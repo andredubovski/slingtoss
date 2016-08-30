@@ -1,0 +1,761 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3A26D81E89B544655BAD8B2609976B83 /* Pods-Rebound-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F24EB4B4E54DEEA6FC73F822AD31A2 /* Pods-Rebound-dummy.m */; };
+		E7A4DC9BFDB7855FFCBB75C4A3091350 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		011ABFB5A76052D118E6A3F21B364737 /* libProviderChartboost.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; path = libProviderChartboost.a; sourceTree = "<group>"; };
+		01475C0D1B8B02A6FBD3B2D0EA920F5E /* AdToAppTargeting.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = AdToAppTargeting.h; sourceTree = "<group>"; };
+		01FEB9C05FB37B29A38D38987C696598 /* TapSenseAds_Right_Arrow.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = TapSenseAds_Right_Arrow.png; path = AdToAppResources/TapSenseResources/TapSenseAds_Right_Arrow.png; sourceTree = "<group>"; };
+		05D5853C0FEF617A87FE7105A93189D1 /* StartApp.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = StartApp.bundle; path = AdToAppResources/StartApp.bundle; sourceTree = "<group>"; };
+		0AB4A9DBF476BF1DDEF111846D4AC57D /* libAdToAppCore.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; path = libAdToAppCore.a; sourceTree = "<group>"; };
+		16B442C597F1AE6217CC6E56353EC0D3 /* Pods-Rebound-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Rebound-acknowledgements.markdown"; sourceTree = "<group>"; };
+		1B2A8294E3EC633714C027DBF1530E58 /* libProviderInhouse.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; path = libProviderInhouse.a; sourceTree = "<group>"; };
+		1E94B23FFD89B9BE2048E72E56105EC2 /* ATALog.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = ATALog.h; sourceTree = "<group>"; };
+		257BED55D9A3C87D766D497171FC3129 /* vg_cta.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = vg_cta.png; path = AdToAppResources/VungleResources/vg_cta.png; sourceTree = "<group>"; };
+		2C3FA1272F30A50BBDA7F26AEE86E24D /* libProviderInMobi.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; path = libProviderInMobi.a; sourceTree = "<group>"; };
+		3060E335A7978DCB1ED2FEB2EB447A61 /* TapSenseAds_Left_Arrow.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = TapSenseAds_Left_Arrow.png; path = AdToAppResources/TapSenseResources/TapSenseAds_Left_Arrow.png; sourceTree = "<group>"; };
+		34667FB36AA82EB5CF54DD2F53FFF9B2 /* libProviderRevmob.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; path = libProviderRevmob.a; sourceTree = "<group>"; };
+		350EE0D7AFB0A5759C4D3CBC2115E0A2 /* __vungle.db */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file; name = __vungle.db; path = AdToAppResources/VungleResources/__vungle.db; sourceTree = "<group>"; };
+		3831CB9C0A8F3D821BE70C9D9F497A81 /* TapSenseAds_Replay_Button.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = TapSenseAds_Replay_Button.png; path = AdToAppResources/TapSenseResources/TapSenseAds_Replay_Button.png; sourceTree = "<group>"; };
+		388F0FCD23AD50BBD74D5C3A535AE386 /* TapSenseAds_Volume_Off.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = TapSenseAds_Volume_Off.png; path = AdToAppResources/TapSenseResources/TapSenseAds_Volume_Off.png; sourceTree = "<group>"; };
+		38B2BBDC1FDE3B133E1EA2A22B1C7A37 /* vg_privacy.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = vg_privacy.png; path = AdToAppResources/VungleResources/vg_privacy.png; sourceTree = "<group>"; };
+		3BA36D7FE8AFF706E343917E767DBDE9 /* libProviderSmaato.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; path = libProviderSmaato.a; sourceTree = "<group>"; };
+		3E0EC156A12A194E6F772118CC78FD44 /* Pods-Rebound-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Rebound-resources.sh"; sourceTree = "<group>"; };
+		41DC4BCF671E41E3AD75A861A32D14FB /* libPersonagraph.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; path = libPersonagraph.a; sourceTree = "<group>"; };
+		4584AC0D33A39CE7E94F37240D2BF143 /* libProviderTapSense.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; path = libProviderTapSense.a; sourceTree = "<group>"; };
+		45F3B9FCAD292191E791139733C2F596 /* vg_mute_on.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = vg_mute_on.png; path = AdToAppResources/VungleResources/vg_mute_on.png; sourceTree = "<group>"; };
+		49ECB8BE7C54F1C7D9D6984EF68ED892 /* mraid.js */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.javascript; name = mraid.js; path = AdToAppResources/TapSenseResources/mraid.js; sourceTree = "<group>"; };
+		4D46B948826A02517914DA0368D01AC0 /* libProviderSupersonic.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; path = libProviderSupersonic.a; sourceTree = "<group>"; };
+		4E5CAC51A189D400E35E0E9F2306BA05 /* Pods-Rebound.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Rebound.release.xcconfig"; sourceTree = "<group>"; };
+		51B9F460D3828368ED48DC94D4330C6A /* libProviderUnity.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; path = libProviderUnity.a; sourceTree = "<group>"; };
+		58E7D60356582C73E911DCDBFE16FB3C /* Pods-Rebound-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Rebound-frameworks.sh"; sourceTree = "<group>"; };
+		59D14E58A23F9A62348FB68390E0F2EE /* TapSenseAds_Close_Button_iPad.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = TapSenseAds_Close_Button_iPad.png; path = AdToAppResources/TapSenseResources/TapSenseAds_Close_Button_iPad.png; sourceTree = "<group>"; };
+		5CA8AF895795F36D2F64FDB1A49F1D81 /* Pods-Rebound-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Rebound-acknowledgements.plist"; sourceTree = "<group>"; };
+		5FA5B426CC25EAA512A0DC63A59DC54A /* TS_SVWebViewController.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = TS_SVWebViewController.bundle; path = AdToAppResources/TapSenseResources/TS_SVWebViewController.bundle; sourceTree = "<group>"; };
+		63F24EB4B4E54DEEA6FC73F822AD31A2 /* Pods-Rebound-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Rebound-dummy.m"; sourceTree = "<group>"; };
+		7332AE8BF56CF09242A32A17F7778C27 /* libProviderFlurry.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; path = libProviderFlurry.a; sourceTree = "<group>"; };
+		7CA26975C46C4875C6E48CA563FFAF1B /* AdToAppSDK.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = AdToAppSDK.h; sourceTree = "<group>"; };
+		7F36051CC900ACB8AD05635FE200D8E7 /* TapSenseAds_Close_No_Padding.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = TapSenseAds_Close_No_Padding.png; path = AdToAppResources/TapSenseResources/TapSenseAds_Close_No_Padding.png; sourceTree = "<group>"; };
+		8095705395A0B0F9F7AD501BF2F43D9C /* libPods-Rebound.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Rebound.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		861D521D84953019CC72487202F70471 /* libProviderTest.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; path = libProviderTest.a; sourceTree = "<group>"; };
+		86B18DBF84BF211A8ABB7966696E00A9 /* UnityAds.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = UnityAds.bundle; path = AdToAppResources/UnityAds.bundle; sourceTree = "<group>"; };
+		8AD200F5DBB346FF13476C83432E4300 /* mraid_ts_ext.js */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.javascript; name = mraid_ts_ext.js; path = AdToAppResources/TapSenseResources/mraid_ts_ext.js; sourceTree = "<group>"; };
+		91086B06C17CF622510029AEA9F9C95C /* libProviderInstreamatic.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; path = libProviderInstreamatic.a; sourceTree = "<group>"; };
+		91216122B914B73454DC44F7D27E84CC /* libProviderApplovin.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; path = libProviderApplovin.a; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		96892EB35025618CE227E4DE583D8F13 /* libProviderAmazon.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; path = libProviderAmazon.a; sourceTree = "<group>"; };
+		AABB84DBD07260A576AA1AC399E0BF81 /* libProviderMyTarget.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; path = libProviderMyTarget.a; sourceTree = "<group>"; };
+		B3DA5AA299D5C8E79C9FEE5EE78740AF /* TapSenseAds_Video_iPhone.nib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file; name = TapSenseAds_Video_iPhone.nib; path = AdToAppResources/TapSenseResources/TapSenseAds_Video_iPhone.nib; sourceTree = "<group>"; };
+		B5240590D39ADF26A4C376273349E104 /* TapSenseAds_Video_iPad.nib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file; name = TapSenseAds_Video_iPad.nib; path = AdToAppResources/TapSenseResources/TapSenseAds_Video_iPad.nib; sourceTree = "<group>"; };
+		C17DDD17DC04A61549815E1E5AE69827 /* AdToAppView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = AdToAppView.h; sourceTree = "<group>"; };
+		CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		D4FBE949556341CE87B1261832BEDE95 /* vg_mute_off.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = vg_mute_off.png; path = AdToAppResources/VungleResources/vg_mute_off.png; sourceTree = "<group>"; };
+		E0B635E323FF0B165DEE689B126BC722 /* libProviderAdColony.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; path = libProviderAdColony.a; sourceTree = "<group>"; };
+		E6029A612A24ECC2E91B8CC20A19BADD /* vg_close.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = vg_close.png; path = AdToAppResources/VungleResources/vg_close.png; sourceTree = "<group>"; };
+		E6DE8041C63C43C89F3F21165893FB98 /* libProviderAvocarrot.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; path = libProviderAvocarrot.a; sourceTree = "<group>"; };
+		E8A872098518A1D8BF7CDBD329BB1569 /* TapSenseAds_Volume_On.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = TapSenseAds_Volume_On.png; path = AdToAppResources/TapSenseResources/TapSenseAds_Volume_On.png; sourceTree = "<group>"; };
+		EAC955EDA19282C357976A87B273C574 /* libProviderVungle.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; path = libProviderVungle.a; sourceTree = "<group>"; };
+		EF3A06DF7C02A9B01B88A8CFA80ABB89 /* libProviderGoogleAdMob.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; path = libProviderGoogleAdMob.a; sourceTree = "<group>"; };
+		F3A34B644DA04E5438B675AEC61AAC58 /* Pods-Rebound.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Rebound.debug.xcconfig"; sourceTree = "<group>"; };
+		F82614A7EB825EA5F5E2119D34E2C28E /* libProviderStartApp.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; path = libProviderStartApp.a; sourceTree = "<group>"; };
+		FE40F04571C1FB9A08A617A08E28DA5A /* libProviderNativeX.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; path = libProviderNativeX.a; sourceTree = "<group>"; };
+		FFFC0167401E6FDE136231277E0256AC /* TapSenseAds_Close_Button.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = TapSenseAds_Close_Button.png; path = AdToAppResources/TapSenseResources/TapSenseAds_Close_Button.png; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8129E0E7CC7C23B6736E14588FDE3569 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E7A4DC9BFDB7855FFCBB75C4A3091350 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		028DCDA37D35B5059C0E66D29AB417AD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AABB84DBD07260A576AA1AC399E0BF81 /* libProviderMyTarget.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		074F9EE4970D5A8EBD153EF19B9BA709 /* Flurry */ = {
+			isa = PBXGroup;
+			children = (
+				283B5F688C36CE859A8DB6DE98B8FE03 /* Frameworks */,
+			);
+			name = Flurry;
+			sourceTree = "<group>";
+		};
+		077146B6DE800558A59F4F5D3B7D0547 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				7CA26975C46C4875C6E48CA563FFAF1B /* AdToAppSDK.h */,
+				01475C0D1B8B02A6FBD3B2D0EA920F5E /* AdToAppTargeting.h */,
+				C17DDD17DC04A61549815E1E5AE69827 /* AdToAppView.h */,
+				1E94B23FFD89B9BE2048E72E56105EC2 /* ATALog.h */,
+				FD2FA3CD7E8996522CFFF8B2317DC265 /* Frameworks */,
+			);
+			name = Core;
+			sourceTree = "<group>";
+		};
+		101B378E84F68693CDB690FAD0BA1560 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4584AC0D33A39CE7E94F37240D2BF143 /* libProviderTapSense.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1166D4D4807E5655F16C06FFC5251725 /* NativeX */ = {
+			isa = PBXGroup;
+			children = (
+				2EE9BB9C9B581EEA2745189C4352AD5A /* Frameworks */,
+			);
+			name = NativeX;
+			sourceTree = "<group>";
+		};
+		123E90491801A000B068117EA42A98DA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8095705395A0B0F9F7AD501BF2F43D9C /* libPods-Rebound.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		12B02BCB3A9214BD661A5404D044016C /* Supersonic */ = {
+			isa = PBXGroup;
+			children = (
+				368814D92AD1E0A96FD9F925918BB69F /* Frameworks */,
+			);
+			name = Supersonic;
+			sourceTree = "<group>";
+		};
+		1B57EC57439ED4BCCD925CCBB11125EE /* Avocarrot */ = {
+			isa = PBXGroup;
+			children = (
+				456B63E1CFEE6CC6E8B77AA870E78CEE /* Frameworks */,
+			);
+			name = Avocarrot;
+			sourceTree = "<group>";
+		};
+		1DDBD6681D338B35123B49B8BFF926A4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				91216122B914B73454DC44F7D27E84CC /* libProviderApplovin.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		22FB1F488B0303A1C84599457B0512A1 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				292A03654A4AC6A6FC0BF59355BEEF2C /* Pods-Rebound */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		283B5F688C36CE859A8DB6DE98B8FE03 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7332AE8BF56CF09242A32A17F7778C27 /* libProviderFlurry.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		292A03654A4AC6A6FC0BF59355BEEF2C /* Pods-Rebound */ = {
+			isa = PBXGroup;
+			children = (
+				16B442C597F1AE6217CC6E56353EC0D3 /* Pods-Rebound-acknowledgements.markdown */,
+				5CA8AF895795F36D2F64FDB1A49F1D81 /* Pods-Rebound-acknowledgements.plist */,
+				63F24EB4B4E54DEEA6FC73F822AD31A2 /* Pods-Rebound-dummy.m */,
+				58E7D60356582C73E911DCDBFE16FB3C /* Pods-Rebound-frameworks.sh */,
+				3E0EC156A12A194E6F772118CC78FD44 /* Pods-Rebound-resources.sh */,
+				F3A34B644DA04E5438B675AEC61AAC58 /* Pods-Rebound.debug.xcconfig */,
+				4E5CAC51A189D400E35E0E9F2306BA05 /* Pods-Rebound.release.xcconfig */,
+			);
+			name = "Pods-Rebound";
+			path = "Target Support Files/Pods-Rebound";
+			sourceTree = "<group>";
+		};
+		2AACC6C478B12193673F29A5B6C3E2E8 /* Inhouse */ = {
+			isa = PBXGroup;
+			children = (
+				E323A9E5CBC77A121FBBB32F5F045B2A /* Frameworks */,
+			);
+			name = Inhouse;
+			sourceTree = "<group>";
+		};
+		2EE9BB9C9B581EEA2745189C4352AD5A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FE40F04571C1FB9A08A617A08E28DA5A /* libProviderNativeX.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		36028EBAB9C809FE616930402377C05F /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				350EE0D7AFB0A5759C4D3CBC2115E0A2 /* __vungle.db */,
+				E6029A612A24ECC2E91B8CC20A19BADD /* vg_close.png */,
+				257BED55D9A3C87D766D497171FC3129 /* vg_cta.png */,
+				D4FBE949556341CE87B1261832BEDE95 /* vg_mute_off.png */,
+				45F3B9FCAD292191E791139733C2F596 /* vg_mute_on.png */,
+				38B2BBDC1FDE3B133E1EA2A22B1C7A37 /* vg_privacy.png */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		3664194C66CDD00E9B86B9E309A1B16A /* InMobi */ = {
+			isa = PBXGroup;
+			children = (
+				C12AD2B062F9976C3E113B38F5EB68CF /* Frameworks */,
+			);
+			name = InMobi;
+			sourceTree = "<group>";
+		};
+		368814D92AD1E0A96FD9F925918BB69F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4D46B948826A02517914DA0368D01AC0 /* libProviderSupersonic.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3DCAB2B7CDE207B3958B6CB957FCC758 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		409251923311D47D1E1F3643103DACC8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				51B9F460D3828368ED48DC94D4330C6A /* libProviderUnity.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		456B63E1CFEE6CC6E8B77AA870E78CEE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E6DE8041C63C43C89F3F21165893FB98 /* libProviderAvocarrot.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4761D2D313F1A6A7F527C435284BB22F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				34667FB36AA82EB5CF54DD2F53FFF9B2 /* libProviderRevmob.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4B56CA5F3689070B118109A9F810F1E4 /* AdMob */ = {
+			isa = PBXGroup;
+			children = (
+				9676398CBABB74CCC9F538E1ED2082B2 /* Frameworks */,
+			);
+			name = AdMob;
+			sourceTree = "<group>";
+		};
+		4DDBA7318177DD52F32FC6715EEF4902 /* MyTarget */ = {
+			isa = PBXGroup;
+			children = (
+				028DCDA37D35B5059C0E66D29AB417AD /* Frameworks */,
+			);
+			name = MyTarget;
+			sourceTree = "<group>";
+		};
+		4EF87F7C6C87AC12B63F1CEEA5D00143 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				41DC4BCF671E41E3AD75A861A32D14FB /* libPersonagraph.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		52AED2E03AE4425E8A2AA3B1817F89A0 /* AdColony */ = {
+			isa = PBXGroup;
+			children = (
+				EC2264DE90AC26B1650A616439A3DC67 /* Frameworks */,
+			);
+			name = AdColony;
+			sourceTree = "<group>";
+		};
+		53EDEB8BA17BFFAD892E9DF8634B70A7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EAC955EDA19282C357976A87B273C574 /* libProviderVungle.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5E74A11889DEBB1E44AE15B2271F3775 /* Personagraph */ = {
+			isa = PBXGroup;
+			children = (
+				4EF87F7C6C87AC12B63F1CEEA5D00143 /* Frameworks */,
+			);
+			name = Personagraph;
+			sourceTree = "<group>";
+		};
+		5E9C0DA5A8D7E60590AE6A8CBDB07BA8 /* TapSense */ = {
+			isa = PBXGroup;
+			children = (
+				101B378E84F68693CDB690FAD0BA1560 /* Frameworks */,
+				6FF2A1E9844E2A67C18FCE3D77C3FD73 /* Resources */,
+			);
+			name = TapSense;
+			sourceTree = "<group>";
+		};
+		68F0B633FBE7432D569110312E924719 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F82614A7EB825EA5F5E2119D34E2C28E /* libProviderStartApp.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6C9CE4B890D21A7D3F0AF3C6D88DA5A3 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				05D5853C0FEF617A87FE7105A93189D1 /* StartApp.bundle */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		6CBBF6CDA806B63067B0A8C867AE8292 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				86B18DBF84BF211A8ABB7966696E00A9 /* UnityAds.bundle */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		6FF2A1E9844E2A67C18FCE3D77C3FD73 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				49ECB8BE7C54F1C7D9D6984EF68ED892 /* mraid.js */,
+				8AD200F5DBB346FF13476C83432E4300 /* mraid_ts_ext.js */,
+				FFFC0167401E6FDE136231277E0256AC /* TapSenseAds_Close_Button.png */,
+				59D14E58A23F9A62348FB68390E0F2EE /* TapSenseAds_Close_Button_iPad.png */,
+				7F36051CC900ACB8AD05635FE200D8E7 /* TapSenseAds_Close_No_Padding.png */,
+				3060E335A7978DCB1ED2FEB2EB447A61 /* TapSenseAds_Left_Arrow.png */,
+				3831CB9C0A8F3D821BE70C9D9F497A81 /* TapSenseAds_Replay_Button.png */,
+				01FEB9C05FB37B29A38D38987C696598 /* TapSenseAds_Right_Arrow.png */,
+				B5240590D39ADF26A4C376273349E104 /* TapSenseAds_Video_iPad.nib */,
+				B3DA5AA299D5C8E79C9FEE5EE78740AF /* TapSenseAds_Video_iPhone.nib */,
+				388F0FCD23AD50BBD74D5C3A535AE386 /* TapSenseAds_Volume_Off.png */,
+				E8A872098518A1D8BF7CDBD329BB1569 /* TapSenseAds_Volume_On.png */,
+				5FA5B426CC25EAA512A0DC63A59DC54A /* TS_SVWebViewController.bundle */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		732EA28B0B3551B34DC6D98DE37D6E3B /* Smaato */ = {
+			isa = PBXGroup;
+			children = (
+				C12EED4DBD6C2D6F9002043B8DACEC45 /* Frameworks */,
+			);
+			name = Smaato;
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
+				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
+				F04ECF2D2CFA710F708C495E81E126C7 /* Pods */,
+				123E90491801A000B068117EA42A98DA /* Products */,
+				22FB1F488B0303A1C84599457B0512A1 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		7E260A4892DE05689EF37C000C1705D2 /* Unity */ = {
+			isa = PBXGroup;
+			children = (
+				409251923311D47D1E1F3643103DACC8 /* Frameworks */,
+				6CBBF6CDA806B63067B0A8C867AE8292 /* Resources */,
+			);
+			name = Unity;
+			sourceTree = "<group>";
+		};
+		91AD03F6E7941A96D28AE5457F728007 /* AdToApp */ = {
+			isa = PBXGroup;
+			children = (
+				52AED2E03AE4425E8A2AA3B1817F89A0 /* AdColony */,
+				4B56CA5F3689070B118109A9F810F1E4 /* AdMob */,
+				A93C8F7D2258069588E8477EC8E05F96 /* AmazonAd */,
+				9281BC26198E3D220AEB52F27C65E14B /* Applovin */,
+				1B57EC57439ED4BCCD925CCBB11125EE /* Avocarrot */,
+				077146B6DE800558A59F4F5D3B7D0547 /* Core */,
+				074F9EE4970D5A8EBD153EF19B9BA709 /* Flurry */,
+				2AACC6C478B12193673F29A5B6C3E2E8 /* Inhouse */,
+				3664194C66CDD00E9B86B9E309A1B16A /* InMobi */,
+				E4FC15C082A6606A558FDBC323982419 /* Instreamatic */,
+				4DDBA7318177DD52F32FC6715EEF4902 /* MyTarget */,
+				1166D4D4807E5655F16C06FFC5251725 /* NativeX */,
+				5E74A11889DEBB1E44AE15B2271F3775 /* Personagraph */,
+				BEFB0662D4AF45F1DFE7FAA98238C7AC /* Revmob */,
+				732EA28B0B3551B34DC6D98DE37D6E3B /* Smaato */,
+				E7C2CCF1B7E421D7413F9AD0AC14914B /* StartApp */,
+				12B02BCB3A9214BD661A5404D044016C /* Supersonic */,
+				5E9C0DA5A8D7E60590AE6A8CBDB07BA8 /* TapSense */,
+				7E260A4892DE05689EF37C000C1705D2 /* Unity */,
+				C55CE53E19ECFD124F2051499C41F07C /* Vungle */,
+			);
+			path = AdToApp;
+			sourceTree = "<group>";
+		};
+		9281BC26198E3D220AEB52F27C65E14B /* Applovin */ = {
+			isa = PBXGroup;
+			children = (
+				1DDBD6681D338B35123B49B8BFF926A4 /* Frameworks */,
+			);
+			name = Applovin;
+			sourceTree = "<group>";
+		};
+		9676398CBABB74CCC9F538E1ED2082B2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EF3A06DF7C02A9B01B88A8CFA80ABB89 /* libProviderGoogleAdMob.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A6B4927F14C9FAFDF0BFC5F70776CD27 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				91086B06C17CF622510029AEA9F9C95C /* libProviderInstreamatic.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A93C8F7D2258069588E8477EC8E05F96 /* AmazonAd */ = {
+			isa = PBXGroup;
+			children = (
+				DC7D6038EBC4945CE4986733B6995B49 /* Frameworks */,
+			);
+			name = AmazonAd;
+			sourceTree = "<group>";
+		};
+		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3DCAB2B7CDE207B3958B6CB957FCC758 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BEFB0662D4AF45F1DFE7FAA98238C7AC /* Revmob */ = {
+			isa = PBXGroup;
+			children = (
+				4761D2D313F1A6A7F527C435284BB22F /* Frameworks */,
+			);
+			name = Revmob;
+			sourceTree = "<group>";
+		};
+		C12AD2B062F9976C3E113B38F5EB68CF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2C3FA1272F30A50BBDA7F26AEE86E24D /* libProviderInMobi.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C12EED4DBD6C2D6F9002043B8DACEC45 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3BA36D7FE8AFF706E343917E767DBDE9 /* libProviderSmaato.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C55CE53E19ECFD124F2051499C41F07C /* Vungle */ = {
+			isa = PBXGroup;
+			children = (
+				53EDEB8BA17BFFAD892E9DF8634B70A7 /* Frameworks */,
+				36028EBAB9C809FE616930402377C05F /* Resources */,
+			);
+			name = Vungle;
+			sourceTree = "<group>";
+		};
+		DC7D6038EBC4945CE4986733B6995B49 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				96892EB35025618CE227E4DE583D8F13 /* libProviderAmazon.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E323A9E5CBC77A121FBBB32F5F045B2A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1B2A8294E3EC633714C027DBF1530E58 /* libProviderInhouse.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E4FC15C082A6606A558FDBC323982419 /* Instreamatic */ = {
+			isa = PBXGroup;
+			children = (
+				A6B4927F14C9FAFDF0BFC5F70776CD27 /* Frameworks */,
+			);
+			name = Instreamatic;
+			sourceTree = "<group>";
+		};
+		E7C2CCF1B7E421D7413F9AD0AC14914B /* StartApp */ = {
+			isa = PBXGroup;
+			children = (
+				68F0B633FBE7432D569110312E924719 /* Frameworks */,
+				6C9CE4B890D21A7D3F0AF3C6D88DA5A3 /* Resources */,
+			);
+			name = StartApp;
+			sourceTree = "<group>";
+		};
+		EC2264DE90AC26B1650A616439A3DC67 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E0B635E323FF0B165DEE689B126BC722 /* libProviderAdColony.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F04ECF2D2CFA710F708C495E81E126C7 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				91AD03F6E7941A96D28AE5457F728007 /* AdToApp */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		FD2FA3CD7E8996522CFFF8B2317DC265 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0AB4A9DBF476BF1DDEF111846D4AC57D /* libAdToAppCore.a */,
+				011ABFB5A76052D118E6A3F21B364737 /* libProviderChartboost.a */,
+				861D521D84953019CC72487202F70471 /* libProviderTest.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3896586FA9EE902F9CCC79E4D294903D /* Pods-Rebound */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FE22ABE46C55509CF4EDA6EA8E23A812 /* Build configuration list for PBXNativeTarget "Pods-Rebound" */;
+			buildPhases = (
+				3B5DE7CC8677CEBBEF0256B4C9059A05 /* Sources */,
+				8129E0E7CC7C23B6736E14588FDE3569 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-Rebound";
+			productName = "Pods-Rebound";
+			productReference = 8095705395A0B0F9F7AD501BF2F43D9C /* libPods-Rebound.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0700;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = 123E90491801A000B068117EA42A98DA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3896586FA9EE902F9CCC79E4D294903D /* Pods-Rebound */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3B5DE7CC8677CEBBEF0256B4C9059A05 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3A26D81E89B544655BAD8B2609976B83 /* Pods-Rebound-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		3FA2475660FFC880302AD18E29B2E5FC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		98F1E1D4B7F9778B9A3C2954892AE2CA /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4E5CAC51A189D400E35E0E9F2306BA05 /* Pods-Rebound.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MACH_O_TYPE = staticlib;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		D6E3A779B5536ED8796642540228A420 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F3A34B644DA04E5438B675AEC61AAC58 /* Pods-Rebound.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MACH_O_TYPE = staticlib;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		F325026B55060D3B22BEC0BAB5FA7344 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3FA2475660FFC880302AD18E29B2E5FC /* Debug */,
+				F325026B55060D3B22BEC0BAB5FA7344 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FE22ABE46C55509CF4EDA6EA8E23A812 /* Build configuration list for PBXNativeTarget "Pods-Rebound" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D6E3A779B5536ED8796642540228A420 /* Debug */,
+				98F1E1D4B7F9778B9A3C2954892AE2CA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}

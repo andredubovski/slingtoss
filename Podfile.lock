@@ -1,0 +1,141 @@
+PODS:
+  - AdToApp (47.1):
+    - AdToApp/Banner (= 47.1)
+    - AdToApp/Image (= 47.1)
+    - AdToApp/Interstitial (= 47.1)
+    - AdToApp/Personagraph (= 47.1)
+    - AdToApp/Reward (= 47.1)
+    - AdToApp/Video (= 47.1)
+  - AdToApp/AdColony (47.1):
+    - AdToApp/Core
+  - AdToApp/AdMob (47.1):
+    - AdToApp/Core
+  - AdToApp/AmazonAd (47.1):
+    - AdToApp/Core
+  - AdToApp/Applovin (47.1):
+    - AdToApp/Core
+  - AdToApp/Avocarrot (47.1):
+    - AdToApp/Core
+  - AdToApp/Banner (47.1):
+    - AdToApp/AdMob
+    - AdToApp/AmazonAd
+    - AdToApp/InMobi
+    - AdToApp/MyTarget
+    - AdToApp/Revmob
+    - AdToApp/Smaato
+    - AdToApp/StartApp
+    - AdToApp/TapSense
+  - AdToApp/Core (47.1)
+  - AdToApp/Flurry (47.1):
+    - AdToApp/Core
+  - AdToApp/Image (47.1):
+    - AdToApp/AdMob
+    - AdToApp/AmazonAd
+    - AdToApp/Avocarrot
+    - AdToApp/Flurry
+    - AdToApp/Inhouse
+    - AdToApp/InMobi
+    - AdToApp/MyTarget
+    - AdToApp/NativeX
+    - AdToApp/Revmob
+    - AdToApp/Smaato
+    - AdToApp/StartApp
+    - AdToApp/TapSense
+  - AdToApp/Inhouse (47.1):
+    - AdToApp/Core
+  - AdToApp/InMobi (47.1):
+    - AdToApp/Core
+  - AdToApp/Instreamatic (47.1):
+    - AdToApp/Core
+  - AdToApp/Interstitial (47.1):
+    - AdToApp/AdColony
+    - AdToApp/AdMob
+    - AdToApp/AmazonAd
+    - AdToApp/Applovin
+    - AdToApp/Avocarrot
+    - AdToApp/Flurry
+    - AdToApp/Inhouse
+    - AdToApp/InMobi
+    - AdToApp/Instreamatic
+    - AdToApp/MyTarget
+    - AdToApp/NativeX
+    - AdToApp/Revmob
+    - AdToApp/Smaato
+    - AdToApp/StartApp
+    - AdToApp/TapSense
+    - AdToApp/Unity
+    - AdToApp/Vungle
+  - AdToApp/MyTarget (47.1):
+    - AdToApp/Core
+  - AdToApp/NativeX (47.1):
+    - AdToApp/Core
+  - AdToApp/Personagraph (47.1):
+    - AdToApp/Core
+  - AdToApp/Revmob (47.1):
+    - AdToApp/Core
+  - AdToApp/Reward (47.1):
+    - AdToApp/AdColony
+    - AdToApp/Applovin
+    - AdToApp/Flurry
+    - AdToApp/Inhouse
+    - AdToApp/InMobi
+    - AdToApp/MyTarget
+    - AdToApp/NativeX
+    - AdToApp/Revmob
+    - AdToApp/StartApp
+    - AdToApp/Supersonic
+    - AdToApp/Unity
+    - AdToApp/Vungle
+  - AdToApp/Smaato (47.1):
+    - AdToApp/Core
+  - AdToApp/StartApp (47.1):
+    - AdToApp/Core
+  - AdToApp/Supersonic (47.1):
+    - AdToApp/Core
+  - AdToApp/TapSense (47.1):
+    - AdToApp/Core
+  - AdToApp/Unity (47.1):
+    - AdToApp/Core
+  - AdToApp/Video (47.1):
+    - AdToApp/AdColony
+    - AdToApp/AdMob
+    - AdToApp/Applovin
+    - AdToApp/Flurry
+    - AdToApp/Inhouse
+    - AdToApp/MyTarget
+    - AdToApp/NativeX
+    - AdToApp/Revmob
+    - AdToApp/Smaato
+    - AdToApp/TapSense
+    - AdToApp/Unity
+    - AdToApp/Vungle
+  - AdToApp/Vungle (47.1):
+    - AdToApp/Core
+
+DEPENDENCIES:
+  - AdToApp
+  - AdToApp/AdColony
+  - AdToApp/AdMob
+  - AdToApp/AmazonAd
+  - AdToApp/Applovin
+  - AdToApp/Avocarrot
+  - AdToApp/Banner
+  - AdToApp/Image
+  - AdToApp/InMobi
+  - AdToApp/Interstitial
+  - AdToApp/MyTarget
+  - AdToApp/NativeX
+  - AdToApp/Smaato
+  - AdToApp/StartApp
+  - AdToApp/Supersonic
+  - AdToApp/TapSense
+  - AdToApp/Unity
+  - AdToApp/Video
+  - AdToApp/Vungle
+
+SPEC CHECKSUMS:
+  AdToApp: 731a6fa98dcf0b76f43a2047864132757c04708b
+
+PODFILE CHECKSUM: e93246bec75a78443be1a3b7e7815f729bd1d3dc
+
+COCOAPODS: 1.0.0
