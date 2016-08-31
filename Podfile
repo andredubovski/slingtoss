@@ -11,7 +11,7 @@ target 'Rebound' do
   pod 'AdToApp/AdMob'
   pod 'AdToApp/InMobi'
   pod 'AdToApp/MyTarget'
-  pod 'AdToApp/Smaato'` 
+  pod 'AdToApp/Smaato'
   pod 'AdToApp/StartApp'
   pod 'AdToApp/TapSense'
   pod 'AdToApp/Unity'

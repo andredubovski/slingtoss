@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "8F554DB61D6CE3910099E929"
+               BlueprintIdentifier = "8FF346911D6D0B2C00504D3E"
                BuildableName = "Rebound.app"
                BlueprintName = "Rebound"
                ReferencedContainer = "container:Rebound.xcodeproj">
@@ -32,7 +32,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "8F554DB61D6CE3910099E929"
+            BlueprintIdentifier = "8FF346911D6D0B2C00504D3E"
             BuildableName = "Rebound.app"
             BlueprintName = "Rebound"
             ReferencedContainer = "container:Rebound.xcodeproj">
@@ -55,7 +55,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "8F554DB61D6CE3910099E929"
+            BlueprintIdentifier = "8FF346911D6D0B2C00504D3E"
             BuildableName = "Rebound.app"
             BlueprintName = "Rebound"
             ReferencedContainer = "container:Rebound.xcodeproj">
@@ -74,7 +74,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "8F554DB61D6CE3910099E929"
+            BlueprintIdentifier = "8FF346911D6D0B2C00504D3E"
             BuildableName = "Rebound.app"
             BlueprintName = "Rebound"
             ReferencedContainer = "container:Rebound.xcodeproj">
