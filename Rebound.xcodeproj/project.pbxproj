@@ -236,7 +236,6 @@
 				8F9BA3BC1D6D15FC007BFB26 /* SKButton.swift */,
 				8F49085A1D73E65900C965CD /* MainMenu.swift */,
 				8F49085C1D73E67600C965CD /* DeathMenu.swift */,
-				8F36DB3A1D7515580096105D /* Theme.swift */,
 			);
 			name = UI;
 			sourceTree = "<group>";
@@ -275,6 +274,7 @@
 		8FF8DCF21D73AAB60024655C /* Mechanics */ = {
 			isa = PBXGroup;
 			children = (
+				8F36DB3A1D7515580096105D /* Theme.swift */,
 				8FF346CB1D6D0BD600504D3E /* Score.swift */,
 				8FF346D91D6D0C3500504D3E /* Background.swift */,
 			);

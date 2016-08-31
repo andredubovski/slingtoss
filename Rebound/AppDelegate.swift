@@ -72,7 +72,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, AdToAppSDKDelegate, AdToA
   func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
     
     AdToAppSDK.enableDebugLogs()
-//    AdToAppSDK.enableTestMode()
+    AdToAppSDK.enableTestMode()
     
     AdToAppSDK.startWithAppId(
       "3b869a80-1024-4409-9aa5-434223be6895:b84af5d5-cb26-4671-a3ca-0b80fb8de90b",

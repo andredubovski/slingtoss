@@ -22,16 +22,16 @@ class Theme {
   
   init() {
     func blankColor(_: CGFloat) -> SKColor {
-      return SKColor.blackColor()
+      return SKColor.clearColor()
     }
     
-    self.permeablePlatformColor = blankColor
-    self.impermeablePlatformColor = blankColor
-    self.ringColor = blankColor
+    permeablePlatformColor = blankColor
+    impermeablePlatformColor = blankColor
+    ringColor = blankColor
     
   }
   
-  func build(permeablePlatformColor: (CGFloat) -> SKColor,
+  init(permeablePlatformColor: (CGFloat) -> SKColor,
              impermeablePlatformColor: (CGFloat) -> SKColor,
              ringColor: (CGFloat) -> SKColor,
              backgroundName: String,
@@ -43,12 +43,16 @@ class Theme {
     self.permeablePlatformColor = permeablePlatformColor
     self.impermeablePlatformColor = impermeablePlatformColor
     self.ringColor = ringColor
-    background.build(imageNamed: backgroundName)
+    self.background = Background(imageNamed: backgroundName)
     self.titleColor = titleColor
     self.uiColor = uiColor
     self.tintColor = tintColor
     self.slingColor = slingColor
     self.ballColor = ballColor
+  }
+  
+  func build() {
+    background.build()
   }
   
 }
@@ -57,8 +61,6 @@ var themes = [Theme]()
 var currentTheme = Theme()
 
 func assembleThemes() {
-  
-  let theme1 = Theme()
   
   func permeablePlatformColor1(length: CGFloat) -> SKColor {
     return SKColor(
@@ -87,8 +89,8 @@ func assembleThemes() {
     )
   }
   
-  theme1.build(
-    permeablePlatformColor1,
+  let theme1 = Theme(
+    permeablePlatformColor: permeablePlatformColor1,
     impermeablePlatformColor: impermeablePlatformColor1,
     ringColor: ringColor1,
     backgroundName: "background1",
@@ -100,8 +102,6 @@ func assembleThemes() {
   themes.append(theme1)
   
   
-  let theme2 = Theme()
-  
   func permeablePlatformColor2(length: CGFloat) -> SKColor {
     return SKColor.lightGrayColor()
   }
@@ -111,11 +111,11 @@ func assembleThemes() {
   }
   
   func ringColor2(radius: CGFloat) -> SKColor {
-    return SKColor.cyanColor()
+    return SKColor.lightGrayColor()
   }
   
-  theme2.build(
-    permeablePlatformColor2,
+  let theme2 = Theme(
+    permeablePlatformColor: permeablePlatformColor2,
     impermeablePlatformColor: impermeablePlatformColor2,
     ringColor: ringColor2,
     backgroundName: "background2",
@@ -126,6 +126,45 @@ func assembleThemes() {
     ballColor: SKColor.blueColor())
   themes.append(theme2)
   
+  
+  func permeablePlatformColor3(length: CGFloat) -> SKColor {
+    return SKColor(
+      red: (length*(450/gameFrame.width)+30) / 255,
+      green: (length*(450/gameFrame.width)+30) / 255,
+      blue: 0.4,
+      alpha: 1
+    )
+  }
+  
+  func impermeablePlatformColor3(length: CGFloat) -> SKColor {
+    return SKColor(
+      red: (length*(200/gameFrame.width)+20) / 255,
+      green: (length*(500/gameFrame.width)-30) / 255,
+      blue: (length*(450/gameFrame.width)+20) / 255,
+      alpha: 1
+    )
+  }
+  
+  func ringColor3(radius: CGFloat) -> SKColor {
+    return SKColor(
+      red: 0.8,
+      green: 1-(radius*(220/gameFrame.width)+40) / 255,
+      blue: 0.5,
+      alpha: 1
+    )
+  }
+  
+  let theme3 = Theme(
+    permeablePlatformColor: permeablePlatformColor3,
+    impermeablePlatformColor: impermeablePlatformColor3,
+    ringColor: ringColor3,
+    backgroundName: "background3",
+    titleColor: SKColor.orangeColor(),
+    uiColor: SKColor(red: 0, green: 0, blue: 1, alpha: 0.6),
+    tintColor: SKColor.whiteColor(),
+    slingColor: SKColor.blueColor(),
+    ballColor: SKColor.whiteColor())
+  themes.append(theme3)
   
   let defaults = NSUserDefaults()
   currentTheme = themes[defaults.integerForKey("theme")]
