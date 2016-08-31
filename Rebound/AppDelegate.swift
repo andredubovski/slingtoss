@@ -72,12 +72,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate, AdToAppSDKDelegate, AdToA
   func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
     
     AdToAppSDK.enableDebugLogs()
-    AdToAppSDK.enableTestMode()
+//    AdToAppSDK.enableTestMode()
     
     AdToAppSDK.startWithAppId(
-      "3b869a80-1024-4409-9aa5-434223be6895:b84af5d5-cb26-4671-a3ca-0b80fb8de90b",
+      "39c3f1a3-bced-4ae4-851b-7cb603a44479:c4050a11-a7eb-4733-b961-7d77c7601aee",
       modules:[
-        //ADTOAPP_IMAGE_INTERSTITIAL,
+        ADTOAPP_IMAGE_INTERSTITIAL,
         ADTOAPP_VIDEO_INTERSTITIAL,
         ADTOAPP_INTERSTITIAL,
         //ADTOAPP_REWARDED_INTERSTITIAL,//Uncomment to test rewarded ads

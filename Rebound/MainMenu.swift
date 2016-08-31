@@ -45,7 +45,6 @@ class MainMenu {
       gameFrame.midX - (buttonWidth + marginWidth),
       title.position.y - (title.frame.height/2 + buttonWidth/2)
     )
-    button1.buttonAction = SKAction.runBlock({iRate.sharedInstance().openRatingsPageInAppStore()})
     button1.display()
     elements.append(button1)
     
@@ -54,6 +53,7 @@ class MainMenu {
       gameFrame.midX,
       title.position.y - (title.frame.height/2 + buttonWidth/2)
     )
+    button2.buttonAction = SKAction.runBlock({iRate.sharedInstance().openRatingsPageInAppStore()})
     button2.display()
     elements.append(button2)
     
