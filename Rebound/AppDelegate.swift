@@ -10,9 +10,9 @@ import UIKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, AdToAppSDKDelegate, AdToAppViewDelegate {
-
+  
   var window: UIWindow?
-
+  
   override class func initialize() -> Void {
     
     //set the bundle ID. normally you wouldn't need to do this
@@ -23,7 +23,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, AdToAppSDKDelegate, AdToA
     
     //enable preview mode
     iRate.sharedInstance().previewMode = true
-//    AdToAppView.attachToView(gameScene.view, position: ADTOAPPSDK_BANNER_POSITION_BOTTOM, edgeInsets: UIEdgeInsets.init(), bannerSize: ADTOAPPSDK_BANNER_SIZE_320x50, delegate: self)
     
   }
   
@@ -72,44 +71,55 @@ class AppDelegate: UIResponder, UIApplicationDelegate, AdToAppSDKDelegate, AdToA
   
   func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
     
-    //Uncomment the line below if you need test mode
-    //AdToAppSDK.enableTestMode()
-    //Uncomment the line below if you need logs
-    //AdToAppSDK.enableDebugLogs()
-    AdToAppSDK.setDelegate(self)
-    AdToAppSDK.startWithAppId("39c3f1a3-bced-4ae4-851b-7cb603a44479:c4050a11-a7eb-4733-b961-7d77c7601aee", modules:[
-      //ADTOAPP_IMAGE_INTERSTITIAL,
-      //ADTOAPP_VIDEO_INTERSTITIAL,
-      ADTOAPP_INTERSTITIAL,
-      //ADTOAPP_REWARDED_INTERSTITIAL,
-      ADTOAPP_BANNER
-      ])
+    AdToAppSDK.enableDebugLogs()
+//    AdToAppSDK.enableTestMode()
+    
+    AdToAppSDK.startWithAppId(
+      "3b869a80-1024-4409-9aa5-434223be6895:b84af5d5-cb26-4671-a3ca-0b80fb8de90b",
+      modules:[
+        //ADTOAPP_IMAGE_INTERSTITIAL,
+        ADTOAPP_VIDEO_INTERSTITIAL,
+        ADTOAPP_INTERSTITIAL,
+        //ADTOAPP_REWARDED_INTERSTITIAL,//Uncomment to test rewarded ads
+        ADTOAPP_BANNER
+      ]
+    )
+    
+    AdToAppSDK_setTargetingParam(ADTOAPP_TARGETING_PARAM_KEYWORDS, "advertisement,mobile ads,ads mediation");
+    AdToAppSDK_setTargetingParam(ADTOAPP_TARGETING_PARAM_USER_INTERESTS, "ecpm,revenue");
+    AdToAppSDK_setTargetingParam(ADTOAPP_TARGETING_PARAM_USER_BIRTHDAY, "1.01.1990");
+    AdToAppSDK_setTargetingParam(ADTOAPP_TARGETING_PARAM_USER_AGE, "25");
+    AdToAppSDK_setTargetingParam(ADTOAPP_TARGETING_PARAM_USER_GENDER, ADTOAPP_TARGETING_PARAM_USER_GENDER_MALE);
+    AdToAppSDK_setTargetingParam(ADTOAPP_TARGETING_PARAM_USER_OCCUPATION, ADTOAPP_TARGETING_PARAM_USER_OCCUPATION_UNIVERSITY);
+    AdToAppSDK_setTargetingParam(ADTOAPP_TARGETING_PARAM_USER_RELATIONSHIP, ADTOAPP_TARGETING_PARAM_USER_RELATIONSHIP_ENGAGED);
+    AdToAppSDK_setTargetingParam(ADTOAPP_TARGETING_PARAM_USER_LATITUDE, "26.71234");
+    AdToAppSDK_setTargetingParam(ADTOAPP_TARGETING_PARAM_USER_LONGITUDE, "-80.051595");
     
     return true
   }
-
+  
   func applicationWillResignActive(application: UIApplication) {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
     // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
   }
-
+  
   func applicationDidEnterBackground(application: UIApplication) {
     // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
   }
-
+  
   func applicationWillEnterForeground(application: UIApplication) {
     // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
   }
-
+  
   func applicationDidBecomeActive(application: UIApplication) {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
   }
-
+  
   func applicationWillTerminate(application: UIApplication) {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
   }
-
-
+  
+  
 }
 
