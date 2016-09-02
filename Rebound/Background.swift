@@ -9,20 +9,28 @@
 import SpriteKit
 
 class Background {
-  let img1 = SKSpriteNode(imageNamed: "bgPattern")
-  let img2 = SKSpriteNode(imageNamed: "bgPattern")
   
-  func build(scene: SKScene) {
+  var imageNamed = String()
+  var img1 = SKSpriteNode()
+  var img2 = SKSpriteNode()
+  
+  init() {
+    
+  }
+  
+  init(imageNamed: String) {
+    self.imageNamed = imageNamed
+  }
+  
+  func build(scene: SKScene = gameScene) {
+    img1 = SKSpriteNode(imageNamed: imageNamed)
+    img2 = SKSpriteNode(imageNamed: imageNamed)
     scene.addChild(img1)
     scene.addChild(img2)
     img1.position = CGPointMake(gameFrame.midX, gameFrame.midY)
     img2.position = CGPointMake(gameFrame.midX, gameFrame.midY - img1.frame.height)
     img1.zPosition = -10
     img2.zPosition = -10
-  }
-  
-  func build() {
-    build(gameScene)
   }
   
   func scroll(interval: CGFloat) {

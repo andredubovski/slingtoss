@@ -25,6 +25,8 @@ class Slingshot: SKShapeNode {
     radius = gameScene.ball.radius+thickness/2 + 1
     
     lineWidth = thickness
+    lineCap = .Square
+    strokeColor = currentTheme.slingColor
     zPosition = 4
   }
   
@@ -32,7 +34,6 @@ class Slingshot: SKShapeNode {
     
     alpha = 1
     removeAllActions()
-    ball.physicsBody?.resting = true
     
     updateSling(ball, atPoint: atPoint)
     
@@ -64,11 +65,14 @@ class Slingshot: SKShapeNode {
     
   }
   
-  func shoot(ball: Ball) {
-    if canShoot {ball.physicsBody?.applyImpulse(shotVector)}
+  func shoot(ball: Ball) -> Bool {
+    if canShoot {
+      ball.physicsBody?.applyImpulse(shotVector)
+      if magnitude(shotVector) > 5.5 {gameScene.terrains.current.fall()}
+    }
     runAction(SKAction.fadeAlphaTo(0, duration: 1))
     
-    if magnitude(shotVector) > 5.5 {gameScene.terrains.array[gameScene.score.amount].fall()}
+    return magnitude(shotVector) > 5.5
   }
   
   func scroll(interval: CGFloat, ball: Ball) {
@@ -78,7 +82,7 @@ class Slingshot: SKShapeNode {
   func update(ball: Ball) {
     if ball.position.y > aimingToPoint.y {removeAllActions(); alpha = 0}
     if alpha > 0 {updateSling(ball, atPoint: aimingToPoint)}
-    if ball.physicsBody?.velocity.dy < 1 && magnitude((ball.physicsBody?.velocity)!) < 30 {
+    if ball.physicsBody?.velocity.dy < 5 && magnitude((ball.physicsBody?.velocity)!) < 50 {
       canShoot = true
     } else {canShoot = false}
   }

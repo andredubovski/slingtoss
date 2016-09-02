@@ -9,8 +9,7 @@
 import UIKit
 import SpriteKit
 
-let gameScene = GameScene()
-let settingsScene = SettingsScene()
+var gameScene = GameScene()
 
 class GameViewController: UIViewController {
   
@@ -21,10 +20,13 @@ class GameViewController: UIViewController {
     
     /* Sprite Kit applies additional optimizations to improve rendering performance */
     skView.ignoresSiblingOrder = true
+    skView.showsFPS = true
+//    skView.showsNodeCount = true
     
     /* Set the scale mode to scale to fit the window */
+    assembleThemes()
+    
     gameScene.scaleMode = .ResizeFill
-    settingsScene.scaleMode = .ResizeFill
     
     skView.presentScene(gameScene)
   }

@@ -48,7 +48,11 @@ class Platform: Terrain {
     CGPathCloseSubpath(mutablePath)
     path = mutablePath
     
-    super.build()
+    
+    if isPermeable {fillColor = currentTheme.permeablePlatformColor(length)}
+    else {fillColor = currentTheme.impermeablePlatformColor(length)}
+    
+    super.build(true)
     
   }
   

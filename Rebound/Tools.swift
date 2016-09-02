@@ -8,9 +8,6 @@
 
 import SpriteKit
 
-let uiColor = SKColor(red: 1, green: 1, blue: 1, alpha: 0.6)
-let uiHighlightColor = SKColor.blackColor()//(red: 0, green: 0, blue: 0, alpha: 0.6)
-
 let fadeIn = SKAction.sequence([SKAction.fadeAlphaTo(0, duration: 0), SKAction.fadeAlphaTo(1, duration: 0.7)])
 
 let fadeOut = SKAction.fadeAlphaTo(0, duration: 0.7)
@@ -119,4 +116,29 @@ func makeSettingsNode() -> SKSpriteNode{
 //info node for main menu
 func makeInfoNode() -> SKSpriteNode {
   return SKSpriteNode(imageNamed: "info")
+}
+
+
+func tintImage(inout image: UIImage, color: UIColor) {
+  UIGraphicsBeginImageContextWithOptions(image.size, false, image.scale)
+  color.setFill()
+  
+  let context = UIGraphicsGetCurrentContext()! as CGContextRef
+  CGContextTranslateCTM(context, 0, image.size.height)
+  CGContextScaleCTM(context, 1.0, -1.0);
+  CGContextSetBlendMode(context, CGBlendMode.Normal)
+  
+  let rect = CGRectMake(0, 0, image.size.width, image.size.height) as CGRect
+  CGContextClipToMask(context, rect, image.CGImage)
+  CGContextFillRect(context, rect)
+  
+  image = UIGraphicsGetImageFromCurrentImageContext() as UIImage
+  UIGraphicsEndImageContext()
+}
+
+extension CollectionType {
+  /// Returns the element at the specified index iff it is within bounds, otherwise nil.
+  subscript (safe index: Index) -> Generator.Element? {
+    return indices.contains(index) ? self[index] : nil
+  }
 }

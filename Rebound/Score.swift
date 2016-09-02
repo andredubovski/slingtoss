@@ -9,8 +9,9 @@
 import SpriteKit
 
 class Score {
+  
   var amount = Int(0)
-  var box = SKSpriteNode(color: SKColor(red: 1, green: 1, blue: 1, alpha: 0.6), size: CGSizeZero)
+  var box = SKSpriteNode(color: currentTheme.uiColor, size: CGSizeZero)
   var label = SKLabelNode()
   
   init() {
@@ -19,9 +20,10 @@ class Score {
   
   func build(scene: SKScene) {
     label.text = String(amount)
-    label.fontColor = SKColor.blackColor()
+    label.fontColor = currentTheme.tintColor
     label.position = CGPointMake(0, -label.frame.height/2)
     box.addChild(label)
+    box.color = currentTheme.uiColor
     box.size = CGSizeMake(label.frame.width+10, label.frame.height+10)
     box.position = CGPointMake(box.frame.width/2, scene.frame.height-box.frame.height/2)
     box.zPosition = 7

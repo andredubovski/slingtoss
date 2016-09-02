@@ -1,7 +1,7 @@
 //
 //  Ball.swift
 //  Rebound
-//
+//  
 //  Created by Andre Oaklin on 8/7/16.
 //  Copyright © 2016 oakl.in. All rights reserved.
 //
@@ -16,7 +16,7 @@ class Ball: SKShapeNode {
     radius = gameFrame.width*0.026
     path = CGPathCreateWithEllipseInRect(CGRectMake(-radius, -radius, radius*2, radius*2), nil)
     position = CGPointMake(gameFrame.midX, gameFrame.height*0.4)
-    fillColor = SKColor.redColor()
+    fillColor = currentTheme.ballColor
     lineWidth = 1
     strokeColor = fillColor
     zPosition = 3
@@ -28,6 +28,8 @@ class Ball: SKShapeNode {
     physicsBody?.usesPreciseCollisionDetection = true
     
     gameScene.addChild(self)
+  
+    
     
   }
   
@@ -41,23 +43,22 @@ class Ball: SKShapeNode {
   }
   
   func update(terrains: TerrainController) {
-    if physicsBody?.velocity.dy > 0 {
-      physicsBody?.collisionBitMask = PhysicsCategory.Wall | PhysicsCategory.ImpermeableTerrain
-    } else {
+    if physicsBody?.velocity.dy < 0 || (physicsBody?.velocity.dy < 30 && terrains.current is Ring) {
       physicsBody?.collisionBitMask = PhysicsCategory.Wall | PhysicsCategory.ImpermeableTerrain | PhysicsCategory.Terrain
+    } else {
+      physicsBody?.collisionBitMask = PhysicsCategory.Wall | PhysicsCategory.ImpermeableTerrain
     }
     
-    if terrains.containPoint(CGPointMake(position.x, position.y-(radius*0.8))) ||
-      terrains.containPoint(CGPointMake(position.x, position.y+(radius*0.8))) ||
-      terrains.containPoint(CGPointMake(position.x-(radius*0.8), position.y)) ||
-      terrains.containPoint(CGPointMake(position.x+(radius*0.8), position.y)){
+    if terrains.containPoint(CGPointMake(position.x, position.y-(radius-3))) ||
+      terrains.containPoint(CGPointMake(position.x, position.y+(radius-3))) ||
+      terrains.containPoint(CGPointMake(position.x-(radius-3), position.y)) ||
+      terrains.containPoint(CGPointMake(position.x+(radius-3), position.y)){
       physicsBody?.collisionBitMask = PhysicsCategory.Wall | PhysicsCategory.ImpermeableTerrain
     }
-  
-    if let platformBody = terrains.current.physicsBody {
-      if terrains.current.doesMove {
-        self.physicsBody?.velocity.dx = (platformBody.velocity.dx)
-      }
+    
+    if gameScene.menu.isActive || gameScene.deathMenu.isActive {
+      physicsBody?.collisionBitMask = PhysicsCategory.Wall | PhysicsCategory.ImpermeableTerrain | PhysicsCategory.Terrain
     }
+  
   }
 }

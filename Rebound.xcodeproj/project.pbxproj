@@ -37,20 +37,19 @@
 		8F49085D1D73E67600C965CD /* DeathMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F49085C1D73E67600C965CD /* DeathMenu.swift */; };
 		8F9463D91D7668E8002233A7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F9463D71D7668E8002233A7 /* LaunchScreen.storyboard */; };
 		8F9463DA1D7668E8002233A7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F9463D81D7668E8002233A7 /* Main.storyboard */; };
-		8FA9764B1D7801E200A00984 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8FA9764A1D7801E200A00984 /* GoogleService-Info.plist */; };
 		8FA976741D791F2900A00984 /* SKButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FA976731D791F2900A00984 /* SKButton.swift */; };
+		8FA9767D1D7935F300A00984 /* Background.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FA976751D7935F300A00984 /* Background.swift */; };
+		8FA9767E1D7935F300A00984 /* Ball.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FA976761D7935F300A00984 /* Ball.swift */; };
+		8FA9767F1D7935F300A00984 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FA976771D7935F300A00984 /* GameScene.swift */; };
+		8FA976801D7935F300A00984 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FA976781D7935F300A00984 /* GameViewController.swift */; };
+		8FA976811D7935F300A00984 /* Platform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FA976791D7935F300A00984 /* Platform.swift */; };
+		8FA976821D7935F300A00984 /* Score.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FA9767A1D7935F300A00984 /* Score.swift */; };
+		8FA976831D7935F300A00984 /* Slingshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FA9767B1D7935F300A00984 /* Slingshot.swift */; };
+		8FA976841D7935F300A00984 /* Tools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FA9767C1D7935F300A00984 /* Tools.swift */; };
+		8FA976861D79362800A00984 /* TerrainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FA976851D79362800A00984 /* TerrainController.swift */; };
 		8FF346961D6D0B2C00504D3E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FF346951D6D0B2C00504D3E /* AppDelegate.swift */; };
 		8FF346981D6D0B2C00504D3E /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8FF346971D6D0B2C00504D3E /* GameScene.sks */; };
 		8FF346A11D6D0B2C00504D3E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8FF346A01D6D0B2C00504D3E /* Assets.xcassets */; };
-		8FF346CE1D6D0BD600504D3E /* Score.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FF346CB1D6D0BD600504D3E /* Score.swift */; };
-		8FF346CF1D6D0BD600504D3E /* Slingshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FF346CC1D6D0BD600504D3E /* Slingshot.swift */; };
-		8FF346D01D6D0BD600504D3E /* Platform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FF346CD1D6D0BD600504D3E /* Platform.swift */; };
-		8FF346D21D6D0BEA00504D3E /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FF346D11D6D0BEA00504D3E /* GameViewController.swift */; };
-		8FF346D41D6D0C0400504D3E /* Ball.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FF346D31D6D0C0400504D3E /* Ball.swift */; };
-		8FF346D61D6D0C0B00504D3E /* Tools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FF346D51D6D0C0B00504D3E /* Tools.swift */; };
-		8FF346D81D6D0C1D00504D3E /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FF346D71D6D0C1D00504D3E /* GameScene.swift */; };
-		8FF346DA1D6D0C3500504D3E /* Background.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FF346D91D6D0C3500504D3E /* Background.swift */; };
-		8FF346DC1D6D0C4200504D3E /* TerrainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FF346DB1D6D0C4200504D3E /* TerrainController.swift */; };
 		9FCB24C26CF48FB098DED68D /* libPods-Rebound.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 83F4DDC37BA9B280D4A78DDC /* libPods-Rebound.a */; };
 /* End PBXBuildFile section */
 
@@ -90,22 +89,21 @@
 		8F9463D51D766885002233A7 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8F9463D71D7668E8002233A7 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8F9463D81D7668E8002233A7 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		8FA9764A1D7801E200A00984 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8FA976721D781AE600A00984 /* MyGlowingGeometry.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = MyGlowingGeometry.m4a; path = Resources/MyGlowingGeometry.m4a; sourceTree = SOURCE_ROOT; };
 		8FA976731D791F2900A00984 /* SKButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKButton.swift; sourceTree = "<group>"; };
+		8FA976751D7935F300A00984 /* Background.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Background.swift; sourceTree = "<group>"; };
+		8FA976761D7935F300A00984 /* Ball.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ball.swift; sourceTree = "<group>"; };
+		8FA976771D7935F300A00984 /* GameScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+		8FA976781D7935F300A00984 /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		8FA976791D7935F300A00984 /* Platform.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Platform.swift; sourceTree = "<group>"; };
+		8FA9767A1D7935F300A00984 /* Score.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Score.swift; sourceTree = "<group>"; };
+		8FA9767B1D7935F300A00984 /* Slingshot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Slingshot.swift; sourceTree = "<group>"; };
+		8FA9767C1D7935F300A00984 /* Tools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tools.swift; sourceTree = "<group>"; };
+		8FA976851D79362800A00984 /* TerrainController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TerrainController.swift; sourceTree = "<group>"; };
 		8FF346921D6D0B2C00504D3E /* Rebound.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Rebound.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8FF346951D6D0B2C00504D3E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8FF346971D6D0B2C00504D3E /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
 		8FF346A01D6D0B2C00504D3E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		8FF346CB1D6D0BD600504D3E /* Score.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Score.swift; path = ../../../Documents/Rebound/Rebound/Score.swift; sourceTree = "<group>"; };
-		8FF346CC1D6D0BD600504D3E /* Slingshot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Slingshot.swift; path = ../../../Documents/Rebound/Rebound/Slingshot.swift; sourceTree = "<group>"; };
-		8FF346CD1D6D0BD600504D3E /* Platform.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Platform.swift; path = ../../../Documents/Rebound/Rebound/Platform.swift; sourceTree = "<group>"; };
-		8FF346D11D6D0BEA00504D3E /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameViewController.swift; path = ../../../Documents/Rebound/Rebound/GameViewController.swift; sourceTree = "<group>"; };
-		8FF346D31D6D0C0400504D3E /* Ball.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Ball.swift; path = ../../../Documents/Rebound/Rebound/Ball.swift; sourceTree = "<group>"; };
-		8FF346D51D6D0C0B00504D3E /* Tools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Tools.swift; path = ../../../Documents/Rebound/Rebound/Tools.swift; sourceTree = "<group>"; };
-		8FF346D71D6D0C1D00504D3E /* GameScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameScene.swift; path = ../../../Documents/Rebound/Rebound/GameScene.swift; sourceTree = "<group>"; };
-		8FF346D91D6D0C3500504D3E /* Background.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Background.swift; path = ../../../Documents/Rebound/Rebound/Background.swift; sourceTree = "<group>"; };
-		8FF346DB1D6D0C4200504D3E /* TerrainController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TerrainController.swift; path = ../../../Documents/Rebound/Rebound/TerrainController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -183,8 +181,11 @@
 		8F6451121D70C1CD00A061FB /* Misc */ = {
 			isa = PBXGroup;
 			children = (
+				8FA9767C1D7935F300A00984 /* Tools.swift */,
+				8F9463D71D7668E8002233A7 /* LaunchScreen.storyboard */,
+				8F9463D81D7668E8002233A7 /* Main.storyboard */,
+				8FF346971D6D0B2C00504D3E /* GameScene.sks */,
 				8FF346A01D6D0B2C00504D3E /* Assets.xcassets */,
-				8FF346D51D6D0C0B00504D3E /* Tools.swift */,
 			);
 			name = Misc;
 			sourceTree = "<group>";
@@ -192,15 +193,12 @@
 		8F9BA3B71D6D1551007BFB26 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				8FA976771D7935F300A00984 /* GameScene.swift */,
 				8FF346951D6D0B2C00504D3E /* AppDelegate.swift */,
-				8F9463D71D7668E8002233A7 /* LaunchScreen.storyboard */,
-				8F9463D81D7668E8002233A7 /* Main.storyboard */,
-				8FF346D11D6D0BEA00504D3E /* GameViewController.swift */,
-				8FF346971D6D0B2C00504D3E /* GameScene.sks */,
-				8F352C261D75FFBD00EEC2B1 /* Rebound-Bridging-Header.h */,
-				8F352C2F1D760BE800EEC2B1 /* Podfile */,
+				8FA976781D7935F300A00984 /* GameViewController.swift */,
 				8F9463D51D766885002233A7 /* Info.plist */,
-				8FA9764A1D7801E200A00984 /* GoogleService-Info.plist */,
+				8F352C2F1D760BE800EEC2B1 /* Podfile */,
+				8F352C261D75FFBD00EEC2B1 /* Rebound-Bridging-Header.h */,
 			);
 			name = Core;
 			sourceTree = "<group>";
@@ -208,13 +206,10 @@
 		8F9BA3B81D6D157E007BFB26 /* Gameplay */ = {
 			isa = PBXGroup;
 			children = (
-				8FF346D71D6D0C1D00504D3E /* GameScene.swift */,
-				8FF346CC1D6D0BD600504D3E /* Slingshot.swift */,
-				8FF346D31D6D0C0400504D3E /* Ball.swift */,
-				8FF346DB1D6D0C4200504D3E /* TerrainController.swift */,
+				8FA976851D79362800A00984 /* TerrainController.swift */,
+				8FA976791D7935F300A00984 /* Platform.swift */,
 				8F4908571D73E2B200C965CD /* Terrain.swift */,
 				8F420FBE1D73F48A0004DA61 /* Ring.swift */,
-				8FF346CD1D6D0BD600504D3E /* Platform.swift */,
 			);
 			name = Gameplay;
 			sourceTree = "<group>";
@@ -225,6 +220,7 @@
 				8FA976731D791F2900A00984 /* SKButton.swift */,
 				8F49085A1D73E65900C965CD /* MainMenu.swift */,
 				8F49085C1D73E67600C965CD /* DeathMenu.swift */,
+				8FA9767A1D7935F300A00984 /* Score.swift */,
 			);
 			name = UI;
 			sourceTree = "<group>";
@@ -271,9 +267,10 @@
 		8FF8DCF21D73AAB60024655C /* Mechanics */ = {
 			isa = PBXGroup;
 			children = (
+				8FA976751D7935F300A00984 /* Background.swift */,
 				8F36DB3A1D7515580096105D /* Theme.swift */,
-				8FF346CB1D6D0BD600504D3E /* Score.swift */,
-				8FF346D91D6D0C3500504D3E /* Background.swift */,
+				8FA976761D7935F300A00984 /* Ball.swift */,
+				8FA9767B1D7935F300A00984 /* Slingshot.swift */,
 			);
 			name = Mechanics;
 			sourceTree = "<group>";
@@ -357,7 +354,6 @@
 				8FF346A11D6D0B2C00504D3E /* Assets.xcassets in Resources */,
 				8F9463D91D7668E8002233A7 /* LaunchScreen.storyboard in Resources */,
 				8F352C301D760BE800EEC2B1 /* Podfile in Resources */,
-				8FA9764B1D7801E200A00984 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -461,21 +457,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8FF346D21D6D0BEA00504D3E /* GameViewController.swift in Sources */,
-				8FF346D01D6D0BD600504D3E /* Platform.swift in Sources */,
-				8FF346D81D6D0C1D00504D3E /* GameScene.swift in Sources */,
-				8FF346CE1D6D0BD600504D3E /* Score.swift in Sources */,
+				8FA9767F1D7935F300A00984 /* GameScene.swift in Sources */,
 				8F420FBF1D73F48A0004DA61 /* Ring.swift in Sources */,
 				8F4908581D73E2B200C965CD /* Terrain.swift in Sources */,
 				8FF346961D6D0B2C00504D3E /* AppDelegate.swift in Sources */,
-				8FF346DA1D6D0C3500504D3E /* Background.swift in Sources */,
+				8FA9767D1D7935F300A00984 /* Background.swift in Sources */,
 				8F49085B1D73E65900C965CD /* MainMenu.swift in Sources */,
+				8FA976811D7935F300A00984 /* Platform.swift in Sources */,
+				8FA976831D7935F300A00984 /* Slingshot.swift in Sources */,
 				8FA976741D791F2900A00984 /* SKButton.swift in Sources */,
-				8FF346D41D6D0C0400504D3E /* Ball.swift in Sources */,
+				8FA976841D7935F300A00984 /* Tools.swift in Sources */,
+				8FA976821D7935F300A00984 /* Score.swift in Sources */,
+				8FA976861D79362800A00984 /* TerrainController.swift in Sources */,
+				8FA9767E1D7935F300A00984 /* Ball.swift in Sources */,
 				8F49085D1D73E67600C965CD /* DeathMenu.swift in Sources */,
-				8FF346CF1D6D0BD600504D3E /* Slingshot.swift in Sources */,
-				8FF346DC1D6D0C4200504D3E /* TerrainController.swift in Sources */,
-				8FF346D61D6D0C0B00504D3E /* Tools.swift in Sources */,
+				8FA976801D7935F300A00984 /* GameViewController.swift in Sources */,
 				8F36DB3B1D7515580096105D /* Theme.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
