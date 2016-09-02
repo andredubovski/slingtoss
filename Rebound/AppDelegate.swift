@@ -9,7 +9,7 @@
 import UIKit
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate, AdToAppSDKDelegate, AdToAppViewDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate {
   
   var window: UIWindow?
   
@@ -18,82 +18,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate, AdToAppSDKDelegate, AdToA
     //set the bundle ID. normally you wouldn't need to do this
     //as it is picked up automatically from your Info.plist file
     //but we want to test with an app that's actually on the store
-    iRate.sharedInstance().applicationBundleID = "com.charcoaldesign.rainbowblocks-free"
+    iRate.sharedInstance().declinedThisVersion = false
+    iRate.sharedInstance().verboseLogging = true
+    iRate.sharedInstance().applicationBundleID = "com.clickgamer.AngryBirds"
     iRate.sharedInstance().onlyPromptIfLatestVersion = false
     
     //enable preview mode
-    iRate.sharedInstance().previewMode = true
+//    iRate.sharedInstance().previewMode = true
+    iRate.sharedInstance().usesUntilPrompt = 4
     
   }
   
-  func adToAppViewDidDisplayAd(adToAppView: AdToAppView!, providerId: Int32) {
-    return
-  }
-  
-  func adToAppView(adToAppView: AdToAppView!, failedToDisplayAdWithError error: NSError!, isConnectionError: Bool) {
-    return
-  }
-  
-  func onAdWillAppear(adType: String, providerId: Int32) {
-    NSLog("On interstitial show")
-  }
-  
-  func onAdDidDisappear(adType: String, providerId: Int32) {
-    NSLog("On interstitial hide")
-  }
-  
-  //optional
-  func onReward(reward: Int32, currency gameCurrency: String!, providerId: Int32) {
-    NSLog("On reward")
-  }
-  
-  //optional
-  func shouldShowAd(adType: String)-> Bool {
-    NSLog("On shoud show Ad")
-    
-    return true;
-  }
-  
-  //optional
-  func onAdClicked(adType: String!, providerId: Int32) {
-    NSLog("On Ad clicked")
-  }
-  
-  //optional
-  func onAdFailedToAppear(adType: String!) {
-    NSLog("On Ad failed to appear")
-  }
-  
-  //optional
-  func onFirstAdLoaded(adType: String!) {
-    NSLog("On First Ad Loaded")
-  }
   
   func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
     
-    AdToAppSDK.enableDebugLogs()
-//    AdToAppSDK.enableTestMode()
     
-    AdToAppSDK.startWithAppId(
-      "39c3f1a3-bced-4ae4-851b-7cb603a44479:c4050a11-a7eb-4733-b961-7d77c7601aee",
-      modules:[
-        ADTOAPP_IMAGE_INTERSTITIAL,
-        ADTOAPP_VIDEO_INTERSTITIAL,
-        ADTOAPP_INTERSTITIAL,
-        //ADTOAPP_REWARDED_INTERSTITIAL,//Uncomment to test rewarded ads
-        ADTOAPP_BANNER
-      ]
-    )
     
-    AdToAppSDK_setTargetingParam(ADTOAPP_TARGETING_PARAM_KEYWORDS, "advertisement,mobile ads,ads mediation");
-    AdToAppSDK_setTargetingParam(ADTOAPP_TARGETING_PARAM_USER_INTERESTS, "ecpm,revenue");
-    AdToAppSDK_setTargetingParam(ADTOAPP_TARGETING_PARAM_USER_BIRTHDAY, "1.01.1990");
-    AdToAppSDK_setTargetingParam(ADTOAPP_TARGETING_PARAM_USER_AGE, "25");
-    AdToAppSDK_setTargetingParam(ADTOAPP_TARGETING_PARAM_USER_GENDER, ADTOAPP_TARGETING_PARAM_USER_GENDER_MALE);
-    AdToAppSDK_setTargetingParam(ADTOAPP_TARGETING_PARAM_USER_OCCUPATION, ADTOAPP_TARGETING_PARAM_USER_OCCUPATION_UNIVERSITY);
-    AdToAppSDK_setTargetingParam(ADTOAPP_TARGETING_PARAM_USER_RELATIONSHIP, ADTOAPP_TARGETING_PARAM_USER_RELATIONSHIP_ENGAGED);
-    AdToAppSDK_setTargetingParam(ADTOAPP_TARGETING_PARAM_USER_LATITUDE, "26.71234");
-    AdToAppSDK_setTargetingParam(ADTOAPP_TARGETING_PARAM_USER_LONGITUDE, "-80.051595");
     
     return true
   }

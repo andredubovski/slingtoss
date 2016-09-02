@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '3896586FA9EE902F9CCC79E4D294903D'
+               BlueprintIdentifier = '687B131C886621477E5361945E9AEC06'
                BlueprintName = 'Pods-Rebound'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'libPods-Rebound.a'>

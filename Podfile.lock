@@ -111,6 +111,24 @@ PODS:
     - AdToApp/Vungle
   - AdToApp/Vungle (47.1):
     - AdToApp/Core
+  - Firebase (3.5.2):
+    - Firebase/Core (= 3.5.2)
+  - Firebase/Analytics (3.5.2):
+    - FirebaseAnalytics (~> 3.3)
+  - Firebase/Core (3.5.2):
+    - Firebase/Analytics
+  - FirebaseAnalytics (3.3.1):
+    - FirebaseInstanceID (~> 1.0)
+    - GoogleInterchangeUtilities (~> 1.2)
+    - GoogleSymbolUtilities (~> 1.1)
+    - GoogleUtilities (~> 1.2)
+  - FirebaseInstanceID (1.0.8)
+  - GoogleInterchangeUtilities (1.2.1):
+    - GoogleSymbolUtilities (~> 1.0)
+  - GoogleSymbolUtilities (1.1.1)
+  - GoogleUtilities (1.3.1):
+    - GoogleSymbolUtilities (~> 1.0)
+  - iRate (1.11.6)
 
 DEPENDENCIES:
   - AdToApp
@@ -132,10 +150,19 @@ DEPENDENCIES:
   - AdToApp/Unity
   - AdToApp/Video
   - AdToApp/Vungle
+  - Firebase
+  - iRate
 
 SPEC CHECKSUMS:
   AdToApp: 731a6fa98dcf0b76f43a2047864132757c04708b
+  Firebase: 94e63112efcad75226c0356a8f3032397b8547c9
+  FirebaseAnalytics: d968d4d5f6aeb795cd64144337bcd233e530efc6
+  FirebaseInstanceID: ba1e640935235e5fac39dfa816fe7660e72e1a8a
+  GoogleInterchangeUtilities: def8415a862effc67d549d5b5b0b9c7a2f97d4de
+  GoogleSymbolUtilities: 33117db1b5f290c6fbf259585e4885b4c84b98d7
+  GoogleUtilities: 56c5ac05b7aa5dc417a1bb85221a9516e04d7032
+  iRate: 61e558919c4a7fde63b3c22ebbd6c114a1eee658
 
-PODFILE CHECKSUM: e93246bec75a78443be1a3b7e7815f729bd1d3dc
+PODFILE CHECKSUM: fcc3bef0b2dfd51129f5c9209205ecaaaaccb32a
 
 COCOAPODS: 1.0.0
