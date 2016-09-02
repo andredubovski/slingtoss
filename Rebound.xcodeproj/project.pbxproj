@@ -51,6 +51,7 @@
 		8FF346981D6D0B2C00504D3E /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8FF346971D6D0B2C00504D3E /* GameScene.sks */; };
 		8FF346A11D6D0B2C00504D3E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8FF346A01D6D0B2C00504D3E /* Assets.xcassets */; };
 		9FCB24C26CF48FB098DED68D /* libPods-Rebound.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 83F4DDC37BA9B280D4A78DDC /* libPods-Rebound.a */; };
+		C1D2FC4C1D794A1D00FC8E43 /* MyGlowingGeometry.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 8FA976721D781AE600A00984 /* MyGlowingGeometry.m4a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -351,6 +352,7 @@
 			files = (
 				8F9463DA1D7668E8002233A7 /* Main.storyboard in Resources */,
 				8FF346981D6D0B2C00504D3E /* GameScene.sks in Resources */,
+				C1D2FC4C1D794A1D00FC8E43 /* MyGlowingGeometry.m4a in Resources */,
 				8FF346A11D6D0B2C00504D3E /* Assets.xcassets in Resources */,
 				8F9463D91D7668E8002233A7 /* LaunchScreen.storyboard in Resources */,
 				8F352C301D760BE800EEC2B1 /* Podfile in Resources */,

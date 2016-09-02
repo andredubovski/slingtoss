@@ -15,17 +15,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   
   override class func initialize() -> Void {
     
-    //set the bundle ID. normally you wouldn't need to do this
-    //as it is picked up automatically from your Info.plist file
-    //but we want to test with an app that's actually on the store
+    
+    iRate.sharedInstance().usesUntilPrompt = 6
+    iRate.sharedInstance().daysUntilPrompt = 0
+    iRate.sharedInstance().remindPeriod = 0
+    iRate.sharedInstance().messageTitle = "PLEASE RATE!"
+    iRate.sharedInstance().message = "I'm 15 years old and I love compliments. Please write a review about my quality app."
+    iRate.sharedInstance().rateButtonLabel = "Hellll yeah 😎"
+    iRate.sharedInstance().remindButtonLabel = "Later"
+    iRate.sharedInstance().cancelButtonLabel = "No, I'm a 💩"
     iRate.sharedInstance().declinedThisVersion = false
+    iRate.sharedInstance().declinedAnyVersion = false
+//    iRate.sharedInstance().ratedThisVersion = false
+//    iRate.sharedInstance().ratedAnyVersion = false
     iRate.sharedInstance().verboseLogging = true
     iRate.sharedInstance().applicationBundleID = "com.clickgamer.AngryBirds"
     iRate.sharedInstance().onlyPromptIfLatestVersion = false
-    
-    //enable preview mode
-//    iRate.sharedInstance().previewMode = true
-    iRate.sharedInstance().usesUntilPrompt = 4
     
   }
   

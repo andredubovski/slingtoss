@@ -100,7 +100,9 @@ class GameScene: SKScene, AdToAppSDKDelegate, AdToAppViewDelegate {
     
     flashDeathOverlay()
     
-    if Int(random(0, to: 7.8)) == 0 {AdToAppSDK.showInterstitial(ADTOAPP_INTERSTITIAL)}
+    let randomAdSelector = Int(random(0, to: 100))
+    if randomAdSelector < 18 {AdToAppSDK.showInterstitial(ADTOAPP_IMAGE_INTERSTITIAL)}
+    else if randomAdSelector > 88 {AdToAppSDK.showInterstitial(ADTOAPP_VIDEO_INTERSTITIAL)}
     
   }
   
@@ -203,14 +205,14 @@ class GameScene: SKScene, AdToAppSDKDelegate, AdToAppViewDelegate {
   }
   
   func playBackgroundMusic(fileNamed: String) {
-//    runAction(
-//      SKAction.repeatActionForever(SKAction.sequence([
-//      SKAction.playSoundFileNamed(fileNamed, waitForCompletion: false),
-//      SKAction.waitForDuration(90)
-//    ])), withKey: "play background music")
+    runAction(
+      SKAction.repeatActionForever(SKAction.sequence([
+      SKAction.playSoundFileNamed(fileNamed, waitForCompletion: false),
+      SKAction.waitForDuration(90)
+    ])), withKey: "play background music")
     
-    let bgMusic = SKAudioNode(fileNamed: fileNamed)
-    addChild(bgMusic)
+//    let bgMusic = SKAudioNode(fileNamed: fileNamed)
+//    addChild(bgMusic)
   }
   
   func setupAdToApp() {
