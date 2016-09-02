@@ -1,6 +1,5 @@
 platform :ios, '7.0'
 target 'Rebound' do
-  pod 'Firebase'
   
   pod 'iRate'
   
@@ -23,4 +22,5 @@ target 'Rebound' do
   pod 'AdToApp/Supersonic'
   pod 'AdToApp/NativeX'
   pod 'AdToApp/Avocarrot'
+  
 end

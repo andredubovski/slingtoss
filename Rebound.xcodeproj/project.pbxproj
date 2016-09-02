@@ -294,7 +294,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8FF346A81D6D0B2C00504D3E /* Build configuration list for PBXNativeTarget "Rebound" */;
 			buildPhases = (
-				F1ED3151206A910BA649C9A2 /* 📦 Check Pods Manifest.lock */,
+				F1ED3151206A910BA649C9A2 /* [CP] Check Pods Manifest.lock */,
 				FE5DF872815945ED79929260 /* [CP] Check Pods Manifest.lock */,
 				8FF3468E1D6D0B2C00504D3E /* Sources */,
 				8FF3468F1D6D0B2C00504D3E /* Frameworks */,
@@ -424,14 +424,14 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Rebound/Pods-Rebound-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		F1ED3151206A910BA649C9A2 /* 📦 Check Pods Manifest.lock */ = {
+		F1ED3151206A910BA649C9A2 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;

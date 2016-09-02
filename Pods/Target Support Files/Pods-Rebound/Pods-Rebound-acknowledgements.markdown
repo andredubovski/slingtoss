@@ -182,30 +182,6 @@ If you have any comments or questions concerning this Privacy Policy, processing
 **Last updated:** December 29, 2015  
 
 
-## Firebase
-
-Copyright 2016 Google
-
-## FirebaseAnalytics
-
-Copyright 2016 Google
-
-## FirebaseInstanceID
-
-Copyright 2016 Google
-
-## GoogleInterchangeUtilities
-
-Copyright 2015 Google Inc.
-
-## GoogleSymbolUtilities
-
-Copyright 2015 Google Inc.
-
-## GoogleUtilities
-
-Copyright 2015 Google Inc.
-
 ## iRate
 
 iRate
