@@ -27,7 +27,7 @@ class SKButton: SKShapeNode {
     super.init()
   }
   
-  convenience init(setSize: CGSize, setColor: SKColor, setGlyph: String, setGlyphColor: SKColor?) {
+  convenience init(setSize: CGSize, setColor: SKColor, setGlyph: String, setGlyphColor: SKColor? = nil) {
     self.init()
     size = setSize
     lightColor = setColor
@@ -75,7 +75,7 @@ class SKButton: SKShapeNode {
     glyph.texture = SKTexture(image: glyphImage!)
   }
   
-  func doWhenTouchesBegin(location: CGPoint) {
+  func doWhenTouchesBegan(location: CGPoint) {
     if containsPoint(location){
       fillColor = darkColor
       runAction(pressIn)

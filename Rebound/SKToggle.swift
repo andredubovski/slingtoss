@@ -30,7 +30,7 @@ class SKToggle: SKButton {
   
   func toggleState() {setStateTo(!state)}
   
-  override func doWhenTouchesBegin(location: CGPoint) {
+  override func doWhenTouchesBegan(location: CGPoint) {
     if containsPoint(location){
       fillColor = darkColor
       removeAllActions()

@@ -118,8 +118,8 @@ class GameScene: SKScene, AdToAppSDKDelegate, AdToAppViewDelegate {
   override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
     for touch in touches {
       let touchLocation = touch.locationInNode(self)
-      if menu.isActive {menu.doWhenTouchesBegin(touchLocation)}
-      if deathMenu.isActive {deathMenu.doWhenTouchesBegin(touchLocation)}
+      if menu.isActive {menu.doWhenTouchesBegan(touchLocation)}
+      if deathMenu.isActive {deathMenu.doWhenTouchesBegan(touchLocation)}
       if slingshot.canShoot && !menu.wasPressed && !deathMenu.wasPressed {
         ball.physicsBody?.resting = true
         slingshot.aim(ball, atPoint: touchLocation)

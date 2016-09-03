@@ -10,6 +10,7 @@ import UIKit
 import SpriteKit
 
 var gameScene = GameScene()
+var settingsScene = SettingsScene()
 
 class GameViewController: UIViewController {
   
@@ -26,6 +27,7 @@ class GameViewController: UIViewController {
     /* Set the scale mode to scale to fit the window */
     assembleThemes()
     
+    settingsScene.scaleMode = .ResizeFill
     gameScene.scaleMode = .ResizeFill
     
     skView.presentScene(gameScene)

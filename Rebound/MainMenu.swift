@@ -45,6 +45,7 @@ class MainMenu {
       gameFrame.midX - (buttonWidth + marginWidth),
       title.position.y - (title.frame.height/2 + buttonWidth/2)
     )
+    button1.buttonAction = SKAction.runBlock({scene.view?.presentScene(settingsScene, transition: SKTransition.doorsOpenHorizontalWithDuration(0.5))})
     button1.display()
     elements.append(button1)
     
@@ -86,11 +87,11 @@ class MainMenu {
   }
   
   
-  func doWhenTouchesBegin(location: CGPoint) {
+  func doWhenTouchesBegan(location: CGPoint) {
     if isActive {
-      button1.doWhenTouchesBegin(location)
-      button2.doWhenTouchesBegin(location)
-      button3.doWhenTouchesBegin(location)
+      button1.doWhenTouchesBegan(location)
+      button2.doWhenTouchesBegan(location)
+      button3.doWhenTouchesBegan(location)
     }
     
     wasPressed = button1.wasPressed || button2.wasPressed || button3.wasPressed

@@ -188,6 +188,8 @@
 		8F6451121D70C1CD00A061FB /* Misc */ = {
 			isa = PBXGroup;
 			children = (
+				C1A1E5A51D7B222700E7CDE4 /* SKToggle.swift */,
+				8FA976731D791F2900A00984 /* SKButton.swift */,
 				8FA9767C1D7935F300A00984 /* Tools.swift */,
 				8F9463D71D7668E8002233A7 /* LaunchScreen.storyboard */,
 				8F9463D81D7668E8002233A7 /* Main.storyboard */,
@@ -224,12 +226,9 @@
 		8F9BA3B91D6D158B007BFB26 /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				8FA976731D791F2900A00984 /* SKButton.swift */,
-				C1A1E5A51D7B222700E7CDE4 /* SKToggle.swift */,
 				8F49085A1D73E65900C965CD /* MainMenu.swift */,
 				8F49085C1D73E67600C965CD /* DeathMenu.swift */,
-				C1A1E5A71D7B5AF400E7CDE4 /* SettingsMenu.swift */,
-				C1A1E5A31D7B202400E7CDE4 /* SettingsScene.swift */,
+				C1A1E5AB1D7B617800E7CDE4 /* Settinngs */,
 				8FA9767A1D7935F300A00984 /* Score.swift */,
 			);
 			name = UI;
@@ -283,6 +282,15 @@
 				8FA9767B1D7935F300A00984 /* Slingshot.swift */,
 			);
 			name = Mechanics;
+			sourceTree = "<group>";
+		};
+		C1A1E5AB1D7B617800E7CDE4 /* Settinngs */ = {
+			isa = PBXGroup;
+			children = (
+				C1A1E5A71D7B5AF400E7CDE4 /* SettingsMenu.swift */,
+				C1A1E5A31D7B202400E7CDE4 /* SettingsScene.swift */,
+			);
+			name = Settinngs;
 			sourceTree = "<group>";
 		};
 		D0DD676D680629BAB4F7B945 /* Pods */ = {
