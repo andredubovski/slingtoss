@@ -45,15 +45,14 @@ class SettingsMenu: SKNode {
     scene.addChild(title)
     
     
-    sfxToggle = SKToggle(setSize: CGSizeMake(buttonWidth, buttonWidth), setColor: currentTheme.uiColor, setGlyph: "SFX", setGlyphColor: currentTheme.tintColor)
+    sfxToggle = SKToggle(setSize: CGSizeMake(buttonWidth, buttonWidth), setColor: currentTheme.uiColor, setGlyph: "SFX")
     sfxToggle.position = CGPointMake(
       gameFrame.midX - (buttonWidth/2 + marginWidth/2),
       title.position.y - (title.frame.height/2 + buttonWidth/2)
     )
     sfxToggle.display(scene)
     
-    
-    musicToggle = SKToggle(setSize: CGSizeMake(buttonWidth, buttonWidth), setColor: currentTheme.uiColor, setGlyph: "Music", setGlyphColor: currentTheme.tintColor)
+    musicToggle = SKToggle(setSize: CGSizeMake(buttonWidth, buttonWidth), setColor: currentTheme.uiColor, setGlyph: "Music")
     musicToggle.position = CGPointMake(
       gameFrame.midX + (buttonWidth/2 + marginWidth/2),
       title.position.y - (title.frame.height/2 + buttonWidth/2)
@@ -61,28 +60,28 @@ class SettingsMenu: SKNode {
     musicToggle.display(scene)
     
     
-    removeAdsToggle = SKToggle(setSize: CGSizeMake(buttonWidth, buttonWidth/1.5), setColor: currentTheme.uiColor, setGlyph: "Music", setGlyphColor: currentTheme.tintColor)
+    removeAdsToggle = SKToggle(setSize: CGSizeMake(buttonWidth, buttonWidth/1.5), setColor: currentTheme.uiColor, setGlyph: "Music")
     removeAdsToggle.position = CGPointMake(
       gameFrame.midX - (buttonWidth/2 + marginWidth/2),
       musicToggle.position.y - (buttonWidth/2 + removeAdsToggle.size.height/2 + marginWidth)
     )
     removeAdsToggle.display(scene)
     
-    
-    refreshIAPButton = SKButton(setSize: CGSizeMake(buttonWidth, buttonWidth/1.5), setColor: currentTheme.uiColor, setGlyph: "SFX", setGlyphColor: currentTheme.tintColor)
+    refreshIAPButton = SKButton(setSize: CGSizeMake(buttonWidth, buttonWidth/1.5), setColor: currentTheme.uiColor, setGlyph: "SFX")
     refreshIAPButton.position = CGPointMake(
       gameFrame.midX + (buttonWidth/2 + marginWidth/2),
       musicToggle.position.y - (buttonWidth/2 + refreshIAPButton.size.height/2 + marginWidth)
     )
     refreshIAPButton.display(scene)
     
-    homeButton = SKButton(setSize: CGSizeMake(buttonWidth/1.5, buttonWidth/1.5), setColor: currentTheme.uiColor, setGlyph: "home", setGlyphColor: currentTheme.tintColor)
+    
+    homeButton = SKButton(setSize: CGSizeMake(buttonWidth/1.5, buttonWidth/1.5), setColor: currentTheme.uiColor, setGlyph: "home")
     homeButton.position = CGPointMake(
-      gameFrame.midX,
-      title.position.y - (title.frame.height/2 + buttonWidth/2)
+      marginWidth+homeButton.size.width/2,
+      removeAdsToggle.position.y - (removeAdsToggle.frame.height/2 + homeButton.size.height + marginWidth)
     )
-    homeButton.buttonAction = SKAction.runBlock({iRate.sharedInstance().openRatingsPageInAppStore()})
-    homeButton.display()
+    homeButton.buttonAction = SKAction.runBlock({scene.view?.presentScene(gameScene, transition: SKTransition.doorsCloseVerticalWithDuration(0.5))})
+    homeButton.display(scene)
 
   }
   

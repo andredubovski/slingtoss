@@ -84,7 +84,7 @@
 		8F352C201D75FD1200EEC2B1 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		8F352C221D75FD1B00EEC2B1 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		8F352C261D75FFBD00EEC2B1 /* Rebound-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Rebound-Bridging-Header.h"; sourceTree = "<group>"; };
-		8F352C2F1D760BE800EEC2B1 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		8F352C2F1D760BE800EEC2B1 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		8F36DB3A1D7515580096105D /* Theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		8F420FBE1D73F48A0004DA61 /* Ring.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ring.swift; sourceTree = "<group>"; };
 		8F4908571D73E2B200C965CD /* Terrain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Terrain.swift; sourceTree = "<group>"; };
@@ -93,7 +93,7 @@
 		8F9463D51D766885002233A7 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8F9463D71D7668E8002233A7 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8F9463D81D7668E8002233A7 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		8FA976721D781AE600A00984 /* MyGlowingGeometry.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = MyGlowingGeometry.m4a; path = Resources/MyGlowingGeometry.m4a; sourceTree = SOURCE_ROOT; };
+		8FA976721D781AE600A00984 /* MyGlowingGeometry.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = MyGlowingGeometry.m4a; sourceTree = "<group>"; };
 		8FA976731D791F2900A00984 /* SKButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKButton.swift; sourceTree = "<group>"; };
 		8FA976751D7935F300A00984 /* Background.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Background.swift; sourceTree = "<group>"; };
 		8FA976761D7935F300A00984 /* Ball.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ball.swift; sourceTree = "<group>"; };
@@ -188,50 +188,50 @@
 		8F6451121D70C1CD00A061FB /* Misc */ = {
 			isa = PBXGroup;
 			children = (
-				C1A1E5A51D7B222700E7CDE4 /* SKToggle.swift */,
-				8FA976731D791F2900A00984 /* SKButton.swift */,
-				8FA9767C1D7935F300A00984 /* Tools.swift */,
+				8FF346A01D6D0B2C00504D3E /* Assets.xcassets */,
+				8FF346971D6D0B2C00504D3E /* GameScene.sks */,
 				8F9463D71D7668E8002233A7 /* LaunchScreen.storyboard */,
 				8F9463D81D7668E8002233A7 /* Main.storyboard */,
-				8FF346971D6D0B2C00504D3E /* GameScene.sks */,
-				8FF346A01D6D0B2C00504D3E /* Assets.xcassets */,
+				8FA976731D791F2900A00984 /* SKButton.swift */,
+				C1A1E5A51D7B222700E7CDE4 /* SKToggle.swift */,
+				8FA9767C1D7935F300A00984 /* Tools.swift */,
 			);
-			name = Misc;
+			path = Misc;
 			sourceTree = "<group>";
 		};
 		8F9BA3B71D6D1551007BFB26 /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				8FA976771D7935F300A00984 /* GameScene.swift */,
 				8FF346951D6D0B2C00504D3E /* AppDelegate.swift */,
+				8FA976771D7935F300A00984 /* GameScene.swift */,
 				8FA976781D7935F300A00984 /* GameViewController.swift */,
 				8F9463D51D766885002233A7 /* Info.plist */,
 				8F352C2F1D760BE800EEC2B1 /* Podfile */,
 				8F352C261D75FFBD00EEC2B1 /* Rebound-Bridging-Header.h */,
 			);
-			name = Core;
+			path = Core;
 			sourceTree = "<group>";
 		};
 		8F9BA3B81D6D157E007BFB26 /* Gameplay */ = {
 			isa = PBXGroup;
 			children = (
-				8FA976851D79362800A00984 /* TerrainController.swift */,
 				8FA976791D7935F300A00984 /* Platform.swift */,
-				8F4908571D73E2B200C965CD /* Terrain.swift */,
 				8F420FBE1D73F48A0004DA61 /* Ring.swift */,
+				8F4908571D73E2B200C965CD /* Terrain.swift */,
+				8FA976851D79362800A00984 /* TerrainController.swift */,
 			);
-			name = Gameplay;
+			path = Gameplay;
 			sourceTree = "<group>";
 		};
 		8F9BA3B91D6D158B007BFB26 /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				8F49085A1D73E65900C965CD /* MainMenu.swift */,
-				8F49085C1D73E67600C965CD /* DeathMenu.swift */,
 				C1A1E5AB1D7B617800E7CDE4 /* Settinngs */,
+				8F49085C1D73E67600C965CD /* DeathMenu.swift */,
+				8F49085A1D73E65900C965CD /* MainMenu.swift */,
 				8FA9767A1D7935F300A00984 /* Score.swift */,
 			);
-			name = UI;
+			path = UI;
 			sourceTree = "<group>";
 		};
 		8FA9764D1D780AF700A00984 /* Sound */ = {
@@ -239,16 +239,16 @@
 			children = (
 				8FA976721D781AE600A00984 /* MyGlowingGeometry.m4a */,
 			);
-			name = Sound;
+			path = Sound;
 			sourceTree = "<group>";
 		};
 		8FF346891D6D0B2C00504D3E = {
 			isa = PBXGroup;
 			children = (
-				8FF346941D6D0B2C00504D3E /* Rebound */,
-				8FF346931D6D0B2C00504D3E /* Products */,
-				D0DD676D680629BAB4F7B945 /* Pods */,
 				4FD94EDA282B6EDFE3E63B90 /* Frameworks */,
+				D0DD676D680629BAB4F7B945 /* Pods */,
+				8FF346931D6D0B2C00504D3E /* Products */,
+				8FF346941D6D0B2C00504D3E /* Rebound */,
 			);
 			sourceTree = "<group>";
 		};
@@ -264,11 +264,11 @@
 			isa = PBXGroup;
 			children = (
 				8F9BA3B71D6D1551007BFB26 /* Core */,
-				8F9BA3B91D6D158B007BFB26 /* UI */,
-				8FF8DCF21D73AAB60024655C /* Mechanics */,
 				8F9BA3B81D6D157E007BFB26 /* Gameplay */,
+				8FF8DCF21D73AAB60024655C /* Mechanics */,
 				8F6451121D70C1CD00A061FB /* Misc */,
 				8FA9764D1D780AF700A00984 /* Sound */,
+				8F9BA3B91D6D158B007BFB26 /* UI */,
 			);
 			path = Rebound;
 			sourceTree = "<group>";
@@ -277,11 +277,11 @@
 			isa = PBXGroup;
 			children = (
 				8FA976751D7935F300A00984 /* Background.swift */,
-				8F36DB3A1D7515580096105D /* Theme.swift */,
 				8FA976761D7935F300A00984 /* Ball.swift */,
 				8FA9767B1D7935F300A00984 /* Slingshot.swift */,
+				8F36DB3A1D7515580096105D /* Theme.swift */,
 			);
-			name = Mechanics;
+			path = Mechanics;
 			sourceTree = "<group>";
 		};
 		C1A1E5AB1D7B617800E7CDE4 /* Settinngs */ = {
@@ -290,7 +290,7 @@
 				C1A1E5A71D7B5AF400E7CDE4 /* SettingsMenu.swift */,
 				C1A1E5A31D7B202400E7CDE4 /* SettingsScene.swift */,
 			);
-			name = Settinngs;
+			path = Settinngs;
 			sourceTree = "<group>";
 		};
 		D0DD676D680629BAB4F7B945 /* Pods */ = {
@@ -595,7 +595,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				ENABLE_BITCODE = NO;
-				INFOPLIST_FILE = Rebound/Info.plist;
+				INFOPLIST_FILE = Rebound/Core/Info.plist;
 				INFOPLIST_OTHER_PREPROCESSOR_FLAGS = "-traditional";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
@@ -620,7 +620,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				ENABLE_BITCODE = NO;
-				INFOPLIST_FILE = Rebound/Info.plist;
+				INFOPLIST_FILE = Rebound/Core/Info.plist;
 				INFOPLIST_OTHER_PREPROCESSOR_FLAGS = "-traditional";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (

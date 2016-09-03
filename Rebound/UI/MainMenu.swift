@@ -40,7 +40,7 @@ class MainMenu {
     elements.append(title)
     scene.addChild(title)
     
-    button1 = SKButton(setSize: CGSizeMake(buttonWidth, buttonWidth), setColor: currentTheme.uiColor, setGlyph: "settings", setGlyphColor: currentTheme.tintColor)
+    button1 = SKButton(setSize: CGSizeMake(buttonWidth, buttonWidth), setColor: currentTheme.uiColor, setGlyph: "settings")
     button1.position = CGPointMake(
       gameFrame.midX - (buttonWidth + marginWidth),
       title.position.y - (title.frame.height/2 + buttonWidth/2)
@@ -49,7 +49,7 @@ class MainMenu {
     button1.display()
     elements.append(button1)
     
-    button2 = SKButton(setSize: CGSizeMake(buttonWidth, buttonWidth), setColor: currentTheme.uiColor, setGlyph: "review", setGlyphColor: currentTheme.tintColor)
+    button2 = SKButton(setSize: CGSizeMake(buttonWidth, buttonWidth), setColor: currentTheme.uiColor, setGlyph: "review")
     button2.position = CGPointMake(
       gameFrame.midX,
       title.position.y - (title.frame.height/2 + buttonWidth/2)
@@ -58,7 +58,7 @@ class MainMenu {
     button2.display()
     elements.append(button2)
     
-    button3 = SKButton(setSize: CGSizeMake(buttonWidth, buttonWidth), setColor: currentTheme.uiColor, setGlyph: "info", setGlyphColor: currentTheme.tintColor)
+    button3 = SKButton(setSize: CGSizeMake(buttonWidth, buttonWidth), setColor: currentTheme.uiColor, setGlyph: "info")
     button3.position = CGPointMake(
       gameFrame.midX + (buttonWidth + marginWidth),
       title.position.y - (title.frame.height/2 + buttonWidth/2)
