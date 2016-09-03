@@ -205,14 +205,14 @@ class GameScene: SKScene, AdToAppSDKDelegate, AdToAppViewDelegate {
   }
   
   func playBackgroundMusic(fileNamed: String) {
-    runAction(
-      SKAction.repeatActionForever(SKAction.sequence([
-      SKAction.playSoundFileNamed(fileNamed, waitForCompletion: false),
-      SKAction.waitForDuration(90)
-    ])), withKey: "play background music")
+//    runAction(
+//      SKAction.repeatActionForever(SKAction.sequence([
+//      SKAction.playSoundFileNamed(fileNamed, waitForCompletion: false),
+//      SKAction.waitForDuration(90)
+//    ])), withKey: "play background music")
     
-//    let bgMusic = SKAudioNode(fileNamed: fileNamed)
-//    addChild(bgMusic)
+    backgroundMusic = SKAudioNode(fileNamed: fileNamed)
+    addChild(backgroundMusic)
   }
   
   func setupAdToApp() {

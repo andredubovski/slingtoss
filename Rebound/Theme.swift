@@ -51,8 +51,12 @@ class Theme {
     self.ballColor = ballColor
   }
   
+  func build(scene: SKScene) {
+    background.build(scene)
+  }
+  
   func build() {
-    background.build()
+    build(gameScene)
   }
   
 }

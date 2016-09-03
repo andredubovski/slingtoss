@@ -14,6 +14,7 @@ class SettingsScene: SKScene {
   
   override func didMoveToView(view: SKView) {
     menu.build(self)
+    currentTheme.build(self)
     print("moved to settings")
     
   }

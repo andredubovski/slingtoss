@@ -11,8 +11,8 @@ import SpriteKit
 class SKToggle: SKButton {
   
   var state = Bool(false)
-  let popOut = SKAction.sequence([SKAction.scaleTo(1.2, duration: 0.035), SKAction.scaleTo(1.1, duration: 0.035)])
-  let releaseIn = SKAction.sequence([SKAction.scaleTo(0.9, duration: 0.05), SKAction.scaleTo(1, duration: 0.035)])
+  let popIn = SKAction.sequence([SKAction.scaleTo(0.85, duration: 0.05)])
+  let pressOut = SKAction.sequence([SKAction.scaleTo(0.95, duration: 0.04), SKAction.scaleTo(0.9, duration: 0.03)])
   var turnOnAction = SKAction()
   var turnOffAction = SKAction()
   
@@ -20,10 +20,10 @@ class SKToggle: SKButton {
     self.state = state
     
     if self.state {
-      runAction(SKAction.group([pressIn, turnOnAction]))
+      runAction(SKAction.group([pressOut, turnOnAction]))
       fillColor = darkColor
     } else {
-      runAction(SKAction.group([releaseIn, turnOffAction]))
+      runAction(SKAction.group([releaseOut, turnOffAction]))
       fillColor = lightColor
     }
   }
@@ -34,7 +34,7 @@ class SKToggle: SKButton {
     if containsPoint(location){
       fillColor = darkColor
       removeAllActions()
-      runAction(popOut)
+      runAction(popIn)
       isPressed = true
       wasPressed = true
     } else {
@@ -49,13 +49,13 @@ class SKToggle: SKButton {
         if !isPressed {
           fillColor = darkColor
           removeAllActions()
-          runAction(popOut)
+          runAction(popIn)
           isPressed = true
         }
       } else if isPressed {
         state ? darkenColor() : resetColor()
         removeAllActions()
-        runAction(state ? pressIn : releaseIn)
+        runAction(state ? pressOut : releaseOut)
         isPressed = false
       }
     }

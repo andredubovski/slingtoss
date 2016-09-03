@@ -27,11 +27,11 @@ class SKButton: SKShapeNode {
     super.init()
   }
   
-  convenience init(setSize: CGSize, setColor: SKColor, setGlyph: String, setGlyphColor: SKColor? = nil) {
+  convenience init(setSize: CGSize, setColor: SKColor, setGlyph: String, setGlyphColor: SKColor? = currentTheme.tintColor) {
     self.init()
     size = setSize
     lightColor = setColor
-    darkColor = SKColor(red: redValue(lightColor)-55/255, green: greenValue(lightColor)-55/255, blue: blueValue(lightColor)-55/255, alpha: alphaValue(lightColor))
+    darkColor = SKColor(red: redValue(lightColor)*0.65, green: greenValue(lightColor)*0.65, blue: blueValue(lightColor)*0.65, alpha: alphaValue(lightColor)*1.3)
     glyphColor = setGlyphColor
     var glyphImage = UIImage(named: setGlyph)
     if let color = setGlyphColor {
@@ -50,7 +50,7 @@ class SKButton: SKShapeNode {
     path = CGPathCreateWithRect(CGRectMake(-size.width/2, -size.height/2, size.width, size.height), nil)
     position = position
     zPosition = 5
-    glyph.runAction(SKAction.scaleTo((size.width*0.8)/glyph.frame.width, duration: 0))
+    glyph.runAction(SKAction.scaleTo((size.height*0.8)/glyph.frame.width, duration: 0))
     scene.addChild(self)
     addChild(glyph)
   }
@@ -100,8 +100,7 @@ class SKButton: SKShapeNode {
   func doWhenTouchesEnded(location: CGPoint) {
     if wasPressed {
       resetColor()
-      xScale = 1
-      yScale = 1
+      runAction(releaseOut)
       isPressed = false
       
       if containsPoint(location){
