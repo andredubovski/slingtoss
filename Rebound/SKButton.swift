@@ -19,7 +19,7 @@ class SKButton: SKShapeNode {
   var wasPressed = Bool(false)
   var isPressed = Bool(false)
   let pressIn = SKAction.scaleTo(0.95, duration: 0.03)
-  let releaseOut = SKAction.sequence([SKAction.scaleTo(1.05, duration: 0.03), SKAction.scaleTo(1, duration: 0.045)])
+  let releaseOut = SKAction.sequence([SKAction.scaleTo(1.1, duration: 0.05), SKAction.scaleTo(1, duration: 0.035)])
   
   var buttonAction = SKAction()
   
@@ -31,7 +31,7 @@ class SKButton: SKShapeNode {
     self.init()
     size = setSize
     lightColor = setColor
-    darkColor = SKColor(red: redValue(lightColor)-40/255, green: greenValue(lightColor)-40/255, blue: blueValue(lightColor)-40/255, alpha: alphaValue(lightColor))
+    darkColor = SKColor(red: redValue(lightColor)-55/255, green: greenValue(lightColor)-55/255, blue: blueValue(lightColor)-55/255, alpha: alphaValue(lightColor))
     glyphColor = setGlyphColor
     var glyphImage = UIImage(named: setGlyph)
     if let color = setGlyphColor {
@@ -61,6 +61,10 @@ class SKButton: SKShapeNode {
   
   func resetColor() {
     fillColor = lightColor
+  }
+  
+  func darkenColor() {
+    fillColor = darkColor
   }
   
   func makeGlyph(imageNamed: String) {

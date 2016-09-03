@@ -27,7 +27,7 @@ class DeathMenu: MainMenu {
     button1.buttonAction = SKAction.runBlock({self.disappear(); gameScene.menu.appear()})
     button2.makeGlyph("share")
     button2.buttonAction = SKAction.runBlock({
-
+      
       let vc = gameScene.view?.window?.rootViewController
       
       let shareText = "Just got \(self.scoreAmount) point\(self.scoreAmount == 1 ? "" : "s") playing Rebound. Check it out! www.oakl.in/rebound"
@@ -65,7 +65,7 @@ class DeathMenu: MainMenu {
     scoreBox.addChild(scoreLabel)
     
     
-
+    
     highScoreBox.path = CGPathCreateWithRect(CGRectMake(
       -(gameFrame.width - 3*marginWidth)/4, -(2*marginWidth)/2,
       (gameFrame.width - 3*marginWidth)/2, 2*marginWidth

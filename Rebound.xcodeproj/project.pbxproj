@@ -51,6 +51,9 @@
 		8FF346981D6D0B2C00504D3E /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8FF346971D6D0B2C00504D3E /* GameScene.sks */; };
 		8FF346A11D6D0B2C00504D3E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8FF346A01D6D0B2C00504D3E /* Assets.xcassets */; };
 		9FCB24C26CF48FB098DED68D /* libPods-Rebound.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 83F4DDC37BA9B280D4A78DDC /* libPods-Rebound.a */; };
+		C1A1E5A41D7B202400E7CDE4 /* SettingsScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1A1E5A31D7B202400E7CDE4 /* SettingsScene.swift */; };
+		C1A1E5A61D7B222700E7CDE4 /* SKToggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1A1E5A51D7B222700E7CDE4 /* SKToggle.swift */; };
+		C1A1E5A81D7B5AF400E7CDE4 /* SettingsMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1A1E5A71D7B5AF400E7CDE4 /* SettingsMenu.swift */; };
 		C1D2FC4C1D794A1D00FC8E43 /* MyGlowingGeometry.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 8FA976721D781AE600A00984 /* MyGlowingGeometry.m4a */; };
 /* End PBXBuildFile section */
 
@@ -105,6 +108,9 @@
 		8FF346951D6D0B2C00504D3E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8FF346971D6D0B2C00504D3E /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
 		8FF346A01D6D0B2C00504D3E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C1A1E5A31D7B202400E7CDE4 /* SettingsScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsScene.swift; sourceTree = "<group>"; };
+		C1A1E5A51D7B222700E7CDE4 /* SKToggle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKToggle.swift; sourceTree = "<group>"; };
+		C1A1E5A71D7B5AF400E7CDE4 /* SettingsMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsMenu.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -219,8 +225,11 @@
 			isa = PBXGroup;
 			children = (
 				8FA976731D791F2900A00984 /* SKButton.swift */,
+				C1A1E5A51D7B222700E7CDE4 /* SKToggle.swift */,
 				8F49085A1D73E65900C965CD /* MainMenu.swift */,
 				8F49085C1D73E67600C965CD /* DeathMenu.swift */,
+				C1A1E5A71D7B5AF400E7CDE4 /* SettingsMenu.swift */,
+				C1A1E5A31D7B202400E7CDE4 /* SettingsScene.swift */,
 				8FA9767A1D7935F300A00984 /* Score.swift */,
 			);
 			name = UI;
@@ -255,12 +264,12 @@
 		8FF346941D6D0B2C00504D3E /* Rebound */ = {
 			isa = PBXGroup;
 			children = (
-				8FA9764D1D780AF700A00984 /* Sound */,
 				8F9BA3B71D6D1551007BFB26 /* Core */,
 				8F9BA3B91D6D158B007BFB26 /* UI */,
 				8FF8DCF21D73AAB60024655C /* Mechanics */,
 				8F9BA3B81D6D157E007BFB26 /* Gameplay */,
 				8F6451121D70C1CD00A061FB /* Misc */,
+				8FA9764D1D780AF700A00984 /* Sound */,
 			);
 			path = Rebound;
 			sourceTree = "<group>";
@@ -470,11 +479,14 @@
 				8FA976741D791F2900A00984 /* SKButton.swift in Sources */,
 				8FA976841D7935F300A00984 /* Tools.swift in Sources */,
 				8FA976821D7935F300A00984 /* Score.swift in Sources */,
+				C1A1E5A41D7B202400E7CDE4 /* SettingsScene.swift in Sources */,
 				8FA976861D79362800A00984 /* TerrainController.swift in Sources */,
+				C1A1E5A81D7B5AF400E7CDE4 /* SettingsMenu.swift in Sources */,
 				8FA9767E1D7935F300A00984 /* Ball.swift in Sources */,
 				8F49085D1D73E67600C965CD /* DeathMenu.swift in Sources */,
 				8FA976801D7935F300A00984 /* GameViewController.swift in Sources */,
 				8F36DB3B1D7515580096105D /* Theme.swift in Sources */,
+				C1A1E5A61D7B222700E7CDE4 /* SKToggle.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
