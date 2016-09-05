@@ -108,3 +108,10 @@ class DeathMenu: MainMenu {
   }
   
 }
+
+extension SKLabelNode {
+  convenience init(text: String, named: Bool) {
+    self.init(text: text)
+    if named {self.name = text}
+  }
+}

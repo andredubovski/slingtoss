@@ -12,7 +12,6 @@ import SpriteKit
 class Ring: Terrain {
   
   //various dimensions of platform
-  var thickness = CGFloat()
   var radius = CGFloat()
   
   init(radius: CGFloat) {
@@ -20,7 +19,6 @@ class Ring: Terrain {
     
     //calculate platform dimensions based on screen size
     self.radius = radius
-    thickness = gameFrame.width*0.046875
   }
   
   convenience init(radius: CGFloat, position: CGPoint) {
@@ -37,16 +35,33 @@ class Ring: Terrain {
     //create path that has platform shape based on dimensions
     let mutablePath = CGPathCreateMutable()
     CGPathMoveToPoint(mutablePath, nil, 0, 0)
-    CGPathAddArc(mutablePath, nil, 0, radius, radius, radians(-90), radians(270), false)
-    CGPathAddArc(mutablePath, nil, 0, radius, radius-thickness, radians(-90), radians(270), false)
+    CGPathAddEllipseInRect(mutablePath, nil, CGRectMake(-radius, 0, radius*2, radius*2))
+    CGPathAddEllipseInRect(mutablePath, nil, CGRectMake(-(radius-thickness), thickness, (radius-thickness)*2, (radius-thickness)*2))
     CGPathCloseSubpath(mutablePath)
     path = mutablePath
     
-    
     fillColor = currentTheme.ringColor(radius)
     
-    super.build()
+    let physicsPath = CGPathCreateMutable()
+    CGPathMoveToPoint(physicsPath, nil, 0, 0)
+    CGPathAddArc(physicsPath, nil, 0, radius, radius, radians(-90), radians(270), false)
+    CGPathAddArc(physicsPath, nil, 0, radius, radius-thickness, radians(270), radians(-90), true)
+    CGPathCloseSubpath(physicsPath)
+
+    super.build(true, path: physicsPath)
     
+    strokeColor = currentTheme.movingPlatformStrokeColor
+    lineWidth = 2
+    
+    
+    
+  }
+  
+  override func fall() {
+    physicsBody?.restitution = 0.4
+    physicsBody?.mass = 0.22
+    physicsBody?.categoryBitMask = isPermeable ? PhysicsCategory.Terrain : PhysicsCategory.ImpermeableTerrain
+    super.fall()
   }
 
 }

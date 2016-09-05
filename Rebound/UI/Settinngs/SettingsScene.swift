@@ -11,11 +11,15 @@ import SpriteKit
 class SettingsScene: SKScene {
   
   var menu = SettingsMenu()
+  var isVirgin = Bool(true)
   
   override func didMoveToView(view: SKView) {
-    menu.build(self)
-    currentTheme.build(self)
     print("moved to settings")
+    if isVirgin {
+      menu.build(self)
+      currentTheme.build(self)
+      isVirgin = false
+    }
     
   }
   

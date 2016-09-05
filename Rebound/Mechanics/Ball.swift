@@ -39,7 +39,7 @@ class Ball: SKShapeNode {
   
   func reset() {
     physicsBody?.resting = true
-    position.y = gameFrame.height*0.4
+    position.y = gameFrame.height*0.32
   }
   
   func update(terrains: TerrainController) {
@@ -49,16 +49,21 @@ class Ball: SKShapeNode {
       physicsBody?.collisionBitMask = PhysicsCategory.Wall | PhysicsCategory.ImpermeableTerrain
     }
     
-    if terrains.containPoint(CGPointMake(position.x, position.y-(radius-3))) ||
-      terrains.containPoint(CGPointMake(position.x, position.y+(radius-3))) ||
-      terrains.containPoint(CGPointMake(position.x-(radius-3), position.y)) ||
-      terrains.containPoint(CGPointMake(position.x+(radius-3), position.y)){
+    if terrains.containPoint(CGPointMake(position.x, position.y-(radius-1.5))) ||
+      terrains.containPoint(CGPointMake(position.x, position.y+(radius-1.5))) ||
+      terrains.containPoint(CGPointMake(position.x-(radius-1.5), position.y)) ||
+      terrains.containPoint(CGPointMake(position.x+(radius-1.5), position.y)){
       physicsBody?.collisionBitMask = PhysicsCategory.Wall | PhysicsCategory.ImpermeableTerrain
     }
     
     if gameScene.menu.isActive || gameScene.deathMenu.isActive {
       physicsBody?.collisionBitMask = PhysicsCategory.Wall | PhysicsCategory.ImpermeableTerrain | PhysicsCategory.Terrain
     }
+    
+//    if position.y < terrains.current.position.y {
+//      gameScene.score.decrement()
+//      terrains.scroll(0, progress: 0, ball: self, score: gameScene.score)
+//    }
   
   }
 }

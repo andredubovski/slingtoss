@@ -45,6 +45,11 @@ class Score {
     draw()
   }
   
+  func decrement() {
+    amount += 1
+    draw()
+  }
+  
   func set(to: Int) {
     amount = to
     draw()

@@ -21,9 +21,10 @@ class GameScene: SKScene, AdToAppSDKDelegate, AdToAppViewDelegate {
   let slingshot = Slingshot()
   let score = Score()
   
-  let scrollThresholdOnScreen = CGFloat(0.36)
+  let scrollThresholdOnScreen = CGFloat(0.33)
   var verticalProgress = CGFloat(0)
   
+  var adsOn = Bool(false)
   var atpView = AdToAppView()
   var atpActive = Bool(true)
   var atpPlaceholderActive = Bool(false)
@@ -32,34 +33,16 @@ class GameScene: SKScene, AdToAppSDKDelegate, AdToAppViewDelegate {
   
   override func didMoveToView(view: SKView) {
     print("did move to view")
+    
     if isVirgin {gameSetup(); isVirgin = false}
+    else {playBackgroundMusic("MyGlowingGeometry.mp4")}
     
-    let doubleTwoFingerTap = UITapGestureRecognizer(target: self, action: #selector(doubleTwoFingerTapped))
-    doubleTwoFingerTap.numberOfTapsRequired = 2
-    doubleTwoFingerTap.numberOfTouchesRequired = 2
-    view.addGestureRecognizer(doubleTwoFingerTap)
-    
-    let twoFingerTap = UITapGestureRecognizer(target: self, action: #selector(twoFingerTapped))
-    twoFingerTap.numberOfTapsRequired = 1
-    twoFingerTap.numberOfTouchesRequired = 2
-    twoFingerTap.requireGestureRecognizerToFail(doubleTwoFingerTap)
-    view.addGestureRecognizer(twoFingerTap)
-    
-    let tripleTap = UITapGestureRecognizer(target: self, action: #selector(tripleTapped))
-    tripleTap.numberOfTapsRequired = 3
-    view.addGestureRecognizer(tripleTap)
-    
-    let doubleTap = UITapGestureRecognizer(target: self, action: #selector(doubleTapped))
-    doubleTap.numberOfTapsRequired = 2
-    doubleTap.requireGestureRecognizerToFail(tripleTap)
-    view.addGestureRecognizer(doubleTap)
   }
   
   private func gameSetup() {
     
     currentTheme.build()
     setupAdToApp()
-    playBackgroundMusic("MyGlowingGeometry.m4a")
     gameFrame = frame
     if gameFrame.width > 500 {physicsWorld.speed = 1.45}
     
@@ -75,6 +58,7 @@ class GameScene: SKScene, AdToAppSDKDelegate, AdToAppViewDelegate {
     menu.appear()
     
     buildWalls()
+    playBackgroundMusic("MyGlowingGeometry.m4a")
     
   }
   
@@ -94,9 +78,11 @@ class GameScene: SKScene, AdToAppSDKDelegate, AdToAppViewDelegate {
     terrains.reset(ball, menu: menu.isActive ? menu:deathMenu)
     ball.reset()
     
-    scroll()
+    scroll(0)
     deathMenu.appear(score.amount)
     score.reset()
+    verticalProgress = 0
+    currentTheme.background.reset()
     
     flashDeathOverlay()
     
@@ -149,6 +135,14 @@ class GameScene: SKScene, AdToAppSDKDelegate, AdToAppViewDelegate {
       if deathMenu.isActive {
         deathMenu.doWhenTouchesEnded(touchLocation, shot: shot)
       }
+      
+      if touch.tapCount == 2 {
+        doubleTapped()
+      }
+    }
+    
+    if touches.count == 2 {
+      twoFingerTapped()
     }
     
     if shot && score.box.alpha < 0.5 {score.appear()}
@@ -166,14 +160,6 @@ class GameScene: SKScene, AdToAppSDKDelegate, AdToAppViewDelegate {
     defaults.setInteger(defaults.integerForKey("theme") + 1 < themes.count ? defaults.integerForKey("theme") + 1 : 0, forKey: "theme")
   }
   
-  func doubleTwoFingerTapped() {
-    print("doubleTwoFingerTapped")
-  }
-  
-  func tripleTapped() {
-    print("tripleTapped")
-  }
-  
   func getScreenShot() -> UIImage {
     let bounds = UIScreen.mainScreen().bounds
     UIGraphicsBeginImageContextWithOptions(bounds.size, true, 0.0)
@@ -185,8 +171,7 @@ class GameScene: SKScene, AdToAppSDKDelegate, AdToAppViewDelegate {
     
   }
   
-  private func scroll() {
-    let interval = ball.position.y - frame.height*scrollThresholdOnScreen
+  private func scroll(interval: CGFloat) {
     if menu.isActive {menu.disappear(); score.appear()}
     if deathMenu.isActive {deathMenu.disappear(); score.appear()}
     currentTheme.background.scroll(interval)
@@ -198,34 +183,42 @@ class GameScene: SKScene, AdToAppSDKDelegate, AdToAppViewDelegate {
   }
   
   override func update(currentTime: CFTimeInterval) {
-    if ball.position.y > frame.height*scrollThresholdOnScreen {scroll()}
-    ball.update(terrains)
-    slingshot.update(ball)
     if ball.position.y < 0 {reset()}
+    let interval = ball.position.y - frame.height*scrollThresholdOnScreen
+    if interval > 0 {scroll(interval)}
+    ball.update(terrains)
+    slingshot.update(terrains.current, ball: ball)
+    print(terrains.array.count)
   }
   
+  
+  
+  
   func playBackgroundMusic(fileNamed: String) {
-//    runAction(
-//      SKAction.repeatActionForever(SKAction.sequence([
-//      SKAction.playSoundFileNamed(fileNamed, waitForCompletion: false),
-//      SKAction.waitForDuration(90)
-//    ])), withKey: "play background music")
+    //    runAction(
+    //      SKAction.repeatActionForever(SKAction.sequence([
+    //      SKAction.playSoundFileNamed(fileNamed, waitForCompletion: false),
+    //      SKAction.waitForDuration(90)
+    //    ])), withKey: "play background music")
     
     backgroundMusic = SKAudioNode(fileNamed: fileNamed)
+    backgroundMusic.removeFromParent()
     addChild(backgroundMusic)
   }
   
   func setupAdToApp() {
-    AdToAppSDK.startWithAppId(
-      "39c3f1a3-bced-4ae4-851b-7cb603a44479:c4050a11-a7eb-4733-b961-7d77c7601aee",
-      modules:[
-        ADTOAPP_IMAGE_INTERSTITIAL,
-        ADTOAPP_VIDEO_INTERSTITIAL,
-        ADTOAPP_INTERSTITIAL,
-        //ADTOAPP_REWARDED_INTERSTITIAL,//Uncomment to test rewarded ads
-        ADTOAPP_BANNER
-      ]
-    )
+    if adsOn {
+      AdToAppSDK.startWithAppId(
+        "39c3f1a3-bced-4ae4-851b-7cb603a44479:c4050a11-a7eb-4733-b961-7d77c7601aee",
+        modules:[
+          ADTOAPP_IMAGE_INTERSTITIAL,
+          ADTOAPP_VIDEO_INTERSTITIAL,
+          ADTOAPP_INTERSTITIAL,
+          //ADTOAPP_REWARDED_INTERSTITIAL,//Uncomment to test rewarded ads
+          ADTOAPP_BANNER
+        ]
+      )
+    }
     
     AdToAppSDK_setTargetingParam(ADTOAPP_TARGETING_PARAM_KEYWORDS, "advertisement,mobile ads,ads mediation");
     AdToAppSDK_setTargetingParam(ADTOAPP_TARGETING_PARAM_USER_INTERESTS, "ecpm,revenue");
@@ -244,12 +237,12 @@ class GameScene: SKScene, AdToAppSDKDelegate, AdToAppViewDelegate {
     showAdPlaceholder()
   }
   
-  func adToAppViewDidDisplayAd(_:AdToAppView!, providerId: Int32) {
+  func adToAppViewDidDisplayAd(_: AdToAppView!, providerId: Int32) {
     return
   }
   
   func showAdPlaceholder() {
-    if !atpPlaceholderActive {
+    if !atpPlaceholderActive && adsOn {
       let adPlaceholder = SKSpriteNode(imageNamed: "adPlaceholder")
       adPlaceholder.position = CGPointMake(frame.midX, adPlaceholder.frame.height/2)
       addChild(adPlaceholder)

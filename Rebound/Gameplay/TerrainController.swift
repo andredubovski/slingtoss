@@ -13,6 +13,9 @@ class TerrainController {
   var current = Terrain()
   var minLength = CGFloat()
   var maxLength = CGFloat()
+  var minRadius = CGFloat()
+  var maxRadius = CGFloat()
+  
   
   init() {
   }
@@ -20,43 +23,65 @@ class TerrainController {
   func build() {
     minLength = gameFrame.width*0.15
     maxLength = gameFrame.width*0.35
+    minRadius = gameFrame.width*0.15
+    maxRadius = gameFrame.width*0.24
   }
   
   
   func scroll(interval: CGFloat, progress: CGFloat, ball: Ball, score: Score) {
-    for platform in array {
-      platform.position.y -= interval
-      if platform.position.y < gameFrame.height && !platform.hasAppeared {platform.appear()}
-      if platform.position.y < 0 && !platform.hasFallen {platform.fall()}
-      if platform.position.y < ball.position.y && !platform.hasScored {
+    for terrain in array {
+      terrain.position.y -= interval
+      if terrain.position.y < gameFrame.height && !terrain.hasAppeared {terrain.appear()}
+      if terrain is Platform  {if terrain.position.y < 0 && !terrain.hasFallen {terrain.fall()}}
+      if terrain is Ring  {if terrain.position.y < -terrain.frame.height/2 && !terrain.hasFallen {terrain.fall()}}
+      if ((terrain.position.y + (terrain.thickness + ball.frame.height/2) - 2.5 <= ball.position.y &&
+        !((terrain.physicsBody?.allContactedBodies().contains(ball.physicsBody!))!))
+        ||
+        ball.physicsBody!.resting && terrain.position.y <= ball.position.y)
+        &&
+        !terrain.hasScored {
         score.increment()
-        platform.hasScored = true
-
+        terrain.hasScored = true
         current = array[score.amount]
+        if let currentPlatform = current as? Platform {
+          if currentPlatform.doesMoveDown {current.beginMovingDown()}
+        }
       }
     }
     
-    if Int(progress/(gameFrame.height/3) + 5) > array.count {
-      makePlatform()
+    if array[array.count-1].position.y < gameFrame.height*2 {
+      makeRandomTerrain()
     }
   }
   
-
-  func makePlatform(willBePermeable: Bool?, lengthRelativeToFrameWidth: CGFloat?, relativePositionAbovePrevious: CGPoint?) {
+  
+  func makePlatform(willBePermeable: Bool? = nil, willMove: Bool? = nil, lengthRelativeToFrameWidth: CGFloat? = nil, relativePositionAbovePrevious: CGPoint? = nil) {
+    
     var isPermeable = Int(random(0, to: 5)) != 0
+    var doesMove = !(Int(random(0, to: 3.5)) != 0)
     var newLength = random(minLength, to: maxLength)
     var position = CGPoint()
     
+    if let lastPlatform = array[safe: array.count-1] as? Platform {
+      if lastPlatform.doesMoveDown {
+        isPermeable = true
+      }
+    }
+    
     if isPermeable {
       position = CGPointMake(random(0, to: gameFrame.width),
-                                array[array.count-1].position.y + random(gameFrame.height/3, to: 2*gameFrame.height/3))
+                             array[array.count-1].position.y + random(gameFrame.height/3, to: 2*gameFrame.height/3))
     } else {
       position = CGPointMake(random(0, to: gameFrame.width),
-                                array[array.count-1].position.y + random(gameFrame.height/3, to: gameFrame.height/2))
+                             array[array.count-1].position.y + random(gameFrame.height/3, to: gameFrame.height/2))
     }
     
     if let permeable = willBePermeable {
       isPermeable = permeable
+    }
+    
+    if let moves = willMove {
+      doesMove = moves
     }
     
     if let length = lengthRelativeToFrameWidth {
@@ -69,6 +94,7 @@ class TerrainController {
     
     let newPlatform = Platform(length: newLength, position: position)
     newPlatform.isPermeable = isPermeable
+    newPlatform.doesMoveDown = doesMove
     array.append(newPlatform)
     newPlatform.build()
     
@@ -76,8 +102,43 @@ class TerrainController {
   }
   
   
-  func makePlatform() {
-    makePlatform(nil, lengthRelativeToFrameWidth: nil, relativePositionAbovePrevious: nil);
+  func makeRandomTerrain() {
+    
+    if let lastPlatform = array[array.count-1] as? Platform {
+      if lastPlatform.doesMoveDown {
+        makePlatform(nil, willMove: random(0, to: 1.4) < 1, lengthRelativeToFrameWidth: nil, relativePositionAbovePrevious: nil)
+        return
+      }
+    }
+    
+    if random(0, to: 1.5) > 1 {
+      makePlatform()
+    } else {
+      makeRing()
+    }
+    
+  }
+  
+  func makeRing(radiusRelativeToFrameWidth: CGFloat? = nil, relativePositionAbovePrevious: CGPoint? = nil) {
+    var newRadius = random(minRadius, to: maxRadius)
+    var position = CGPoint()
+    
+    position = CGPointMake(random(0, to: gameFrame.width),
+                           array[array.count-1].position.y + random(gameFrame.height/3, to: gameFrame.height/2))
+    
+    if let radius = radiusRelativeToFrameWidth {
+      newRadius = radius*gameFrame.width
+    }
+    
+    if let pos = relativePositionAbovePrevious {
+      position = CGPointMake(pos.x*gameFrame.width, array[array.count-1].position.y + pos.y*gameFrame.height)
+    }
+    
+    let newRing = Ring(radius: newRadius, position: position)
+    array.append(newRing)
+    newRing.build()
+    
+    newRing.makeSureIsInFrame()
   }
   
   
@@ -87,20 +148,19 @@ class TerrainController {
     }
     array.removeAll()
     
-    let firstPlatform = Platform(length: gameFrame.width*0.3, position: CGPointMake(ball.position.x, gameFrame.height/7))
+    let firstPlatform = Platform(length: gameFrame.width*0.3, position: CGPointMake(ball.position.x, gameFrame.height/12))
     firstPlatform.build()
     firstPlatform.hasScored = true
     firstPlatform.makeSureIsInFrame()
+    current = firstPlatform
     array.append(firstPlatform)
-    ball.position.x = firstPlatform.position.x
     
     makePlatform(
       true,
+      willMove: false,
       lengthRelativeToFrameWidth: random(0.15, to: 0.25),
-      relativePositionAbovePrevious: CGPointMake(CGFloat(Int(random(1, to: 3))) / 3.0, 0)
+      relativePositionAbovePrevious: CGPointMake(CGFloat(Int(random(1, to: 3))) / 3.0, 1/3)
     )
-    
-    array[1].position.y = menu.highScoreBox.position.y - (menu.highScoreBox.frame.height/2 + 2*menu.marginWidth + array[1].frame.height)
     
     makePlatform(
       true,
@@ -112,7 +172,7 @@ class TerrainController {
   
   func containPoint(point: CGPoint) -> Bool {
     if array[gameScene.score.amount].containsPoint(point) {return true}
-    if array[gameScene.score.amount+1].containsPoint(point) {return true}
+    if array.count > gameScene.score.amount+1 {if array[gameScene.score.amount+1].containsPoint(point) {return true}}
     return false
   }
 }

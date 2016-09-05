@@ -45,14 +45,14 @@ class SettingsMenu: SKNode {
     scene.addChild(title)
     
     
-    sfxToggle = SKToggle(setSize: CGSizeMake(buttonWidth, buttonWidth), setColor: currentTheme.uiColor, setGlyph: "SFX")
+    sfxToggle = SKToggle(setSize: CGSizeMake(buttonWidth, buttonWidth), setGlyph: "SFX")
     sfxToggle.position = CGPointMake(
       gameFrame.midX - (buttonWidth/2 + marginWidth/2),
       title.position.y - (title.frame.height/2 + buttonWidth/2)
     )
     sfxToggle.display(scene)
     
-    musicToggle = SKToggle(setSize: CGSizeMake(buttonWidth, buttonWidth), setColor: currentTheme.uiColor, setGlyph: "Music")
+    musicToggle = SKToggle(setSize: CGSizeMake(buttonWidth, buttonWidth), setGlyph: "Music")
     musicToggle.position = CGPointMake(
       gameFrame.midX + (buttonWidth/2 + marginWidth/2),
       title.position.y - (title.frame.height/2 + buttonWidth/2)
@@ -60,14 +60,14 @@ class SettingsMenu: SKNode {
     musicToggle.display(scene)
     
     
-    removeAdsToggle = SKToggle(setSize: CGSizeMake(buttonWidth, buttonWidth/1.5), setColor: currentTheme.uiColor, setGlyph: "Music")
+    removeAdsToggle = SKToggle(setSize: CGSizeMake(buttonWidth, buttonWidth/1.5), setGlyph: "removeAds")
     removeAdsToggle.position = CGPointMake(
       gameFrame.midX - (buttonWidth/2 + marginWidth/2),
       musicToggle.position.y - (buttonWidth/2 + removeAdsToggle.size.height/2 + marginWidth)
     )
     removeAdsToggle.display(scene)
     
-    refreshIAPButton = SKButton(setSize: CGSizeMake(buttonWidth, buttonWidth/1.5), setColor: currentTheme.uiColor, setGlyph: "SFX")
+    refreshIAPButton = SKButton(setSize: CGSizeMake(buttonWidth, buttonWidth/1.5), setGlyph: "refreshIAP")
     refreshIAPButton.position = CGPointMake(
       gameFrame.midX + (buttonWidth/2 + marginWidth/2),
       musicToggle.position.y - (buttonWidth/2 + refreshIAPButton.size.height/2 + marginWidth)
@@ -75,13 +75,21 @@ class SettingsMenu: SKNode {
     refreshIAPButton.display(scene)
     
     
-    homeButton = SKButton(setSize: CGSizeMake(buttonWidth/1.5, buttonWidth/1.5), setColor: currentTheme.uiColor, setGlyph: "home")
+    homeButton = SKButton(setSize: CGSizeMake(buttonWidth/1.5, buttonWidth/1.5), setGlyph: "home")
     homeButton.position = CGPointMake(
       marginWidth+homeButton.size.width/2,
-      removeAdsToggle.position.y - (removeAdsToggle.frame.height/2 + homeButton.size.height + marginWidth)
+      removeAdsToggle.position.y - (removeAdsToggle.frame.height/2 + homeButton.size.height/2 + marginWidth)
     )
-    homeButton.buttonAction = SKAction.runBlock({scene.view?.presentScene(gameScene, transition: SKTransition.doorsCloseVerticalWithDuration(0.5))})
+    homeButton.buttonAction = SKAction.runBlock({scene.view?.presentScene(gameScene, transition: SKTransition.doorsCloseHorizontalWithDuration(0.5))})
     homeButton.display(scene)
+    
+    creditsButton = SKButton(setSize: CGSizeMake(gameFrame.width - (3*marginWidth + homeButton.frame.width), homeButton.frame.height), setGlyph: "credits")
+    creditsButton.position = CGPointMake(
+      homeButton.position.x + (homeButton.frame.width/2 + creditsButton.size.width/2 + marginWidth),
+      homeButton.position.y
+    )
+    creditsButton.buttonAction = SKAction()
+    creditsButton.display(scene)
 
   }
   
@@ -91,6 +99,7 @@ class SettingsMenu: SKNode {
     removeAdsToggle.doWhenTouchesBegan(location)
     refreshIAPButton.doWhenTouchesBegan(location)
     creditsButton.doWhenTouchesBegan(location)
+    homeButton.doWhenTouchesBegan(location)
   }
   
   func doWhenTouchesMoved(location: CGPoint) {
@@ -99,6 +108,7 @@ class SettingsMenu: SKNode {
     removeAdsToggle.doWhenTouchesMoved(location)
     refreshIAPButton.doWhenTouchesMoved(location)
     creditsButton.doWhenTouchesMoved(location)
+    homeButton.doWhenTouchesMoved(location)
   }
   
   func doWhenTouchesEnded(location: CGPoint) {
@@ -107,6 +117,7 @@ class SettingsMenu: SKNode {
     removeAdsToggle.doWhenTouchesEnded(location)
     refreshIAPButton.doWhenTouchesEnded(location)
     creditsButton.doWhenTouchesEnded(location)
+    homeButton.doWhenTouchesEnded(location)
   }
   
 }

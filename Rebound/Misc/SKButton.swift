@@ -27,7 +27,7 @@ class SKButton: SKShapeNode {
     super.init()
   }
   
-  convenience init(setSize: CGSize, setColor: SKColor, setGlyph: String, setGlyphColor: SKColor? = currentTheme.tintColor) {
+  convenience init(setSize: CGSize, setColor: SKColor = currentTheme.uiColor, setGlyph: String, setGlyphColor: SKColor? = currentTheme.tintColor) {
     self.init()
     size = setSize
     lightColor = setColor
@@ -50,7 +50,7 @@ class SKButton: SKShapeNode {
     path = CGPathCreateWithRect(CGRectMake(-size.width/2, -size.height/2, size.width, size.height), nil)
     position = position
     zPosition = 5
-    glyph.runAction(SKAction.scaleTo((size.height*0.8)/glyph.frame.width, duration: 0))
+    glyph.runAction(SKAction.scaleTo((size.width*0.8)/glyph.frame.width, duration: 0))
     scene.addChild(self)
     addChild(glyph)
   }

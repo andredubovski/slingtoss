@@ -10,15 +10,28 @@ import SpriteKit
 
 class Terrain: SKShapeNode {
   
+  var thickness = CGFloat()
   var hasScored = Bool(false)
   var hasFallen = Bool(false)
   var hasAppeared = Bool(false)
   
   var isPermeable = Bool(true)
   
-  func build(isEdgeBody: Bool) {
+  override init() {
     
-    physicsBody = isEdgeBody ? SKPhysicsBody(polygonFromPath: self.path!) : SKPhysicsBody(edgeLoopFromPath: self.path!)
+    thickness = gameFrame.width*0.046875
+    super.init()
+    
+  }
+  
+  required init?(coder aDecoder: NSCoder) {
+    fatalError("init(coder:) has not been implemented")
+  }
+  
+  func build(isEdgeBody: Bool, path: CGPath?) {
+    
+    if let p = path {physicsBody = isEdgeBody ? SKPhysicsBody(polygonFromPath: p) : SKPhysicsBody(edgeLoopFromPath: p)}
+    else {physicsBody = isEdgeBody ? SKPhysicsBody(polygonFromPath: self.path!) : SKPhysicsBody(edgeLoopFromPath: self.path!)}
     physicsBody?.dynamic = false
     physicsBody?.restitution = 0.4
     physicsBody?.mass = 0.22
@@ -31,7 +44,7 @@ class Terrain: SKShapeNode {
   }
   
   func build() {
-    build(false)
+    build(false, path: nil)
   }
   
   func appear() {
@@ -46,14 +59,24 @@ class Terrain: SKShapeNode {
   }
   
   func fall() {
+    physicsBody?.linearDamping = 0.1
+    physicsBody?.angularDamping = 0.1
     physicsBody?.dynamic = true
     physicsBody?.affectedByGravity = true
-    physicsBody?.applyAngularImpulse(random(-100, to: 100) > 0 ? -0.04 : 0.04)
+    physicsBody?.applyAngularImpulse(random(-100, to: 100) > 0 ? -0.027 : 0.027)
+    hasFallen = true
   }
   
   func makeSureIsInFrame() {
     if position.x < frame.width/2 {position.x = frame.width/2}
     if position.x > gameFrame.width-frame.width/2 {position.x = gameFrame.width-frame.width/2}
+  }
+  
+  func beginMovingDown() {
+    physicsBody?.dynamic = true
+    physicsBody?.affectedByGravity = true
+    physicsBody?.linearDamping = 100
+    physicsBody?.angularDamping = 15
   }
   
 }

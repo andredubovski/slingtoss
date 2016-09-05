@@ -11,16 +11,16 @@ import SpriteKit
 class Platform: Terrain {
   
   //various dimensions of platform
-  var thickness = CGFloat()
   var length = CGFloat()
   var edgeHeight = CGFloat()
+  var doesMoveDown = Bool(false)
+  var isMovingDown = Bool(false)
   
   init(length: CGFloat) {
     super.init()
     
     //calculate platform dimensions based on screen size
     self.length = length
-    thickness = gameFrame.width*0.046875
     edgeHeight = thickness*2
   }
   
@@ -48,11 +48,11 @@ class Platform: Terrain {
     CGPathCloseSubpath(mutablePath)
     path = mutablePath
     
+    super.build(true, path: self.path)
     
     if isPermeable {fillColor = currentTheme.permeablePlatformColor(length)}
     else {fillColor = currentTheme.impermeablePlatformColor(length)}
-    
-    super.build(true)
+    if doesMoveDown {strokeColor = currentTheme.movingPlatformStrokeColor; lineWidth = 2.5}
     
   }
   

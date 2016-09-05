@@ -13,6 +13,7 @@ class Theme {
   var permeablePlatformColor: (CGFloat) -> SKColor
   var impermeablePlatformColor: (CGFloat) -> SKColor
   var ringColor: (CGFloat) -> SKColor
+  var movingPlatformStrokeColor = SKColor()
   var background = Background()
   var titleColor = SKColor()
   var uiColor = SKColor()
@@ -34,6 +35,7 @@ class Theme {
   init(permeablePlatformColor: (CGFloat) -> SKColor,
              impermeablePlatformColor: (CGFloat) -> SKColor,
              ringColor: (CGFloat) -> SKColor,
+             movingPlatformStrokeColor: SKColor = SKColor.whiteColor(),
              backgroundName: String,
              titleColor: SKColor,
              uiColor: SKColor,
@@ -43,6 +45,7 @@ class Theme {
     self.permeablePlatformColor = permeablePlatformColor
     self.impermeablePlatformColor = impermeablePlatformColor
     self.ringColor = ringColor
+    self.movingPlatformStrokeColor = movingPlatformStrokeColor
     self.background = Background(imageNamed: backgroundName)
     self.titleColor = titleColor
     self.uiColor = uiColor
@@ -57,6 +60,10 @@ class Theme {
   
   func build() {
     build(gameScene)
+  }
+  
+  func scroll(interval: CGFloat) {
+    background.scroll(interval)
   }
   
 }
@@ -122,6 +129,7 @@ func assembleThemes() {
     permeablePlatformColor: permeablePlatformColor2,
     impermeablePlatformColor: impermeablePlatformColor2,
     ringColor: ringColor2,
+    movingPlatformStrokeColor: SKColor.blackColor(),
     backgroundName: "background2",
     titleColor:  SKColor.blackColor(),
     uiColor: SKColor(red: 0, green: 0, blue: 0, alpha: 0.6),
@@ -162,6 +170,7 @@ func assembleThemes() {
     permeablePlatformColor: permeablePlatformColor3,
     impermeablePlatformColor: impermeablePlatformColor3,
     ringColor: ringColor3,
+    movingPlatformStrokeColor: SKColor.blueColor(),
     backgroundName: "background3",
     titleColor: SKColor.orangeColor(),
     uiColor: SKColor(red: 0, green: 0, blue: 1, alpha: 0.6),

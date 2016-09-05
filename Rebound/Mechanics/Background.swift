@@ -44,4 +44,10 @@ class Background {
     }
   }
   
+  func reset(scene: SKScene = gameScene) {
+    img1.removeFromParent()
+    img2.removeFromParent()
+    build(scene)
+  }
+  
 }

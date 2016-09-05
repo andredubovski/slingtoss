@@ -21,7 +21,7 @@ class Slingshot: SKShapeNode {
   func build() {
     gameScene.addChild(self)
     thickness = gameFrame.width*0.012325
-    maxStretch = gameFrame.height*0.32
+    maxStretch = gameFrame.width*0.568
     radius = gameScene.ball.radius+thickness/2 + 1
     
     lineWidth = thickness
@@ -68,7 +68,6 @@ class Slingshot: SKShapeNode {
   func shoot(ball: Ball) -> Bool {
     if canShoot {
       ball.physicsBody?.applyImpulse(shotVector)
-      if magnitude(shotVector) > 5.5 {gameScene.terrains.current.fall()}
     }
     runAction(SKAction.fadeAlphaTo(0, duration: 1))
     
@@ -79,12 +78,16 @@ class Slingshot: SKShapeNode {
     aimingToPoint.y -= interval
   }
   
-  func update(ball: Ball) {
+  func update(terrain: Terrain, ball: Ball) {
     if ball.position.y > aimingToPoint.y {removeAllActions(); alpha = 0}
     if alpha > 0 {updateSling(ball, atPoint: aimingToPoint)}
-    if ball.physicsBody?.velocity.dy < 5 && magnitude((ball.physicsBody?.velocity)!) < 50 {
-      canShoot = true
-    } else {canShoot = false}
+    if let ballBody = ball.physicsBody {
+      if let terrainBody = terrain.physicsBody {
+        if (terrainBody.allContactedBodies().contains(ballBody)) || terrain is Ring &&
+        magnitude(ballBody.velocity) < 65 {canShoot = true}
+        else {canShoot = false}
+      }
+    }
   }
   
 }
