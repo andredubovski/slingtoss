@@ -110,7 +110,7 @@
 		C1A1E5A31D7B202400E7CDE4 /* SettingsScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsScene.swift; sourceTree = "<group>"; };
 		C1A1E5A51D7B222700E7CDE4 /* SKToggle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKToggle.swift; sourceTree = "<group>"; };
 		C1A1E5A71D7B5AF400E7CDE4 /* SettingsMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsMenu.swift; sourceTree = "<group>"; };
-		C1CAFF171D7E481E008B3D5F /* Config.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Config.plist; path = ../Core/Config.plist; sourceTree = "<group>"; };
+		C1CAFF171D7E481E008B3D5F /* Config.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Config.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -188,13 +188,13 @@
 		8F6451121D70C1CD00A061FB /* Misc */ = {
 			isa = PBXGroup;
 			children = (
+				C1401A9F1D7D3071007764F8 /* Assets.xcassets */,
 				8FF346971D6D0B2C00504D3E /* GameScene.sks */,
 				8F9463D71D7668E8002233A7 /* LaunchScreen.storyboard */,
 				8F9463D81D7668E8002233A7 /* Main.storyboard */,
 				8FA976731D791F2900A00984 /* SKButton.swift */,
 				C1A1E5A51D7B222700E7CDE4 /* SKToggle.swift */,
 				8FA9767C1D7935F300A00984 /* Tools.swift */,
-				C1401A9F1D7D3071007764F8 /* Assets.xcassets */,
 			);
 			path = Misc;
 			sourceTree = "<group>";
@@ -203,8 +203,8 @@
 			isa = PBXGroup;
 			children = (
 				8FF346951D6D0B2C00504D3E /* AppDelegate.swift */,
-				8FA976781D7935F300A00984 /* GameViewController.swift */,
 				8FA976771D7935F300A00984 /* GameScene.swift */,
+				8FA976781D7935F300A00984 /* GameViewController.swift */,
 				8F9463D51D766885002233A7 /* Info.plist */,
 				8F352C261D75FFBD00EEC2B1 /* Rebound-Bridging-Header.h */,
 			);
@@ -264,10 +264,10 @@
 			children = (
 				8F9BA3B71D6D1551007BFB26 /* Core */,
 				8F9BA3B81D6D157E007BFB26 /* Gameplay */,
-				8F9BA3B91D6D158B007BFB26 /* UI */,
 				8FF8DCF21D73AAB60024655C /* Mechanics */,
 				8F6451121D70C1CD00A061FB /* Misc */,
 				8FA9764D1D780AF700A00984 /* Sound */,
+				8F9BA3B91D6D158B007BFB26 /* UI */,
 			);
 			path = Rebound;
 			sourceTree = "<group>";
@@ -275,9 +275,9 @@
 		8FF8DCF21D73AAB60024655C /* Mechanics */ = {
 			isa = PBXGroup;
 			children = (
-				C1CAFF171D7E481E008B3D5F /* Config.plist */,
 				8FA976751D7935F300A00984 /* Background.swift */,
 				8FA976761D7935F300A00984 /* Ball.swift */,
+				C1CAFF171D7E481E008B3D5F /* Config.plist */,
 				8FA9767B1D7935F300A00984 /* Slingshot.swift */,
 				8F36DB3A1D7515580096105D /* Theme.swift */,
 			);
@@ -290,8 +290,7 @@
 				C1A1E5A71D7B5AF400E7CDE4 /* SettingsMenu.swift */,
 				C1A1E5A31D7B202400E7CDE4 /* SettingsScene.swift */,
 			);
-			name = Settings;
-			path = Settinngs;
+			path = Settings;
 			sourceTree = "<group>";
 		};
 		D0DD676D680629BAB4F7B945 /* Pods */ = {

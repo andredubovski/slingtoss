@@ -19,7 +19,7 @@ class Terrain: SKShapeNode {
   
   override init() {
     
-    thickness = gameFrame.width*0.046875
+    thickness = gameFrame.width * CGFloat(config!.objectForKey("relativeThickness") as! NSNumber)
     super.init()
     
   }
