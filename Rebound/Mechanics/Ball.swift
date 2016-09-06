@@ -60,10 +60,13 @@ class Ball: SKShapeNode {
       physicsBody?.collisionBitMask = PhysicsCategory.Wall | PhysicsCategory.ImpermeableTerrain | PhysicsCategory.Terrain
     }
     
-//    if position.y < terrains.current.position.y {
-//      gameScene.score.decrement()
-//      terrains.scroll(0, progress: 0, ball: self, score: gameScene.score)
-//    }
+    if let nextTerrain = terrains.array[safe: terrains.currentIndex+1] {
+      if position.y > nextTerrain!.position.y &&
+        physicsBody!.resting &&
+        !nextTerrain!.hasScored {
+        nextTerrain!.scoreOn(gameScene.score)
+      }
+    }
   
   }
 }

@@ -11,11 +11,11 @@ import SpriteKit
 class TerrainController {
   var array = [Terrain?]()
   var current = Terrain()
+  var currentIndex = Int()
   var minLength = CGFloat()
   var maxLength = CGFloat()
   var minRadius = CGFloat()
   var maxRadius = CGFloat()
-  
   
   init() {
   }
@@ -35,15 +35,13 @@ class TerrainController {
         if terrain.position.y < gameFrame.height && !terrain.hasAppeared {terrain.appear()}
         if terrain is Platform  {if terrain.position.y < 0 && !terrain.hasFallen {terrain.fall()}}
         if terrain is Ring  {if terrain.position.y < -terrain.frame.height/2 && !terrain.hasFallen {terrain.fall()}}
-        if ((terrain.position.y + (terrain.thickness + ball.frame.height/2) - 2.5 <= ball.position.y &&
+        if (terrain.position.y + (terrain.thickness + ball.frame.height/2) - 2.5 <= ball.position.y &&
           !((terrain.physicsBody?.allContactedBodies().contains(ball.physicsBody!))!))
-          ||
-          ball.physicsBody!.resting && terrain.position.y <= ball.position.y)
           &&
           !terrain.hasScored {
-          score.increment()
-          terrain.hasScored = true
+          terrain.scoreOn(score)
           current = array[score.amount]!
+          currentIndex = score.amount
           if let currentPlatform = current as? Platform {
             if currentPlatform.doesMoveDown {current.beginMovingDown()}
           }

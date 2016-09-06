@@ -79,4 +79,9 @@ class Terrain: SKShapeNode {
     physicsBody?.angularDamping = 15
   }
   
+  func scoreOn(score: Score) {
+    score.increment()
+    hasScored = true
+  }
+  
 }

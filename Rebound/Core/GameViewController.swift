@@ -12,6 +12,9 @@ import SpriteKit
 var gameScene = GameScene()
 var settingsScene = SettingsScene()
 
+var path = NSBundle.mainBundle().pathForResource("Config", ofType: "plist")
+var config = NSDictionary(contentsOfFile: path!)
+
 class GameViewController: UIViewController {
   
   override func viewDidLoad() {
