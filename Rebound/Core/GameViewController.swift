@@ -15,6 +15,10 @@ var settingsScene = SettingsScene()
 var path = NSBundle.mainBundle().pathForResource("Config", ofType: "plist")
 var config = NSDictionary(contentsOfFile: path!)
 
+func configValueForKey(key: String) -> CGFloat {
+  return CGFloat(config!.objectForKey(key) as! NSNumber)
+}
+
 class GameViewController: UIViewController {
   
   override func viewDidLoad() {

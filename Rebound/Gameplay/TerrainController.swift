@@ -21,10 +21,10 @@ class TerrainController {
   }
   
   func build() {
-    minLength = gameFrame.width*0.15
-    maxLength = gameFrame.width*0.35
-    minRadius = gameFrame.width*0.15
-    maxRadius = gameFrame.width*0.24
+    minLength = gameFrame.width * configValueForKey("Min relative platform length")
+    maxLength = gameFrame.width * configValueForKey("Max relative platform length")
+    minRadius = gameFrame.width * configValueForKey("Min relative ring radius")
+    maxRadius = gameFrame.width * configValueForKey("Max relative ring radius")
   }
   
   
@@ -42,9 +42,7 @@ class TerrainController {
           terrain.scoreOn(score)
           current = array[score.amount]!
           currentIndex = score.amount
-          if let currentPlatform = current as? Platform {
-            if currentPlatform.doesMoveDown {current.beginMovingDown()}
-          }
+          if current.doesMoveDown {current.beginMovingDown()}
         }
         if terrain.position.y < -gameFrame.height {
           array[i] = nil
@@ -66,12 +64,6 @@ class TerrainController {
     var doesMove = !(Int(random(0, to: 4)) != 0)
     var newLength = random(minLength, to: maxLength)
     var position = CGPoint()
-    
-    if let lastPlatform = array[safe: array.count-1] as? Platform {
-      if lastPlatform.doesMoveDown {
-        isPermeable = true
-      }
-    }
     
     if isPermeable {
       position = CGPointMake(random(0, to: gameFrame.width),
@@ -107,26 +99,10 @@ class TerrainController {
   }
   
   
-  func makeRandomTerrain() {
-    
-    if let lastPlatform = array[array.count-1] as? Platform {
-      if lastPlatform.doesMoveDown {
-        makePlatform(nil, willMove: random(0, to: 1.3) < 1, lengthRelativeToFrameWidth: nil, relativePositionAbovePrevious: nil)
-        return
-      }
-    }
-    
-    if random(0, to: 1.5) > 1 {
-      makePlatform()
-    } else {
-      makeRing()
-    }
-    
-  }
-  
-  func makeRing(radiusRelativeToFrameWidth: CGFloat? = nil, relativePositionAbovePrevious: CGPoint? = nil) {
+  func makeRing(willMove: Bool? = nil, radiusRelativeToFrameWidth: CGFloat? = nil, relativePositionAbovePrevious: CGPoint? = nil) {
     var newRadius = random(minRadius, to: maxRadius)
     var position = CGPoint()
+    let doesMove = false
     
     position = CGPointMake(random(0, to: gameFrame.width),
                            array[array.count-1]!.position.y + random(gameFrame.height/3, to: gameFrame.height/2))
@@ -140,10 +116,39 @@ class TerrainController {
     }
     
     let newRing = Ring(radius: newRadius, position: position)
+    newRing.doesMoveDown = doesMove
     array.append(newRing)
     newRing.build()
     
     newRing.makeSureIsInFrame()
+  }
+  
+  
+  func makeRandomTerrain() {
+    
+    var moving = Bool?()
+    moving = nil
+    var permeable = Bool?()
+    permeable = nil
+    
+    if let lastTerrain = array[array.count-1] {
+      if lastTerrain.doesMoveDown {
+        moving = random(0, to: 1.3) < 1
+      }
+    }
+    
+    if let lastPlatform = array[array.count-1] as? Platform {
+      if lastPlatform.isPermeable {
+        permeable = false
+      }
+    }
+    
+    if random(0, to: 1.5) > 1 {
+      makePlatform(permeable, willMove: moving)
+    } else {
+      makeRing(moving)
+    }
+    
   }
   
   
@@ -176,8 +181,8 @@ class TerrainController {
   
   
   func containPoint(point: CGPoint) -> Bool {
-    if array[gameScene.score.amount]!.containsPoint(point) {return true}
-    if array.count > gameScene.score.amount+1 {if array[gameScene.score.amount+1]!.containsPoint(point) {return true}}
+    if current.containsPoint(point) {return true}
+    if let next = array[gameScene.score.amount+1] {if next.containsPoint(point) {return true}}
     return false
   }
 }

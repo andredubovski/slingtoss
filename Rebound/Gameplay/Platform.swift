@@ -13,15 +13,13 @@ class Platform: Terrain {
   //various dimensions of platform
   var length = CGFloat()
   var edgeHeight = CGFloat()
-  var doesMoveDown = Bool(false)
-  var isMovingDown = Bool(false)
   
   init(length: CGFloat) {
     super.init()
     
     //calculate platform dimensions based on screen size
     self.length = length
-    edgeHeight = thickness*2
+    edgeHeight = gameFrame.width * configValueForKey("Relative platform edge height")
   }
   
   convenience init(length: CGFloat, position: CGPoint) {
@@ -48,11 +46,10 @@ class Platform: Terrain {
     CGPathCloseSubpath(mutablePath)
     path = mutablePath
     
-    super.build(true, path: self.path)
+    super.build()
     
     if isPermeable {fillColor = currentTheme.permeablePlatformColor(length)}
     else {fillColor = currentTheme.impermeablePlatformColor(length)}
-    if doesMoveDown {strokeColor = currentTheme.movingPlatformStrokeColor; lineWidth = 2; glowWidth = 0.5}
     
   }
   

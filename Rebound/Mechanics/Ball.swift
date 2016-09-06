@@ -13,7 +13,7 @@ class Ball: SKShapeNode {
   
   func build() {
     
-    radius = gameFrame.width*0.026
+    radius = gameFrame.width * configValueForKey("Relative ball radius")
     path = CGPathCreateWithEllipseInRect(CGRectMake(-radius, -radius, radius*2, radius*2), nil)
     position = CGPointMake(gameFrame.midX, gameFrame.height*0.4)
     fillColor = currentTheme.ballColor
@@ -23,14 +23,13 @@ class Ball: SKShapeNode {
     
     physicsBody = SKPhysicsBody(circleOfRadius: radius)
     physicsBody?.categoryBitMask = PhysicsCategory.Ball
+    physicsBody?.dynamic = true
     physicsBody!.mass = pow(0.000000305*gameFrame.height, 0.5)
     physicsBody!.angularDamping = 4
     physicsBody?.usesPreciseCollisionDetection = true
     
     gameScene.addChild(self)
   
-    
-    
   }
   
   func scroll(interval: CGFloat) {
@@ -60,13 +59,7 @@ class Ball: SKShapeNode {
       physicsBody?.collisionBitMask = PhysicsCategory.Wall | PhysicsCategory.ImpermeableTerrain | PhysicsCategory.Terrain
     }
     
-    if let nextTerrain = terrains.array[safe: terrains.currentIndex+1] {
-      if position.y > nextTerrain!.position.y &&
-        physicsBody!.resting &&
-        !nextTerrain!.hasScored {
-        nextTerrain!.scoreOn(gameScene.score)
-      }
-    }
+    
   
   }
 }

@@ -125,7 +125,7 @@ class GameScene: SKScene, AdToAppSDKDelegate, AdToAppViewDelegate {
   override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
     
     var shot = Bool(false)
-    if !menu.wasPressed && !deathMenu.wasPressed {shot = slingshot.shoot(ball)}
+    if !menu.wasPressed && !deathMenu.wasPressed {shot = slingshot.shoot(terrains.current, ball: ball)}
     
     for touch in touches {
       let touchLocation = touch.locationInNode(self)

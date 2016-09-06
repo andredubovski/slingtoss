@@ -2,7 +2,19 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>relativeThickness</key>
+	<key>Relative ball radius</key>
+	<real>0.026</real>
+	<key>Relative terrain thickness</key>
 	<real>0.046875</real>
+	<key>Relative platform edge height</key>
+	<real>0.09375</real>
+	<key>Min relative platform length</key>
+	<real>0.15</real>
+	<key>Max relative platform length</key>
+	<real>0.35</real>
+	<key>Min relative ring radius</key>
+	<real>0.15</real>
+	<key>Max relative ring radius</key>
+	<real>0.24</real>
 </dict>
 </plist>

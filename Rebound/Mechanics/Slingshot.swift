@@ -65,7 +65,7 @@ class Slingshot: SKShapeNode {
     
   }
   
-  func shoot(ball: Ball) -> Bool {
+  func shoot(terrain: Terrain, ball: Ball) -> Bool {
     if canShoot {
       ball.physicsBody?.applyImpulse(shotVector)
     }

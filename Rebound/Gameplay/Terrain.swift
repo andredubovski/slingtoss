@@ -16,10 +16,12 @@ class Terrain: SKShapeNode {
   var hasAppeared = Bool(false)
   
   var isPermeable = Bool(true)
+  var doesMoveDown = Bool(false)
+  var isMovingDown = Bool(false)
   
   override init() {
     
-    thickness = gameFrame.width * CGFloat(config!.objectForKey("relativeThickness") as! NSNumber)
+    thickness = gameFrame.width * configValueForKey("Relative terrain thickness")
     super.init()
     
   }
@@ -28,23 +30,24 @@ class Terrain: SKShapeNode {
     fatalError("init(coder:) has not been implemented")
   }
   
-  func build(isEdgeBody: Bool, path: CGPath?) {
+  func build(path: CGPath?) {
     
-    if let p = path {physicsBody = isEdgeBody ? SKPhysicsBody(polygonFromPath: p) : SKPhysicsBody(edgeLoopFromPath: p)}
-    else {physicsBody = isEdgeBody ? SKPhysicsBody(polygonFromPath: self.path!) : SKPhysicsBody(edgeLoopFromPath: self.path!)}
+    if let p = path {physicsBody = SKPhysicsBody(polygonFromPath: p)}
+    else {physicsBody = SKPhysicsBody(polygonFromPath: self.path!)}
     physicsBody?.dynamic = false
     physicsBody?.restitution = 0.4
     physicsBody?.mass = 0.22
     physicsBody?.categoryBitMask = isPermeable ? PhysicsCategory.Terrain : PhysicsCategory.ImpermeableTerrain
     
-    strokeColor = fillColor
+    if doesMoveDown {strokeColor = currentTheme.movingPlatformStrokeColor; lineWidth = 2; glowWidth = 0.5}
+    else {strokeColor = fillColor}
     
     gameScene.addChild(self)
     
   }
   
   func build() {
-    build(false, path: nil)
+    build(nil)
   }
   
   func appear() {
@@ -76,7 +79,7 @@ class Terrain: SKShapeNode {
     physicsBody?.dynamic = true
     physicsBody?.affectedByGravity = true
     physicsBody?.linearDamping = 100
-    physicsBody?.angularDamping = 15
+    physicsBody?.angularDamping = 18
   }
   
   func scoreOn(score: Score) {

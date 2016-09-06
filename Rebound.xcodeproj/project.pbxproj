@@ -275,9 +275,9 @@
 		8FF8DCF21D73AAB60024655C /* Mechanics */ = {
 			isa = PBXGroup;
 			children = (
+				C1CAFF171D7E481E008B3D5F /* Config.plist */,
 				8FA976751D7935F300A00984 /* Background.swift */,
 				8FA976761D7935F300A00984 /* Ball.swift */,
-				C1CAFF171D7E481E008B3D5F /* Config.plist */,
 				8FA9767B1D7935F300A00984 /* Slingshot.swift */,
 				8F36DB3A1D7515580096105D /* Theme.swift */,
 			);

@@ -43,20 +43,12 @@ class Ring: Terrain {
     fillColor = currentTheme.ringColor(radius)
     
     let physicsPath = CGPathCreateMutable()
-    CGPathMoveToPoint(physicsPath, nil, 0, 0)
     CGPathAddArc(physicsPath, nil, 0, radius, radius, radians(-90), radians(270), false)
     CGPathAddArc(physicsPath, nil, 0, radius, radius-thickness, radians(270), radians(-90), true)
     CGPathCloseSubpath(physicsPath)
 
-    super.build(true, path: physicsPath)
+    super.build(physicsPath)
     
-  }
-  
-  override func fall() {
-    physicsBody?.restitution = 0.4
-    physicsBody?.mass = 0.22
-    physicsBody?.categoryBitMask = isPermeable ? PhysicsCategory.Terrain : PhysicsCategory.ImpermeableTerrain
-    super.fall()
   }
 
 }
