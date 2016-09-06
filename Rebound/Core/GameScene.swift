@@ -188,7 +188,6 @@ class GameScene: SKScene, AdToAppSDKDelegate, AdToAppViewDelegate {
     if interval > 0 {scroll(interval)}
     ball.update(terrains)
     slingshot.update(terrains.current, ball: ball)
-    print(terrains.array.count)
   }
   
   

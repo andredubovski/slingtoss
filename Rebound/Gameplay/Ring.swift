@@ -50,11 +50,6 @@ class Ring: Terrain {
 
     super.build(true, path: physicsPath)
     
-    strokeColor = currentTheme.movingPlatformStrokeColor
-    lineWidth = 2
-    
-    
-    
   }
   
   override func fall() {

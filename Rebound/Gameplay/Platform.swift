@@ -52,7 +52,7 @@ class Platform: Terrain {
     
     if isPermeable {fillColor = currentTheme.permeablePlatformColor(length)}
     else {fillColor = currentTheme.impermeablePlatformColor(length)}
-    if doesMoveDown {strokeColor = currentTheme.movingPlatformStrokeColor; lineWidth = 2.5}
+    if doesMoveDown {strokeColor = currentTheme.movingPlatformStrokeColor; lineWidth = 2; glowWidth = 0.5}
     
   }
   
