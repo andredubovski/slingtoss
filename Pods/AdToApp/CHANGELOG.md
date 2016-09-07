@@ -1,4 +1,20 @@
 
+## 47.4 (September 6, 2016)
+
+UPDATED:
+- GoogleMobileAds to 7.10.1;
+
+## 47.3 (September 5, 2016)
+
+UPDATED:
+- miscellaneous improvements in "Show Interstitial" logic;
+
+## 47.2 (August 30, 2016)
+
+FIXED:
+- InHouse impression tracking;
+- InHouse module disabling;
+
 ## 47.1 (August 26, 2016)
 
 ADDED:

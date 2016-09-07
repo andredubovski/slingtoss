@@ -60,8 +60,16 @@ class SettingsMenu: SKNode {
       gameFrame.midX + (buttonWidth/2 + marginWidth/2),
       title.position.y - (title.frame.height/2 + buttonWidth/2)
     )
-    musicToggle.turnOnAction = SKAction.runBlock({defaults.setBool(true, forKey: "Music"); gameScene.beginBgMusic()})
-    musicToggle.turnOffAction = SKAction.runBlock({defaults.setBool(false, forKey: "Music"); gameScene.backgroundMusicPlayer.stop()})
+    musicToggle.turnOnAction = SKAction.runBlock({
+      defaults.setBool(true, forKey: "Music")
+      gameScene.backgroundMusicPlayer.volume = 0.24
+      gameScene.backgroundMusicPlayer.play()
+    })
+    musicToggle.turnOffAction = SKAction.runBlock({
+      defaults.setBool(false, forKey: "Music")
+      gameScene.backgroundMusicPlayer.volume = 0.0
+      gameScene.backgroundMusicPlayer.pause()
+    })
     musicToggle.display(scene)
     musicToggle.setStateTo(defaults.boolForKey("Music"))
     

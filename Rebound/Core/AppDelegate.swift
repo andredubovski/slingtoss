@@ -26,9 +26,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     iRate.sharedInstance().cancelButtonLabel = "No, I'm a 💩"
     iRate.sharedInstance().declinedThisVersion = false
     iRate.sharedInstance().declinedAnyVersion = false
-//    iRate.sharedInstance().ratedThisVersion = false
-//    iRate.sharedInstance().ratedAnyVersion = false
-    iRate.sharedInstance().verboseLogging = true
+    iRate.sharedInstance().ratedThisVersion = false
+    iRate.sharedInstance().ratedAnyVersion = false
+//    iRate.sharedInstance().verboseLogging = true
     iRate.sharedInstance().applicationBundleID = "com.clickgamer.AngryBirds"
     iRate.sharedInstance().onlyPromptIfLatestVersion = false
     

@@ -6,7 +6,7 @@
 
 #import <Foundation/Foundation.h>
 
-#define ADTOAPPSDK_VERSION (@"47.1")
+#define ADTOAPPSDK_VERSION (@"47.4")
 
 #define ADTOAPP_IMAGE_INTERSTITIAL (@"Image")
 #define ADTOAPP_VIDEO_INTERSTITIAL (@"Video")

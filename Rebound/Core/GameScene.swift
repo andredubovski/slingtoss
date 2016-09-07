@@ -197,7 +197,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate, AdToAppSDKDelegate, AdToAppV
   
   
   func didBeginContact(contact: SKPhysicsContact) {
-    if contact.collisionImpulse > 1 {
+    if contact.collisionImpulse > 0.45 && defaults.boolForKey("SFX") {
       if ((contact.bodyA.node!.name == "ball" && contact.bodyB.node!.name == "permeable platform") ||
         (contact.bodyB.node!.name == "ball" && contact.bodyA.node!.name == "permeable platform") ||
         (contact.bodyA.node!.name == "ball" && contact.bodyB.node!.name == "ring") ||
@@ -218,7 +218,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate, AdToAppSDKDelegate, AdToAppV
   
   
   func beginBgMusic() {
-    let path = NSBundle.mainBundle().pathForResource("MyGlowingGeometry.m4a", ofType:nil)!
+    let path = NSBundle.mainBundle().pathForResource("StrangeGreenPlanet.mp3", ofType:nil)!
     let url = NSURL(fileURLWithPath: path)
     
     do {

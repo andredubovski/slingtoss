@@ -55,8 +55,8 @@
 		C1A1E5A81D7B5AF400E7CDE4 /* SettingsMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1A1E5A71D7B5AF400E7CDE4 /* SettingsMenu.swift */; };
 		C1C987491D7F97FD0074BC0F /* Bounce.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C1C987481D7F97FD0074BC0F /* Bounce.mp3 */; };
 		C1C9874B1D7FA9F10074BC0F /* StrangeGreenPlanet.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C1C9874A1D7FA9F10074BC0F /* StrangeGreenPlanet.mp3 */; };
+		C1C9874D1D7FB6C60074BC0F /* Gameover.wav in Resources */ = {isa = PBXBuildFile; fileRef = C1C9874C1D7FB6C60074BC0F /* Gameover.wav */; };
 		C1CAFF181D7E481E008B3D5F /* Config.plist in Resources */ = {isa = PBXBuildFile; fileRef = C1CAFF171D7E481E008B3D5F /* Config.plist */; };
-		C1D2FC4C1D794A1D00FC8E43 /* MyGlowingGeometry.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 8FA976721D781AE600A00984 /* MyGlowingGeometry.m4a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -94,7 +94,6 @@
 		8F9463D51D766885002233A7 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8F9463D71D7668E8002233A7 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8F9463D81D7668E8002233A7 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		8FA976721D781AE600A00984 /* MyGlowingGeometry.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = MyGlowingGeometry.m4a; sourceTree = "<group>"; };
 		8FA976731D791F2900A00984 /* SKButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKButton.swift; sourceTree = "<group>"; };
 		8FA976751D7935F300A00984 /* Background.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Background.swift; sourceTree = "<group>"; };
 		8FA976761D7935F300A00984 /* Ball.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ball.swift; sourceTree = "<group>"; };
@@ -114,6 +113,7 @@
 		C1A1E5A71D7B5AF400E7CDE4 /* SettingsMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsMenu.swift; sourceTree = "<group>"; };
 		C1C987481D7F97FD0074BC0F /* Bounce.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Bounce.mp3; sourceTree = "<group>"; };
 		C1C9874A1D7FA9F10074BC0F /* StrangeGreenPlanet.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = StrangeGreenPlanet.mp3; sourceTree = "<group>"; };
+		C1C9874C1D7FB6C60074BC0F /* Gameover.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Gameover.wav; sourceTree = "<group>"; };
 		C1CAFF171D7E481E008B3D5F /* Config.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Config.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -240,7 +240,7 @@
 		8FA9764D1D780AF700A00984 /* Sound */ = {
 			isa = PBXGroup;
 			children = (
-				8FA976721D781AE600A00984 /* MyGlowingGeometry.m4a */,
+				C1C9874C1D7FB6C60074BC0F /* Gameover.wav */,
 				C1C9874A1D7FA9F10074BC0F /* StrangeGreenPlanet.mp3 */,
 				C1C987481D7F97FD0074BC0F /* Bounce.mp3 */,
 			);
@@ -373,10 +373,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C1C9874D1D7FB6C60074BC0F /* Gameover.wav in Resources */,
 				C1C987491D7F97FD0074BC0F /* Bounce.mp3 in Resources */,
 				8F9463DA1D7668E8002233A7 /* Main.storyboard in Resources */,
 				8FF346981D6D0B2C00504D3E /* GameScene.sks in Resources */,
-				C1D2FC4C1D794A1D00FC8E43 /* MyGlowingGeometry.m4a in Resources */,
 				8F9463D91D7668E8002233A7 /* LaunchScreen.storyboard in Resources */,
 				C1C9874B1D7FA9F10074BC0F /* StrangeGreenPlanet.mp3 in Resources */,
 				C1CAFF181D7E481E008B3D5F /* Config.plist in Resources */,
