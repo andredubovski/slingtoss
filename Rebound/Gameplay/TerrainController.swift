@@ -131,8 +131,9 @@ class TerrainController {
     
     if let lastTerrain = array[array.count-1] {
       if lastTerrain.doesMoveDown {
-        if random(0, to: 1.3) < 1 {
+        if random(0, to: 1.45) < 1 {
           makePlatform(permeable, willMove: true)
+          return
         }
       }
     }
@@ -143,7 +144,7 @@ class TerrainController {
       }
     }
     
-    if random(0, to: 1.5) > 1 {
+    if random(0, to: 3.8) > 1 {
       makePlatform(permeable, willMove: moving)
     } else {
       makeRing(moving)

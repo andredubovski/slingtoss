@@ -55,7 +55,7 @@
 		C1A1E5A81D7B5AF400E7CDE4 /* SettingsMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1A1E5A71D7B5AF400E7CDE4 /* SettingsMenu.swift */; };
 		C1C987491D7F97FD0074BC0F /* Bounce.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C1C987481D7F97FD0074BC0F /* Bounce.mp3 */; };
 		C1C9874B1D7FA9F10074BC0F /* StrangeGreenPlanet.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C1C9874A1D7FA9F10074BC0F /* StrangeGreenPlanet.mp3 */; };
-		C1C9874D1D7FB6C60074BC0F /* Gameover.wav in Resources */ = {isa = PBXBuildFile; fileRef = C1C9874C1D7FB6C60074BC0F /* Gameover.wav */; };
+		C1C9874F1D7FC1F40074BC0F /* GameOver.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C1C9874E1D7FC1F40074BC0F /* GameOver.mp3 */; };
 		C1CAFF181D7E481E008B3D5F /* Config.plist in Resources */ = {isa = PBXBuildFile; fileRef = C1CAFF171D7E481E008B3D5F /* Config.plist */; };
 /* End PBXBuildFile section */
 
@@ -113,7 +113,7 @@
 		C1A1E5A71D7B5AF400E7CDE4 /* SettingsMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsMenu.swift; sourceTree = "<group>"; };
 		C1C987481D7F97FD0074BC0F /* Bounce.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Bounce.mp3; sourceTree = "<group>"; };
 		C1C9874A1D7FA9F10074BC0F /* StrangeGreenPlanet.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = StrangeGreenPlanet.mp3; sourceTree = "<group>"; };
-		C1C9874C1D7FB6C60074BC0F /* Gameover.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Gameover.wav; sourceTree = "<group>"; };
+		C1C9874E1D7FC1F40074BC0F /* GameOver.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = GameOver.mp3; sourceTree = "<group>"; };
 		C1CAFF171D7E481E008B3D5F /* Config.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Config.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -215,7 +215,7 @@
 			path = Core;
 			sourceTree = "<group>";
 		};
-		8F9BA3B81D6D157E007BFB26 /* Gameplay */ = {
+		8F9BA3B81D6D157E007BFB26 /* Terrain */ = {
 			isa = PBXGroup;
 			children = (
 				8FA976791D7935F300A00984 /* Platform.swift */,
@@ -223,6 +223,7 @@
 				8F4908571D73E2B200C965CD /* Terrain.swift */,
 				8FA976851D79362800A00984 /* TerrainController.swift */,
 			);
+			name = Terrain;
 			path = Gameplay;
 			sourceTree = "<group>";
 		};
@@ -240,9 +241,9 @@
 		8FA9764D1D780AF700A00984 /* Sound */ = {
 			isa = PBXGroup;
 			children = (
-				C1C9874C1D7FB6C60074BC0F /* Gameover.wav */,
 				C1C9874A1D7FA9F10074BC0F /* StrangeGreenPlanet.mp3 */,
 				C1C987481D7F97FD0074BC0F /* Bounce.mp3 */,
+				C1C9874E1D7FC1F40074BC0F /* GameOver.mp3 */,
 			);
 			path = Sound;
 			sourceTree = "<group>";
@@ -269,7 +270,7 @@
 			isa = PBXGroup;
 			children = (
 				8F9BA3B71D6D1551007BFB26 /* Core */,
-				8F9BA3B81D6D157E007BFB26 /* Gameplay */,
+				8F9BA3B81D6D157E007BFB26 /* Terrain */,
 				8FF8DCF21D73AAB60024655C /* Mechanics */,
 				8F6451121D70C1CD00A061FB /* Misc */,
 				8FA9764D1D780AF700A00984 /* Sound */,
@@ -373,7 +374,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C1C9874D1D7FB6C60074BC0F /* Gameover.wav in Resources */,
+				C1C9874F1D7FC1F40074BC0F /* GameOver.mp3 in Resources */,
 				C1C987491D7F97FD0074BC0F /* Bounce.mp3 in Resources */,
 				8F9463DA1D7668E8002233A7 /* Main.storyboard in Resources */,
 				8FF346981D6D0B2C00504D3E /* GameScene.sks in Resources */,

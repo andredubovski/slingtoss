@@ -16,7 +16,7 @@ class Ball: SKShapeNode {
     
     name = "ball"
     radius = gameFrame.width * configValueForKey("Relative ball radius")
-    path = CGPathCreateWithRect(CGRectMake(-radius*0.8, -radius*0.8, radius*1.6, radius*1.6), nil)
+    path = CGPathCreateWithEllipseInRect(CGRectMake(-radius, -radius, radius*2, radius*2), nil)
     position = CGPointMake(gameFrame.midX, gameFrame.height*0.4)
     fillColor = currentTheme.ballColor
     lineWidth = 1

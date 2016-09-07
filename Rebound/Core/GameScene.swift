@@ -45,6 +45,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate, AdToAppSDKDelegate, AdToAppV
     
     currentTheme.build()
     setupAdToApp()
+    setupSound()
     physicsWorld.contactDelegate = self
     gameFrame = frame
     if gameFrame.width > 500 {physicsWorld.speed = 1.45}
@@ -61,7 +62,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate, AdToAppSDKDelegate, AdToAppV
     menu.appear()
     
     buildWalls()
-    setupSound()
     
   }
   
@@ -90,6 +90,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate, AdToAppSDKDelegate, AdToAppV
     currentTheme.background.reset()
     
     flashDeathOverlay()
+    if defaults.boolForKey("SFX") && !isVirgin {gameOverSoundPlayer.play()}
     
     let randomAdSelector = Int(random(0, to: 100))
     if randomAdSelector < 18 {AdToAppSDK.showInterstitial(ADTOAPP_IMAGE_INTERSTITIAL)}
@@ -235,7 +236,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate, AdToAppSDKDelegate, AdToAppV
     backgroundMusicPlayer.volume = defaults.boolForKey("Music") ? 0.24 : 0
   }
   
-  
   func buildBounceSound() {
     let path = NSBundle.mainBundle().pathForResource("Bounce.mp3", ofType:nil)!
     let url = NSURL(fileURLWithPath: path)
@@ -249,7 +249,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate, AdToAppSDKDelegate, AdToAppV
       }
     }
   }
-  
   
   func playBounceSound(volume: CGFloat) {
     let previousIndex = bouncePlayerIndex - 1 >= 0 ? bouncePlayerIndex - 1 : 2
@@ -268,10 +267,24 @@ class GameScene: SKScene, SKPhysicsContactDelegate, AdToAppSDKDelegate, AdToAppV
     if bouncePlayerIndex > 2 {bouncePlayerIndex = 0}
   }
   
-  
+  func buildGameOverSound() {
+    let path = NSBundle.mainBundle().pathForResource("GameOver.mp3", ofType:nil)!
+    let url = NSURL(fileURLWithPath: path)
+    
+    do {
+      let sound = try AVAudioPlayer(contentsOfURL: url)
+      gameOverSoundPlayer = sound
+      gameOverSoundPlayer.volume = 0.4
+      gameOverSoundPlayer.prepareToPlay()
+    } catch {
+      fatalError("couldn't load music file")
+    }
+  }
+
   func setupSound() {
     beginBgMusic()
     buildBounceSound()
+    buildGameOverSound()
   }
   
   
@@ -314,6 +327,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate, AdToAppSDKDelegate, AdToAppV
     if !atpPlaceholderActive && adsOn {
       let adPlaceholder = SKSpriteNode(imageNamed: "adPlaceholder")
       adPlaceholder.position = CGPointMake(frame.midX, adPlaceholder.frame.height/2)
+      adPlaceholder.zPosition = 2
       addChild(adPlaceholder)
       atpPlaceholderActive = true
     }

@@ -32,6 +32,7 @@ class Terrain: SKShapeNode {
   
   func build(path: CGPath?) {
     
+    zPosition = 2.5
     if let p = path {physicsBody = SKPhysicsBody(polygonFromPath: p)}
     else {physicsBody = SKPhysicsBody(polygonFromPath: self.path!)}
     physicsBody?.dynamic = false
