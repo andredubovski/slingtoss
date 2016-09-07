@@ -30,9 +30,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate, AdToAppSDKDelegate, AdToAppV
   var atpActive = Bool(true)
   var atpPlaceholderActive = Bool(false)
   
-  var backgroundMusicPlayer:AVAudioPlayer! = nil
+  var backgroundMusicPlayer: AVAudioPlayer! = nil
   var bouncePlayerIndex = Int(0)
   var bounceSoundPlayer = [AVAudioPlayer!]()
+  var gameOverSoundPlayer: AVAudioPlayer! = nil
   
   override func didMoveToView(view: SKView) {
     
