@@ -12,11 +12,16 @@ import SpriteKit
 var gameScene = GameScene()
 var settingsScene = SettingsScene()
 
+var defaults = NSUserDefaults()
 var path = NSBundle.mainBundle().pathForResource("Config", ofType: "plist")
 var config = NSDictionary(contentsOfFile: path!)
 
 func configValueForKey(key: String) -> CGFloat {
   return CGFloat(config!.objectForKey(key) as! NSNumber)
+}
+
+func configBoolForKey(key: String) -> Bool {
+  return config!.objectForKey(key) as! Bool
 }
 
 class GameViewController: UIViewController {

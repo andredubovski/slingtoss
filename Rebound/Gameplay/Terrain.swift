@@ -38,6 +38,7 @@ class Terrain: SKShapeNode {
     physicsBody?.restitution = 0.4
     physicsBody?.mass = 0.22
     physicsBody?.categoryBitMask = isPermeable ? PhysicsCategory.Terrain : PhysicsCategory.ImpermeableTerrain
+    physicsBody?.contactTestBitMask = PhysicsCategory.Ball
     
     if doesMoveDown {strokeColor = currentTheme.movingPlatformStrokeColor; lineWidth = 2; glowWidth = 0.5}
     else {strokeColor = fillColor}

@@ -10,9 +10,11 @@ import SpriteKit
 
 class Ball: SKShapeNode {
   var radius = CGFloat()
+  var collidingWithPermeable = Bool()
   
   func build() {
     
+    name = "ball"
     radius = gameFrame.width * configValueForKey("Relative ball radius")
     path = CGPathCreateWithEllipseInRect(CGRectMake(-radius, -radius, radius*2, radius*2), nil)
     position = CGPointMake(gameFrame.midX, gameFrame.height*0.4)
@@ -23,6 +25,7 @@ class Ball: SKShapeNode {
     
     physicsBody = SKPhysicsBody(circleOfRadius: radius)
     physicsBody?.categoryBitMask = PhysicsCategory.Ball
+    physicsBody?.contactTestBitMask = PhysicsCategory.Terrain | PhysicsCategory.ImpermeableTerrain | PhysicsCategory.Wall
     physicsBody?.dynamic = true
     physicsBody!.mass = pow(0.000000305*gameFrame.height, 0.5)
     physicsBody!.angularDamping = 4
@@ -42,10 +45,12 @@ class Ball: SKShapeNode {
   }
   
   func update(terrains: TerrainController) {
-    if physicsBody?.velocity.dy < 0 || (physicsBody?.velocity.dy < 30 && terrains.current is Ring) {
+    if physicsBody?.velocity.dy <= 0 || (physicsBody?.velocity.dy < 30 && terrains.current is Ring) {
       physicsBody?.collisionBitMask = PhysicsCategory.Wall | PhysicsCategory.ImpermeableTerrain | PhysicsCategory.Terrain
+      collidingWithPermeable = true
     } else {
       physicsBody?.collisionBitMask = PhysicsCategory.Wall | PhysicsCategory.ImpermeableTerrain
+      collidingWithPermeable = false
     }
     
     if terrains.containPoint(CGPointMake(position.x, position.y-(radius-1.5))) ||
@@ -58,8 +63,6 @@ class Ball: SKShapeNode {
     if gameScene.menu.isActive || gameScene.deathMenu.isActive {
       physicsBody?.collisionBitMask = PhysicsCategory.Wall | PhysicsCategory.ImpermeableTerrain | PhysicsCategory.Terrain
     }
-    
-    
   
   }
 }

@@ -50,14 +50,20 @@ class SettingsMenu: SKNode {
       gameFrame.midX - (buttonWidth/2 + marginWidth/2),
       title.position.y - (title.frame.height/2 + buttonWidth/2)
     )
+    sfxToggle.turnOnAction = SKAction.runBlock({defaults.setBool(true, forKey: "SFX")})
+    sfxToggle.turnOffAction = SKAction.runBlock({defaults.setBool(false, forKey: "SFX")})
     sfxToggle.display(scene)
+    sfxToggle.setStateTo(defaults.boolForKey("SFX"))
     
     musicToggle = SKToggle(setSize: CGSizeMake(buttonWidth, buttonWidth), setGlyph: "Music")
     musicToggle.position = CGPointMake(
       gameFrame.midX + (buttonWidth/2 + marginWidth/2),
       title.position.y - (title.frame.height/2 + buttonWidth/2)
     )
+    musicToggle.turnOnAction = SKAction.runBlock({defaults.setBool(true, forKey: "Music"); gameScene.beginBgMusic()})
+    musicToggle.turnOffAction = SKAction.runBlock({defaults.setBool(false, forKey: "Music"); gameScene.backgroundMusicPlayer.stop()})
     musicToggle.display(scene)
+    musicToggle.setStateTo(defaults.boolForKey("Music"))
     
     
     removeAdsToggle = SKToggle(setSize: CGSizeMake(buttonWidth, buttonWidth/1.5), setGlyph: "removeAds")
@@ -65,7 +71,10 @@ class SettingsMenu: SKNode {
       gameFrame.midX - (buttonWidth/2 + marginWidth/2),
       musicToggle.position.y - (buttonWidth/2 + removeAdsToggle.size.height/2 + marginWidth)
     )
+    removeAdsToggle.turnOnAction = SKAction.runBlock({defaults.setBool(false, forKey: "Ads")})
+    removeAdsToggle.turnOffAction = SKAction.runBlock({defaults.setBool(true, forKey: "Ads")})
     removeAdsToggle.display(scene)
+    removeAdsToggle.setStateTo(!defaults.boolForKey("Ads"))
     
     refreshIAPButton = SKButton(setSize: CGSizeMake(buttonWidth, buttonWidth/1.5), setGlyph: "refreshIAP")
     refreshIAPButton.position = CGPointMake(

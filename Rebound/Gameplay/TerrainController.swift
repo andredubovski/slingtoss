@@ -46,14 +46,12 @@ class TerrainController {
         }
         if terrain.position.y < -gameFrame.height {
           array[i] = nil
-          print("set one terrain to nil because it was too low")
         }
       }
     }
     
     if array[array.count-1]!.position.y < gameFrame.height*2 {
       makeRandomTerrain()
-      print("added new random terrain, new terrain count is \(array.count)")
     }
   }
   
@@ -65,16 +63,16 @@ class TerrainController {
     var newLength = random(minLength, to: maxLength)
     var position = CGPoint()
     
+    if let permeable = willBePermeable {
+      isPermeable = permeable
+    }
+    
     if isPermeable {
       position = CGPointMake(random(0, to: gameFrame.width),
                              array[array.count-1]!.position.y + random(gameFrame.height/3, to: 2*gameFrame.height/3))
     } else {
       position = CGPointMake(random(0, to: gameFrame.width),
                              array[array.count-1]!.position.y + random(gameFrame.height/3, to: gameFrame.height/2))
-    }
-    
-    if let permeable = willBePermeable {
-      isPermeable = permeable
     }
     
     if let moves = willMove {
@@ -133,7 +131,9 @@ class TerrainController {
     
     if let lastTerrain = array[array.count-1] {
       if lastTerrain.doesMoveDown {
-        moving = random(0, to: 1.3) < 1
+        if random(0, to: 1.3) < 1 {
+          makePlatform(permeable, willMove: true)
+        }
       }
     }
     

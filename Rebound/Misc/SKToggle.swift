@@ -17,6 +17,7 @@ class SKToggle: SKButton {
   var turnOffAction = SKAction()
   
   func setStateTo(state: Bool) {
+    removeAllActions()
     self.state = state
     
     if self.state {
@@ -64,7 +65,6 @@ class SKToggle: SKButton {
   override func doWhenTouchesEnded(location: CGPoint) {
     if wasPressed {      
       if containsPoint(location){
-        removeAllActions()
         toggleState()
       }
     }

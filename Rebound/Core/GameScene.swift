@@ -7,11 +7,12 @@
 //
 
 import SpriteKit
+import AVFoundation
 
 var gameFrame = CGRect()
 let blankView = UIView()
 
-class GameScene: SKScene, AdToAppSDKDelegate, AdToAppViewDelegate {
+class GameScene: SKScene, SKPhysicsContactDelegate, AdToAppSDKDelegate, AdToAppViewDelegate {
   
   var isVirgin = Bool(true)
   var menu = MainMenu()
@@ -24,18 +25,18 @@ class GameScene: SKScene, AdToAppSDKDelegate, AdToAppViewDelegate {
   let scrollThresholdOnScreen = CGFloat(0.33)
   var verticalProgress = CGFloat(0)
   
-  var adsOn = Bool(false)
+  var adsOn = defaults.boolForKey("Ads")
   var atpView = AdToAppView()
   var atpActive = Bool(true)
   var atpPlaceholderActive = Bool(false)
   
-  var backgroundMusic = SKAudioNode()
+  var backgroundMusicPlayer:AVAudioPlayer! = nil
+  var bouncePlayerIndex = Int(0)
+  var bounceSoundPlayer = [AVAudioPlayer!]()
   
   override func didMoveToView(view: SKView) {
-    print("did move to view")
     
     if isVirgin {gameSetup(); isVirgin = false}
-    else {playBackgroundMusic("MyGlowingGeometry.mp4")}
     
   }
   
@@ -43,6 +44,7 @@ class GameScene: SKScene, AdToAppSDKDelegate, AdToAppViewDelegate {
     
     currentTheme.build()
     setupAdToApp()
+    physicsWorld.contactDelegate = self
     gameFrame = frame
     if gameFrame.width > 500 {physicsWorld.speed = 1.45}
     
@@ -58,7 +60,7 @@ class GameScene: SKScene, AdToAppSDKDelegate, AdToAppViewDelegate {
     menu.appear()
     
     buildWalls()
-    playBackgroundMusic("MyGlowingGeometry.m4a")
+    setupSound()
     
   }
   
@@ -67,6 +69,8 @@ class GameScene: SKScene, AdToAppSDKDelegate, AdToAppViewDelegate {
       let wall = SKSpriteNode(color: SKColor.clearColor(), size: CGSizeMake(1, frame.height))
       wall.position = CGPointMake(CGFloat(i)*frame.width, frame.midY)
       wall.physicsBody = SKPhysicsBody(rectangleOfSize: wall.size)
+      physicsBody?.contactTestBitMask = PhysicsCategory.Ball
+      wall.name = "wall"
       wall.physicsBody!.dynamic = false
       wall.physicsBody!.restitution = 0.7
       addChild(wall)
@@ -100,6 +104,7 @@ class GameScene: SKScene, AdToAppSDKDelegate, AdToAppViewDelegate {
     addChild(deathScreen)
     deathScreen.runAction(SKAction.fadeAlphaTo(0, duration: 1))
   }
+  
   
   override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
     for touch in touches {
@@ -150,26 +155,14 @@ class GameScene: SKScene, AdToAppSDKDelegate, AdToAppViewDelegate {
   
   
   func twoFingerTapped() {
-    print("twoFingerTapped")
     AdToAppSDK.showInterstitial(ADTOAPP_INTERSTITIAL)
   }
   
   func doubleTapped() {
-    print("doubleTapped")
     let defaults = NSUserDefaults()
     defaults.setInteger(defaults.integerForKey("theme") + 1 < themes.count ? defaults.integerForKey("theme") + 1 : 0, forKey: "theme")
   }
   
-  func getScreenShot() -> UIImage {
-    let bounds = UIScreen.mainScreen().bounds
-    UIGraphicsBeginImageContextWithOptions(bounds.size, true, 0.0)
-    self.view!.drawViewHierarchyInRect(bounds, afterScreenUpdates: false)
-    let img = UIGraphicsGetImageFromCurrentImageContext()
-    UIGraphicsEndImageContext()
-    
-    return img
-    
-  }
   
   private func scroll(interval: CGFloat) {
     if menu.isActive {menu.disappear(); score.appear()}
@@ -191,19 +184,95 @@ class GameScene: SKScene, AdToAppSDKDelegate, AdToAppViewDelegate {
   }
   
   
-  
-  
-  func playBackgroundMusic(fileNamed: String) {
-    //    runAction(
-    //      SKAction.repeatActionForever(SKAction.sequence([
-    //      SKAction.playSoundFileNamed(fileNamed, waitForCompletion: false),
-    //      SKAction.waitForDuration(90)
-    //    ])), withKey: "play background music")
+  func getScreenShot() -> UIImage {
+    let bounds = UIScreen.mainScreen().bounds
+    UIGraphicsBeginImageContextWithOptions(bounds.size, true, 0.0)
+    self.view!.drawViewHierarchyInRect(bounds, afterScreenUpdates: false)
+    let img = UIGraphicsGetImageFromCurrentImageContext()
+    UIGraphicsEndImageContext()
     
-    backgroundMusic = SKAudioNode(fileNamed: fileNamed)
-    backgroundMusic.removeFromParent()
-    addChild(backgroundMusic)
+    return img
+    
   }
+  
+  
+  func didBeginContact(contact: SKPhysicsContact) {
+    if contact.collisionImpulse > 1 {
+      if ((contact.bodyA.node!.name == "ball" && contact.bodyB.node!.name == "permeable platform") ||
+        (contact.bodyB.node!.name == "ball" && contact.bodyA.node!.name == "permeable platform") ||
+        (contact.bodyA.node!.name == "ball" && contact.bodyB.node!.name == "ring") ||
+        (contact.bodyB.node!.name == "ball" && contact.bodyA.node!.name == "ring"))
+        &&
+        ball.collidingWithPermeable {
+          playBounceSound(contact.collisionImpulse/8<=1 ? contact.collisionImpulse/8 : 1)
+      }
+      
+      if (contact.bodyA.node!.name == "ball" && contact.bodyB.node!.name == "impermeable platform") ||
+        (contact.bodyB.node!.name == "ball" && contact.bodyA.node!.name == "impermeable platform") ||
+        (contact.bodyA.node!.name == "ball" && contact.bodyB.node!.name == "wall") ||
+        (contact.bodyB.node!.name == "ball" && contact.bodyA.node!.name == "wall") {
+        playBounceSound(contact.collisionImpulse/5<=1 ? contact.collisionImpulse/5 : 1)
+      }
+    }
+  }
+  
+  
+  func beginBgMusic() {
+    let path = NSBundle.mainBundle().pathForResource("MyGlowingGeometry.m4a", ofType:nil)!
+    let url = NSURL(fileURLWithPath: path)
+    
+    do {
+      let sound = try AVAudioPlayer(contentsOfURL: url)
+      backgroundMusicPlayer = sound
+      backgroundMusicPlayer.numberOfLoops = -1
+      backgroundMusicPlayer.prepareToPlay()
+      backgroundMusicPlayer.play()
+    } catch {
+      fatalError("couldn't load music file")
+    }
+    
+    backgroundMusicPlayer.volume = defaults.boolForKey("Music") ? 0.24 : 0
+  }
+  
+  
+  func buildBounceSound() {
+    let path = NSBundle.mainBundle().pathForResource("Bounce.mp3", ofType:nil)!
+    let url = NSURL(fileURLWithPath: path)
+    for _ in 0...2 {
+      do {
+        let sound = try AVAudioPlayer(contentsOfURL: url)
+        sound.prepareToPlay()
+        bounceSoundPlayer.append(sound)
+      } catch {
+        fatalError("couldn't load music file")
+      }
+    }
+  }
+  
+  
+  func playBounceSound(volume: CGFloat) {
+    let previousIndex = bouncePlayerIndex - 1 >= 0 ? bouncePlayerIndex - 1 : 2
+    if bounceSoundPlayer[previousIndex].playing {
+      if bounceSoundPlayer[previousIndex].currentTime > 0.1 {
+        bounceSoundPlayer[bouncePlayerIndex].volume = Float(volume)
+        bounceSoundPlayer[bouncePlayerIndex].play()
+      }
+    }
+    else {
+      bounceSoundPlayer[bouncePlayerIndex].volume = Float(volume)
+      bounceSoundPlayer[bouncePlayerIndex].play()
+    }
+    
+    bouncePlayerIndex += 1
+    if bouncePlayerIndex > 2 {bouncePlayerIndex = 0}
+  }
+  
+  
+  func setupSound() {
+    beginBgMusic()
+    buildBounceSound()
+  }
+  
   
   func setupAdToApp() {
     if adsOn {

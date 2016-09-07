@@ -32,6 +32,7 @@ class Ring: Terrain {
   
   override func build() {
     
+    name = "ring"
     //create path that has platform shape based on dimensions
     let mutablePath = CGPathCreateMutable()
     CGPathMoveToPoint(mutablePath, nil, 0, 0)

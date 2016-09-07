@@ -48,8 +48,8 @@ class Platform: Terrain {
     
     super.build()
     
-    if isPermeable {fillColor = currentTheme.permeablePlatformColor(length)}
-    else {fillColor = currentTheme.impermeablePlatformColor(length)}
+    if isPermeable {fillColor = currentTheme.permeablePlatformColor(length); name = "permeable platform"}
+    else {fillColor = currentTheme.impermeablePlatformColor(length); name = "impermeable platform"}
     
   }
   
