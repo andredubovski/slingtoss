@@ -17,12 +17,14 @@ class GameScene: SKScene, SKPhysicsContactDelegate, AdToAppSDKDelegate, AdToAppV
   var isVirgin = Bool(true)
   var menu = MainMenu()
   var deathMenu = DeathMenu()
+  var onDeathMenu = Bool(false)
+  var resetCount = Int(0)
   let terrains = TerrainController()
   let ball = Ball()
   let slingshot = Slingshot()
   let score = Score()
   
-  let scrollThresholdOnScreen = CGFloat(0.33)
+  let scrollThresholdOnScreen = configValueForKey("Relative scroll threshold")
   var verticalProgress = CGFloat(0)
   
   var adsOn = defaults.boolForKey("Ads")
@@ -58,8 +60,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate, AdToAppSDKDelegate, AdToAppV
     score.build()
     
     reset()
-    deathMenu.hide()
-    menu.appear()
+    if !onDeathMenu {
+      deathMenu.hide()
+      menu.appear()
+    }
     
     buildWalls()
     
@@ -96,8 +100,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate, AdToAppSDKDelegate, AdToAppV
     if randomAdSelector < 18 {AdToAppSDK.showInterstitial(ADTOAPP_IMAGE_INTERSTITIAL)}
     else if randomAdSelector > 88 {AdToAppSDK.showInterstitial(ADTOAPP_VIDEO_INTERSTITIAL)}
     
+    resetCount += 1
+    
   }
-  
   
   func flashDeathOverlay() {
     let deathScreen = SKSpriteNode(color: currentTheme.tintColor, size: frame.size)

@@ -2,6 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>Max relative slingshot stretch</key>
+	<real>0.585</real>
 	<key>Relative ball radius</key>
 	<real>0.026</real>
 	<key>Relative terrain thickness</key>
@@ -16,5 +18,7 @@
 	<real>0.15</real>
 	<key>Max relative ring radius</key>
 	<real>0.24</real>
+	<key>Relative scroll threshold</key>
+	<real>0.38</real>
 </dict>
 </plist>

@@ -16,6 +16,19 @@ func random(from: CGFloat, to: CGFloat) -> CGFloat {
   return from + (CGFloat(arc4random()) * (to-from)) / (pow(2.0, 32.0))
 }
 
+func weightedRandom(from: CGFloat, to: CGFloat, weight: CGFloat) -> CGFloat {
+  var p = weight/2 + 0.25
+  if p == 0.5 {p = 0.49999999}
+  
+  let max = to - from
+  let a = (4 - 8*p) / pow(max, 2)
+  let b = (4*p - 1) / (max)
+  let x = random(0, to: 1)
+  let f = (-b + sqrt(pow(b, 2) + 2*a*x)) / a
+  
+  return from + f
+}
+
 func radians(degrees: CGFloat) -> CGFloat {
   return CGFloat(M_PI) * (degrees/180)
 }

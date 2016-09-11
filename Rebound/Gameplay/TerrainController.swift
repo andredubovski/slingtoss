@@ -58,14 +58,13 @@ class TerrainController {
   
   func makePlatform(willBePermeable: Bool? = nil, willMove: Bool? = nil, lengthRelativeToFrameWidth: CGFloat? = nil, relativePositionAbovePrevious: CGPoint? = nil) {
     
-    var isPermeable = Int(random(0, to: 5)) != 0
-    var doesMove = !(Int(random(0, to: 4)) != 0)
+    var isPermeable = Int(random(0, to: 4)) != 0
+    var doesMove = !(Int(random(0, to: 5.5)) != 0)
     var newLength = random(minLength, to: maxLength)
     var position = CGPoint()
     
     if let permeable = willBePermeable {
-      isPermeable = permeable
-    }
+      isPermeable = permeable    }
     
     if isPermeable {
       position = CGPointMake(random(0, to: gameFrame.width),
@@ -129,18 +128,18 @@ class TerrainController {
     var permeable = Bool?()
     permeable = nil
     
+    if let lastPlatform = array[array.count-1] as? Platform {
+      if lastPlatform.doesMoveDown {
+        permeable = true
+      }
+    }
+    
     if let lastTerrain = array[array.count-1] {
       if lastTerrain.doesMoveDown {
         if random(0, to: 1.45) < 1 {
           makePlatform(permeable, willMove: true)
           return
         }
-      }
-    }
-    
-    if let lastPlatform = array[array.count-1] as? Platform {
-      if lastPlatform.isPermeable {
-        permeable = false
       }
     }
     
@@ -178,6 +177,7 @@ class TerrainController {
       lengthRelativeToFrameWidth: random(0.25, to: 0.35),
       relativePositionAbovePrevious: CGPointMake(random(0, to: 1), random(0.6, to: 0.66))
     )
+    
   }
   
   
