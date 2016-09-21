@@ -34,7 +34,7 @@ class Platform: Terrain {
   override func build() {
     
     //create path that has platform shape based on dimensions
-    let mutablePath = CGPathCreateMutable()
+    let mutablePath = CGMutablePath()
     CGPathMoveToPoint(mutablePath, nil, -length/2, 0)
     CGPathAddLineToPoint(mutablePath, nil, length/2, 0)
     CGPathAddLineToPoint(mutablePath, nil, length/2 + edgeHeight/sqrt(2), edgeHeight/sqrt(2))
@@ -43,13 +43,13 @@ class Platform: Terrain {
     CGPathAddLineToPoint(mutablePath, nil, -(length/2 - thickness*tan(radians(22.5))), thickness)
     CGPathAddLineToPoint(mutablePath, nil, -length/2 - (edgeHeight-thickness)/sqrt(2), (edgeHeight+thickness)/sqrt(2))
     CGPathAddLineToPoint(mutablePath, nil, -(length/2 + edgeHeight/sqrt(2)), edgeHeight/sqrt(2))
-    CGPathCloseSubpath(mutablePath)
+    mutablePath.closeSubpath()
     path = mutablePath
     
     super.build()
-    
-    if isPermeable {fillColor = currentTheme.permeablePlatformColor(length); name = "permeable platform"}
-    else {fillColor = currentTheme.impermeablePlatformColor(length); name = "impermeable platform"}
+    let randomLength = random(configValueForKey("Min relative platform length"), to: configValueForKey("Max relative platform length")) * gameFrame.width
+    if isPermeable {fillColor = currentTheme.permeablePlatformColor(randomLength); name = "permeable platform"}
+    else {fillColor = currentTheme.impermeablePlatformColor(randomLength); name = "impermeable platform"}
     
   }
   

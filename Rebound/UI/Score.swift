@@ -11,21 +11,21 @@ import SpriteKit
 class Score {
   
   var amount = Int(0)
-  var box = SKSpriteNode(color: currentTheme.uiColor, size: CGSizeZero)
+  var box = SKSpriteNode(color: currentTheme.uiColor, size: CGSize.zero)
   var label = SKLabelNode()
   
   init() {
     
   }
   
-  func build(scene: SKScene) {
+  func build(_ scene: SKScene) {
     label.text = String(amount)
     label.fontColor = currentTheme.tintColor
-    label.position = CGPointMake(0, -label.frame.height/2)
+    label.position = CGPoint(x: 0, y: -label.frame.height/2)
     box.addChild(label)
     box.color = currentTheme.uiColor
-    box.size = CGSizeMake(label.frame.width+10, label.frame.height+10)
-    box.position = CGPointMake(box.frame.width/2, scene.frame.height-box.frame.height/2)
+    box.size = CGSize(width: label.frame.width+10, height: label.frame.height+10)
+    box.position = CGPoint(x: box.frame.width/2, y: scene.frame.height-box.frame.height/2)
     box.zPosition = 7
     scene.addChild(box)
   }
@@ -34,10 +34,10 @@ class Score {
     build(gameScene)
   }
   
-  private func draw() {
+  fileprivate func draw() {
     label.text = String(amount)
-    box.size = CGSizeMake(label.frame.width+10, box.frame.height)
-    box.position = CGPointMake(box.frame.width/2, box.position.y)
+    box.size = CGSize(width: label.frame.width+10, height: box.frame.height)
+    box.position = CGPoint(x: box.frame.width/2, y: box.position.y)
   }
   
   func increment() {
@@ -50,16 +50,16 @@ class Score {
     draw()
   }
   
-  func set(to: Int) {
+  func set(_ to: Int) {
     amount = to
     draw()
   }
   
   func reset() {
 
-    let defaults = NSUserDefaults()
-    if amount > defaults.integerForKey("high score") {
-      defaults.setInteger(amount, forKey: "high score")
+    let defaults = UserDefaults()
+    if amount > defaults.integer(forKey: "high score") {
+      defaults.set(amount, forKey: "high score")
     }
     
     amount = 0
@@ -71,6 +71,6 @@ class Score {
   
   func appear() {
     box.removeAllActions()
-    box.runAction(fadeIn)
+    box.run(fadeIn)
   }
 }

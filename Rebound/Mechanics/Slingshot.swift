@@ -25,12 +25,12 @@ class Slingshot: SKShapeNode {
     radius = gameScene.ball.radius+thickness/2 + 1
     
     lineWidth = thickness
-    lineCap = .Square
+    lineCap = .square
     strokeColor = currentTheme.slingColor
     zPosition = 4
   }
   
-  func aim(ball: Ball, atPoint: CGPoint) {
+  func aim(_ ball: Ball, atPoint: CGPoint) {
     
     if canShoot {
       alpha = 1
@@ -41,16 +41,16 @@ class Slingshot: SKShapeNode {
     
   }
   
-  func updateSling(ball: Ball, atPoint: CGPoint) {
+  func updateSling(_ ball: Ball, atPoint: CGPoint) {
     
     let stretch = distance(ball.position, p2: atPoint) < maxStretch ? distance(ball.position, p2: atPoint) : maxStretch
     alpha = 0.2 + 0.35*(stretch/maxStretch)
     
-    let mutablePath = CGPathCreateMutable()
+    let mutablePath = CGMutablePath()
     CGPathMoveToPoint(mutablePath, nil, radius, 0)
     CGPathAddArc(mutablePath, nil, 0, 0, radius, radians(0), radians(180), true)
     CGPathAddLineToPoint(mutablePath, nil, 0, stretch)
-    CGPathCloseSubpath(mutablePath)
+    mutablePath.closeSubpath()
     path = mutablePath
     
     zRotation = -atan((atPoint.x-ball.position.x) / (atPoint.y-ball.position.y))
@@ -58,29 +58,29 @@ class Slingshot: SKShapeNode {
     
     shotVector = vectorFromAngleMagnitude(-zRotation, magnitude: stretch/sensitivity)
     let aimVector = vectorFromAngleMagnitude(-zRotation, magnitude: stretch)
-    aimingToPoint = CGPointMake(ball.position.x + aimVector.dx, ball.position.y + aimVector.dy)
+    aimingToPoint = CGPoint(x: ball.position.x + aimVector.dx, y: ball.position.y + aimVector.dy)
     
     if atPoint.y < position.y {
       alpha = 0
-      shotVector = CGVectorMake(0, 0)
+      shotVector = CGVector(dx: 0, dy: 0)
     }
     
   }
   
-  func shoot(terrain: Terrain, ball: Ball) -> Bool {
+  func shoot(_ terrain: Terrain, ball: Ball) -> Bool {
     if canShoot {
       ball.physicsBody?.applyImpulse(shotVector)
     }
-    runAction(SKAction.fadeAlphaTo(0, duration: 1))
+    run(SKAction.fadeAlpha(to: 0, duration: 1))
     
     return magnitude(shotVector) > 5.5
   }
   
-  func scroll(interval: CGFloat, ball: Ball) {
+  func scroll(_ interval: CGFloat, ball: Ball) {
     aimingToPoint.y -= interval
   }
   
-  func update(terrain: Terrain, ball: Ball) {
+  func update(_ terrain: Terrain, ball: Ball) {
     if ball.position.y > aimingToPoint.y {removeAllActions(); alpha = 0}
     if alpha > 0 {updateSling(ball, atPoint: aimingToPoint)}
     if let ballBody = ball.physicsBody {

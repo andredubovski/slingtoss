@@ -11,31 +11,31 @@ import SpriteKit
 class SKToggle: SKButton {
   
   var state = Bool(false)
-  let popIn = SKAction.sequence([SKAction.scaleTo(0.85, duration: 0.05)])
-  let pressOut = SKAction.sequence([SKAction.scaleTo(0.95, duration: 0.04), SKAction.scaleTo(0.9, duration: 0.03)])
+  let popIn = SKAction.sequence([SKAction.scale(to: 0.85, duration: 0.05)])
+  let pressOut = SKAction.sequence([SKAction.scale(to: 0.95, duration: 0.04), SKAction.scale(to: 0.9, duration: 0.03)])
   var turnOnAction = SKAction()
   var turnOffAction = SKAction()
   
-  func setStateTo(state: Bool) {
+  func setStateTo(_ state: Bool) {
     removeAllActions()
     self.state = state
     
     if self.state {
-      runAction(SKAction.group([pressOut, turnOnAction]))
+      run(SKAction.group([pressOut, turnOnAction]))
       fillColor = darkColor
     } else {
-      runAction(SKAction.group([releaseOut, turnOffAction]))
+      run(SKAction.group([releaseOut, turnOffAction]))
       fillColor = lightColor
     }
   }
   
   func toggleState() {setStateTo(!state)}
   
-  override func doWhenTouchesBegan(location: CGPoint) {
-    if containsPoint(location){
+  override func doWhenTouchesBegan(_ location: CGPoint) {
+    if contains(location){
       fillColor = darkColor
       removeAllActions()
-      runAction(popIn)
+      run(popIn)
       isPressed = true
       wasPressed = true
     } else {
@@ -44,27 +44,27 @@ class SKToggle: SKButton {
     }
   }
   
-  override func doWhenTouchesMoved(location: CGPoint) {
+  override func doWhenTouchesMoved(_ location: CGPoint) {
     if wasPressed {
-      if containsPoint(location){
+      if contains(location){
         if !isPressed {
           fillColor = darkColor
           removeAllActions()
-          runAction(popIn)
+          run(popIn)
           isPressed = true
         }
       } else if isPressed {
         state ? darkenColor() : resetColor()
         removeAllActions()
-        runAction(state ? pressOut : releaseOut)
+        run(state ? pressOut : releaseOut)
         isPressed = false
       }
     }
   }
   
-  override func doWhenTouchesEnded(location: CGPoint) {
+  override func doWhenTouchesEnded(_ location: CGPoint) {
     if wasPressed {      
-      if containsPoint(location){
+      if contains(location){
         toggleState()
       }
     }

@@ -13,7 +13,7 @@ class SettingsScene: SKScene {
   var menu = SettingsMenu()
   var isVirgin = Bool(true)
   
-  override func didMoveToView(view: SKView) {
+  override func didMove(to view: SKView) {
     if isVirgin {
       menu.build(self)
       currentTheme.build(self)
@@ -22,23 +22,23 @@ class SettingsScene: SKScene {
     
   }
   
-  override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+  override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
     for touch in touches {
-      let location = touch.locationInNode(self)
+      let location = touch.location(in: self)
       menu.doWhenTouchesBegan(location)
     }
   }
   
-  override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
+  override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
     for touch in touches {
-      let location = touch.locationInNode(self)
+      let location = touch.location(in: self)
       menu.doWhenTouchesMoved(location)
     }
   }
   
-  override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
+  override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
     for touch in touches {
-      let location = touch.locationInNode(self)
+      let location = touch.location(in: self)
       menu.doWhenTouchesEnded(location)
     }
   }

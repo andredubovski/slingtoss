@@ -30,12 +30,12 @@ class Terrain: SKShapeNode {
     fatalError("init(coder:) has not been implemented")
   }
   
-  func build(path: CGPath?) {
+  func build(_ path: CGPath?) {
     
     zPosition = 2.5
-    if let p = path {physicsBody = SKPhysicsBody(polygonFromPath: p)}
-    else {physicsBody = SKPhysicsBody(polygonFromPath: self.path!)}
-    physicsBody?.dynamic = false
+    if let p = path {physicsBody = SKPhysicsBody(polygonFrom: p)}
+    else {physicsBody = SKPhysicsBody(polygonFrom: self.path!)}
+    physicsBody?.isDynamic = false
     physicsBody?.restitution = 0.4
     physicsBody?.mass = 0.22
     physicsBody?.categoryBitMask = isPermeable ? PhysicsCategory.Terrain : PhysicsCategory.ImpermeableTerrain
@@ -54,19 +54,21 @@ class Terrain: SKShapeNode {
   
   func appear() {
     hasAppeared = true
-    let popOut = SKAction.sequence([
-      SKAction.scaleTo(0, duration: 0),
-      SKAction.scaleTo(1.2, duration: 0.4),
-      SKAction.scaleTo(1, duration: 0.1)
-      ])
-    
-    runAction(popOut)
+    let popOut = SKAction.group([SKAction.sequence([
+      SKAction.scale(to: 0, duration: 0),
+      SKAction.scale(to: 1.2, duration: 0.4),
+      SKAction.scale(to: 1, duration: 0.1)
+      ]),
+      SKAction.fadeAlpha(to: 1, duration: 0.5)
+  ])
+  
+    run(popOut)
   }
   
   func fall() {
     physicsBody?.linearDamping = 0.1
     physicsBody?.angularDamping = 0.1
-    physicsBody?.dynamic = true
+    physicsBody?.isDynamic = true
     physicsBody?.affectedByGravity = true
     physicsBody?.applyAngularImpulse(random(-100, to: 100) > 0 ? -0.027 : 0.027)
     hasFallen = true
@@ -78,13 +80,13 @@ class Terrain: SKShapeNode {
   }
   
   func beginMovingDown() {
-    physicsBody?.dynamic = true
+    physicsBody?.isDynamic = true
     physicsBody?.affectedByGravity = true
     physicsBody?.linearDamping = 100
     physicsBody?.angularDamping = 18
   }
   
-  func scoreOn(score: Score) {
+  func scoreOn(_ score: Score) {
     score.increment()
     hasScored = true
   }

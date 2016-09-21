@@ -12,16 +12,16 @@ import SpriteKit
 var gameScene = GameScene()
 var settingsScene = SettingsScene()
 
-var defaults = NSUserDefaults()
-var path = NSBundle.mainBundle().pathForResource("Config", ofType: "plist")
+var defaults = UserDefaults()
+var path = Bundle.main.path(forResource: "Config", ofType: "plist")
 var config = NSDictionary(contentsOfFile: path!)
 
-func configValueForKey(key: String) -> CGFloat {
-  return CGFloat(config!.objectForKey(key) as! NSNumber)
+func configValueForKey(_ key: String) -> CGFloat {
+  return CGFloat(config!.object(forKey: key) as! NSNumber)
 }
 
-func configBoolForKey(key: String) -> Bool {
-  return config!.objectForKey(key) as! Bool
+func configBoolForKey(_ key: String) -> Bool {
+  return config!.object(forKey: key) as! Bool
 }
 
 class GameViewController: UIViewController {
@@ -39,21 +39,21 @@ class GameViewController: UIViewController {
     /* Set the scale mode to scale to fit the window */
     assembleThemes()
     
-    settingsScene.scaleMode = .ResizeFill
-    gameScene.scaleMode = .ResizeFill
+    settingsScene.scaleMode = .resizeFill
+    gameScene.scaleMode = .resizeFill
     
     skView.presentScene(gameScene)
   }
   
-  override func shouldAutorotate() -> Bool {
+  override var shouldAutorotate : Bool {
     return true
   }
   
-  override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
-    if UIDevice.currentDevice().userInterfaceIdiom == .Phone {
-      return .AllButUpsideDown
+  override var supportedInterfaceOrientations : UIInterfaceOrientationMask {
+    if UIDevice.current.userInterfaceIdiom == .phone {
+      return .allButUpsideDown
     } else {
-      return .All
+      return .all
     }
   }
   
@@ -62,7 +62,7 @@ class GameViewController: UIViewController {
     // Release any cached data, images, etc that aren't in use.
   }
   
-  override func prefersStatusBarHidden() -> Bool {
+  override var prefersStatusBarHidden : Bool {
     return true
   }
 }

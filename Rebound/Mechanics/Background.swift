@@ -22,18 +22,18 @@ class Background {
     self.imageNamed = imageNamed
   }
   
-  func build(scene: SKScene = gameScene) {
+  func build(_ scene: SKScene = gameScene) {
     img1 = SKSpriteNode(imageNamed: imageNamed)
     img2 = SKSpriteNode(imageNamed: imageNamed)
     scene.addChild(img1)
     scene.addChild(img2)
-    img1.position = CGPointMake(gameFrame.midX, gameFrame.midY)
-    img2.position = CGPointMake(gameFrame.midX, gameFrame.midY - img1.frame.height)
+    img1.position = CGPoint(x: gameFrame.midX, y: gameFrame.midY)
+    img2.position = CGPoint(x: gameFrame.midX, y: gameFrame.midY - img1.frame.height)
     img1.zPosition = -10
     img2.zPosition = -10
   }
   
-  func scroll(interval: CGFloat) {
+  func scroll(_ interval: CGFloat) {
     img1.position.y -= interval/2
     img2.position.y -= interval/2
     if img2.position.y < -img2.frame.height/2 {
@@ -44,7 +44,7 @@ class Background {
     }
   }
   
-  func reset(scene: SKScene = gameScene) {
+  func reset(_ scene: SKScene = gameScene) {
     img1.removeFromParent()
     img2.removeFromParent()
     build(scene)

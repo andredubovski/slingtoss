@@ -33,84 +33,84 @@ class SettingsMenu: SKNode {
     fatalError("init(coder:) has not been implemented")
   }
   
-  func build(scene: SKScene) {
+  func build(_ scene: SKScene) {
     buttonWidth = gameFrame.width / (2 + 3*buttonToMarginRatio)
     marginWidth = buttonWidth*buttonToMarginRatio
     
     
-    title.position = CGPointMake(gameFrame.midX, gameFrame.height*0.86)
+    title.position = CGPoint(x: gameFrame.midX, y: gameFrame.height*0.86)
     title.fontColor = currentTheme.titleColor
     title.fontSize = 78.0 * gameFrame.width/320
-    title.runAction(SKAction.scaleTo((gameFrame.width-2*marginWidth)/title.frame.width, duration: 0))
+    title.run(SKAction.scale(to: (gameFrame.width-2*marginWidth)/title.frame.width, duration: 0))
     scene.addChild(title)
     
     
-    sfxToggle = SKToggle(setSize: CGSizeMake(buttonWidth, buttonWidth), setGlyph: "SFX")
-    sfxToggle.position = CGPointMake(
-      gameFrame.midX - (buttonWidth/2 + marginWidth/2),
-      title.position.y - (title.frame.height/2 + buttonWidth/2)
+    sfxToggle = SKToggle(setSize: CGSize(width: buttonWidth, height: buttonWidth), setGlyph: "SFX")
+    sfxToggle.position = CGPoint(
+      x: gameFrame.midX - (buttonWidth/2 + marginWidth/2),
+      y: title.position.y - (title.frame.height/2 + buttonWidth/2)
     )
-    sfxToggle.turnOnAction = SKAction.runBlock({defaults.setBool(true, forKey: "SFX")})
-    sfxToggle.turnOffAction = SKAction.runBlock({defaults.setBool(false, forKey: "SFX")})
+    sfxToggle.turnOnAction = SKAction.run({defaults.set(true, forKey: "SFX")})
+    sfxToggle.turnOffAction = SKAction.run({defaults.set(false, forKey: "SFX")})
     sfxToggle.display(scene)
-    sfxToggle.setStateTo(defaults.boolForKey("SFX"))
+    sfxToggle.setStateTo(defaults.bool(forKey: "SFX"))
     
-    musicToggle = SKToggle(setSize: CGSizeMake(buttonWidth, buttonWidth), setGlyph: "Music")
-    musicToggle.position = CGPointMake(
-      gameFrame.midX + (buttonWidth/2 + marginWidth/2),
-      title.position.y - (title.frame.height/2 + buttonWidth/2)
+    musicToggle = SKToggle(setSize: CGSize(width: buttonWidth, height: buttonWidth), setGlyph: "Music")
+    musicToggle.position = CGPoint(
+      x: gameFrame.midX + (buttonWidth/2 + marginWidth/2),
+      y: title.position.y - (title.frame.height/2 + buttonWidth/2)
     )
-    musicToggle.turnOnAction = SKAction.runBlock({
-      defaults.setBool(true, forKey: "Music")
+    musicToggle.turnOnAction = SKAction.run({
+      defaults.set(true, forKey: "Music")
       gameScene.backgroundMusicPlayer.volume = 0.24
       gameScene.backgroundMusicPlayer.play()
     })
-    musicToggle.turnOffAction = SKAction.runBlock({
-      defaults.setBool(false, forKey: "Music")
+    musicToggle.turnOffAction = SKAction.run({
+      defaults.set(false, forKey: "Music")
       gameScene.backgroundMusicPlayer.volume = 0.0
       gameScene.backgroundMusicPlayer.pause()
     })
     musicToggle.display(scene)
-    musicToggle.setStateTo(defaults.boolForKey("Music"))
+    musicToggle.setStateTo(defaults.bool(forKey: "Music"))
     
     
-    removeAdsToggle = SKToggle(setSize: CGSizeMake(buttonWidth, buttonWidth/1.5), setGlyph: "removeAds")
-    removeAdsToggle.position = CGPointMake(
-      gameFrame.midX - (buttonWidth/2 + marginWidth/2),
-      musicToggle.position.y - (buttonWidth/2 + removeAdsToggle.size.height/2 + marginWidth)
+    removeAdsToggle = SKToggle(setSize: CGSize(width: buttonWidth, height: buttonWidth/1.5), setGlyph: "removeAds")
+    removeAdsToggle.position = CGPoint(
+      x: gameFrame.midX - (buttonWidth/2 + marginWidth/2),
+      y: musicToggle.position.y - (buttonWidth/2 + removeAdsToggle.size.height/2 + marginWidth)
     )
-    removeAdsToggle.turnOnAction = SKAction.runBlock({defaults.setBool(false, forKey: "Ads")})
-    removeAdsToggle.turnOffAction = SKAction.runBlock({defaults.setBool(true, forKey: "Ads")})
+    removeAdsToggle.turnOnAction = SKAction.run({defaults.set(false, forKey: "Ads")})
+    removeAdsToggle.turnOffAction = SKAction.run({defaults.set(true, forKey: "Ads")})
     removeAdsToggle.display(scene)
-    removeAdsToggle.setStateTo(!defaults.boolForKey("Ads"))
+    removeAdsToggle.setStateTo(!defaults.bool(forKey: "Ads"))
     
-    refreshIAPButton = SKButton(setSize: CGSizeMake(buttonWidth, buttonWidth/1.5), setGlyph: "refreshIAP")
-    refreshIAPButton.position = CGPointMake(
-      gameFrame.midX + (buttonWidth/2 + marginWidth/2),
-      musicToggle.position.y - (buttonWidth/2 + refreshIAPButton.size.height/2 + marginWidth)
+    refreshIAPButton = SKButton(setSize: CGSize(width: buttonWidth, height: buttonWidth/1.5), setGlyph: "refreshIAP")
+    refreshIAPButton.position = CGPoint(
+      x: gameFrame.midX + (buttonWidth/2 + marginWidth/2),
+      y: musicToggle.position.y - (buttonWidth/2 + refreshIAPButton.size.height/2 + marginWidth)
     )
     refreshIAPButton.display(scene)
     
     
-    homeButton = SKButton(setSize: CGSizeMake(buttonWidth/1.5, buttonWidth/1.5), setGlyph: "home")
-    homeButton.position = CGPointMake(
-      marginWidth+homeButton.size.width/2,
-      removeAdsToggle.position.y - (removeAdsToggle.frame.height/2 + homeButton.size.height/2 + marginWidth)
+    homeButton = SKButton(setSize: CGSize(width: buttonWidth/1.5, height: buttonWidth/1.5), setGlyph: "home")
+    homeButton.position = CGPoint(
+      x: marginWidth+homeButton.size.width/2,
+      y: removeAdsToggle.position.y - (removeAdsToggle.frame.height/2 + homeButton.size.height/2 + marginWidth)
     )
-    homeButton.buttonAction = SKAction.runBlock({scene.view?.presentScene(gameScene, transition: SKTransition.doorsCloseHorizontalWithDuration(0.5))})
+    homeButton.buttonAction = SKAction.run({scene.view?.presentScene(gameScene, transition: SKTransition.doorsCloseHorizontal(withDuration: 0.5))})
     homeButton.display(scene)
     
-    creditsButton = SKButton(setSize: CGSizeMake(gameFrame.width - (3*marginWidth + homeButton.frame.width), homeButton.frame.height), setGlyph: "credits")
-    creditsButton.position = CGPointMake(
-      homeButton.position.x + (homeButton.frame.width/2 + creditsButton.size.width/2 + marginWidth),
-      homeButton.position.y
+    creditsButton = SKButton(setSize: CGSize(width: gameFrame.width - (3*marginWidth + homeButton.frame.width), height: homeButton.frame.height), setGlyph: "credits")
+    creditsButton.position = CGPoint(
+      x: homeButton.position.x + (homeButton.frame.width/2 + creditsButton.size.width/2 + marginWidth),
+      y: homeButton.position.y
     )
     creditsButton.buttonAction = SKAction()
     creditsButton.display(scene)
 
   }
   
-  func doWhenTouchesBegan(location: CGPoint) {
+  func doWhenTouchesBegan(_ location: CGPoint) {
     sfxToggle.doWhenTouchesBegan(location)
     musicToggle.doWhenTouchesBegan(location)
     removeAdsToggle.doWhenTouchesBegan(location)
@@ -119,7 +119,7 @@ class SettingsMenu: SKNode {
     homeButton.doWhenTouchesBegan(location)
   }
   
-  func doWhenTouchesMoved(location: CGPoint) {
+  func doWhenTouchesMoved(_ location: CGPoint) {
     sfxToggle.doWhenTouchesMoved(location)
     musicToggle.doWhenTouchesMoved(location)
     removeAdsToggle.doWhenTouchesMoved(location)
@@ -128,7 +128,7 @@ class SettingsMenu: SKNode {
     homeButton.doWhenTouchesMoved(location)
   }
   
-  func doWhenTouchesEnded(location: CGPoint) {
+  func doWhenTouchesEnded(_ location: CGPoint) {
     sfxToggle.doWhenTouchesEnded(location)
     musicToggle.doWhenTouchesEnded(location)
     removeAdsToggle.doWhenTouchesEnded(location)

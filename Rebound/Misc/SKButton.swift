@@ -10,7 +10,7 @@ import SpriteKit
 
 class SKButton: SKShapeNode {
   
-  var size = CGSizeMake(120, 120)
+  var size = CGSize(width: 120, height: 120)
   var lightColor = SKColor()
   var darkColor = SKColor()
   var glyph = SKSpriteNode()
@@ -18,8 +18,8 @@ class SKButton: SKShapeNode {
   
   var wasPressed = Bool(false)
   var isPressed = Bool(false)
-  let pressIn = SKAction.scaleTo(0.95, duration: 0.03)
-  let releaseOut = SKAction.sequence([SKAction.scaleTo(1.1, duration: 0.05), SKAction.scaleTo(1, duration: 0.035)])
+  let pressIn = SKAction.scale(to: 0.95, duration: 0.03)
+  let releaseOut = SKAction.sequence([SKAction.scale(to: 1.1, duration: 0.05), SKAction.scale(to: 1, duration: 0.035)])
   
   var buttonAction = SKAction()
   
@@ -44,13 +44,13 @@ class SKButton: SKShapeNode {
     fatalError("init(coder:) has not been implemented")
   }
   
-  func display(scene: SKScene) {
+  func display(_ scene: SKScene) {
     fillColor = lightColor
     lineWidth = 0
-    path = CGPathCreateWithRect(CGRectMake(-size.width/2, -size.height/2, size.width, size.height), nil)
+    path = CGPath(rect: CGRect(x: -size.width/2, y: -size.height/2, width: size.width, height: size.height), transform: nil)
     position = position
     zPosition = 5
-    glyph.runAction(SKAction.scaleTo((size.width*0.8)/glyph.frame.width, duration: 0))
+    glyph.run(SKAction.scale(to: (size.width*0.8)/glyph.frame.width, duration: 0))
     scene.addChild(self)
     addChild(glyph)
   }
@@ -67,7 +67,7 @@ class SKButton: SKShapeNode {
     fillColor = darkColor
   }
   
-  func makeGlyph(imageNamed: String) {
+  func makeGlyph(_ imageNamed: String) {
     var glyphImage = UIImage(named: imageNamed)
     if let color = glyphColor {
       tintImage(&glyphImage!, color: color)
@@ -75,10 +75,10 @@ class SKButton: SKShapeNode {
     glyph.texture = SKTexture(image: glyphImage!)
   }
   
-  func doWhenTouchesBegan(location: CGPoint) {
-    if containsPoint(location){
+  func doWhenTouchesBegan(_ location: CGPoint) {
+    if contains(location){
       fillColor = darkColor
-      runAction(pressIn)
+      run(pressIn)
       isPressed = true
       wasPressed = true
     } else {
@@ -87,24 +87,24 @@ class SKButton: SKShapeNode {
     }
   }
   
-  func doWhenTouchesMoved(location: CGPoint) {
+  func doWhenTouchesMoved(_ location: CGPoint) {
     if wasPressed {
-      if containsPoint(location){
+      if contains(location){
         fillColor = darkColor
-        runAction(pressIn)
+        run(pressIn)
         isPressed = true
-      } else if isPressed {resetColor(); runAction(releaseOut); isPressed = false}
+      } else if isPressed {resetColor(); run(releaseOut); isPressed = false}
     }
   }
   
-  func doWhenTouchesEnded(location: CGPoint) {
+  func doWhenTouchesEnded(_ location: CGPoint) {
     if wasPressed {
       resetColor()
-      runAction(releaseOut)
+      run(releaseOut)
       isPressed = false
       
-      if containsPoint(location){
-        runAction(buttonAction)
+      if contains(location){
+        run(buttonAction)
       }
     }
     wasPressed = false

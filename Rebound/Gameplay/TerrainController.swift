@@ -17,18 +17,20 @@ class TerrainController {
   var minRadius = CGFloat()
   var maxRadius = CGFloat()
   
+  var difficulty = CGFloat()
+  
   init() {
   }
   
   func build() {
-    minLength = gameFrame.width * configValueForKey("Min relative platform length")
-    maxLength = gameFrame.width * configValueForKey("Max relative platform length")
-    minRadius = gameFrame.width * configValueForKey("Min relative ring radius")
-    maxRadius = gameFrame.width * configValueForKey("Max relative ring radius")
+    minLength = configValueForKey("Min relative platform length")
+    maxLength = configValueForKey("Max relative platform length")
+    minRadius = configValueForKey("Min relative ring radius")
+    maxRadius = configValueForKey("Max relative ring radius")
   }
   
   
-  func scroll(interval: CGFloat, progress: CGFloat, ball: Ball, score: Score) {
+  func scroll(_ interval: CGFloat, progress: CGFloat, ball: Ball, score: Score) {
     for i in 0...array.count-1 {
       if let terrain = array[i] {
         terrain.position.y -= interval
@@ -50,115 +52,92 @@ class TerrainController {
       }
     }
     
+    difficulty = CGFloat(score.amount)/50
+    
     if array[array.count-1]!.position.y < gameFrame.height*2 {
-      makeRandomTerrain()
+      makeRandomTerrain(difficulty)
     }
   }
   
   
-  func makePlatform(willBePermeable: Bool? = nil, willMove: Bool? = nil, lengthRelativeToFrameWidth: CGFloat? = nil, relativePositionAbovePrevious: CGPoint? = nil) {
+  func makePlatform(_ willBePermeable: Bool, willMove: Bool, lengthRelativeToFrameWidth: CGFloat, relativePositionAbovePrevious: CGPoint) {
     
-    var isPermeable = Int(random(0, to: 4)) != 0
-    var doesMove = !(Int(random(0, to: 5.5)) != 0)
-    var newLength = random(minLength, to: maxLength)
-    var position = CGPoint()
+    let length = lengthRelativeToFrameWidth*gameFrame.width
     
-    if let permeable = willBePermeable {
-      isPermeable = permeable    }
+    let position = CGPoint(x: relativePositionAbovePrevious.x*gameFrame.width, y: array[array.count-1]!.position.y + relativePositionAbovePrevious.y*gameFrame.height)
     
-    if isPermeable {
-      position = CGPointMake(random(0, to: gameFrame.width),
-                             array[array.count-1]!.position.y + random(gameFrame.height/3, to: 2*gameFrame.height/3))
-    } else {
-      position = CGPointMake(random(0, to: gameFrame.width),
-                             array[array.count-1]!.position.y + random(gameFrame.height/3, to: gameFrame.height/2))
-    }
-    
-    if let moves = willMove {
-      doesMove = moves
-    }
-    
-    if let length = lengthRelativeToFrameWidth {
-      newLength = length*gameFrame.width
-    }
-    
-    if let pos = relativePositionAbovePrevious {
-      position = CGPointMake(pos.x*gameFrame.width, array[array.count-1]!.position.y + pos.y*gameFrame.height)
-    }
-    
-    let newPlatform = Platform(length: newLength, position: position)
-    newPlatform.isPermeable = isPermeable
-    newPlatform.doesMoveDown = doesMove
+    let newPlatform = Platform(length: length, position: position)
+    newPlatform.isPermeable = willBePermeable
+    newPlatform.doesMoveDown = willMove
     array.append(newPlatform)
     newPlatform.build()
-    
     newPlatform.makeSureIsInFrame()
+    
+    print("made \(willBePermeable ? "permeable" : "impermeable"), \(willMove ? "moving" : "stationary"),  platform at \(relativePositionAbovePrevious), with length \(lengthRelativeToFrameWidth)")
   }
   
   
-  func makeRing(willMove: Bool? = nil, radiusRelativeToFrameWidth: CGFloat? = nil, relativePositionAbovePrevious: CGPoint? = nil) {
-    var newRadius = random(minRadius, to: maxRadius)
+  func makeRing(_ willMove: Bool? = nil, radiusRelativeToFrameWidth: CGFloat, relativePositionAbovePrevious: CGPoint) {
+    var radius = CGFloat()
     var position = CGPoint()
     let doesMove = false
     
-    position = CGPointMake(random(0, to: gameFrame.width),
-                           array[array.count-1]!.position.y + random(gameFrame.height/3, to: gameFrame.height/2))
+    radius = radiusRelativeToFrameWidth*gameFrame.width
     
-    if let radius = radiusRelativeToFrameWidth {
-      newRadius = radius*gameFrame.width
-    }
+    position = CGPoint(x: relativePositionAbovePrevious.x*gameFrame.width, y: array[array.count-1]!.position.y + relativePositionAbovePrevious.y*gameFrame.height)
     
-    if let pos = relativePositionAbovePrevious {
-      position = CGPointMake(pos.x*gameFrame.width, array[array.count-1]!.position.y + pos.y*gameFrame.height)
-    }
-    
-    let newRing = Ring(radius: newRadius, position: position)
+    let newRing = Ring(radius: radius, position: position)
     newRing.doesMoveDown = doesMove
     array.append(newRing)
     newRing.build()
-    
     newRing.makeSureIsInFrame()
   }
   
   
-  func makeRandomTerrain() {
-    
-    var moving = Bool?()
-    moving = nil
-    var permeable = Bool?()
-    permeable = nil
-    
-    if let lastPlatform = array[array.count-1] as? Platform {
-      if lastPlatform.doesMoveDown {
-        permeable = true
-      }
-    }
-    
-    if let lastTerrain = array[array.count-1] {
-      if lastTerrain.doesMoveDown {
-        if random(0, to: 1.45) < 1 {
-          makePlatform(permeable, willMove: true)
-          return
+  func makeRandomTerrain(_ difficulty: CGFloat = 0.5) {
+  
+    var position = CGPoint(x: random(0, to: 1), y: weightedRandom(1/3, to: 2/3, weight: difficulty))
+  
+    if random(0, to: 3.8) > 1 {
+      
+      var moving = weightedRandom(0, to: 100, weight: difficulty) > 85
+      
+      var permeable = !(weightedRandom(0, to: 100, weight: difficulty) > 80)
+      
+      if let lastPlatform = array[array.count-1] as? Platform {
+        if lastPlatform.doesMoveDown {
+          permeable = true
+          if weightedRandom(0, to: 100, weight: difficulty) > 30 {
+            moving = true
+          }
         }
       }
-    }
-    
-    if random(0, to: 3.8) > 1 {
-      makePlatform(permeable, willMove: moving)
+      
+      let length = weightedRandom(minLength, to: maxLength, weight: 1-difficulty)
+      
+      if !permeable {
+        position = CGPoint(x: random(0, to: 1), y: weightedRandom(1/3, to: 1/2, weight: difficulty))
+      }
+      
+      makePlatform(permeable, willMove: moving, lengthRelativeToFrameWidth: length, relativePositionAbovePrevious: position)
+      
     } else {
-      makeRing(moving)
+      
+      let radius = weightedRandom(minRadius, to: maxRadius, weight: 1-difficulty)
+      makeRing(false, radiusRelativeToFrameWidth: radius, relativePositionAbovePrevious: position)
+      
     }
     
   }
   
   
-  func reset(ball: Ball, menu: MainMenu) {
+  func reset(_ ball: Ball, menu: MainMenu) {
     for p in array {
       if let platform = p {platform.removeFromParent()}
     }
     array.removeAll()
     
-    let firstPlatform = Platform(length: gameFrame.width*0.3, position: CGPointMake(ball.position.x, gameFrame.height/12))
+    let firstPlatform = Platform(length: gameFrame.width*0.3, position: CGPoint(x: ball.position.x, y: gameFrame.height/12))
     firstPlatform.build()
     firstPlatform.hasScored = true
     firstPlatform.makeSureIsInFrame()
@@ -168,22 +147,20 @@ class TerrainController {
     makePlatform(
       true,
       willMove: false,
-      lengthRelativeToFrameWidth: random(0.15, to: 0.25),
-      relativePositionAbovePrevious: CGPointMake(CGFloat(Int(random(1, to: 3))) / 3.0, 1/3)
+      lengthRelativeToFrameWidth: random(0.25, to: 0.3),
+      relativePositionAbovePrevious: CGPoint(x: CGFloat(Int(random(1, to: 3))) / 3.0, y: 1/3)
     )
     
-    makePlatform(
-      true,
-      lengthRelativeToFrameWidth: random(0.25, to: 0.35),
-      relativePositionAbovePrevious: CGPointMake(random(0, to: 1), random(0.6, to: 0.66))
-    )
+    makeRandomTerrain(0.01)
+    array[array.count-1]!.alpha = 0
+    array[array.count-1]!.hasAppeared = true
     
   }
   
   
-  func containPoint(point: CGPoint) -> Bool {
-    if current.containsPoint(point) {return true}
-    if let next = array[gameScene.score.amount+1] {if next.containsPoint(point) {return true}}
+  func containPoint(_ point: CGPoint) -> Bool {
+    if current.contains(point) {return true}
+    if let next = array[gameScene.score.amount+1] {if next.contains(point) {return true}}
     return false
   }
 }

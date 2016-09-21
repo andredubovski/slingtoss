@@ -14,7 +14,7 @@ class DeathMenu: MainMenu {
   var scoreBox = SKShapeNode()
   var scoreLabel = SKLabelNode()
   
-  override func build(scene: SKScene = gameScene) {
+  override func build(_ scene: SKScene = gameScene) {
     
     super.build()
     
@@ -24,9 +24,9 @@ class DeathMenu: MainMenu {
     title.xScale = (gameFrame.width-2*marginWidth)/title.frame.width
     
     button1.makeGlyph("home")
-    button1.buttonAction = SKAction.runBlock({self.disappear(); gameScene.menu.appear()})
+    button1.buttonAction = SKAction.run({self.disappear(); gameScene.menu.appear()})
     button2.makeGlyph("share")
-    button2.buttonAction = SKAction.runBlock({
+    button2.buttonAction = SKAction.run({
       
       let vc = gameScene.view?.window?.rootViewController
       
@@ -36,20 +36,20 @@ class DeathMenu: MainMenu {
       
       let activityVC:UIActivityViewController = UIActivityViewController(activityItems: [shareText, shareImage], applicationActivities: nil)
       
-      vc?.presentViewController(activityVC, animated: true, completion: nil)
+      vc?.present(activityVC, animated: true, completion: nil)
       
     })
     button3.makeGlyph("gameCenter")
     
     
     
-    scoreBox.path = CGPathCreateWithRect(CGRectMake(
-      -(gameFrame.width - 3*marginWidth)/4, -(2*marginWidth)/2,
-      (gameFrame.width - 3*marginWidth)/2, 2*marginWidth
-      ), nil)
+    scoreBox.path = CGPath(rect: CGRect(
+      x: -(gameFrame.width - 3*marginWidth)/4, y: -(2*marginWidth)/2,
+      width: (gameFrame.width - 3*marginWidth)/2, height: 2*marginWidth
+      ), transform: nil)
     scoreBox.fillColor = currentTheme.uiColor
     scoreBox.lineWidth = 0
-    scoreBox.position = CGPointMake(gameFrame.midX - (marginWidth/2 + scoreBox.frame.width/2), button2.position.y - (buttonWidth/2 + marginWidth + highScoreBox.frame.height/2))
+    scoreBox.position = CGPoint(x: gameFrame.midX - (marginWidth/2 + scoreBox.frame.width/2), y: button2.position.y - (buttonWidth/2 + marginWidth + highScoreBox.frame.height/2))
     scene.addChild(scoreBox)
     elements.append(scoreBox)
     
@@ -66,14 +66,14 @@ class DeathMenu: MainMenu {
     
     
     
-    highScoreBox.path = CGPathCreateWithRect(CGRectMake(
-      -(gameFrame.width - 3*marginWidth)/4, -(2*marginWidth)/2,
-      (gameFrame.width - 3*marginWidth)/2, 2*marginWidth
-      ), nil)
-    highScoreBox.position = CGPointMake(gameFrame.midX + (marginWidth/2 + highScoreBox.frame.width/2), button2.position.y - (buttonWidth/2 + marginWidth + highScoreBox.frame.height/2))
+    highScoreBox.path = CGPath(rect: CGRect(
+      x: -(gameFrame.width - 3*marginWidth)/4, y: -(2*marginWidth)/2,
+      width: (gameFrame.width - 3*marginWidth)/2, height: 2*marginWidth
+      ), transform: nil)
+    highScoreBox.position = CGPoint(x: gameFrame.midX + (marginWidth/2 + highScoreBox.frame.width/2), y: button2.position.y - (buttonWidth/2 + marginWidth + highScoreBox.frame.height/2))
     
-    let defaults = NSUserDefaults()
-    highScoreLabel.text = "HIGH: \(defaults.integerForKey("high score"))"
+    let defaults = UserDefaults()
+    highScoreLabel.text = "HIGH: \(defaults.integer(forKey: "high score"))"
     highScoreLabel.position.y = -highScoreLabel.frame.height*0.4
     highScoreLabel.removeAllActions()
     highScoreLabel.xScale = 1
@@ -83,13 +83,13 @@ class DeathMenu: MainMenu {
     
   }
   
-  func appear(scoreAmount: Int) {
+  func appear(_ scoreAmount: Int) {
     self.scoreAmount = scoreAmount
     
-    let defaults = NSUserDefaults()
-    if scoreAmount > defaults.integerForKey("high score") {
-      defaults.setInteger(scoreAmount, forKey: "high score")
-      highScoreLabel.text = "HIGH: \(defaults.integerForKey("high score"))"
+    let defaults = UserDefaults()
+    if scoreAmount > defaults.integer(forKey: "high score") {
+      defaults.set(scoreAmount, forKey: "high score")
+      highScoreLabel.text = "HIGH: \(defaults.integer(forKey: "high score"))"
     }
     
     scoreLabel.text = "SCORE: \(scoreAmount)"

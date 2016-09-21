@@ -34,19 +34,20 @@ class Ring: Terrain {
     
     name = "ring"
     //create path that has platform shape based on dimensions
-    let mutablePath = CGPathCreateMutable()
+    let mutablePath = CGMutablePath()
     CGPathMoveToPoint(mutablePath, nil, 0, 0)
-    CGPathAddEllipseInRect(mutablePath, nil, CGRectMake(-radius, 0, radius*2, radius*2))
-    CGPathAddEllipseInRect(mutablePath, nil, CGRectMake(-(radius-thickness), thickness, (radius-thickness)*2, (radius-thickness)*2))
-    CGPathCloseSubpath(mutablePath)
+    CGPathAddEllipseInRect(mutablePath, nil, CGRect(x: -radius, y: 0, width: radius*2, height: radius*2))
+    CGPathAddEllipseInRect(mutablePath, nil, CGRect(x: -(radius-thickness), y: thickness, width: (radius-thickness)*2, height: (radius-thickness)*2))
+    mutablePath.closeSubpath()
     path = mutablePath
     
-    fillColor = currentTheme.ringColor(radius)
+    let randomRadius = random(configValueForKey("Min relative ring radius"), to: configValueForKey("Max relative ring radius")) * gameFrame.width
+    fillColor = currentTheme.ringColor(randomRadius)
     
-    let physicsPath = CGPathCreateMutable()
+    let physicsPath = CGMutablePath()
     CGPathAddArc(physicsPath, nil, 0, radius, radius, radians(-90), radians(270), false)
     CGPathAddArc(physicsPath, nil, 0, radius, radius-thickness, radians(270), radians(-90), true)
-    CGPathCloseSubpath(physicsPath)
+    physicsPath.closeSubpath()
 
     super.build(physicsPath)
     

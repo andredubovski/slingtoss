@@ -29,65 +29,65 @@ class MainMenu {
     
   }
   
-  func build(scene: SKScene = gameScene) {
+  func build(_ scene: SKScene = gameScene) {
     buttonWidth = gameFrame.width / (3 + 4*buttonToMarginRatio)
     marginWidth = buttonWidth*buttonToMarginRatio
     
-    title.position = CGPointMake(gameFrame.midX, gameFrame.height*0.86)
+    title.position = CGPoint(x: gameFrame.midX, y: gameFrame.height*0.86)
     title.fontColor = currentTheme.titleColor
     title.fontSize = 78.0 * gameFrame.width/320
-    title.runAction(SKAction.scaleTo((gameFrame.width-2*marginWidth)/title.frame.width, duration: 0))
+    title.run(SKAction.scale(to: (gameFrame.width-2*marginWidth)/title.frame.width, duration: 0))
     elements.append(title)
     scene.addChild(title)
     
-    button1 = SKButton(setSize: CGSizeMake(buttonWidth, buttonWidth), setGlyph: "settings")
-    button1.position = CGPointMake(
-      gameFrame.midX - (buttonWidth + marginWidth),
-      title.position.y - (title.frame.height/2 + buttonWidth/2)
+    button1 = SKButton(setSize: CGSize(width: buttonWidth, height: buttonWidth), setGlyph: "settings")
+    button1.position = CGPoint(
+      x: gameFrame.midX - (buttonWidth + marginWidth),
+      y: title.position.y - (title.frame.height/2 + buttonWidth/2)
     )
-    button1.buttonAction = SKAction.runBlock({scene.view?.presentScene(settingsScene, transition: SKTransition.doorsOpenHorizontalWithDuration(0.5))})
+    button1.buttonAction = SKAction.run({scene.view?.presentScene(settingsScene, transition: SKTransition.doorsOpenHorizontal(withDuration: 0.5))})
     button1.display()
     elements.append(button1)
     
-    button2 = SKButton(setSize: CGSizeMake(buttonWidth, buttonWidth), setGlyph: "review")
-    button2.position = CGPointMake(
-      gameFrame.midX,
-      title.position.y - (title.frame.height/2 + buttonWidth/2)
+    button2 = SKButton(setSize: CGSize(width: buttonWidth, height: buttonWidth), setGlyph: "review")
+    button2.position = CGPoint(
+      x: gameFrame.midX,
+      y: title.position.y - (title.frame.height/2 + buttonWidth/2)
     )
-    button2.buttonAction = SKAction.runBlock({iRate.sharedInstance().openRatingsPageInAppStore()})
+    button2.buttonAction = SKAction.run({iRate.sharedInstance().openRatingsPageInAppStore()})
     button2.display()
     elements.append(button2)
     
-    button3 = SKButton(setSize: CGSizeMake(buttonWidth, buttonWidth), setGlyph: "info")
-    button3.position = CGPointMake(
-      gameFrame.midX + (buttonWidth + marginWidth),
-      title.position.y - (title.frame.height/2 + buttonWidth/2)
+    button3 = SKButton(setSize: CGSize(width: buttonWidth, height: buttonWidth), setGlyph: "info")
+    button3.position = CGPoint(
+      x: gameFrame.midX + (buttonWidth + marginWidth),
+      y: title.position.y - (title.frame.height/2 + buttonWidth/2)
     )
     button3.display()
     elements.append(button3)
     
-    highScoreBox = SKShapeNode(rect: CGRectMake(
-      -(gameFrame.width - 2*marginWidth)/2, -(2*marginWidth)/2,
-      gameFrame.width - 2*marginWidth, 2*marginWidth
+    highScoreBox = SKShapeNode(rect: CGRect(
+      x: -(gameFrame.width - 2*marginWidth)/2, y: -(2*marginWidth)/2,
+      width: gameFrame.width - 2*marginWidth, height: 2*marginWidth
     ))
     highScoreBox.fillColor = currentTheme.uiColor
     highScoreBox.lineWidth = 0
-    highScoreBox.position = CGPointMake(gameFrame.midX, button2.position.y - (buttonWidth/2 + marginWidth + highScoreBox.frame.height/2))
+    highScoreBox.position = CGPoint(x: gameFrame.midX, y: button2.position.y - (buttonWidth/2 + marginWidth + highScoreBox.frame.height/2))
     scene.addChild(highScoreBox)
     elements.append(highScoreBox)
     
-    let defaults = NSUserDefaults()
-    highScoreLabel = SKLabelNode(text: "HIGH SCORE: \(defaults.integerForKey("high score"))")
+    let defaults = UserDefaults()
+    highScoreLabel = SKLabelNode(text: "HIGH SCORE: \(defaults.integer(forKey: "high score"))")
     highScoreLabel.fontColor = currentTheme.tintColor
     highScoreLabel.position.y = -highScoreLabel.frame.height/2
     highScoreLabel.fontSize = 32 * gameFrame.width/320
-    highScoreLabel.runAction(SKAction.scaleTo((highScoreBox.frame.height*0.8)/highScoreLabel.frame.height, duration: 0))
+    highScoreLabel.run(SKAction.scale(to: (highScoreBox.frame.height*0.8)/highScoreLabel.frame.height, duration: 0))
     highScoreBox.addChild(highScoreLabel)
     
   }
   
   
-  func doWhenTouchesBegan(location: CGPoint) {
+  func doWhenTouchesBegan(_ location: CGPoint) {
     if isActive {
       button1.doWhenTouchesBegan(location)
       button2.doWhenTouchesBegan(location)
@@ -98,7 +98,7 @@ class MainMenu {
   }
   
   
-  func doWhenTouchesMoved(location: CGPoint) {
+  func doWhenTouchesMoved(_ location: CGPoint) {
     if isActive {
       button1.doWhenTouchesMoved(location)
       button2.doWhenTouchesMoved(location)
@@ -109,7 +109,7 @@ class MainMenu {
   }
   
   
-  func doWhenTouchesEnded(location: CGPoint, shot: Bool) {
+  func doWhenTouchesEnded(_ location: CGPoint, shot: Bool) {
     if isActive {
       button1.doWhenTouchesEnded(location)
       button2.doWhenTouchesEnded(location)
@@ -125,7 +125,7 @@ class MainMenu {
   func appear() {
     for element in elements {
       element.removeAllActions()
-      element.runAction(fadeIn)
+      element.run(fadeIn)
     }
     isActive = true
   }
@@ -134,7 +134,7 @@ class MainMenu {
   func disappear() {
     for element in elements {
       element.removeAllActions()
-      element.runAction(fadeOut)
+      element.run(fadeOut)
     }
     isActive = false
   }

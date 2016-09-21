@@ -7,6 +7,26 @@
 //
 
 import SpriteKit
+fileprivate func < <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
+  switch (lhs, rhs) {
+  case let (l?, r?):
+    return l < r
+  case (nil, _?):
+    return true
+  default:
+    return false
+  }
+}
+
+fileprivate func <= <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
+  switch (lhs, rhs) {
+  case let (l?, r?):
+    return l <= r
+  default:
+    return !(rhs < lhs)
+  }
+}
+
 
 class Ball: SKShapeNode {
   var radius = CGFloat()
@@ -16,8 +36,8 @@ class Ball: SKShapeNode {
     
     name = "ball"
     radius = gameFrame.width * configValueForKey("Relative ball radius")
-    path = CGPathCreateWithEllipseInRect(CGRectMake(-radius, -radius, radius*2, radius*2), nil)
-    position = CGPointMake(gameFrame.midX, gameFrame.height*0.4)
+    path = CGPath(ellipseIn: CGRect(x: -radius, y: -radius, width: radius*2, height: radius*2), transform: nil)
+    position = CGPoint(x: gameFrame.midX, y: gameFrame.height*0.4)
     fillColor = currentTheme.ballColor
     lineWidth = 1
     strokeColor = fillColor
@@ -26,7 +46,7 @@ class Ball: SKShapeNode {
     physicsBody = SKPhysicsBody(circleOfRadius: radius)
     physicsBody?.categoryBitMask = PhysicsCategory.Ball
     physicsBody?.contactTestBitMask = PhysicsCategory.Terrain | PhysicsCategory.ImpermeableTerrain | PhysicsCategory.Wall
-    physicsBody?.dynamic = true
+    physicsBody?.isDynamic = true
     physicsBody!.mass = pow(0.000000305*gameFrame.height, 0.5)
     physicsBody!.angularDamping = 4
     physicsBody?.usesPreciseCollisionDetection = true
@@ -35,17 +55,21 @@ class Ball: SKShapeNode {
   
   }
   
-  func scroll(interval: CGFloat) {
+  func scroll(_ interval: CGFloat) {
     position.y -= interval
   }
   
   func reset() {
-    physicsBody?.resting = true
+    physicsBody?.isResting = true
     position.y = gameFrame.height*0.32
   }
   
-  func update(terrains: TerrainController) {
-    if physicsBody?.velocity.dy <= 0 || (physicsBody?.velocity.dy < 30 && terrains.current is Ring) {
+  func update(_ terrains: TerrainController) {
+    if (physicsBody?.velocity.dy <= 0 || (physicsBody?.velocity.dy < 30 && terrains.current is Ring)) &&
+      !(terrains.containPoint(CGPoint(x: position.x, y: position.y-(radius-1.5))) ||
+        terrains.containPoint(CGPoint(x: position.x, y: position.y+(radius-1.5))) ||
+        terrains.containPoint(CGPoint(x: position.x-(radius-1.5), y: position.y)) ||
+        terrains.containPoint(CGPoint(x: position.x+(radius-1.5), y: position.y))) {
       physicsBody?.collisionBitMask = PhysicsCategory.Wall | PhysicsCategory.ImpermeableTerrain | PhysicsCategory.Terrain
       collidingWithPermeable = true
     } else {
@@ -53,16 +77,9 @@ class Ball: SKShapeNode {
       collidingWithPermeable = false
     }
     
-    if terrains.containPoint(CGPointMake(position.x, position.y-(radius-1.5))) ||
-      terrains.containPoint(CGPointMake(position.x, position.y+(radius-1.5))) ||
-      terrains.containPoint(CGPointMake(position.x-(radius-1.5), position.y)) ||
-      terrains.containPoint(CGPointMake(position.x+(radius-1.5), position.y)){
-      physicsBody?.collisionBitMask = PhysicsCategory.Wall | PhysicsCategory.ImpermeableTerrain
-    }
-    
     if gameScene.menu.isActive || gameScene.deathMenu.isActive {
       physicsBody?.collisionBitMask = PhysicsCategory.Wall | PhysicsCategory.ImpermeableTerrain | PhysicsCategory.Terrain
-      collidingWithPermeable = false
+      collidingWithPermeable = true
     }
   
   }
