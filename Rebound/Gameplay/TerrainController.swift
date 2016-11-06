@@ -34,7 +34,8 @@ class TerrainController {
     for i in 0...array.count-1 {
       if let terrain = array[i] {
         terrain.position.y -= interval
-        if terrain.position.y < gameFrame.height && !terrain.hasAppeared {terrain.appear()}
+        if (terrain.position.y < gameFrame.height && !terrain.hasAppeared) ||
+          (i == 2 && !terrain.hasAppeared) {terrain.appear()}
         if terrain is Platform  {if terrain.position.y < 0 && !terrain.hasFallen {terrain.fall()}}
         if terrain is Ring  {if terrain.position.y < -terrain.frame.height/2 && !terrain.hasFallen {terrain.fall()}}
         if (terrain.position.y + (terrain.thickness + ball.frame.height/2) - 2.5 <= ball.position.y &&
@@ -52,7 +53,7 @@ class TerrainController {
       }
     }
     
-    difficulty = CGFloat(score.amount)/50
+    difficulty = pow(CGFloat(score.amount), 1/7) - 1
     
     if array[array.count-1]!.position.y < gameFrame.height*2 {
       makeRandomTerrain(difficulty)

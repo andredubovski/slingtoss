@@ -30,7 +30,7 @@ class Terrain: SKShapeNode {
     fatalError("init(coder:) has not been implemented")
   }
   
-  func build(_ path: CGPath?) {
+  func build(physicsPath: CGPath? = nil) {
     
     zPosition = 2.5
     if let p = path {physicsBody = SKPhysicsBody(polygonFrom: p)}
@@ -49,7 +49,7 @@ class Terrain: SKShapeNode {
   }
   
   func build() {
-    build(nil)
+    build(physicsPath: nil)
   }
   
   func appear() {
