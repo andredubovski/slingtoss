@@ -1,4 +1,84 @@
 
+## 47.14 (November 1, 2016)
+
+UPDATED:
+- Supersonic to 6.4.18;
+- MyTarget to 4.5.14;
+- iSoma to 8.0.10;
+- GoogleMobileAds to 7.14.0;
+- Facebook to 4.17.0;
+
+## 47.13 (October 24, 2016)
+
+UPDATED:
+- Instreamatic to 2.9.4;
+- GoogleMobileAds to 7.13.1;
+- Yandex to 2.5.0 (Yandex Metrica to 2.6.2);
+
+REMOVED:
+- Chartboost provider;
+
+## 47.12 (October 17, 2016)
+
+UPDATED:
+- Vungle to 4.0.6;
+- MyTarget to 4.5.12;
+- iSoma to 8.0.9;
+
+## 47.11 (October 11, 2016)
+
+UPDATED:
+- GoogleMobileAds to 7.12.1;
+- RevMobAds to 9.2.3;
+- Instreamatic to 2.9.3;
+- FlurryAds to 7.8.0;
+- Facebook to 4.16.1;
+
+## 47.10 (October 3, 2016)
+
+UPDATED:
+- AmazonAd to 2.2.15;
+- Vungle to 4.0.5;
+- TapSense to 3.2.3;
+- Supersonic to 6.4.17;
+- NativeX to 5.5.9;
+- RevMobAds to 9.2.2;
+- InMobi to 6.0.0;
+- MyTarget to 4.5.9;
+- iSoma to 8.0.8;
+- GoogleMobileAds to 7.12.0;
+- Yandex to 2.4.0 (Yandex Metrica to 2.6.0);
+- Facebook to 4.16.0;
+
+- RevMob provider become optional (removed from full version of AdToAppSDK because of the large number of crashes);
+
+## 47.9 (September 26, 2016)
+
+UPDATED:
+- Wooby provider (Image);
+- Supersonic provider with SDK v6.4.17;
+
+## 47.8 (September 26, 2016)
+
+ADDED:
+- Facebook provider (Interstitial and Banners formats);
+- NativeX provider with SDK v5.5.8;
+
+## 47.7 (September 19, 2016)
+
+FIXED:
+- analytics uploader bugfixes;
+
+## 47.6 (September 15, 2016)
+
+REMOVED:
+- NativeX provider
+
+## 47.5 (September 14, 2016)
+
+UPDATED:
+- installs tracking logic for InHouse ads;
+
 ## 47.4 (September 6, 2016)
 
 UPDATED:

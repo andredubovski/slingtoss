@@ -27,7 +27,6 @@
 		8F352C1B1D75FCF600EEC2B1 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F352C1A1D75FCF600EEC2B1 /* AdSupport.framework */; };
 		8F352C1D1D75FCFF00EEC2B1 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F352C1C1D75FCFF00EEC2B1 /* MediaPlayer.framework */; };
 		8F352C1F1D75FD0900EEC2B1 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F352C1E1D75FD0900EEC2B1 /* SystemConfiguration.framework */; };
-		8F352C211D75FD1200EEC2B1 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F352C201D75FD1200EEC2B1 /* StoreKit.framework */; };
 		8F352C231D75FD1B00EEC2B1 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F352C221D75FD1B00EEC2B1 /* MessageUI.framework */; };
 		8F36DB3B1D7515580096105D /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F36DB3A1D7515580096105D /* Theme.swift */; };
 		8F420FBF1D73F48A0004DA61 /* Ring.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F420FBE1D73F48A0004DA61 /* Ring.swift */; };
@@ -53,6 +52,7 @@
 		C1A1E5A41D7B202400E7CDE4 /* SettingsScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1A1E5A31D7B202400E7CDE4 /* SettingsScene.swift */; };
 		C1A1E5A61D7B222700E7CDE4 /* SKToggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1A1E5A51D7B222700E7CDE4 /* SKToggle.swift */; };
 		C1A1E5A81D7B5AF400E7CDE4 /* SettingsMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1A1E5A71D7B5AF400E7CDE4 /* SettingsMenu.swift */; };
+		C1B3B7821DCFB13600F1EC77 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1B3B7811DCFB13600F1EC77 /* StoreKit.framework */; };
 		C1C987491D7F97FD0074BC0F /* Bounce.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C1C987481D7F97FD0074BC0F /* Bounce.mp3 */; };
 		C1C9874B1D7FA9F10074BC0F /* StrangeGreenPlanet.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C1C9874A1D7FA9F10074BC0F /* StrangeGreenPlanet.mp3 */; };
 		C1C9874F1D7FC1F40074BC0F /* GameOver.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C1C9874E1D7FC1F40074BC0F /* GameOver.mp3 */; };
@@ -83,7 +83,6 @@
 		8F352C1A1D75FCF600EEC2B1 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		8F352C1C1D75FCFF00EEC2B1 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		8F352C1E1D75FD0900EEC2B1 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		8F352C201D75FD1200EEC2B1 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		8F352C221D75FD1B00EEC2B1 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		8F352C261D75FFBD00EEC2B1 /* Rebound-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Rebound-Bridging-Header.h"; sourceTree = "<group>"; };
 		8F36DB3A1D7515580096105D /* Theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
@@ -111,6 +110,7 @@
 		C1A1E5A31D7B202400E7CDE4 /* SettingsScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsScene.swift; sourceTree = "<group>"; };
 		C1A1E5A51D7B222700E7CDE4 /* SKToggle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKToggle.swift; sourceTree = "<group>"; };
 		C1A1E5A71D7B5AF400E7CDE4 /* SettingsMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsMenu.swift; sourceTree = "<group>"; };
+		C1B3B7811DCFB13600F1EC77 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		C1C987481D7F97FD0074BC0F /* Bounce.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Bounce.mp3; sourceTree = "<group>"; };
 		C1C9874A1D7FA9F10074BC0F /* StrangeGreenPlanet.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = StrangeGreenPlanet.mp3; sourceTree = "<group>"; };
 		C1C9874E1D7FC1F40074BC0F /* GameOver.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = GameOver.mp3; sourceTree = "<group>"; };
@@ -123,7 +123,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				8F352C231D75FD1B00EEC2B1 /* MessageUI.framework in Frameworks */,
-				8F352C211D75FD1200EEC2B1 /* StoreKit.framework in Frameworks */,
 				8F352C1F1D75FD0900EEC2B1 /* SystemConfiguration.framework in Frameworks */,
 				8F352C1D1D75FCFF00EEC2B1 /* MediaPlayer.framework in Frameworks */,
 				8F352C1B1D75FCF600EEC2B1 /* AdSupport.framework in Frameworks */,
@@ -135,6 +134,7 @@
 				8F352C0F1D75FC3200EEC2B1 /* QuartzCore.framework in Frameworks */,
 				8F352C0D1D75FC2600EEC2B1 /* EventKitUI.framework in Frameworks */,
 				8F352C0B1D75FC1F00EEC2B1 /* EventKit.framework in Frameworks */,
+				C1B3B7821DCFB13600F1EC77 /* StoreKit.framework in Frameworks */,
 				8F352C091D75FC0000EEC2B1 /* Social.framework in Frameworks */,
 				8F352C071D75FBF600EEC2B1 /* CoreMotion.framework in Frameworks */,
 				8F352C051D75FBDB00EEC2B1 /* Photos.framework in Frameworks */,
@@ -154,6 +154,7 @@
 		4FD94EDA282B6EDFE3E63B90 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C1B3B7811DCFB13600F1EC77 /* StoreKit.framework */,
 				8F352C241D75FDA100EEC2B1 /* iOS */,
 				83F4DDC37BA9B280D4A78DDC /* libPods-Rebound.a */,
 			);
@@ -164,7 +165,6 @@
 			isa = PBXGroup;
 			children = (
 				8F352C221D75FD1B00EEC2B1 /* MessageUI.framework */,
-				8F352C201D75FD1200EEC2B1 /* StoreKit.framework */,
 				8F352C1E1D75FD0900EEC2B1 /* SystemConfiguration.framework */,
 				8F352C1C1D75FCFF00EEC2B1 /* MediaPlayer.framework */,
 				8F352C1A1D75FCF600EEC2B1 /* AdSupport.framework */,
@@ -350,6 +350,11 @@
 						DevelopmentTeam = YRLX8RKRSZ;
 						LastSwiftMigration = 0800;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.InAppPurchase = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
