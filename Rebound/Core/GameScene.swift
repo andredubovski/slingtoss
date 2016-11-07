@@ -343,7 +343,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate, AdToAppSDKDelegate, AdToAppV
     }
   }
   
-  func ad(_ adToAppView: AdToAppView!, failedToDisplayAdWithError error: NSError!, isConnectionError: Bool) {
+  func ad(_ adToAppView: AdToAppView!, failedToDisplayAdWithError error: Error!, isConnectionError: Bool) {
     return
   }
   

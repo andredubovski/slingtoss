@@ -35,7 +35,7 @@ class Ring: Terrain {
     name = "ring"
     //create path that has platform shape based on dimensions
     let mutablePath = CGMutablePath()
-    CGPathMoveToPoint(mutablePath, nil, 0, 0)
+    mutablePath.move(to: CGPoint(x: 0, y: 0))
     CGPathAddEllipseInRect(mutablePath, nil, CGRect(x: -radius, y: 0, width: radius*2, height: radius*2))
     CGPathAddEllipseInRect(mutablePath, nil, CGRect(x: -(radius-thickness), y: thickness, width: (radius-thickness)*2, height: (radius-thickness)*2))
     mutablePath.closeSubpath()
