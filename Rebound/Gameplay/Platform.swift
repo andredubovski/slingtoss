@@ -35,14 +35,15 @@ class Platform: Terrain {
     
     //create path that has platform shape based on dimensions
     let mutablePath = CGMutablePath()
-    CGPathMoveToPoint(mutablePath, nil, -length/2, 0)
-    CGPathAddLineToPoint(mutablePath, nil, length/2, 0)
-    CGPathAddLineToPoint(mutablePath, nil, length/2 + edgeHeight/sqrt(2), edgeHeight/sqrt(2))
-    CGPathAddLineToPoint(mutablePath, nil, length/2 + (edgeHeight-thickness)/sqrt(2), (edgeHeight+thickness)/sqrt(2))
-    CGPathAddLineToPoint(mutablePath, nil, length/2 - thickness*tan(radians(22.5)), thickness)
-    CGPathAddLineToPoint(mutablePath, nil, -(length/2 - thickness*tan(radians(22.5))), thickness)
-    CGPathAddLineToPoint(mutablePath, nil, -length/2 - (edgeHeight-thickness)/sqrt(2), (edgeHeight+thickness)/sqrt(2))
-    CGPathAddLineToPoint(mutablePath, nil, -(length/2 + edgeHeight/sqrt(2)), edgeHeight/sqrt(2))
+    mutablePath.move(to: CGPoint(x: 0, y: 0))
+    mutablePath.addLine(to: CGPoint(x: -length/2, y: 0))
+    mutablePath.addLine(to: CGPoint(x: length/2, y: 0))
+    mutablePath.addLine(to: CGPoint(x: length/2 + edgeHeight/sqrt(2), y: edgeHeight/sqrt(2)))
+    mutablePath.addLine(to: CGPoint(x: length/2 + (edgeHeight-thickness)/sqrt(2), y: (edgeHeight+thickness)/sqrt(2)))
+    mutablePath.addLine(to: CGPoint(x: length/2 - thickness*tan(radians(22.5)), y: thickness))
+    mutablePath.addLine(to: CGPoint(x: -(length/2 - thickness*tan(radians(22.5))), y: thickness))
+    mutablePath.addLine(to: CGPoint(x: -length/2 - (edgeHeight-thickness)/sqrt(2), y: (edgeHeight+thickness)/sqrt(2)))
+    mutablePath.addLine(to: CGPoint(x: -(length/2 + edgeHeight/sqrt(2)), y: edgeHeight/sqrt(2)))
     mutablePath.closeSubpath()
     path = mutablePath
     

@@ -36,8 +36,8 @@ class Ring: Terrain {
     //create path that has platform shape based on dimensions
     let mutablePath = CGMutablePath()
     mutablePath.move(to: CGPoint(x: 0, y: 0))
-    CGPathAddEllipseInRect(mutablePath, nil, CGRect(x: -radius, y: 0, width: radius*2, height: radius*2))
-    CGPathAddEllipseInRect(mutablePath, nil, CGRect(x: -(radius-thickness), y: thickness, width: (radius-thickness)*2, height: (radius-thickness)*2))
+    mutablePath.addEllipse(in: CGRect(x: -radius, y: 0, width: radius*2, height: radius*2))
+    mutablePath.addEllipse(in: CGRect(x: -(radius-thickness), y: thickness, width: (radius-thickness)*2, height: (radius-thickness)*2))
     mutablePath.closeSubpath()
     path = mutablePath
     
@@ -45,8 +45,9 @@ class Ring: Terrain {
     fillColor = currentTheme.ringColor(randomRadius)
     
     let physicsPath = CGMutablePath()
-    CGPathAddArc(physicsPath, nil, 0, radius, radius, radians(-90), radians(270), false)
-    CGPathAddArc(physicsPath, nil, 0, radius, radius-thickness, radians(270), radians(-90), true)
+    physicsPath.move(to: CGPoint(x: 0, y: 0))
+    physicsPath.addArc(center: CGPoint(x: 0, y: radius), radius: radius, startAngle: radians(-90), endAngle: radians(270), clockwise: false)
+    physicsPath.addArc(center: CGPoint(x: 0, y: radius), radius: radius-thickness, startAngle: radians(270), endAngle: radians(-90), clockwise: false)
     physicsPath.closeSubpath()
 
     super.build(physicsPath)

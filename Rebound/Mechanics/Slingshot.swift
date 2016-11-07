@@ -47,9 +47,9 @@ class Slingshot: SKShapeNode {
     alpha = 0.2 + 0.35*(stretch/maxStretch)
     
     let mutablePath = CGMutablePath()
-    CGPathMoveToPoint(mutablePath, nil, radius, 0)
-    CGPathAddArc(mutablePath, nil, 0, 0, radius, radians(0), radians(180), true)
-    CGPathAddLineToPoint(mutablePath, nil, 0, stretch)
+    mutablePath.move(to: CGPoint(x: radius, y: 0))
+    mutablePath.addArc(center: CGPoint(x: 0, y: 0), radius: radius, startAngle: radians(0), endAngle: radians(180), clockwise: true)
+    mutablePath.addLine(to: CGPoint(x: 0, y: stretch))
     mutablePath.closeSubpath()
     path = mutablePath
     
