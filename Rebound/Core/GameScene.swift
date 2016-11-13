@@ -35,6 +35,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate, AdToAppSDKDelegate, AdToAppV
   var backgroundMusicPlayer: AVAudioPlayer! = nil
   var bouncePlayerIndex = Int(0)
   var bounceSoundPlayer = [AVAudioPlayer!]()
+  var aimSoundPlayer = [AVAudioPlayer!]()
   var gameOverSoundPlayer: AVAudioPlayer! = nil
   
   override func didMove(to view: SKView) {
@@ -252,6 +253,20 @@ class GameScene: SKScene, SKPhysicsContactDelegate, AdToAppSDKDelegate, AdToAppV
     backgroundMusicPlayer.volume = defaults.bool(forKey: "Music") ? 0.24 : 0
   }
   
+  func buildAimSound() {
+    for i in 1...4 {
+      let path = Bundle.main.path(forResource: "Aiming\(i).m4a", ofType:nil)!
+      let url = URL(fileURLWithPath: path)
+      do {
+        let sound = try AVAudioPlayer(contentsOf: url)
+        sound.prepareToPlay()
+        aimSoundPlayer.append(sound)
+      } catch {
+        fatalError("couldn't load music file")
+      }
+    }
+  }
+  
   func buildBounceSound() {
     let path = Bundle.main.path(forResource: "Bounce.m4a", ofType:nil)!
     let url = URL(fileURLWithPath: path)
@@ -299,12 +314,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate, AdToAppSDKDelegate, AdToAppV
 
   func setupSound() {
     let audioSession = AVAudioSession.sharedInstance()
-    do {
-      try audioSession.setCategory(AVAudioSessionCategoryAmbient, with: .duckOthers)
-    } catch {
-      print("AVAudioSession cannot be set: \(error)")
-    }
+    do {try audioSession.setCategory(AVAudioSessionCategoryAmbient, with: .duckOthers)}
+    catch {print("AVAudioSession cannot be set: \(error)")}
     beginBgMusic()
+    buildAimSound()
     buildBounceSound()
     buildGameOverSound()
   }
@@ -314,7 +327,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate, AdToAppSDKDelegate, AdToAppV
     //Uncomment the line below if you need test mode
     AdToAppSDK.enableTestMode()
     //Uncomment the line below if you need logs
-    AdToAppSDK.enableDebugLogs()
+//    AdToAppSDK.enableDebugLogs()
     AdToAppSDK.setDelegate(self)
     AdToAppSDK.start(withAppId: "39c3f1a3-bced-4ae4-851b-7cb603a44479:c4050a11-a7eb-4733-b961-7d77c7601aee", modules:[
       ADTOAPP_IMAGE_INTERSTITIAL,

@@ -49,6 +49,10 @@
 		8FF346961D6D0B2C00504D3E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FF346951D6D0B2C00504D3E /* AppDelegate.swift */; };
 		8FF346981D6D0B2C00504D3E /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8FF346971D6D0B2C00504D3E /* GameScene.sks */; };
 		9FCB24C26CF48FB098DED68D /* libPods-Rebound.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 83F4DDC37BA9B280D4A78DDC /* libPods-Rebound.a */; };
+		C11DA6091DD9269200E47D69 /* Aiming1.m4a in Resources */ = {isa = PBXBuildFile; fileRef = C11DA6051DD9269200E47D69 /* Aiming1.m4a */; };
+		C11DA60A1DD9269200E47D69 /* Aiming2.m4a in Resources */ = {isa = PBXBuildFile; fileRef = C11DA6061DD9269200E47D69 /* Aiming2.m4a */; };
+		C11DA60B1DD9269200E47D69 /* Aiming3.m4a in Resources */ = {isa = PBXBuildFile; fileRef = C11DA6071DD9269200E47D69 /* Aiming3.m4a */; };
+		C11DA60C1DD9269200E47D69 /* Aiming4.m4a in Resources */ = {isa = PBXBuildFile; fileRef = C11DA6081DD9269200E47D69 /* Aiming4.m4a */; };
 		C1401AA01D7D3071007764F8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C1401A9F1D7D3071007764F8 /* Assets.xcassets */; };
 		C1A1E5A41D7B202400E7CDE4 /* SettingsScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1A1E5A31D7B202400E7CDE4 /* SettingsScene.swift */; };
 		C1A1E5A61D7B222700E7CDE4 /* SKToggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1A1E5A51D7B222700E7CDE4 /* SKToggle.swift */; };
@@ -109,6 +113,10 @@
 		8FF346921D6D0B2C00504D3E /* Rebound.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Rebound.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8FF346951D6D0B2C00504D3E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8FF346971D6D0B2C00504D3E /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
+		C11DA6051DD9269200E47D69 /* Aiming1.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = Aiming1.m4a; path = "Sling Sound Effects/Aiming1.m4a"; sourceTree = "<group>"; };
+		C11DA6061DD9269200E47D69 /* Aiming2.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = Aiming2.m4a; path = "Sling Sound Effects/Aiming2.m4a"; sourceTree = "<group>"; };
+		C11DA6071DD9269200E47D69 /* Aiming3.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = Aiming3.m4a; path = "Sling Sound Effects/Aiming3.m4a"; sourceTree = "<group>"; };
+		C11DA6081DD9269200E47D69 /* Aiming4.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = Aiming4.m4a; path = "Sling Sound Effects/Aiming4.m4a"; sourceTree = "<group>"; };
 		C1401A9F1D7D3071007764F8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C1A1E5A31D7B202400E7CDE4 /* SettingsScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsScene.swift; sourceTree = "<group>"; };
 		C1A1E5A51D7B222700E7CDE4 /* SKToggle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKToggle.swift; sourceTree = "<group>"; };
@@ -248,6 +256,7 @@
 			isa = PBXGroup;
 			children = (
 				C1F2D3C71DD8E88E008D8315 /* Bounce.m4a */,
+				C11DA6041DD9268100E47D69 /* Sling Sound Effects */,
 				C1F2D3C91DD8EDA4008D8315 /* GameOver.m4a */,
 				C1C9874A1D7FA9F10074BC0F /* StrangeGreenPlanet.mp3 */,
 			);
@@ -295,6 +304,17 @@
 				8F36DB3A1D7515580096105D /* Theme.swift */,
 			);
 			path = Mechanics;
+			sourceTree = "<group>";
+		};
+		C11DA6041DD9268100E47D69 /* Sling Sound Effects */ = {
+			isa = PBXGroup;
+			children = (
+				C11DA6051DD9269200E47D69 /* Aiming1.m4a */,
+				C11DA6061DD9269200E47D69 /* Aiming2.m4a */,
+				C11DA6071DD9269200E47D69 /* Aiming3.m4a */,
+				C11DA6081DD9269200E47D69 /* Aiming4.m4a */,
+			);
+			name = "Sling Sound Effects";
 			sourceTree = "<group>";
 		};
 		C1A1E5AB1D7B617800E7CDE4 /* Settings */ = {
@@ -387,12 +407,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C11DA60B1DD9269200E47D69 /* Aiming3.m4a in Resources */,
 				C1F2D3CA1DD8EDA4008D8315 /* GameOver.m4a in Resources */,
 				8F9463DA1D7668E8002233A7 /* Main.storyboard in Resources */,
 				8FF346981D6D0B2C00504D3E /* GameScene.sks in Resources */,
 				8F9463D91D7668E8002233A7 /* LaunchScreen.storyboard in Resources */,
 				C1C9874B1D7FA9F10074BC0F /* StrangeGreenPlanet.mp3 in Resources */,
+				C11DA60A1DD9269200E47D69 /* Aiming2.m4a in Resources */,
 				C1F2D3C81DD8E88E008D8315 /* Bounce.m4a in Resources */,
+				C11DA6091DD9269200E47D69 /* Aiming1.m4a in Resources */,
+				C11DA60C1DD9269200E47D69 /* Aiming4.m4a in Resources */,
 				C1CAFF181D7E481E008B3D5F /* Config.plist in Resources */,
 				C1401AA01D7D3071007764F8 /* Assets.xcassets in Resources */,
 			);
