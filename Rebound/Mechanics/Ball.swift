@@ -65,7 +65,7 @@ class Ball: SKShapeNode {
   }
   
   func update(_ terrains: TerrainController) {
-    if (physicsBody?.velocity.dy <= 0 || (physicsBody?.velocity.dy < 30 && terrains.current is Ring)) &&
+    if physicsBody?.velocity.dy <= 30 &&
       !(terrains.containPoint(CGPoint(x: position.x, y: position.y-(radius-1.5))) ||
         terrains.containPoint(CGPoint(x: position.x, y: position.y+(radius-1.5))) ||
         terrains.containPoint(CGPoint(x: position.x-(radius-1.5), y: position.y)) ||

@@ -51,10 +51,10 @@ class Terrain: SKShapeNode {
   func appear() {
     let popOut = SKAction.group([SKAction.sequence([
       SKAction.scale(to: 0, duration: 0),
-      SKAction.scale(to: 1.2, duration: 0.4),
-      SKAction.scale(to: 1, duration: 0.1)
+      SKAction.scale(to: 1.2, duration: 0.24),
+      SKAction.scale(to: 1, duration: 0.06)
       ]),
-      SKAction.fadeAlpha(to: 1, duration: 0.5)
+      SKAction.fadeAlpha(to: 1, duration: 0.3)
   ])
   
     run(popOut)

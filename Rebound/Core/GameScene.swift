@@ -28,7 +28,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate, AdToAppSDKDelegate, AdToAppV
   var verticalProgress = CGFloat(0)
   
   var adsOn = defaults.bool(forKey: "Ads")
-  var atpView = AdToAppView()
+  var banner = AdToAppView()
   var atpActive = Bool(true)
   var atpPlaceholderActive = Bool(false)
   
@@ -46,7 +46,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate, AdToAppSDKDelegate, AdToAppV
   fileprivate func gameSetup() {
     
     currentTheme.build()
-    setupAdToApp()
+    if defaults.bool(forKey: "Ads") {setupAdToApp()}
     setupSound()
     physicsWorld.contactDelegate = self
     gameFrame = frame
@@ -169,8 +169,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate, AdToAppSDKDelegate, AdToAppV
   }
   
   func doubleTapped() {
-    let defaults = UserDefaults()
-    defaults.set(defaults.integer(forKey: "theme") + 1 < themes.count ? defaults.integer(forKey: "theme") + 1 : 0, forKey: "theme")
+//    let defaults = UserDefaults()
+//    defaults.set(defaults.integer(forKey: "theme") + 1 < themes.count ? defaults.integer(forKey: "theme") + 1 : 0, forKey: "theme")
+    
+    banner.isHidden = !banner.isHidden
+    
   }
   
   
@@ -207,7 +210,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate, AdToAppSDKDelegate, AdToAppV
   
   
   func didBegin(_ contact: SKPhysicsContact) {
-    if contact.collisionImpulse > 0.45 && defaults.bool(forKey: "SFX") {
+    if contact.collisionImpulse > 1.89 && defaults.bool(forKey: "SFX") {
       if ((contact.bodyA.node!.name == "ball" && contact.bodyB.node!.name == "permeable platform") ||
         (contact.bodyB.node!.name == "ball" && contact.bodyA.node!.name == "permeable platform") ||
         (contact.bodyA.node!.name == "ball" && contact.bodyB.node!.name == "ring") ||
@@ -247,7 +250,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate, AdToAppSDKDelegate, AdToAppV
   func buildBounceSound() {
     let path = Bundle.main.path(forResource: "Bounce.m4a", ofType:nil)!
     let url = URL(fileURLWithPath: path)
-    for _ in 0...2 {
+    for _ in 0...1 {
       do {
         let sound = try AVAudioPlayer(contentsOf: url)
         sound.prepareToPlay()
@@ -259,7 +262,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate, AdToAppSDKDelegate, AdToAppV
   }
   
   func playBounceSound(_ volume: CGFloat) {
-    let previousIndex = bouncePlayerIndex - 1 >= 0 ? bouncePlayerIndex - 1 : 2
+    let previousIndex = bouncePlayerIndex - 1 >= 0 ? bouncePlayerIndex - 1 : 1
     if bounceSoundPlayer[previousIndex].isPlaying {
       if bounceSoundPlayer[previousIndex].currentTime > 0.1 {
         bounceSoundPlayer[bouncePlayerIndex].volume = Float(volume)
@@ -272,17 +275,17 @@ class GameScene: SKScene, SKPhysicsContactDelegate, AdToAppSDKDelegate, AdToAppV
     }
     
     bouncePlayerIndex += 1
-    if bouncePlayerIndex > 2 {bouncePlayerIndex = 0}
+    if bouncePlayerIndex > 1 {bouncePlayerIndex = 0}
   }
   
   func buildGameOverSound() {
-    let path = Bundle.main.path(forResource: "GameOver.mp3", ofType:nil)!
+    let path = Bundle.main.path(forResource: "GameOver.m4a", ofType:nil)!
     let url = URL(fileURLWithPath: path)
     
     do {
       let sound = try AVAudioPlayer(contentsOf: url)
       gameOverSoundPlayer = sound
-      gameOverSoundPlayer.volume = 0.4
+      gameOverSoundPlayer.volume = 1
       gameOverSoundPlayer.prepareToPlay()
     } catch {
       fatalError("couldn't load music file")
@@ -304,7 +307,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate, AdToAppSDKDelegate, AdToAppV
   
   func setupAdToApp() {
     //Uncomment the line below if you need test mode
-//    AdToAppSDK.enableTestMode()
+    AdToAppSDK.enableTestMode()
     //Uncomment the line below if you need logs
     AdToAppSDK.enableDebugLogs()
     AdToAppSDK.setDelegate(self)
@@ -316,7 +319,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate, AdToAppSDKDelegate, AdToAppV
       ADTOAPP_BANNER
       ])
     
-    let banner:AdToAppView = AdToAppView.attach(to: self.view, position:ADTOAPPSDK_BANNER_POSITION_BOTTOM, edgeInsets:UIEdgeInsets.zero, bannerSize:ADTOAPPSDK_BANNER_SIZE_320x50, delegate:self) as! AdToAppView
+    
+    banner = AdToAppView.attach(to: self.view, position:ADTOAPPSDK_BANNER_POSITION_BOTTOM, edgeInsets:UIEdgeInsets.zero, bannerSize:ADTOAPPSDK_BANNER_SIZE_320x50, delegate:self) as! AdToAppView
     //Delegate methods:
     //func adToAppViewDidDisplayAd(adToAppView: AdToAppView) {
     //    NSLog("adToAppViewDidDisplayAd");
@@ -325,6 +329,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate, AdToAppSDKDelegate, AdToAppV
     //    NSLog("adToAppView:adToAppView:failedToDisplayAdWithError:isConnectionError:");
     //}
     banner.setRefreshInterval(25.0)
+    
   }
   
   func showAdPlaceholder() {
