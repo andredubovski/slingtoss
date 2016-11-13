@@ -96,7 +96,7 @@
 		8F9463D51D766885002233A7 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8F9463D71D7668E8002233A7 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8F9463D81D7668E8002233A7 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		8FA976731D791F2900A00984 /* SKButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SKButton.swift; path = ../Misc/SKButton.swift; sourceTree = "<group>"; };
+		8FA976731D791F2900A00984 /* SKButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKButton.swift; sourceTree = "<group>"; };
 		8FA976751D7935F300A00984 /* Background.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Background.swift; sourceTree = "<group>"; };
 		8FA976761D7935F300A00984 /* Ball.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ball.swift; sourceTree = "<group>"; };
 		8FA976771D7935F300A00984 /* GameScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
@@ -111,7 +111,7 @@
 		8FF346971D6D0B2C00504D3E /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
 		C1401A9F1D7D3071007764F8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C1A1E5A31D7B202400E7CDE4 /* SettingsScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsScene.swift; sourceTree = "<group>"; };
-		C1A1E5A51D7B222700E7CDE4 /* SKToggle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SKToggle.swift; path = ../Misc/SKToggle.swift; sourceTree = "<group>"; };
+		C1A1E5A51D7B222700E7CDE4 /* SKToggle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKToggle.swift; sourceTree = "<group>"; };
 		C1A1E5A71D7B5AF400E7CDE4 /* SettingsMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsMenu.swift; sourceTree = "<group>"; };
 		C1C9874A1D7FA9F10074BC0F /* StrangeGreenPlanet.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = StrangeGreenPlanet.mp3; sourceTree = "<group>"; };
 		C1CAFF171D7E481E008B3D5F /* Config.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Config.plist; sourceTree = "<group>"; };
@@ -200,10 +200,10 @@
 			children = (
 				C1401A9F1D7D3071007764F8 /* Assets.xcassets */,
 				8FF346971D6D0B2C00504D3E /* GameScene.sks */,
+				C1F2D3CD1DD902AC008D8315 /* IAPHelper.swift */,
 				8F9463D71D7668E8002233A7 /* LaunchScreen.storyboard */,
 				8F9463D81D7668E8002233A7 /* Main.storyboard */,
 				8FA9767C1D7935F300A00984 /* Tools.swift */,
-				C1F2D3CD1DD902AC008D8315 /* IAPHelper.swift */,
 			);
 			path = Misc;
 			sourceTree = "<group>";
@@ -235,10 +235,10 @@
 			isa = PBXGroup;
 			children = (
 				C1A1E5AB1D7B617800E7CDE4 /* Settings */,
-				8FA976731D791F2900A00984 /* SKButton.swift */,
-				C1A1E5A51D7B222700E7CDE4 /* SKToggle.swift */,
 				8F49085C1D73E67600C965CD /* DeathMenu.swift */,
 				8F49085A1D73E65900C965CD /* MainMenu.swift */,
+				8FA976731D791F2900A00984 /* SKButton.swift */,
+				C1A1E5A51D7B222700E7CDE4 /* SKToggle.swift */,
 				8FA9767A1D7935F300A00984 /* Score.swift */,
 			);
 			path = UI;
