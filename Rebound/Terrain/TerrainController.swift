@@ -48,7 +48,7 @@ class TerrainController {
           if current.doesMoveDown {current.beginMovingDown()}
         }
         if terrain.position.y < -gameFrame.height {
-          array[i] = nil
+          array[i]?.removeFromParent()
         }
       }
     }
@@ -76,7 +76,7 @@ class TerrainController {
   }
   
   
-  func makeRing(_ willMove: Bool? = nil, radiusRelativeToFrameWidth: CGFloat, relativePositionAbovePrevious: CGPoint) {
+  func makeRing(_ willMove: Bool?, radiusRelativeToFrameWidth: CGFloat, relativePositionAbovePrevious: CGPoint) {
     var radius = CGFloat()
     var position = CGPoint()
     let doesMove = false
@@ -101,7 +101,7 @@ class TerrainController {
       
       var moving = weightedRandom(0, to: 100, weight: difficulty) > 85
       
-      var permeable = !(weightedRandom(0, to: 100, weight: difficulty) > 80)
+      var permeable = !(weightedRandom(0, to: 100, weight: difficulty) > 63.5)
       
       if let lastPlatform = array[array.count-1] as? Platform {
         if lastPlatform.doesMoveDown {
@@ -131,8 +131,9 @@ class TerrainController {
   
   
   func reset(_ ball: Ball, menu: MainMenu) {
-    for p in array {
-      if let platform = p {platform.removeFromParent()}
+    for (iT, t) in array.enumerated() {
+      if let terrain = t {terrain.removeFromParent()}
+      array[iT] = nil
     }
     array.removeAll()
     

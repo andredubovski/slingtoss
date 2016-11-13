@@ -145,7 +145,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate, AdToAppSDKDelegate, AdToAppV
       if deathMenu.isActive {
         deathMenu.doWhenTouchesEnded(touchLocation, shot: shot)
         if shot {
-          terrains.array[2]!.appear()
+          terrains.array[2]?.appear()
         }
       }
       
@@ -172,7 +172,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate, AdToAppSDKDelegate, AdToAppV
 //    let defaults = UserDefaults()
 //    defaults.set(defaults.integer(forKey: "theme") + 1 < themes.count ? defaults.integer(forKey: "theme") + 1 : 0, forKey: "theme")
     
-    banner.isHidden = !banner.isHidden
+//    banner.isHidden = !banner.isHidden
+    
+    terrains.array[terrains.currentIndex] = nil
     
   }
   
@@ -194,6 +196,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate, AdToAppSDKDelegate, AdToAppV
     if interval > 0 {scroll(interval)}
     ball.update(terrains)
     slingshot.update(terrains.current, ball: ball)
+    if score.amount == 1 && terrains.array[2]!.alpha < 0.1 {
+      terrains.array[2]?.appear()
+    }
   }
   
   
