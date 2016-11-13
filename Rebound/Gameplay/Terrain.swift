@@ -30,16 +30,16 @@ class Terrain: SKShapeNode {
     fatalError("init(coder:) has not been implemented")
   }
   
-  func build(physicsPath: CGPath? = nil) {
+  func build() {
     
     zPosition = 2.5
-    if let p = path {physicsBody = SKPhysicsBody(polygonFrom: p)}
-    else {physicsBody = SKPhysicsBody(polygonFrom: self.path!)}
+    physicsBody = SKPhysicsBody(polygonFrom: self.path!)
     physicsBody?.isDynamic = false
     physicsBody?.restitution = 0.4
     physicsBody?.mass = 0.22
     physicsBody?.categoryBitMask = isPermeable ? PhysicsCategory.Terrain : PhysicsCategory.ImpermeableTerrain
     physicsBody?.contactTestBitMask = PhysicsCategory.Ball
+    physicsBody?.usesPreciseCollisionDetection = true
     
     if doesMoveDown {strokeColor = currentTheme.movingPlatformStrokeColor; lineWidth = 2; glowWidth = 0.5}
     else {strokeColor = fillColor}
@@ -48,12 +48,7 @@ class Terrain: SKShapeNode {
     
   }
   
-  func build() {
-    build(physicsPath: nil)
-  }
-  
   func appear() {
-    hasAppeared = true
     let popOut = SKAction.group([SKAction.sequence([
       SKAction.scale(to: 0, duration: 0),
       SKAction.scale(to: 1.2, duration: 0.4),
@@ -63,6 +58,7 @@ class Terrain: SKShapeNode {
   ])
   
     run(popOut)
+    hasAppeared = true
   }
   
   func fall() {

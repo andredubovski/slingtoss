@@ -6,7 +6,7 @@
 
 #import <Foundation/Foundation.h>
 
-#define ADTOAPPSDK_VERSION (@"47.4")
+#define ADTOAPPSDK_VERSION (@"47.14")
 
 #define ADTOAPP_IMAGE_INTERSTITIAL (@"Image")
 #define ADTOAPP_VIDEO_INTERSTITIAL (@"Video")
@@ -17,7 +17,6 @@
 
 /** ADS PROVIDERS **/
 #define ADTOAPP_PROVIDER_ADCOLONY_IDT       (1)
-#define ADTOAPP_PROVIDER_CHARTBOOST_IDT     (2)
 #define ADTOAPP_PROVIDER_SMAATO_IDT         (3)
 #define ADTOAPP_PROVIDER_STARTAPP_IDT       (5)
 #define ADTOAPP_PROVIDER_INMOBI_IDT         (6)

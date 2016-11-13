@@ -73,8 +73,6 @@ class TerrainController {
     array.append(newPlatform)
     newPlatform.build()
     newPlatform.makeSureIsInFrame()
-    
-    print("made \(willBePermeable ? "permeable" : "impermeable"), \(willMove ? "moving" : "stationary"),  platform at \(relativePositionAbovePrevious), with length \(lengthRelativeToFrameWidth)")
   }
   
   

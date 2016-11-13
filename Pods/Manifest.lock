@@ -1,34 +1,29 @@
 PODS:
-  - AdToApp (47.4):
-    - AdToApp/Banner (= 47.4)
-    - AdToApp/Image (= 47.4)
-    - AdToApp/Interstitial (= 47.4)
-    - AdToApp/Personagraph (= 47.4)
-    - AdToApp/Reward (= 47.4)
-    - AdToApp/Video (= 47.4)
-  - AdToApp/AdColony (47.4):
+  - AdToApp/AdColony (47.14):
     - AdToApp/Core
-  - AdToApp/AdMob (47.4):
+  - AdToApp/AdMob (47.14):
     - AdToApp/Core
-  - AdToApp/AmazonAd (47.4):
+  - AdToApp/AmazonAd (47.14):
     - AdToApp/Core
-  - AdToApp/Applovin (47.4):
+  - AdToApp/Applovin (47.14):
     - AdToApp/Core
-  - AdToApp/Avocarrot (47.4):
+  - AdToApp/Avocarrot (47.14):
     - AdToApp/Core
-  - AdToApp/Banner (47.4):
+  - AdToApp/Banner (47.14):
     - AdToApp/AdMob
     - AdToApp/AmazonAd
+    - AdToApp/Facebook
     - AdToApp/InMobi
     - AdToApp/MyTarget
-    - AdToApp/Revmob
     - AdToApp/Smaato
     - AdToApp/StartApp
     - AdToApp/TapSense
-  - AdToApp/Core (47.4)
-  - AdToApp/Flurry (47.4):
+  - AdToApp/Core (47.14)
+  - AdToApp/Facebook (47.14):
     - AdToApp/Core
-  - AdToApp/Image (47.4):
+  - AdToApp/Flurry (47.14):
+    - AdToApp/Core
+  - AdToApp/Image (47.14):
     - AdToApp/AdMob
     - AdToApp/AmazonAd
     - AdToApp/Avocarrot
@@ -37,66 +32,50 @@ PODS:
     - AdToApp/InMobi
     - AdToApp/MyTarget
     - AdToApp/NativeX
-    - AdToApp/Revmob
     - AdToApp/Smaato
     - AdToApp/StartApp
     - AdToApp/TapSense
-  - AdToApp/Inhouse (47.4):
+  - AdToApp/Inhouse (47.14):
     - AdToApp/Core
-  - AdToApp/InMobi (47.4):
+  - AdToApp/InMobi (47.14):
     - AdToApp/Core
-  - AdToApp/Instreamatic (47.4):
+  - AdToApp/Instreamatic (47.14):
     - AdToApp/Core
-  - AdToApp/Interstitial (47.4):
+  - AdToApp/Interstitial (47.14):
     - AdToApp/AdColony
     - AdToApp/AdMob
     - AdToApp/AmazonAd
     - AdToApp/Applovin
     - AdToApp/Avocarrot
+    - AdToApp/Facebook
     - AdToApp/Flurry
     - AdToApp/Inhouse
     - AdToApp/InMobi
     - AdToApp/Instreamatic
     - AdToApp/MyTarget
     - AdToApp/NativeX
-    - AdToApp/Revmob
     - AdToApp/Smaato
     - AdToApp/StartApp
     - AdToApp/TapSense
     - AdToApp/Unity
     - AdToApp/Vungle
-  - AdToApp/MyTarget (47.4):
+  - AdToApp/MyTarget (47.14):
     - AdToApp/Core
-  - AdToApp/NativeX (47.4):
+  - AdToApp/NativeX (47.14):
     - AdToApp/Core
-  - AdToApp/Personagraph (47.4):
+  - AdToApp/Revmob (47.14):
     - AdToApp/Core
-  - AdToApp/Revmob (47.4):
+  - AdToApp/Smaato (47.14):
     - AdToApp/Core
-  - AdToApp/Reward (47.4):
-    - AdToApp/AdColony
-    - AdToApp/Applovin
-    - AdToApp/Flurry
-    - AdToApp/Inhouse
-    - AdToApp/InMobi
-    - AdToApp/MyTarget
-    - AdToApp/NativeX
-    - AdToApp/Revmob
-    - AdToApp/StartApp
-    - AdToApp/Supersonic
-    - AdToApp/Unity
-    - AdToApp/Vungle
-  - AdToApp/Smaato (47.4):
+  - AdToApp/StartApp (47.14):
     - AdToApp/Core
-  - AdToApp/StartApp (47.4):
+  - AdToApp/Supersonic (47.14):
     - AdToApp/Core
-  - AdToApp/Supersonic (47.4):
+  - AdToApp/TapSense (47.14):
     - AdToApp/Core
-  - AdToApp/TapSense (47.4):
+  - AdToApp/Unity (47.14):
     - AdToApp/Core
-  - AdToApp/Unity (47.4):
-    - AdToApp/Core
-  - AdToApp/Video (47.4):
+  - AdToApp/Video (47.14):
     - AdToApp/AdColony
     - AdToApp/AdMob
     - AdToApp/Applovin
@@ -104,28 +83,32 @@ PODS:
     - AdToApp/Inhouse
     - AdToApp/MyTarget
     - AdToApp/NativeX
-    - AdToApp/Revmob
     - AdToApp/Smaato
     - AdToApp/TapSense
     - AdToApp/Unity
     - AdToApp/Vungle
-  - AdToApp/Vungle (47.4):
+  - AdToApp/Vungle (47.14):
+    - AdToApp/Core
+  - AdToApp/Yandex (47.14):
     - AdToApp/Core
   - iRate (1.11.6)
 
 DEPENDENCIES:
-  - AdToApp
   - AdToApp/AdColony
   - AdToApp/AdMob
   - AdToApp/AmazonAd
   - AdToApp/Applovin
   - AdToApp/Avocarrot
   - AdToApp/Banner
+  - AdToApp/Flurry
   - AdToApp/Image
+  - AdToApp/Inhouse
   - AdToApp/InMobi
+  - AdToApp/Instreamatic
   - AdToApp/Interstitial
   - AdToApp/MyTarget
   - AdToApp/NativeX
+  - AdToApp/Revmob
   - AdToApp/Smaato
   - AdToApp/StartApp
   - AdToApp/Supersonic
@@ -133,12 +116,13 @@ DEPENDENCIES:
   - AdToApp/Unity
   - AdToApp/Video
   - AdToApp/Vungle
+  - AdToApp/Yandex
   - iRate
 
 SPEC CHECKSUMS:
-  AdToApp: 963197588ed28a2f4ae755030a1b598fc9598136
+  AdToApp: 2db758eaece13fce792b803defec41b17f55aeac
   iRate: 61e558919c4a7fde63b3c22ebbd6c114a1eee658
 
-PODFILE CHECKSUM: 386f0e98976a1e5bbce78e58dd8f357f24cc4fc2
+PODFILE CHECKSUM: bdf9d5e94f299574a40b97e56f64c22f707c9fdd
 
 COCOAPODS: 1.0.1

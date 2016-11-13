@@ -47,5 +47,28 @@
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
 	</array>
+  <key>NSAppTransportSecurity</key>
+  <dict>
+    <key>NSAllowsArbitraryLoads</key>
+    <true/>
+  </dict>
+  <key>LSApplicationQueriesSchemes</key>
+  <array>
+    <string>fb</string>
+    <string>instagram</string>
+    <string>tumblr</string>
+    <string>twitter</string>
+    <string>itms­apps</string>
+    <string>itmss</string>
+    <string>itms</string>
+  </array>
+  <key>NSCalendarsUsageDescription</key>
+  <string>Adding events</string>
+  <key>NSPhotoLibraryUsageDescription</key>
+  <string>Taking selfies</string>
+  <key>NSCameraUsageDescription</key>
+  <string>Taking selfies</string>
+  <key>NSMotionUsageDescription </key>
+  <string>Interactive ad controls</string>
 </dict>
 </plist>

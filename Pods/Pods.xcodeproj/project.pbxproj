@@ -7,12 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1513E1E4433F4B945B8C7FDF46CF4FEC /* iRate.m in Sources */ = {isa = PBXBuildFile; fileRef = C0AB0AE4A844E72DDDF9905FEB4B6ACF /* iRate.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		1513E1E4433F4B945B8C7FDF46CF4FEC /* iRate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BF3D15B43532A36458096C76AFE4161 /* iRate.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
 		2D9AECC92A77C64AD586BC330F5282F6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */; };
 		419F5143ADC58633F82293506A021A1F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */; };
-		A53A2315F1F3902CB3DB0881F88D212D /* iRate-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A5C829D8D4D06800FF2CA1520E4B8EC6 /* iRate-dummy.m */; };
+		A53A2315F1F3902CB3DB0881F88D212D /* iRate-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = AEE310E1F7564BF9DA24D31F030118CF /* iRate-dummy.m */; };
 		EE01C40829163CC3331397810A7E152F /* Pods-Rebound-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F24EB4B4E54DEEA6FC73F822AD31A2 /* Pods-Rebound-dummy.m */; };
-		F94207909B77F7EBB7F69D5502C9EA56 /* iRate.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B5CFB0162BF3287E55AE4F368338D06 /* iRate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F94207909B77F7EBB7F69D5502C9EA56 /* iRate.h in Headers */ = {isa = PBXBuildFile; fileRef = 869C71143BD7FDE13681A8042CE20CF8 /* iRate.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -26,70 +26,70 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		08A5C31F4BACC66B08BB651212AE17F3 /* vg_cta.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = vg_cta.png; path = AdToAppResources/VungleResources/vg_cta.png; sourceTree = "<group>"; };
-		0A8700FE9DA60FBBAB40A241ECF05D8E /* libPersonagraph.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; path = libPersonagraph.a; sourceTree = "<group>"; };
+		101567D992E3E4DE1ACD2375C32623EE /* libProviderAdColony.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; path = libProviderAdColony.a; sourceTree = "<group>"; };
 		130C0D41A361A95C0E6CA8EC9AC8CE77 /* libPods-Rebound.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Rebound.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		14AF16BD38059DCE04449D71BCABC53B /* libProviderNativeX.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; path = libProviderNativeX.a; sourceTree = "<group>"; };
+		1623BC7AFD9D20F111EE54089730B664 /* libProviderAvocarrot.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; path = libProviderAvocarrot.a; sourceTree = "<group>"; };
 		16B442C597F1AE6217CC6E56353EC0D3 /* Pods-Rebound-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Rebound-acknowledgements.markdown"; sourceTree = "<group>"; };
-		1729767C9DE3CC7F2A7F5E70F82A71F1 /* TapSenseAds_Right_Arrow.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = TapSenseAds_Right_Arrow.png; path = AdToAppResources/TapSenseResources/TapSenseAds_Right_Arrow.png; sourceTree = "<group>"; };
-		19F3DF54F641D531C15C82DEA9657651 /* iRate-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "iRate-prefix.pch"; sourceTree = "<group>"; };
-		19F6A91BC58DA94E94289FED8CE1BAE3 /* ATALog.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = ATALog.h; sourceTree = "<group>"; };
-		1C7B1D0E920FEC3EE3E643A5CD4C6416 /* libProviderApplovin.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; path = libProviderApplovin.a; sourceTree = "<group>"; };
-		1C93FF2DCE1F86EB6542576BFEB180BD /* libAdToAppCore.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; path = libAdToAppCore.a; sourceTree = "<group>"; };
-		1D36286D07EB38551F670E2C7C6CE62E /* mraid.js */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.javascript; name = mraid.js; path = AdToAppResources/TapSenseResources/mraid.js; sourceTree = "<group>"; };
-		23AEB9D3F2A31A1A4FCEF8400F3775E0 /* libProviderInstreamatic.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; path = libProviderInstreamatic.a; sourceTree = "<group>"; };
-		310BD6B74002843D0B67FB37889CCDB0 /* libProviderTapSense.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; path = libProviderTapSense.a; sourceTree = "<group>"; };
+		185A2D2F16CF3E0EA6E1DAB78E733CB2 /* libProviderTapSense.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; path = libProviderTapSense.a; sourceTree = "<group>"; };
+		1BEB3BA81822BDAD3B754CED01053FE8 /* libProviderRevmob.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; path = libProviderRevmob.a; sourceTree = "<group>"; };
+		2309B98F23FB98836D610B327336D334 /* libProviderStartApp.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; path = libProviderStartApp.a; sourceTree = "<group>"; };
+		26468B25D17C91510BBA87BA964C874E /* libProviderInMobi.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; path = libProviderInMobi.a; sourceTree = "<group>"; };
+		2E1576636F5EC89ACAD8601C72074BFA /* TapSenseAds_Video_iPad.nib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file; name = TapSenseAds_Video_iPad.nib; path = AdToAppResources/TapSenseResources/TapSenseAds_Video_iPad.nib; sourceTree = "<group>"; };
+		2E1A35953B318F676EB790DD38ACC2BB /* libProviderApplovin.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; path = libProviderApplovin.a; sourceTree = "<group>"; };
+		2FF1F2270FA520B1C73A399207B5D07C /* libProviderGoogleAdMob.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; path = libProviderGoogleAdMob.a; sourceTree = "<group>"; };
+		30962A908F3B3AA9E7020453346628A9 /* mraid.js */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.javascript; name = mraid.js; path = AdToAppResources/TapSenseResources/mraid.js; sourceTree = "<group>"; };
+		312CC6619619DEC9F72DCED353109F2F /* __vungle.db */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file; name = __vungle.db; path = AdToAppResources/VungleResources/__vungle.db; sourceTree = "<group>"; };
+		3208260549FE83D9D6375ED869205DAF /* libAdToAppCore.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; path = libAdToAppCore.a; sourceTree = "<group>"; };
+		3502D3E70C94D11B2C2982587B1F6CD3 /* libProviderAmazon.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; path = libProviderAmazon.a; sourceTree = "<group>"; };
 		39EF99D7B6B63C9761874ED52E440F84 /* libiRate.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libiRate.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E0EC156A12A194E6F772118CC78FD44 /* Pods-Rebound-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Rebound-resources.sh"; sourceTree = "<group>"; };
-		3F1E3C50B635C85FDB6C1632944BD01F /* libProviderFlurry.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; path = libProviderFlurry.a; sourceTree = "<group>"; };
-		4541BAA986FC3913582EBA3AAA2D8C0C /* UnityAds.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = UnityAds.bundle; path = AdToAppResources/UnityAds.bundle; sourceTree = "<group>"; };
-		4709C64584A8FFDB6E34169D331C2C45 /* mraid_ts_ext.js */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.javascript; name = mraid_ts_ext.js; path = AdToAppResources/TapSenseResources/mraid_ts_ext.js; sourceTree = "<group>"; };
-		4958CF6E61AE61FA084483DBB71581A0 /* libProviderStartApp.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; path = libProviderStartApp.a; sourceTree = "<group>"; };
+		47F7D8EF08F5587552C1692E6DADC4F9 /* StartApp.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = StartApp.bundle; path = AdToAppResources/StartApp.bundle; sourceTree = "<group>"; };
+		4A3D438BFCCF00AF79BD39B4C706E9D1 /* TapSenseAds_Replay_Button.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = TapSenseAds_Replay_Button.png; path = AdToAppResources/TapSenseResources/TapSenseAds_Replay_Button.png; sourceTree = "<group>"; };
 		4E5CAC51A189D400E35E0E9F2306BA05 /* Pods-Rebound.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Rebound.release.xcconfig"; sourceTree = "<group>"; };
-		5136347A90090ECE3534A87DD62DC497 /* vg_privacy.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = vg_privacy.png; path = AdToAppResources/VungleResources/vg_privacy.png; sourceTree = "<group>"; };
 		58E7D60356582C73E911DCDBFE16FB3C /* Pods-Rebound-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Rebound-frameworks.sh"; sourceTree = "<group>"; };
-		5B5CFB0162BF3287E55AE4F368338D06 /* iRate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = iRate.h; path = iRate/iRate.h; sourceTree = "<group>"; };
-		5C5349A454BBC759E68DCD2704A31073 /* libProviderMyTarget.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; path = libProviderMyTarget.a; sourceTree = "<group>"; };
+		5BC5C69A8EB98979C08FE132DFF86923 /* libProviderNativeX.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; path = libProviderNativeX.a; sourceTree = "<group>"; };
 		5CA8AF895795F36D2F64FDB1A49F1D81 /* Pods-Rebound-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Rebound-acknowledgements.plist"; sourceTree = "<group>"; };
-		5E18F540FFCBB71B77A7214390B4A334 /* libProviderInhouse.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; path = libProviderInhouse.a; sourceTree = "<group>"; };
+		63691308D6EB161C1BCE261E17823468 /* libProviderFlurry.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; path = libProviderFlurry.a; sourceTree = "<group>"; };
 		63F24EB4B4E54DEEA6FC73F822AD31A2 /* Pods-Rebound-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Rebound-dummy.m"; sourceTree = "<group>"; };
-		692299646426ED57D0C4FEF79EA707C8 /* libProviderSupersonic.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; path = libProviderSupersonic.a; sourceTree = "<group>"; };
-		7BED00F02CFB2D63EB7E53A2F1C0BC20 /* vg_mute_on.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = vg_mute_on.png; path = AdToAppResources/VungleResources/vg_mute_on.png; sourceTree = "<group>"; };
-		800900FF055929951D3ED7F300AC4426 /* AdToAppView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = AdToAppView.h; sourceTree = "<group>"; };
-		81ABE35C1F7BCED8725DEE0468271F60 /* TapSenseAds_Video_iPhone.nib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file; name = TapSenseAds_Video_iPhone.nib; path = AdToAppResources/TapSenseResources/TapSenseAds_Video_iPhone.nib; sourceTree = "<group>"; };
-		83FD6FC5BA7F5B3FEA0E0D327596637D /* TapSenseAds_Left_Arrow.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = TapSenseAds_Left_Arrow.png; path = AdToAppResources/TapSenseResources/TapSenseAds_Left_Arrow.png; sourceTree = "<group>"; };
-		8917908B9237290CF5C531395BF15E39 /* AdToAppSDK.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = AdToAppSDK.h; sourceTree = "<group>"; };
-		9220966E4B37C6D298FEFDEDFB897360 /* StartApp.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = StartApp.bundle; path = AdToAppResources/StartApp.bundle; sourceTree = "<group>"; };
+		6C53B76451E967E06A71A227180082E6 /* TS_SVWebViewController.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = TS_SVWebViewController.bundle; path = AdToAppResources/TapSenseResources/TS_SVWebViewController.bundle; sourceTree = "<group>"; };
+		74F83D8424FFB3189D1F1D3B0006CE56 /* vg_close.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = vg_close.png; path = AdToAppResources/VungleResources/vg_close.png; sourceTree = "<group>"; };
+		7FB2C9F6C2B5DDE325C1622CF44BCC5F /* libProviderSupersonic.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; path = libProviderSupersonic.a; sourceTree = "<group>"; };
+		869C71143BD7FDE13681A8042CE20CF8 /* iRate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = iRate.h; path = iRate/iRate.h; sourceTree = "<group>"; };
+		8BF3D15B43532A36458096C76AFE4161 /* iRate.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = iRate.m; path = iRate/iRate.m; sourceTree = "<group>"; };
+		8C9E1C035525B4EAF59A11D416C8C6E9 /* TapSenseAds_Video_iPhone.nib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file; name = TapSenseAds_Video_iPhone.nib; path = AdToAppResources/TapSenseResources/TapSenseAds_Video_iPhone.nib; sourceTree = "<group>"; };
+		8CB550610F972DA4120D7A89C2B3E82E /* libProviderSmaato.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; path = libProviderSmaato.a; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		9D005C6CAA68E0DE129DA6F4CD01F29F /* iRate.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = iRate.xcconfig; sourceTree = "<group>"; };
-		A457A4F7930E332BDA3D2B31DFD08E33 /* AdToAppTargeting.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = AdToAppTargeting.h; sourceTree = "<group>"; };
-		A5C829D8D4D06800FF2CA1520E4B8EC6 /* iRate-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "iRate-dummy.m"; sourceTree = "<group>"; };
-		ACBD738775D906959D9F28F54B77AF92 /* TapSenseAds_Volume_On.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = TapSenseAds_Volume_On.png; path = AdToAppResources/TapSenseResources/TapSenseAds_Volume_On.png; sourceTree = "<group>"; };
-		AF4D4CF7CD62101F9E00DD67062BCADE /* TapSenseAds_Close_Button.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = TapSenseAds_Close_Button.png; path = AdToAppResources/TapSenseResources/TapSenseAds_Close_Button.png; sourceTree = "<group>"; };
-		B0BCB6ABCF2C05096DDA8FDE3D80D3CD /* TapSenseAds_Close_No_Padding.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = TapSenseAds_Close_No_Padding.png; path = AdToAppResources/TapSenseResources/TapSenseAds_Close_No_Padding.png; sourceTree = "<group>"; };
-		BAF4658EB658B88EDEFC3D8BDB643564 /* vg_mute_off.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = vg_mute_off.png; path = AdToAppResources/VungleResources/vg_mute_off.png; sourceTree = "<group>"; };
-		C0AB0AE4A844E72DDDF9905FEB4B6ACF /* iRate.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = iRate.m; path = iRate/iRate.m; sourceTree = "<group>"; };
-		CA728DD41B7658B181D6A8008F201AF9 /* libProviderChartboost.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; path = libProviderChartboost.a; sourceTree = "<group>"; };
-		CD52DF53C126231818172C12112F80DF /* libProviderSmaato.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; path = libProviderSmaato.a; sourceTree = "<group>"; };
+		9510C5F94C56827DB646E291308BB3DF /* libProviderInhouse.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; path = libProviderInhouse.a; sourceTree = "<group>"; };
+		98F83679825736AB2C9E933C0A51079F /* iRate.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = iRate.xcconfig; sourceTree = "<group>"; };
+		9D0A26DC87FAAC1123AEFD030505821F /* UnityAds.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = UnityAds.bundle; path = AdToAppResources/UnityAds.bundle; sourceTree = "<group>"; };
+		AC83DEC29C43BB7064252D1CC5B6A851 /* libProviderInstreamatic.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; path = libProviderInstreamatic.a; sourceTree = "<group>"; };
+		AC8AD3CB135A29DE6DCA33261306BF9E /* iRate.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = iRate.bundle; path = iRate/iRate.bundle; sourceTree = "<group>"; };
+		AEE310E1F7564BF9DA24D31F030118CF /* iRate-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "iRate-dummy.m"; sourceTree = "<group>"; };
+		B670E31F292A909121CE0A699EF72E3A /* libProviderFacebook.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; path = libProviderFacebook.a; sourceTree = "<group>"; };
+		BF4AFA62F844D006684BDC7B514596C4 /* iRate-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "iRate-prefix.pch"; sourceTree = "<group>"; };
+		C03D8C869BAD2818C3C82DD63D0BDA00 /* libProviderYandex.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; path = libProviderYandex.a; sourceTree = "<group>"; };
+		C1FEF736E691B2B99F80B9EC49DDC70D /* mraid_ts_ext.js */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.javascript; name = mraid_ts_ext.js; path = AdToAppResources/TapSenseResources/mraid_ts_ext.js; sourceTree = "<group>"; };
+		C3A7600BAB0CC91140BF74B849950B49 /* libProviderVungle.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; path = libProviderVungle.a; sourceTree = "<group>"; };
+		C8F905DEE0D55C9A8D31AA83B76DFC74 /* vg_privacy.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = vg_privacy.png; path = AdToAppResources/VungleResources/vg_privacy.png; sourceTree = "<group>"; };
 		CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		D63751B093CBCDEE91307E0B676AFBE6 /* libProviderUnity.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; path = libProviderUnity.a; sourceTree = "<group>"; };
-		E2D27ABF31D24A5F00AE08D7C2907FC1 /* vg_close.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = vg_close.png; path = AdToAppResources/VungleResources/vg_close.png; sourceTree = "<group>"; };
-		E4675BD97288F46C35433753DB5F739E /* libProviderAdColony.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; path = libProviderAdColony.a; sourceTree = "<group>"; };
-		E7C8B7E05686218D3BCA9A6F256269CC /* libProviderAmazon.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; path = libProviderAmazon.a; sourceTree = "<group>"; };
-		E8788B2897CB59F89D5FC10E62524F72 /* libProviderVungle.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; path = libProviderVungle.a; sourceTree = "<group>"; };
-		EA705BE75C1CB1F477C680D507F14163 /* TapSenseAds_Volume_Off.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = TapSenseAds_Volume_Off.png; path = AdToAppResources/TapSenseResources/TapSenseAds_Volume_Off.png; sourceTree = "<group>"; };
-		EB2C500C76CF5DF0282E7028B8216FD7 /* TS_SVWebViewController.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = TS_SVWebViewController.bundle; path = AdToAppResources/TapSenseResources/TS_SVWebViewController.bundle; sourceTree = "<group>"; };
-		EC14F7CA2AC23F949DB64960599D2C50 /* libProviderRevmob.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; path = libProviderRevmob.a; sourceTree = "<group>"; };
-		F21F4700C50BA263EB2EE351374EDA78 /* TapSenseAds_Video_iPad.nib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file; name = TapSenseAds_Video_iPad.nib; path = AdToAppResources/TapSenseResources/TapSenseAds_Video_iPad.nib; sourceTree = "<group>"; };
-		F24EA3052BC7AA5E7E6E0BDAAB9BB66E /* libProviderInMobi.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; path = libProviderInMobi.a; sourceTree = "<group>"; };
+		D06122DD476226C5D45B8548960F5C38 /* TapSenseAds_Volume_Off.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = TapSenseAds_Volume_Off.png; path = AdToAppResources/TapSenseResources/TapSenseAds_Volume_Off.png; sourceTree = "<group>"; };
+		D43F2B8E93D0BCE5B465CCB0680F8E24 /* TapSenseAds_Close_No_Padding.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = TapSenseAds_Close_No_Padding.png; path = AdToAppResources/TapSenseResources/TapSenseAds_Close_No_Padding.png; sourceTree = "<group>"; };
+		DAB1F00E9E634392B6B1B3E4B548A875 /* TapSenseAds_Volume_On.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = TapSenseAds_Volume_On.png; path = AdToAppResources/TapSenseResources/TapSenseAds_Volume_On.png; sourceTree = "<group>"; };
+		DB93CA4C11888EBE5636D08B79A5A184 /* libProviderUnity.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; path = libProviderUnity.a; sourceTree = "<group>"; };
+		DC62CFA8FA3FAFFDCA45AE8E0B8AA4C8 /* libProviderTest.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; path = libProviderTest.a; sourceTree = "<group>"; };
+		E1C4318E3A6968D1832DF913D688430F /* AdToAppView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = AdToAppView.h; sourceTree = "<group>"; };
+		E57975A61A447A8E4EC51576478946E8 /* vg_mute_off.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = vg_mute_off.png; path = AdToAppResources/VungleResources/vg_mute_off.png; sourceTree = "<group>"; };
+		E6400C8D628649570517CE044C37A446 /* TapSenseAds_Right_Arrow.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = TapSenseAds_Right_Arrow.png; path = AdToAppResources/TapSenseResources/TapSenseAds_Right_Arrow.png; sourceTree = "<group>"; };
+		E646A901FB1919FDEBCF3108AD26278D /* TapSenseAds_Close_Button_iPad.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = TapSenseAds_Close_Button_iPad.png; path = AdToAppResources/TapSenseResources/TapSenseAds_Close_Button_iPad.png; sourceTree = "<group>"; };
+		EF40F45AB53470DDF5CF3482B395E4F4 /* TapSenseAds_Left_Arrow.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = TapSenseAds_Left_Arrow.png; path = AdToAppResources/TapSenseResources/TapSenseAds_Left_Arrow.png; sourceTree = "<group>"; };
+		EF9ACCE1685D4D48F7AECD2BA43DC697 /* vg_cta.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = vg_cta.png; path = AdToAppResources/VungleResources/vg_cta.png; sourceTree = "<group>"; };
+		F34EA14491CBB93CFB81BF919A519A04 /* ATALog.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = ATALog.h; sourceTree = "<group>"; };
 		F3A34B644DA04E5438B675AEC61AAC58 /* Pods-Rebound.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Rebound.debug.xcconfig"; sourceTree = "<group>"; };
-		F3D241FC0021E149703C19B050501815 /* libProviderTest.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; path = libProviderTest.a; sourceTree = "<group>"; };
-		F835FB0484519E1D4C094BEF6E6A049D /* libProviderAvocarrot.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; path = libProviderAvocarrot.a; sourceTree = "<group>"; };
-		F838A65AB8D7061F81678047CEEE898A /* TapSenseAds_Replay_Button.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = TapSenseAds_Replay_Button.png; path = AdToAppResources/TapSenseResources/TapSenseAds_Replay_Button.png; sourceTree = "<group>"; };
-		F9E0C3E5349BBCD99A9517FBC81A2C38 /* TapSenseAds_Close_Button_iPad.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = TapSenseAds_Close_Button_iPad.png; path = AdToAppResources/TapSenseResources/TapSenseAds_Close_Button_iPad.png; sourceTree = "<group>"; };
-		FB2C1DA6EA5784B0E6634D94D044F3C9 /* __vungle.db */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file; name = __vungle.db; path = AdToAppResources/VungleResources/__vungle.db; sourceTree = "<group>"; };
-		FDD72ACFD71736FC4228977B23D7BA1F /* iRate.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = iRate.bundle; path = iRate/iRate.bundle; sourceTree = "<group>"; };
-		FF61EA2E3B048647386226E352C6CE38 /* libProviderGoogleAdMob.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; path = libProviderGoogleAdMob.a; sourceTree = "<group>"; };
+		F6E8078AEAD07D26D50FA0C623832D7C /* AdToAppSDK.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = AdToAppSDK.h; sourceTree = "<group>"; };
+		F9B5E16EEDAD54068141ABE710C05535 /* AdToAppTargeting.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = AdToAppTargeting.h; sourceTree = "<group>"; };
+		FCB9B88DBE54C95D28DC2F41AFF9367D /* libProviderMyTarget.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; path = libProviderMyTarget.a; sourceTree = "<group>"; };
+		FD38616CAC385F849205087EB8E37BD4 /* vg_mute_on.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = vg_mute_on.png; path = AdToAppResources/VungleResources/vg_mute_on.png; sourceTree = "<group>"; };
+		FE937E29D3F5F519710103F4EF4639F0 /* TapSenseAds_Close_Button.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = TapSenseAds_Close_Button.png; path = AdToAppResources/TapSenseResources/TapSenseAds_Close_Button.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,58 +121,56 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		075FE9C98C35190FCF78CB1C478F8908 /* Avocarrot */ = {
+		081DEB7AB809ED51C91082A08EDE9ACC /* Revmob */ = {
 			isa = PBXGroup;
 			children = (
-				4B2D1D9FAAAB8EE71D185D7AD7D11A11 /* Frameworks */,
-			);
-			name = Avocarrot;
-			sourceTree = "<group>";
-		};
-		0857E4BA72A0D20343AF190DC46BD05B /* Revmob */ = {
-			isa = PBXGroup;
-			children = (
-				707045D21EF09EDCD550CD60BA2E2C12 /* Frameworks */,
+				21BFE5C595468C34981E500FB01BD30E /* Frameworks */,
 			);
 			name = Revmob;
 			sourceTree = "<group>";
 		};
-		0D2FF67B881BF03BDA96E534BBE9ADA0 /* AdMob */ = {
+		1657085761BAF0324890B7B6349DA85D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				377458A0A469DED462A248A4799094A6 /* Frameworks */,
-			);
-			name = AdMob;
-			sourceTree = "<group>";
-		};
-		173DCD61535682853CC2D88923A2D850 /* Flurry */ = {
-			isa = PBXGroup;
-			children = (
-				D347E39094C0390557659C793C82305C /* Frameworks */,
-			);
-			name = Flurry;
-			sourceTree = "<group>";
-		};
-		1884E5EF1BD663C91168B1CF012A5E53 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				CD52DF53C126231818172C12112F80DF /* libProviderSmaato.a */,
+				185A2D2F16CF3E0EA6E1DAB78E733CB2 /* libProviderTapSense.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		1C583E39C131E01B33CA721A49A79B00 /* MyTarget */ = {
+		183D3601CE2B5FB3ED684CDF16E48AB3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				F5D88F13146422B821A0858A8AD06BB5 /* Frameworks */,
+				FCB9B88DBE54C95D28DC2F41AFF9367D /* libProviderMyTarget.a */,
 			);
-			name = MyTarget;
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		2084BD8789EB10749FAB38065AE85053 /* Frameworks */ = {
+		1B8E58430E985D65900BE294BC3F6975 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				1C7B1D0E920FEC3EE3E643A5CD4C6416 /* libProviderApplovin.a */,
+				E7A7D22551CF78967360E9B5A14789AA /* AdToApp */,
+				D5EF5157708F2DC2DE10B518FC32AB7F /* iRate */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		204D3F04E787358E9C6FCBFDC8F29A62 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				312CC6619619DEC9F72DCED353109F2F /* __vungle.db */,
+				74F83D8424FFB3189D1F1D3B0006CE56 /* vg_close.png */,
+				EF9ACCE1685D4D48F7AECD2BA43DC697 /* vg_cta.png */,
+				E57975A61A447A8E4EC51576478946E8 /* vg_mute_off.png */,
+				FD38616CAC385F849205087EB8E37BD4 /* vg_mute_on.png */,
+				C8F905DEE0D55C9A8D31AA83B76DFC74 /* vg_privacy.png */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		21BFE5C595468C34981E500FB01BD30E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1BEB3BA81822BDAD3B754CED01053FE8 /* libProviderRevmob.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -183,6 +181,62 @@
 				292A03654A4AC6A6FC0BF59355BEEF2C /* Pods-Rebound */,
 			);
 			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		240BF4A1C29FD72D59531B02C91CD344 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				98F83679825736AB2C9E933C0A51079F /* iRate.xcconfig */,
+				AEE310E1F7564BF9DA24D31F030118CF /* iRate-dummy.m */,
+				BF4AFA62F844D006684BDC7B514596C4 /* iRate-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/iRate";
+			sourceTree = "<group>";
+		};
+		24932EB0B59A60EB08AC731B8E9881CE /* Unity */ = {
+			isa = PBXGroup;
+			children = (
+				492E99BFBFF18726D74C710968FD1F93 /* Frameworks */,
+				36A252CF6E7E4AACBA86B8E72802768C /* Resources */,
+			);
+			name = Unity;
+			sourceTree = "<group>";
+		};
+		25964715616670BF63E3AE9FE234A110 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				30962A908F3B3AA9E7020453346628A9 /* mraid.js */,
+				C1FEF736E691B2B99F80B9EC49DDC70D /* mraid_ts_ext.js */,
+				FE937E29D3F5F519710103F4EF4639F0 /* TapSenseAds_Close_Button.png */,
+				E646A901FB1919FDEBCF3108AD26278D /* TapSenseAds_Close_Button_iPad.png */,
+				D43F2B8E93D0BCE5B465CCB0680F8E24 /* TapSenseAds_Close_No_Padding.png */,
+				EF40F45AB53470DDF5CF3482B395E4F4 /* TapSenseAds_Left_Arrow.png */,
+				4A3D438BFCCF00AF79BD39B4C706E9D1 /* TapSenseAds_Replay_Button.png */,
+				E6400C8D628649570517CE044C37A446 /* TapSenseAds_Right_Arrow.png */,
+				2E1576636F5EC89ACAD8601C72074BFA /* TapSenseAds_Video_iPad.nib */,
+				8C9E1C035525B4EAF59A11D416C8C6E9 /* TapSenseAds_Video_iPhone.nib */,
+				D06122DD476226C5D45B8548960F5C38 /* TapSenseAds_Volume_Off.png */,
+				DAB1F00E9E634392B6B1B3E4B548A875 /* TapSenseAds_Volume_On.png */,
+				6C53B76451E967E06A71A227180082E6 /* TS_SVWebViewController.bundle */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		279BD1867D5CF7C7F421A23552142052 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8CB550610F972DA4120D7A89C2B3E82E /* libProviderSmaato.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		280A42757516DA904F62EFF3B2ADD811 /* Avocarrot */ = {
+			isa = PBXGroup;
+			children = (
+				7D986E34C19000DF7D9583BD073D2D39 /* Frameworks */,
+			);
+			name = Avocarrot;
 			sourceTree = "<group>";
 		};
 		292A03654A4AC6A6FC0BF59355BEEF2C /* Pods-Rebound */ = {
@@ -200,37 +254,45 @@
 			path = "Target Support Files/Pods-Rebound";
 			sourceTree = "<group>";
 		};
-		35F5F2AEBAB4E5324AEE25040919A871 /* Applovin */ = {
+		29D53EC6485668F8B8D8D15086347DF6 /* TapSense */ = {
 			isa = PBXGroup;
 			children = (
-				2084BD8789EB10749FAB38065AE85053 /* Frameworks */,
-			);
-			name = Applovin;
-			sourceTree = "<group>";
-		};
-		377458A0A469DED462A248A4799094A6 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				FF61EA2E3B048647386226E352C6CE38 /* libProviderGoogleAdMob.a */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		37C50B2865B45F4005802E5970DDF41E /* TapSense */ = {
-			isa = PBXGroup;
-			children = (
-				9EB37BF723485CB44507846BFCEED6F1 /* Frameworks */,
-				9BF317AFBE9F93761BBE8147A9BAFDD2 /* Resources */,
+				1657085761BAF0324890B7B6349DA85D /* Frameworks */,
+				25964715616670BF63E3AE9FE234A110 /* Resources */,
 			);
 			name = TapSense;
 			sourceTree = "<group>";
 		};
-		3D37EC8B23D5507D50E8A049D7418492 /* AdColony */ = {
+		32575A13C1D006A83DA5054BF2F339B8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				41902828A2F89AEBF4C04C426B4B1E91 /* Frameworks */,
+				2309B98F23FB98836D610B327336D334 /* libProviderStartApp.a */,
 			);
-			name = AdColony;
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		36A252CF6E7E4AACBA86B8E72802768C /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				9D0A26DC87FAAC1123AEFD030505821F /* UnityAds.bundle */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		3B135D068619BD60E4DB2E3D9D924100 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2FF1F2270FA520B1C73A399207B5D07C /* libProviderGoogleAdMob.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3DAFF460C807B8AC73154AC67223E5D5 /* Yandex */ = {
+			isa = PBXGroup;
+			children = (
+				8AE1F78EE6825E24EAB67F6576B08329 /* Frameworks */,
+			);
+			name = Yandex;
 			sourceTree = "<group>";
 		};
 		3DCAB2B7CDE207B3958B6CB957FCC758 /* iOS */ = {
@@ -241,120 +303,112 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
-		41902828A2F89AEBF4C04C426B4B1E91 /* Frameworks */ = {
+		4142AE707A170D26173EC5C20DA01AF5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				E4675BD97288F46C35433753DB5F739E /* libProviderAdColony.a */,
+				3502D3E70C94D11B2C2982587B1F6CD3 /* libProviderAmazon.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		49542F110221F7C2279F0CA54C80AC46 /* Supersonic */ = {
+		491995C733BABE985C56335EE4187DC9 /* AdColony */ = {
 			isa = PBXGroup;
 			children = (
-				D63361A46BA7ABB4A3DA885C36B7CCEB /* Frameworks */,
+				8D695D45AC3A1269CB4B953EF1CB0F3F /* Frameworks */,
 			);
-			name = Supersonic;
+			name = AdColony;
 			sourceTree = "<group>";
 		};
-		49794DD08EC909C7E64E9BCE7989F9EF /* Frameworks */ = {
+		492E99BFBFF18726D74C710968FD1F93 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				1C93FF2DCE1F86EB6542576BFEB180BD /* libAdToAppCore.a */,
-				CA728DD41B7658B181D6A8008F201AF9 /* libProviderChartboost.a */,
-				F3D241FC0021E149703C19B050501815 /* libProviderTest.a */,
+				DB93CA4C11888EBE5636D08B79A5A184 /* libProviderUnity.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		4B2D1D9FAAAB8EE71D185D7AD7D11A11 /* Frameworks */ = {
+		4AF9988B3458B71992B2621507D93AB5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				F835FB0484519E1D4C094BEF6E6A049D /* libProviderAvocarrot.a */,
+				63691308D6EB161C1BCE261E17823468 /* libProviderFlurry.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		507B1E0809EA744C1433AD0D5F433951 /* Resources */ = {
+		4F4902A8F606081FE848B5EC62291018 /* Facebook */ = {
 			isa = PBXGroup;
 			children = (
-				9220966E4B37C6D298FEFDEDFB897360 /* StartApp.bundle */,
+				CAAEDD58CEB19DF082740B3115246942 /* Frameworks */,
 			);
-			name = Resources;
+			name = Facebook;
 			sourceTree = "<group>";
 		};
-		55AA582B01C5AD89F9A4C286B412957C /* Unity */ = {
+		50DC5691BBF8BBF3801C6CA24B372AF6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				DF6CD71AB40BAC94794A46BFB66F3CAC /* Frameworks */,
-				6110ABAF114502705FD59005EF60100D /* Resources */,
+				5BC5C69A8EB98979C08FE132DFF86923 /* libProviderNativeX.a */,
 			);
-			name = Unity;
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		582744F5C4E08F6CAF01550372D57808 /* Core */ = {
+		5E32101F6076CBE4D37268131C93890D /* Smaato */ = {
 			isa = PBXGroup;
 			children = (
-				8917908B9237290CF5C531395BF15E39 /* AdToAppSDK.h */,
-				A457A4F7930E332BDA3D2B31DFD08E33 /* AdToAppTargeting.h */,
-				800900FF055929951D3ED7F300AC4426 /* AdToAppView.h */,
-				19F6A91BC58DA94E94289FED8CE1BAE3 /* ATALog.h */,
-				49794DD08EC909C7E64E9BCE7989F9EF /* Frameworks */,
-			);
-			name = Core;
-			sourceTree = "<group>";
-		};
-		6110ABAF114502705FD59005EF60100D /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				4541BAA986FC3913582EBA3AAA2D8C0C /* UnityAds.bundle */,
-			);
-			name = Resources;
-			sourceTree = "<group>";
-		};
-		64B48A4204F05675995334492B654125 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				FB2C1DA6EA5784B0E6634D94D044F3C9 /* __vungle.db */,
-				E2D27ABF31D24A5F00AE08D7C2907FC1 /* vg_close.png */,
-				08A5C31F4BACC66B08BB651212AE17F3 /* vg_cta.png */,
-				BAF4658EB658B88EDEFC3D8BDB643564 /* vg_mute_off.png */,
-				7BED00F02CFB2D63EB7E53A2F1C0BC20 /* vg_mute_on.png */,
-				5136347A90090ECE3534A87DD62DC497 /* vg_privacy.png */,
-			);
-			name = Resources;
-			sourceTree = "<group>";
-		};
-		69C5C7B8BA1001EA9C7AC4CE294B7746 /* AmazonAd */ = {
-			isa = PBXGroup;
-			children = (
-				CBE53E95DDBE0784F7C6885E6BACC463 /* Frameworks */,
-			);
-			name = AmazonAd;
-			sourceTree = "<group>";
-		};
-		7039CA3F8147979739A79170B133F2A5 /* Smaato */ = {
-			isa = PBXGroup;
-			children = (
-				1884E5EF1BD663C91168B1CF012A5E53 /* Frameworks */,
+				279BD1867D5CF7C7F421A23552142052 /* Frameworks */,
 			);
 			name = Smaato;
 			sourceTree = "<group>";
 		};
-		707045D21EF09EDCD550CD60BA2E2C12 /* Frameworks */ = {
+		5F5E6B485260FC2F91C233269BAD9FE9 /* AdMob */ = {
 			isa = PBXGroup;
 			children = (
-				EC14F7CA2AC23F949DB64960599D2C50 /* libProviderRevmob.a */,
+				3B135D068619BD60E4DB2E3D9D924100 /* Frameworks */,
+			);
+			name = AdMob;
+			sourceTree = "<group>";
+		};
+		63039E9840868DCD24D468B84C223BAA /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				F6E8078AEAD07D26D50FA0C623832D7C /* AdToAppSDK.h */,
+				F9B5E16EEDAD54068141ABE710C05535 /* AdToAppTargeting.h */,
+				E1C4318E3A6968D1832DF913D688430F /* AdToAppView.h */,
+				F34EA14491CBB93CFB81BF919A519A04 /* ATALog.h */,
+				92C8C85FA4A7E560E4F2D2D99FC889B7 /* Frameworks */,
+			);
+			name = Core;
+			sourceTree = "<group>";
+		};
+		66379A67FE39A4FAD5B26BEEA10EDB1A /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				47F7D8EF08F5587552C1692E6DADC4F9 /* StartApp.bundle */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		663B092F6DBAE50EED0721962D228DA1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7FB2C9F6C2B5DDE325C1622CF44BCC5F /* libProviderSupersonic.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		70781B35309C0ABA61E1D1392A502768 /* NativeX */ = {
+		77598C0733EE7F6AE97E71551B3787B5 /* Supersonic */ = {
 			isa = PBXGroup;
 			children = (
-				ABDE1CE338C0A81573064DFAF7492107 /* Frameworks */,
+				663B092F6DBAE50EED0721962D228DA1 /* Frameworks */,
 			);
-			name = NativeX;
+			name = Supersonic;
+			sourceTree = "<group>";
+		};
+		7D986E34C19000DF7D9583BD073D2D39 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1623BC7AFD9D20F111EE54089730B664 /* libProviderAvocarrot.a */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		7DB346D0F39D3F0E887471402A8071AB = {
@@ -362,147 +416,100 @@
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
 				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
-				8FC27445275CAF86C46BEF9381369A76 /* Pods */,
+				1B8E58430E985D65900BE294BC3F6975 /* Pods */,
 				00AB7911FB64D2E9B5B585A5C53CCD32 /* Products */,
 				22FB1F488B0303A1C84599457B0512A1 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
-		84875937AF7329559A3198AE31DDE6D1 /* Resources */ = {
+		88A28A3769EF23800DDC36F6AFEA058D /* Inhouse */ = {
 			isa = PBXGroup;
 			children = (
-				FDD72ACFD71736FC4228977B23D7BA1F /* iRate.bundle */,
+				F0F0C6BA182066C7AAA9ACC312E45549 /* Frameworks */,
 			);
-			name = Resources;
+			name = Inhouse;
 			sourceTree = "<group>";
 		};
-		860ABEAD0A6072343DECDECAD7598ED8 /* Frameworks */ = {
+		89B94714C10E0AA2C9381783A642A7E1 /* Instreamatic */ = {
 			isa = PBXGroup;
 			children = (
-				F24EA3052BC7AA5E7E6E0BDAAB9BB66E /* libProviderInMobi.a */,
+				C8EDA19427130628BCA689046F0AE3CE /* Frameworks */,
+			);
+			name = Instreamatic;
+			sourceTree = "<group>";
+		};
+		8AE1F78EE6825E24EAB67F6576B08329 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C03D8C869BAD2818C3C82DD63D0BDA00 /* libProviderYandex.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		8EE88CBF9A5216E17A09122C0C8AA9DC /* AdToApp */ = {
+		8D695D45AC3A1269CB4B953EF1CB0F3F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				3D37EC8B23D5507D50E8A049D7418492 /* AdColony */,
-				0D2FF67B881BF03BDA96E534BBE9ADA0 /* AdMob */,
-				69C5C7B8BA1001EA9C7AC4CE294B7746 /* AmazonAd */,
-				35F5F2AEBAB4E5324AEE25040919A871 /* Applovin */,
-				075FE9C98C35190FCF78CB1C478F8908 /* Avocarrot */,
-				582744F5C4E08F6CAF01550372D57808 /* Core */,
-				173DCD61535682853CC2D88923A2D850 /* Flurry */,
-				EFF2BBBBF035A5512F525A28DACFC400 /* Inhouse */,
-				FC43F3822F7B3055FA3B9C96A22D34AA /* InMobi */,
-				F2BBB8C6B41263352BF30B6E8A24B68D /* Instreamatic */,
-				1C583E39C131E01B33CA721A49A79B00 /* MyTarget */,
-				70781B35309C0ABA61E1D1392A502768 /* NativeX */,
-				ADA7362B1AD6656FDE3492D519737A1D /* Personagraph */,
-				0857E4BA72A0D20343AF190DC46BD05B /* Revmob */,
-				7039CA3F8147979739A79170B133F2A5 /* Smaato */,
-				BA48F0F10822E3FEA64A3EA7A2548C23 /* StartApp */,
-				49542F110221F7C2279F0CA54C80AC46 /* Supersonic */,
-				37C50B2865B45F4005802E5970DDF41E /* TapSense */,
-				55AA582B01C5AD89F9A4C286B412957C /* Unity */,
-				EB5C7BE4AA9163112F6C93A723D7DAB3 /* Vungle */,
-			);
-			path = AdToApp;
-			sourceTree = "<group>";
-		};
-		8F7FF55B8636B5F00B09E30D815F10D5 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				0A8700FE9DA60FBBAB40A241ECF05D8E /* libPersonagraph.a */,
+				101567D992E3E4DE1ACD2375C32623EE /* libProviderAdColony.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		8FC27445275CAF86C46BEF9381369A76 /* Pods */ = {
+		92C8C85FA4A7E560E4F2D2D99FC889B7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				8EE88CBF9A5216E17A09122C0C8AA9DC /* AdToApp */,
-				E41962851D45A100C886589651D7357A /* iRate */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		9A3B39842C302FAE0C78DB111D3D8D06 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				23AEB9D3F2A31A1A4FCEF8400F3775E0 /* libProviderInstreamatic.a */,
+				3208260549FE83D9D6375ED869205DAF /* libAdToAppCore.a */,
+				DC62CFA8FA3FAFFDCA45AE8E0B8AA4C8 /* libProviderTest.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		9BF317AFBE9F93761BBE8147A9BAFDD2 /* Resources */ = {
+		95435FB52E1587D6CD72B3C4C663FA1C /* MyTarget */ = {
 			isa = PBXGroup;
 			children = (
-				1D36286D07EB38551F670E2C7C6CE62E /* mraid.js */,
-				4709C64584A8FFDB6E34169D331C2C45 /* mraid_ts_ext.js */,
-				AF4D4CF7CD62101F9E00DD67062BCADE /* TapSenseAds_Close_Button.png */,
-				F9E0C3E5349BBCD99A9517FBC81A2C38 /* TapSenseAds_Close_Button_iPad.png */,
-				B0BCB6ABCF2C05096DDA8FDE3D80D3CD /* TapSenseAds_Close_No_Padding.png */,
-				83FD6FC5BA7F5B3FEA0E0D327596637D /* TapSenseAds_Left_Arrow.png */,
-				F838A65AB8D7061F81678047CEEE898A /* TapSenseAds_Replay_Button.png */,
-				1729767C9DE3CC7F2A7F5E70F82A71F1 /* TapSenseAds_Right_Arrow.png */,
-				F21F4700C50BA263EB2EE351374EDA78 /* TapSenseAds_Video_iPad.nib */,
-				81ABE35C1F7BCED8725DEE0468271F60 /* TapSenseAds_Video_iPhone.nib */,
-				EA705BE75C1CB1F477C680D507F14163 /* TapSenseAds_Volume_Off.png */,
-				ACBD738775D906959D9F28F54B77AF92 /* TapSenseAds_Volume_On.png */,
-				EB2C500C76CF5DF0282E7028B8216FD7 /* TS_SVWebViewController.bundle */,
+				183D3601CE2B5FB3ED684CDF16E48AB3 /* Frameworks */,
 			);
-			name = Resources;
+			name = MyTarget;
 			sourceTree = "<group>";
 		};
-		9EB37BF723485CB44507846BFCEED6F1 /* Frameworks */ = {
+		9FC0B82AAD35AFE27EFBEC37459A95D2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				310BD6B74002843D0B67FB37889CCDB0 /* libProviderTapSense.a */,
+				2E1A35953B318F676EB790DD38ACC2BB /* libProviderApplovin.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		A3163C1DE9AF45128264FB7C4E6CD412 /* Frameworks */ = {
+		A20A7FD7246ADC67A5DFDFE817704911 /* Vungle */ = {
 			isa = PBXGroup;
 			children = (
-				5E18F540FFCBB71B77A7214390B4A334 /* libProviderInhouse.a */,
+				B695016C35068874322313EFCBD49816 /* Frameworks */,
+				204D3F04E787358E9C6FCBFDC8F29A62 /* Resources */,
+			);
+			name = Vungle;
+			sourceTree = "<group>";
+		};
+		AB94FAEE340BD9116DDEA2B4B0F57BCF /* NativeX */ = {
+			isa = PBXGroup;
+			children = (
+				50DC5691BBF8BBF3801C6CA24B372AF6 /* Frameworks */,
+			);
+			name = NativeX;
+			sourceTree = "<group>";
+		};
+		B06DDB2403AE5231052B2FEAD3B900CC /* Applovin */ = {
+			isa = PBXGroup;
+			children = (
+				9FC0B82AAD35AFE27EFBEC37459A95D2 /* Frameworks */,
+			);
+			name = Applovin;
+			sourceTree = "<group>";
+		};
+		B695016C35068874322313EFCBD49816 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C3A7600BAB0CC91140BF74B849950B49 /* libProviderVungle.a */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		A752BD536C7C4610D0B5ABEFB88CDC96 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				E8788B2897CB59F89D5FC10E62524F72 /* libProviderVungle.a */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		ABDE1CE338C0A81573064DFAF7492107 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				14AF16BD38059DCE04449D71BCABC53B /* libProviderNativeX.a */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		ADA7362B1AD6656FDE3492D519737A1D /* Personagraph */ = {
-			isa = PBXGroup;
-			children = (
-				8F7FF55B8636B5F00B09E30D815F10D5 /* Frameworks */,
-			);
-			name = Personagraph;
-			sourceTree = "<group>";
-		};
-		BA48F0F10822E3FEA64A3EA7A2548C23 /* StartApp */ = {
-			isa = PBXGroup;
-			children = (
-				E7B62134769CE04A1D188F9575E6A9C4 /* Frameworks */,
-				507B1E0809EA744C1433AD0D5F433951 /* Resources */,
-			);
-			name = StartApp;
 			sourceTree = "<group>";
 		};
 		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
@@ -513,107 +520,116 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		CBE53E95DDBE0784F7C6885E6BACC463 /* Frameworks */ = {
+		BE6C3EBA26399D5CF5BC00CC946A6CD0 /* StartApp */ = {
 			isa = PBXGroup;
 			children = (
-				E7C8B7E05686218D3BCA9A6F256269CC /* libProviderAmazon.a */,
+				32575A13C1D006A83DA5054BF2F339B8 /* Frameworks */,
+				66379A67FE39A4FAD5B26BEEA10EDB1A /* Resources */,
+			);
+			name = StartApp;
+			sourceTree = "<group>";
+		};
+		C205C5977B2547302CD7E31851E21E4E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				26468B25D17C91510BBA87BA964C874E /* libProviderInMobi.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		D2C0381480A786C58968573F87AE962D /* Support Files */ = {
+		C8EDA19427130628BCA689046F0AE3CE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				9D005C6CAA68E0DE129DA6F4CD01F29F /* iRate.xcconfig */,
-				A5C829D8D4D06800FF2CA1520E4B8EC6 /* iRate-dummy.m */,
-				19F3DF54F641D531C15C82DEA9657651 /* iRate-prefix.pch */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/iRate";
-			sourceTree = "<group>";
-		};
-		D347E39094C0390557659C793C82305C /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				3F1E3C50B635C85FDB6C1632944BD01F /* libProviderFlurry.a */,
+				AC83DEC29C43BB7064252D1CC5B6A851 /* libProviderInstreamatic.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		D63361A46BA7ABB4A3DA885C36B7CCEB /* Frameworks */ = {
+		CAAEDD58CEB19DF082740B3115246942 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				692299646426ED57D0C4FEF79EA707C8 /* libProviderSupersonic.a */,
+				B670E31F292A909121CE0A699EF72E3A /* libProviderFacebook.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		DF6CD71AB40BAC94794A46BFB66F3CAC /* Frameworks */ = {
+		D1E4CD6A9946DAF5936ED33685A80F19 /* AmazonAd */ = {
 			isa = PBXGroup;
 			children = (
-				D63751B093CBCDEE91307E0B676AFBE6 /* libProviderUnity.a */,
+				4142AE707A170D26173EC5C20DA01AF5 /* Frameworks */,
 			);
-			name = Frameworks;
+			name = AmazonAd;
 			sourceTree = "<group>";
 		};
-		E41962851D45A100C886589651D7357A /* iRate */ = {
+		D495722E5ECB5A2DAB2CCF282C7576E0 /* Flurry */ = {
 			isa = PBXGroup;
 			children = (
-				5B5CFB0162BF3287E55AE4F368338D06 /* iRate.h */,
-				C0AB0AE4A844E72DDDF9905FEB4B6ACF /* iRate.m */,
-				84875937AF7329559A3198AE31DDE6D1 /* Resources */,
-				D2C0381480A786C58968573F87AE962D /* Support Files */,
+				4AF9988B3458B71992B2621507D93AB5 /* Frameworks */,
+			);
+			name = Flurry;
+			sourceTree = "<group>";
+		};
+		D5EF5157708F2DC2DE10B518FC32AB7F /* iRate */ = {
+			isa = PBXGroup;
+			children = (
+				869C71143BD7FDE13681A8042CE20CF8 /* iRate.h */,
+				8BF3D15B43532A36458096C76AFE4161 /* iRate.m */,
+				DB5E36825141AA9D0DB9D3D615AA495B /* Resources */,
+				240BF4A1C29FD72D59531B02C91CD344 /* Support Files */,
 			);
 			path = iRate;
 			sourceTree = "<group>";
 		};
-		E7B62134769CE04A1D188F9575E6A9C4 /* Frameworks */ = {
+		DB5E36825141AA9D0DB9D3D615AA495B /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				4958CF6E61AE61FA084483DBB71581A0 /* libProviderStartApp.a */,
+				AC8AD3CB135A29DE6DCA33261306BF9E /* iRate.bundle */,
 			);
-			name = Frameworks;
+			name = Resources;
 			sourceTree = "<group>";
 		};
-		EB5C7BE4AA9163112F6C93A723D7DAB3 /* Vungle */ = {
+		E66CD866F246ECA2D20A6ACA688F9752 /* InMobi */ = {
 			isa = PBXGroup;
 			children = (
-				A752BD536C7C4610D0B5ABEFB88CDC96 /* Frameworks */,
-				64B48A4204F05675995334492B654125 /* Resources */,
-			);
-			name = Vungle;
-			sourceTree = "<group>";
-		};
-		EFF2BBBBF035A5512F525A28DACFC400 /* Inhouse */ = {
-			isa = PBXGroup;
-			children = (
-				A3163C1DE9AF45128264FB7C4E6CD412 /* Frameworks */,
-			);
-			name = Inhouse;
-			sourceTree = "<group>";
-		};
-		F2BBB8C6B41263352BF30B6E8A24B68D /* Instreamatic */ = {
-			isa = PBXGroup;
-			children = (
-				9A3B39842C302FAE0C78DB111D3D8D06 /* Frameworks */,
-			);
-			name = Instreamatic;
-			sourceTree = "<group>";
-		};
-		F5D88F13146422B821A0858A8AD06BB5 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				5C5349A454BBC759E68DCD2704A31073 /* libProviderMyTarget.a */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		FC43F3822F7B3055FA3B9C96A22D34AA /* InMobi */ = {
-			isa = PBXGroup;
-			children = (
-				860ABEAD0A6072343DECDECAD7598ED8 /* Frameworks */,
+				C205C5977B2547302CD7E31851E21E4E /* Frameworks */,
 			);
 			name = InMobi;
+			sourceTree = "<group>";
+		};
+		E7A7D22551CF78967360E9B5A14789AA /* AdToApp */ = {
+			isa = PBXGroup;
+			children = (
+				491995C733BABE985C56335EE4187DC9 /* AdColony */,
+				5F5E6B485260FC2F91C233269BAD9FE9 /* AdMob */,
+				D1E4CD6A9946DAF5936ED33685A80F19 /* AmazonAd */,
+				B06DDB2403AE5231052B2FEAD3B900CC /* Applovin */,
+				280A42757516DA904F62EFF3B2ADD811 /* Avocarrot */,
+				63039E9840868DCD24D468B84C223BAA /* Core */,
+				4F4902A8F606081FE848B5EC62291018 /* Facebook */,
+				D495722E5ECB5A2DAB2CCF282C7576E0 /* Flurry */,
+				88A28A3769EF23800DDC36F6AFEA058D /* Inhouse */,
+				E66CD866F246ECA2D20A6ACA688F9752 /* InMobi */,
+				89B94714C10E0AA2C9381783A642A7E1 /* Instreamatic */,
+				95435FB52E1587D6CD72B3C4C663FA1C /* MyTarget */,
+				AB94FAEE340BD9116DDEA2B4B0F57BCF /* NativeX */,
+				081DEB7AB809ED51C91082A08EDE9ACC /* Revmob */,
+				5E32101F6076CBE4D37268131C93890D /* Smaato */,
+				BE6C3EBA26399D5CF5BC00CC946A6CD0 /* StartApp */,
+				77598C0733EE7F6AE97E71551B3787B5 /* Supersonic */,
+				29D53EC6485668F8B8D8D15086347DF6 /* TapSense */,
+				24932EB0B59A60EB08AC731B8E9881CE /* Unity */,
+				A20A7FD7246ADC67A5DFDFE817704911 /* Vungle */,
+				3DAFF460C807B8AC73154AC67223E5D5 /* Yandex */,
+			);
+			path = AdToApp;
+			sourceTree = "<group>";
+		};
+		F0F0C6BA182066C7AAA9ACC312E45549 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9510C5F94C56827DB646E291308BB3DF /* libProviderInhouse.a */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -723,7 +739,7 @@
 /* Begin XCBuildConfiguration section */
 		13AEB3C357ED2A716DCE84D039EE79FA /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9D005C6CAA68E0DE129DA6F4CD01F29F /* iRate.xcconfig */;
+			baseConfigurationReference = 98F83679825736AB2C9E933C0A51079F /* iRate.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -807,7 +823,7 @@
 		};
 		90AB1D8C14048E085564CF39C298C034 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9D005C6CAA68E0DE129DA6F4CD01F29F /* iRate.xcconfig */;
+			baseConfigurationReference = 98F83679825736AB2C9E933C0A51079F /* iRate.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEBUG_INFORMATION_FORMAT = dwarf;

@@ -2,11 +2,11 @@ platform :ios, '7.0'
 target 'Rebound' do
   
   pod 'iRate'
-
-  pod 'AdToApp'
+  
   pod 'AdToApp/Interstitial'
   pod 'AdToApp/Image'
   pod 'AdToApp/Video'
+#  pod 'AdToApp/Reward'
   pod 'AdToApp/Banner'
   pod 'AdToApp/AdColony'
   pod 'AdToApp/AmazonAd'
@@ -22,5 +22,10 @@ target 'Rebound' do
   pod 'AdToApp/Supersonic'
   pod 'AdToApp/NativeX'
   pod 'AdToApp/Avocarrot'
+  pod 'AdToApp/Instreamatic'
+  pod 'AdToApp/Revmob'
+  pod 'AdToApp/Flurry'
+  pod 'AdToApp/Inhouse'
+  pod 'AdToApp/Yandex'
   
 end

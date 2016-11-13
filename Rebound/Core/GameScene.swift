@@ -96,9 +96,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate, AdToAppSDKDelegate, AdToAppV
     flashDeathOverlay()
     if defaults.bool(forKey: "SFX") && !isVirgin {gameOverSoundPlayer.play()}
     
-    let randomAdSelector = Int(random(0, to: 100))
-    if randomAdSelector < 18 {AdToAppSDK.showInterstitial(ADTOAPP_IMAGE_INTERSTITIAL)}
-    else if randomAdSelector > 88 {AdToAppSDK.showInterstitial(ADTOAPP_VIDEO_INTERSTITIAL)}
+    if random(0, to: 1) > 0.635 {AdToAppSDK.showInterstitial(ADTOAPP_INTERSTITIAL)}
     
     resetCount += 1
     
@@ -247,7 +245,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate, AdToAppSDKDelegate, AdToAppV
   }
   
   func buildBounceSound() {
-    let path = Bundle.main.path(forResource: "Bounce.mp3", ofType:nil)!
+    let path = Bundle.main.path(forResource: "Bounce.m4a", ofType:nil)!
     let url = URL(fileURLWithPath: path)
     for _ in 0...2 {
       do {
@@ -292,6 +290,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate, AdToAppSDKDelegate, AdToAppV
   }
 
   func setupSound() {
+    let audioSession = AVAudioSession.sharedInstance()
+    do {
+      try audioSession.setCategory(AVAudioSessionCategoryAmbient, with: .duckOthers)
+    } catch {
+      print("AVAudioSession cannot be set: \(error)")
+    }
     beginBgMusic()
     buildBounceSound()
     buildGameOverSound()
@@ -299,52 +303,38 @@ class GameScene: SKScene, SKPhysicsContactDelegate, AdToAppSDKDelegate, AdToAppV
   
   
   func setupAdToApp() {
-    if adsOn {
-      AdToAppSDK.start(
-        withAppId: "39c3f1a3-bced-4ae4-851b-7cb603a44479:c4050a11-a7eb-4733-b961-7d77c7601aee",
-        modules:[
-          ADTOAPP_IMAGE_INTERSTITIAL,
-          ADTOAPP_VIDEO_INTERSTITIAL,
-          ADTOAPP_INTERSTITIAL,
-          //ADTOAPP_REWARDED_INTERSTITIAL,//Uncomment to test rewarded ads
-          ADTOAPP_BANNER
-        ]
-      )
-    }
+    //Uncomment the line below if you need test mode
+//    AdToAppSDK.enableTestMode()
+    //Uncomment the line below if you need logs
+    AdToAppSDK.enableDebugLogs()
+    AdToAppSDK.setDelegate(self)
+    AdToAppSDK.start(withAppId: "39c3f1a3-bced-4ae4-851b-7cb603a44479:c4050a11-a7eb-4733-b961-7d77c7601aee", modules:[
+      ADTOAPP_IMAGE_INTERSTITIAL,
+      ADTOAPP_VIDEO_INTERSTITIAL,
+      ADTOAPP_INTERSTITIAL,
+      //ADTOAPP_REWARDED_INTERSTITIAL,
+      ADTOAPP_BANNER
+      ])
     
-    AdToAppSDK_setTargetingParam(ADTOAPP_TARGETING_PARAM_KEYWORDS, "advertisement,mobile ads,ads mediation");
-    AdToAppSDK_setTargetingParam(ADTOAPP_TARGETING_PARAM_USER_INTERESTS, "ecpm,revenue");
-    AdToAppSDK_setTargetingParam(ADTOAPP_TARGETING_PARAM_USER_BIRTHDAY, "1.01.1990");
-    AdToAppSDK_setTargetingParam(ADTOAPP_TARGETING_PARAM_USER_AGE, "25");
-    AdToAppSDK_setTargetingParam(ADTOAPP_TARGETING_PARAM_USER_GENDER, ADTOAPP_TARGETING_PARAM_USER_GENDER_MALE);
-    AdToAppSDK_setTargetingParam(ADTOAPP_TARGETING_PARAM_USER_OCCUPATION, ADTOAPP_TARGETING_PARAM_USER_OCCUPATION_UNIVERSITY);
-    AdToAppSDK_setTargetingParam(ADTOAPP_TARGETING_PARAM_USER_RELATIONSHIP, ADTOAPP_TARGETING_PARAM_USER_RELATIONSHIP_ENGAGED);
-    AdToAppSDK_setTargetingParam(ADTOAPP_TARGETING_PARAM_USER_LATITUDE, "26.71234");
-    AdToAppSDK_setTargetingParam(ADTOAPP_TARGETING_PARAM_USER_LONGITUDE, "-80.051595");
-    
-    AdToAppView.attach(to: view, position: ADTOAPPSDK_BANNER_POSITION_BOTTOM, edgeInsets: UIEdgeInsets.zero, bannerSize: ADTOAPPSDK_BANNER_SIZE_320x50, delegate: self)
     let banner:AdToAppView = AdToAppView.attach(to: self.view, position:ADTOAPPSDK_BANNER_POSITION_BOTTOM, edgeInsets:UIEdgeInsets.zero, bannerSize:ADTOAPPSDK_BANNER_SIZE_320x50, delegate:self) as! AdToAppView
+    //Delegate methods:
+    //func adToAppViewDidDisplayAd(adToAppView: AdToAppView) {
+    //    NSLog("adToAppViewDidDisplayAd");
+    //}
+    //func adToAppView(adToAppView :AdToAppView, failedToDisplayAdWithError:NSError, isConnectionError:Bool){
+    //    NSLog("adToAppView:adToAppView:failedToDisplayAdWithError:isConnectionError:");
+    //}
     banner.setRefreshInterval(25.0)
-    
-    showAdPlaceholder()
-  }
-  
-  func ad(toAppViewDidDisplayAd _: AdToAppView!, providerId: Int32) {
-    return
   }
   
   func showAdPlaceholder() {
     if !atpPlaceholderActive && adsOn {
       let adPlaceholder = SKSpriteNode(imageNamed: "adPlaceholder")
       adPlaceholder.position = CGPoint(x: frame.midX, y: adPlaceholder.frame.height/2)
-      adPlaceholder.zPosition = 2
+      adPlaceholder.zPosition = 1000
       addChild(adPlaceholder)
       atpPlaceholderActive = true
     }
-  }
-  
-  func ad(_ adToAppView: AdToAppView!, failedToDisplayAdWithError error: Error!, isConnectionError: Bool) {
-    return
   }
   
   func onAdWillAppear(_ adType: String, providerId: Int32) {
@@ -355,31 +345,13 @@ class GameScene: SKScene, SKPhysicsContactDelegate, AdToAppSDKDelegate, AdToAppV
     NSLog("On interstitial hide")
   }
   
-  //optional
-  func onReward(_ reward: Int32, currency gameCurrency: String!, providerId: Int32) {
-    NSLog("On reward")
+  func ad(toAppViewDidDisplayAd adToAppView: AdToAppView!, providerId: Int32) {
+    return
   }
-  
-  //optional
-  func shouldShowAd(_ adType: String)-> Bool {
-    NSLog("On shoud show Ad")
-    
-    return true;
-  }
-  
-  //optional
-  func onAdClicked(_ adType: String!, providerId: Int32) {
-    NSLog("On Ad clicked")
-  }
-  
-  //optional
-  func onAdFailed(toAppear adType: String!) {
-    NSLog("On Ad failed to appear")
-  }
-  
-  //optional
-  func onFirstAdLoaded(_ adType: String!) {
-    NSLog("On First Ad Loaded")
+  func ad(_ adToAppView: AdToAppView!, failedToDisplayAdWithError error: Error!, isConnectionError: Bool) {
+    print(error)
+    print("is connection error: \(isConnectionError)")
+    return
   }
   
 }

@@ -57,6 +57,7 @@
 		C1C9874B1D7FA9F10074BC0F /* StrangeGreenPlanet.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C1C9874A1D7FA9F10074BC0F /* StrangeGreenPlanet.mp3 */; };
 		C1C9874F1D7FC1F40074BC0F /* GameOver.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C1C9874E1D7FC1F40074BC0F /* GameOver.mp3 */; };
 		C1CAFF181D7E481E008B3D5F /* Config.plist in Resources */ = {isa = PBXBuildFile; fileRef = C1CAFF171D7E481E008B3D5F /* Config.plist */; };
+		C1F2D3C81DD8E88E008D8315 /* Bounce.m4a in Resources */ = {isa = PBXBuildFile; fileRef = C1F2D3C71DD8E88E008D8315 /* Bounce.m4a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -115,6 +116,7 @@
 		C1C9874A1D7FA9F10074BC0F /* StrangeGreenPlanet.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = StrangeGreenPlanet.mp3; sourceTree = "<group>"; };
 		C1C9874E1D7FC1F40074BC0F /* GameOver.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = GameOver.mp3; sourceTree = "<group>"; };
 		C1CAFF171D7E481E008B3D5F /* Config.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Config.plist; sourceTree = "<group>"; };
+		C1F2D3C71DD8E88E008D8315 /* Bounce.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = Bounce.m4a; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -243,6 +245,7 @@
 			children = (
 				C1C9874A1D7FA9F10074BC0F /* StrangeGreenPlanet.mp3 */,
 				C1C987481D7F97FD0074BC0F /* Bounce.mp3 */,
+				C1F2D3C71DD8E88E008D8315 /* Bounce.m4a */,
 				C1C9874E1D7FC1F40074BC0F /* GameOver.mp3 */,
 			);
 			path = Sound;
@@ -382,6 +385,7 @@
 				8FF346981D6D0B2C00504D3E /* GameScene.sks in Resources */,
 				8F9463D91D7668E8002233A7 /* LaunchScreen.storyboard in Resources */,
 				C1C9874B1D7FA9F10074BC0F /* StrangeGreenPlanet.mp3 in Resources */,
+				C1F2D3C81DD8E88E008D8315 /* Bounce.m4a in Resources */,
 				C1CAFF181D7E481E008B3D5F /* Config.plist in Resources */,
 				C1401AA01D7D3071007764F8 /* Assets.xcassets in Resources */,
 			);
