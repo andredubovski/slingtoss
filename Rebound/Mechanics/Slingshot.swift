@@ -7,16 +7,24 @@
 //
 
 import SpriteKit
+import AVFoundation
 
 class Slingshot: SKShapeNode {
   var thickness = CGFloat()
   var radius = CGFloat()
+  var stretch = CGFloat()
   var maxStretch = CGFloat()
+  var relativeStretch = CGFloat()
+  var relativeStretchStrength = Int()
+  var lastRelativeStretchStrength = Int()
   
   var sensitivity = CGFloat(10.6)
   var shotVector = CGVector()
   var aimingToPoint = CGPoint()
   var canShoot = Bool(false)
+  
+  var aimPlayer = [AVAudioPlayer!]()
+  var shotPlayer: AVAudioPlayer! = nil
   
   func build() {
     gameScene.addChild(self)
@@ -28,6 +36,43 @@ class Slingshot: SKShapeNode {
     lineCap = .square
     strokeColor = currentTheme.slingColor
     zPosition = 4
+    
+    for i in 1...4 {
+      let path = Bundle.main.path(forResource: "Aiming\(i).m4a", ofType:nil)!
+      let url = URL(fileURLWithPath: path)
+      do {
+        let sound = try AVAudioPlayer(contentsOf: url)
+        sound.prepareToPlay()
+        aimPlayer.append(sound)
+      } catch {
+        fatalError("couldn't load music file")
+      }
+    }
+    
+    let path = Bundle.main.path(forResource: "Shot.m4a", ofType:nil)!
+    let url = URL(fileURLWithPath: path)
+    do {
+      let sound = try AVAudioPlayer(contentsOf: url)
+      sound.prepareToPlay()
+      shotPlayer = sound
+    } catch {
+      fatalError("couldn't load music file")
+    }
+    
+  }
+  
+  func playAimSound(strength: Int) {
+    for p in aimPlayer {
+      p?.pause()
+      p?.currentTime = 0
+    }
+    aimPlayer[strength].play()
+  }
+  
+  func playAppropriateAimSound() {
+    if relativeStretchStrength > 0 {
+      aimPlayer[relativeStretchStrength-1].play()
+    }
   }
   
   func aim(_ ball: Ball, atPoint: CGPoint) {
@@ -37,14 +82,21 @@ class Slingshot: SKShapeNode {
       removeAllActions()
       
       updateSling(ball, atPoint: atPoint)
+      
+      lastRelativeStretchStrength = relativeStretchStrength
+      relativeStretchStrength = Int(4*relativeStretch)
+      if lastRelativeStretchStrength != relativeStretchStrength && defaults.bool(forKey: "SFX") {
+        playAppropriateAimSound()
+      }
     }
     
   }
   
   func updateSling(_ ball: Ball, atPoint: CGPoint) {
     
-    let stretch = distance(ball.position, p2: atPoint) < maxStretch ? distance(ball.position, p2: atPoint) : maxStretch
-    alpha = 0.2 + 0.35*(stretch/maxStretch)
+    stretch = distance(ball.position, p2: atPoint) < maxStretch ? distance(ball.position, p2: atPoint) : maxStretch
+    relativeStretch = stretch/maxStretch
+    alpha = 0.2 + 0.35*(relativeStretch)
     
     let mutablePath = CGMutablePath()
     mutablePath.move(to: CGPoint(x: radius, y: 0))
@@ -70,6 +122,10 @@ class Slingshot: SKShapeNode {
   func shoot(_ terrain: Terrain, ball: Ball) -> Bool {
     if canShoot {
       ball.physicsBody?.applyImpulse(shotVector)
+      if defaults.bool(forKey: "SFX") {
+        shotPlayer.volume = Float(relativeStretch)
+        shotPlayer.play()
+      }
     }
     run(SKAction.fadeAlpha(to: 0, duration: 1))
     

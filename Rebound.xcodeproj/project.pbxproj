@@ -53,6 +53,8 @@
 		C11DA60A1DD9269200E47D69 /* Aiming2.m4a in Resources */ = {isa = PBXBuildFile; fileRef = C11DA6061DD9269200E47D69 /* Aiming2.m4a */; };
 		C11DA60B1DD9269200E47D69 /* Aiming3.m4a in Resources */ = {isa = PBXBuildFile; fileRef = C11DA6071DD9269200E47D69 /* Aiming3.m4a */; };
 		C11DA60C1DD9269200E47D69 /* Aiming4.m4a in Resources */ = {isa = PBXBuildFile; fileRef = C11DA6081DD9269200E47D69 /* Aiming4.m4a */; };
+		C11DA60E1DD94A4000E47D69 /* Shot.m4a in Resources */ = {isa = PBXBuildFile; fileRef = C11DA60D1DD94A4000E47D69 /* Shot.m4a */; };
+		C11DA6141DD9501900E47D69 /* Click.m4a in Resources */ = {isa = PBXBuildFile; fileRef = C11DA6131DD9501900E47D69 /* Click.m4a */; };
 		C1401AA01D7D3071007764F8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C1401A9F1D7D3071007764F8 /* Assets.xcassets */; };
 		C1A1E5A41D7B202400E7CDE4 /* SettingsScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1A1E5A31D7B202400E7CDE4 /* SettingsScene.swift */; };
 		C1A1E5A61D7B222700E7CDE4 /* SKToggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1A1E5A51D7B222700E7CDE4 /* SKToggle.swift */; };
@@ -62,7 +64,6 @@
 		C1F2D3C81DD8E88E008D8315 /* Bounce.m4a in Resources */ = {isa = PBXBuildFile; fileRef = C1F2D3C71DD8E88E008D8315 /* Bounce.m4a */; };
 		C1F2D3CA1DD8EDA4008D8315 /* GameOver.m4a in Resources */ = {isa = PBXBuildFile; fileRef = C1F2D3C91DD8EDA4008D8315 /* GameOver.m4a */; };
 		C1F2D3CC1DD9016C008D8315 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1F2D3CB1DD9016C008D8315 /* GameKit.framework */; };
-		C1F2D3CE1DD902AC008D8315 /* IAPHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F2D3CD1DD902AC008D8315 /* IAPHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -117,6 +118,8 @@
 		C11DA6061DD9269200E47D69 /* Aiming2.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = Aiming2.m4a; path = "Sling Sound Effects/Aiming2.m4a"; sourceTree = "<group>"; };
 		C11DA6071DD9269200E47D69 /* Aiming3.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = Aiming3.m4a; path = "Sling Sound Effects/Aiming3.m4a"; sourceTree = "<group>"; };
 		C11DA6081DD9269200E47D69 /* Aiming4.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = Aiming4.m4a; path = "Sling Sound Effects/Aiming4.m4a"; sourceTree = "<group>"; };
+		C11DA60D1DD94A4000E47D69 /* Shot.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = Shot.m4a; sourceTree = "<group>"; };
+		C11DA6131DD9501900E47D69 /* Click.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = Click.m4a; sourceTree = "<group>"; };
 		C1401A9F1D7D3071007764F8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C1A1E5A31D7B202400E7CDE4 /* SettingsScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsScene.swift; sourceTree = "<group>"; };
 		C1A1E5A51D7B222700E7CDE4 /* SKToggle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKToggle.swift; sourceTree = "<group>"; };
@@ -126,7 +129,6 @@
 		C1F2D3C71DD8E88E008D8315 /* Bounce.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = Bounce.m4a; sourceTree = "<group>"; };
 		C1F2D3C91DD8EDA4008D8315 /* GameOver.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = GameOver.m4a; sourceTree = "<group>"; };
 		C1F2D3CB1DD9016C008D8315 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
-		C1F2D3CD1DD902AC008D8315 /* IAPHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAPHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,8 +136,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8F352C231D75FD1B00EEC2B1 /* MessageUI.framework in Frameworks */,
 				8F352C211D75FD1200EEC2B1 /* StoreKit.framework in Frameworks */,
+				8F352C231D75FD1B00EEC2B1 /* MessageUI.framework in Frameworks */,
 				8F352C1F1D75FD0900EEC2B1 /* SystemConfiguration.framework in Frameworks */,
 				8F352C1D1D75FCFF00EEC2B1 /* MediaPlayer.framework in Frameworks */,
 				8F352C1B1D75FCF600EEC2B1 /* AdSupport.framework in Frameworks */,
@@ -208,7 +210,6 @@
 			children = (
 				C1401A9F1D7D3071007764F8 /* Assets.xcassets */,
 				8FF346971D6D0B2C00504D3E /* GameScene.sks */,
-				C1F2D3CD1DD902AC008D8315 /* IAPHelper.swift */,
 				8F9463D71D7668E8002233A7 /* LaunchScreen.storyboard */,
 				8F9463D81D7668E8002233A7 /* Main.storyboard */,
 				8FA9767C1D7935F300A00984 /* Tools.swift */,
@@ -258,7 +259,9 @@
 				C1F2D3C71DD8E88E008D8315 /* Bounce.m4a */,
 				C11DA6041DD9268100E47D69 /* Sling Sound Effects */,
 				C1F2D3C91DD8EDA4008D8315 /* GameOver.m4a */,
+				C11DA60D1DD94A4000E47D69 /* Shot.m4a */,
 				C1C9874A1D7FA9F10074BC0F /* StrangeGreenPlanet.mp3 */,
+				C11DA6131DD9501900E47D69 /* Click.m4a */,
 			);
 			path = Sound;
 			sourceTree = "<group>";
@@ -417,8 +420,10 @@
 				C1F2D3C81DD8E88E008D8315 /* Bounce.m4a in Resources */,
 				C11DA6091DD9269200E47D69 /* Aiming1.m4a in Resources */,
 				C11DA60C1DD9269200E47D69 /* Aiming4.m4a in Resources */,
+				C11DA60E1DD94A4000E47D69 /* Shot.m4a in Resources */,
 				C1CAFF181D7E481E008B3D5F /* Config.plist in Resources */,
 				C1401AA01D7D3071007764F8 /* Assets.xcassets in Resources */,
+				C11DA6141DD9501900E47D69 /* Click.m4a in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -530,7 +535,6 @@
 				8F49085B1D73E65900C965CD /* MainMenu.swift in Sources */,
 				8FA976811D7935F300A00984 /* Platform.swift in Sources */,
 				8FA976831D7935F300A00984 /* Slingshot.swift in Sources */,
-				C1F2D3CE1DD902AC008D8315 /* IAPHelper.swift in Sources */,
 				8FA976741D791F2900A00984 /* SKButton.swift in Sources */,
 				8FA976841D7935F300A00984 /* Tools.swift in Sources */,
 				8FA976821D7935F300A00984 /* Score.swift in Sources */,

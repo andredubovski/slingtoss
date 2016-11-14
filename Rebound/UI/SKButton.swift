@@ -7,6 +7,7 @@
 //
 
 import SpriteKit
+import AVFoundation
 
 class SKButton: SKShapeNode {
   
@@ -23,6 +24,8 @@ class SKButton: SKShapeNode {
   
   var buttonAction = SKAction()
   
+  var clickPlayer: AVAudioPlayer! = nil
+  
   override init() {
     super.init()
   }
@@ -38,6 +41,16 @@ class SKButton: SKShapeNode {
       tintImage(&glyphImage!, color: color)
     }
     glyph = SKSpriteNode(texture: SKTexture(image: glyphImage!))
+    
+    let path = Bundle.main.path(forResource: "Click.m4a", ofType:nil)!
+    let url = URL(fileURLWithPath: path)
+    do {
+      let sound = try AVAudioPlayer(contentsOf: url)
+      sound.prepareToPlay()
+      clickPlayer = sound
+    } catch {
+      fatalError("couldn't load music file")
+    }
   }
   
   required init?(coder aDecoder: NSCoder) {
@@ -100,11 +113,14 @@ class SKButton: SKShapeNode {
   func doWhenTouchesEnded(_ location: CGPoint) {
     if wasPressed {
       resetColor()
-      run(releaseOut)
+      if isPressed {run(releaseOut)}
       isPressed = false
       
       if contains(location){
         run(buttonAction)
+        if defaults.bool(forKey: "SFX") {
+          clickPlayer.play()
+        }
       }
     }
     wasPressed = false

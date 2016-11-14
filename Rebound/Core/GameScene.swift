@@ -34,9 +34,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate, AdToAppSDKDelegate, AdToAppV
   
   var backgroundMusicPlayer: AVAudioPlayer! = nil
   var bouncePlayerIndex = Int(0)
-  var bounceSoundPlayer = [AVAudioPlayer!]()
-  var aimSoundPlayer = [AVAudioPlayer!]()
-  var gameOverSoundPlayer: AVAudioPlayer! = nil
+  var bouncePlayer = [AVAudioPlayer!]()
+  var gameOverPlayer: AVAudioPlayer! = nil
   
   override func didMove(to view: SKView) {
     
@@ -95,7 +94,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate, AdToAppSDKDelegate, AdToAppV
     currentTheme.background.reset()
     
     flashDeathOverlay()
-    if defaults.bool(forKey: "SFX") && !isVirgin {gameOverSoundPlayer.play()}
+    if defaults.bool(forKey: "SFX") && !isVirgin {gameOverPlayer.play()}
     
     if random(0, to: 1) > 0.635 {AdToAppSDK.showInterstitial(ADTOAPP_INTERSTITIAL)}
     
@@ -120,6 +119,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate, AdToAppSDKDelegate, AdToAppV
       if slingshot.canShoot && !menu.wasPressed && !deathMenu.wasPressed {
         ball.physicsBody?.isResting = true
         slingshot.aim(ball, atPoint: touchLocation)
+        if defaults.bool(forKey: "SFX") {
+          slingshot.playAppropriateAimSound()
+        }
       }
     }
   }
@@ -173,9 +175,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate, AdToAppSDKDelegate, AdToAppV
 //    let defaults = UserDefaults()
 //    defaults.set(defaults.integer(forKey: "theme") + 1 < themes.count ? defaults.integer(forKey: "theme") + 1 : 0, forKey: "theme")
     
-//    banner.isHidden = !banner.isHidden
+    banner.isHidden = !banner.isHidden
     
-    terrains.array[terrains.currentIndex] = nil
+//    terrains.array[terrains.currentIndex] = nil
     
   }
   
@@ -253,20 +255,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate, AdToAppSDKDelegate, AdToAppV
     backgroundMusicPlayer.volume = defaults.bool(forKey: "Music") ? 0.24 : 0
   }
   
-  func buildAimSound() {
-    for i in 1...4 {
-      let path = Bundle.main.path(forResource: "Aiming\(i).m4a", ofType:nil)!
-      let url = URL(fileURLWithPath: path)
-      do {
-        let sound = try AVAudioPlayer(contentsOf: url)
-        sound.prepareToPlay()
-        aimSoundPlayer.append(sound)
-      } catch {
-        fatalError("couldn't load music file")
-      }
-    }
-  }
-  
   func buildBounceSound() {
     let path = Bundle.main.path(forResource: "Bounce.m4a", ofType:nil)!
     let url = URL(fileURLWithPath: path)
@@ -274,7 +262,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate, AdToAppSDKDelegate, AdToAppV
       do {
         let sound = try AVAudioPlayer(contentsOf: url)
         sound.prepareToPlay()
-        bounceSoundPlayer.append(sound)
+        bouncePlayer.append(sound)
       } catch {
         fatalError("couldn't load music file")
       }
@@ -283,15 +271,15 @@ class GameScene: SKScene, SKPhysicsContactDelegate, AdToAppSDKDelegate, AdToAppV
   
   func playBounceSound(_ volume: CGFloat) {
     let previousIndex = bouncePlayerIndex - 1 >= 0 ? bouncePlayerIndex - 1 : 1
-    if bounceSoundPlayer[previousIndex].isPlaying {
-      if bounceSoundPlayer[previousIndex].currentTime > 0.1 {
-        bounceSoundPlayer[bouncePlayerIndex].volume = Float(volume)
-        bounceSoundPlayer[bouncePlayerIndex].play()
+    if bouncePlayer[previousIndex].isPlaying {
+      if bouncePlayer[previousIndex].currentTime > 0.1 {
+        bouncePlayer[bouncePlayerIndex].volume = Float(volume)
+        bouncePlayer[bouncePlayerIndex].play()
       }
     }
     else {
-      bounceSoundPlayer[bouncePlayerIndex].volume = Float(volume)
-      bounceSoundPlayer[bouncePlayerIndex].play()
+      bouncePlayer[bouncePlayerIndex].volume = Float(volume)
+      bouncePlayer[bouncePlayerIndex].play()
     }
     
     bouncePlayerIndex += 1
@@ -304,9 +292,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate, AdToAppSDKDelegate, AdToAppV
     
     do {
       let sound = try AVAudioPlayer(contentsOf: url)
-      gameOverSoundPlayer = sound
-      gameOverSoundPlayer.volume = 1
-      gameOverSoundPlayer.prepareToPlay()
+      gameOverPlayer = sound
+      gameOverPlayer.volume = 1
+      gameOverPlayer.prepareToPlay()
     } catch {
       fatalError("couldn't load music file")
     }
@@ -317,7 +305,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate, AdToAppSDKDelegate, AdToAppV
     do {try audioSession.setCategory(AVAudioSessionCategoryAmbient, with: .duckOthers)}
     catch {print("AVAudioSession cannot be set: \(error)")}
     beginBgMusic()
-    buildAimSound()
     buildBounceSound()
     buildGameOverSound()
   }
