@@ -146,7 +146,8 @@ class SettingsMenu: SKNode {
       x: homeButton.position.x + (homeButton.frame.width/2 + creditsButton.size.width/2 + marginWidth),
       y: homeButton.position.y
     )
-    creditsButton.buttonAction = SKAction()
+    creditsButton.buttonAction =
+      SKAction.run({settingsScene.view?.presentScene(creditsScene, transition: SKTransition.doorsOpenHorizontal(withDuration: 0.5))})
     creditsButton.display(scene)
 
   }

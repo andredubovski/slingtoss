@@ -13,6 +13,7 @@ import StoreKit
 
 var gameScene = GameScene()
 var settingsScene = SettingsScene()
+var creditsScene = CreditsScene()
 
 var defaults = UserDefaults()
 var path = Bundle.main.path(forResource: "Config", ofType: "plist")
@@ -43,6 +44,7 @@ class GameViewController: UIViewController, GKGameCenterControllerDelegate {
     
     settingsScene.scaleMode = .resizeFill
     gameScene.scaleMode = .resizeFill
+    creditsScene.scaleMode = .resizeFill
     
     skView.presentScene(gameScene)
   }

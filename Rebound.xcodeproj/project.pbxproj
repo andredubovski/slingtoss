@@ -50,7 +50,6 @@
 		8FF346981D6D0B2C00504D3E /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8FF346971D6D0B2C00504D3E /* GameScene.sks */; };
 		C11DA60E1DD94A4000E47D69 /* Shot.m4a in Resources */ = {isa = PBXBuildFile; fileRef = C11DA60D1DD94A4000E47D69 /* Shot.m4a */; };
 		C11DA6141DD9501900E47D69 /* Click.m4a in Resources */ = {isa = PBXBuildFile; fileRef = C11DA6131DD9501900E47D69 /* Click.m4a */; };
-		C11DA6161DD9804F00E47D69 /* IAPHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C11DA6151DD9804F00E47D69 /* IAPHelper.swift */; };
 		C13530E61DDA90E300473AC8 /* Aiming1.m4a in Resources */ = {isa = PBXBuildFile; fileRef = C13530E21DDA90E300473AC8 /* Aiming1.m4a */; };
 		C13530E71DDA90E300473AC8 /* Aiming2.m4a in Resources */ = {isa = PBXBuildFile; fileRef = C13530E31DDA90E300473AC8 /* Aiming2.m4a */; };
 		C13530E81DDA90E300473AC8 /* Aiming3.m4a in Resources */ = {isa = PBXBuildFile; fileRef = C13530E41DDA90E300473AC8 /* Aiming3.m4a */; };
@@ -118,7 +117,6 @@
 		8FF346971D6D0B2C00504D3E /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
 		C11DA60D1DD94A4000E47D69 /* Shot.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = Shot.m4a; sourceTree = "<group>"; };
 		C11DA6131DD9501900E47D69 /* Click.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = Click.m4a; sourceTree = "<group>"; };
-		C11DA6151DD9804F00E47D69 /* IAPHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAPHelper.swift; sourceTree = "<group>"; };
 		C13530E21DDA90E300473AC8 /* Aiming1.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = Aiming1.m4a; sourceTree = "<group>"; };
 		C13530E31DDA90E300473AC8 /* Aiming2.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = Aiming2.m4a; sourceTree = "<group>"; };
 		C13530E41DDA90E300473AC8 /* Aiming3.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = Aiming3.m4a; sourceTree = "<group>"; };
@@ -215,7 +213,6 @@
 				C1401A9F1D7D3071007764F8 /* Assets.xcassets */,
 				C148A39D1DDAC2E500C45592 /* CreditsScene.swift */,
 				8FF346971D6D0B2C00504D3E /* GameScene.sks */,
-				C11DA6151DD9804F00E47D69 /* IAPHelper.swift */,
 				8F9463D71D7668E8002233A7 /* LaunchScreen.storyboard */,
 				8F9463D81D7668E8002233A7 /* Main.storyboard */,
 				8FA9767C1D7935F300A00984 /* Tools.swift */,
@@ -541,7 +538,6 @@
 				8F49085B1D73E65900C965CD /* MainMenu.swift in Sources */,
 				8FA976811D7935F300A00984 /* Platform.swift in Sources */,
 				8FA976831D7935F300A00984 /* Slingshot.swift in Sources */,
-				C11DA6161DD9804F00E47D69 /* IAPHelper.swift in Sources */,
 				8FA976741D791F2900A00984 /* SKButton.swift in Sources */,
 				8FA976841D7935F300A00984 /* Tools.swift in Sources */,
 				8FA976821D7935F300A00984 /* Score.swift in Sources */,

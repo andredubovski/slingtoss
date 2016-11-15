@@ -314,7 +314,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate, AdToAppSDKDelegate, AdToAppV
   
   func setupAdToApp() {
     //Uncomment the line below if you need test mode
-    AdToAppSDK.enableTestMode()
+//    AdToAppSDK.enableTestMode()
     //Uncomment the line below if you need logs
 //    AdToAppSDK.enableDebugLogs()
     AdToAppSDK.setDelegate(self)
