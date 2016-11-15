@@ -8,6 +8,8 @@
 
 import UIKit
 import SpriteKit
+import GameKit
+import StoreKit
 
 var gameScene = GameScene()
 var settingsScene = SettingsScene()
@@ -24,7 +26,7 @@ func configBoolForKey(_ key: String) -> Bool {
   return config!.object(forKey: key) as! Bool
 }
 
-class GameViewController: UIViewController {
+class GameViewController: UIViewController, GKGameCenterControllerDelegate {
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -64,5 +66,9 @@ class GameViewController: UIViewController {
   
   override var prefersStatusBarHidden : Bool {
     return true
+  }
+  
+  func gameCenterViewControllerDidFinish(_ gameCenterViewController: GKGameCenterViewController) {
+    gameCenterViewController.dismiss(animated: true, completion: nil)
   }
 }

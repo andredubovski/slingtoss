@@ -48,13 +48,13 @@
 		8FA976861D79362800A00984 /* TerrainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FA976851D79362800A00984 /* TerrainController.swift */; };
 		8FF346961D6D0B2C00504D3E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FF346951D6D0B2C00504D3E /* AppDelegate.swift */; };
 		8FF346981D6D0B2C00504D3E /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8FF346971D6D0B2C00504D3E /* GameScene.sks */; };
-		9FCB24C26CF48FB098DED68D /* libPods-Rebound.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 83F4DDC37BA9B280D4A78DDC /* libPods-Rebound.a */; };
-		C11DA6091DD9269200E47D69 /* Aiming1.m4a in Resources */ = {isa = PBXBuildFile; fileRef = C11DA6051DD9269200E47D69 /* Aiming1.m4a */; };
-		C11DA60A1DD9269200E47D69 /* Aiming2.m4a in Resources */ = {isa = PBXBuildFile; fileRef = C11DA6061DD9269200E47D69 /* Aiming2.m4a */; };
-		C11DA60B1DD9269200E47D69 /* Aiming3.m4a in Resources */ = {isa = PBXBuildFile; fileRef = C11DA6071DD9269200E47D69 /* Aiming3.m4a */; };
-		C11DA60C1DD9269200E47D69 /* Aiming4.m4a in Resources */ = {isa = PBXBuildFile; fileRef = C11DA6081DD9269200E47D69 /* Aiming4.m4a */; };
 		C11DA60E1DD94A4000E47D69 /* Shot.m4a in Resources */ = {isa = PBXBuildFile; fileRef = C11DA60D1DD94A4000E47D69 /* Shot.m4a */; };
 		C11DA6141DD9501900E47D69 /* Click.m4a in Resources */ = {isa = PBXBuildFile; fileRef = C11DA6131DD9501900E47D69 /* Click.m4a */; };
+		C11DA6161DD9804F00E47D69 /* IAPHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C11DA6151DD9804F00E47D69 /* IAPHelper.swift */; };
+		C13530E61DDA90E300473AC8 /* Aiming1.m4a in Resources */ = {isa = PBXBuildFile; fileRef = C13530E21DDA90E300473AC8 /* Aiming1.m4a */; };
+		C13530E71DDA90E300473AC8 /* Aiming2.m4a in Resources */ = {isa = PBXBuildFile; fileRef = C13530E31DDA90E300473AC8 /* Aiming2.m4a */; };
+		C13530E81DDA90E300473AC8 /* Aiming3.m4a in Resources */ = {isa = PBXBuildFile; fileRef = C13530E41DDA90E300473AC8 /* Aiming3.m4a */; };
+		C13530E91DDA90E300473AC8 /* Aiming4.m4a in Resources */ = {isa = PBXBuildFile; fileRef = C13530E51DDA90E300473AC8 /* Aiming4.m4a */; };
 		C1401AA01D7D3071007764F8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C1401A9F1D7D3071007764F8 /* Assets.xcassets */; };
 		C1A1E5A41D7B202400E7CDE4 /* SettingsScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1A1E5A31D7B202400E7CDE4 /* SettingsScene.swift */; };
 		C1A1E5A61D7B222700E7CDE4 /* SKToggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1A1E5A51D7B222700E7CDE4 /* SKToggle.swift */; };
@@ -64,12 +64,13 @@
 		C1F2D3C81DD8E88E008D8315 /* Bounce.m4a in Resources */ = {isa = PBXBuildFile; fileRef = C1F2D3C71DD8E88E008D8315 /* Bounce.m4a */; };
 		C1F2D3CA1DD8EDA4008D8315 /* GameOver.m4a in Resources */ = {isa = PBXBuildFile; fileRef = C1F2D3C91DD8EDA4008D8315 /* GameOver.m4a */; };
 		C1F2D3CC1DD9016C008D8315 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1F2D3CB1DD9016C008D8315 /* GameKit.framework */; };
+		E7E97E38FA39BFB068E40B29 /* Pods_Rebound.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C5DA0BD7121F10A90DD492F /* Pods_Rebound.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		542874CBB5A334FB8098203C /* Pods-Rebound.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rebound.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Rebound/Pods-Rebound.debug.xcconfig"; sourceTree = "<group>"; };
-		83F4DDC37BA9B280D4A78DDC /* libPods-Rebound.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Rebound.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		89A450626BC629D13713208E /* Pods-Rebound.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rebound.release.xcconfig"; path = "Pods/Target Support Files/Pods-Rebound/Pods-Rebound.release.xcconfig"; sourceTree = "<group>"; };
+		8C5DA0BD7121F10A90DD492F /* Pods_Rebound.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Rebound.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F352BF81D75FB3A00EEC2B1 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		8F352BFA1D75FB7200EEC2B1 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		8F352BFC1D75FB7E00EEC2B1 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
@@ -114,12 +115,13 @@
 		8FF346921D6D0B2C00504D3E /* Rebound.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Rebound.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8FF346951D6D0B2C00504D3E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8FF346971D6D0B2C00504D3E /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
-		C11DA6051DD9269200E47D69 /* Aiming1.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = Aiming1.m4a; path = "Sling Sound Effects/Aiming1.m4a"; sourceTree = "<group>"; };
-		C11DA6061DD9269200E47D69 /* Aiming2.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = Aiming2.m4a; path = "Sling Sound Effects/Aiming2.m4a"; sourceTree = "<group>"; };
-		C11DA6071DD9269200E47D69 /* Aiming3.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = Aiming3.m4a; path = "Sling Sound Effects/Aiming3.m4a"; sourceTree = "<group>"; };
-		C11DA6081DD9269200E47D69 /* Aiming4.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = Aiming4.m4a; path = "Sling Sound Effects/Aiming4.m4a"; sourceTree = "<group>"; };
 		C11DA60D1DD94A4000E47D69 /* Shot.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = Shot.m4a; sourceTree = "<group>"; };
 		C11DA6131DD9501900E47D69 /* Click.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = Click.m4a; sourceTree = "<group>"; };
+		C11DA6151DD9804F00E47D69 /* IAPHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAPHelper.swift; sourceTree = "<group>"; };
+		C13530E21DDA90E300473AC8 /* Aiming1.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = Aiming1.m4a; sourceTree = "<group>"; };
+		C13530E31DDA90E300473AC8 /* Aiming2.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = Aiming2.m4a; sourceTree = "<group>"; };
+		C13530E41DDA90E300473AC8 /* Aiming3.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = Aiming3.m4a; sourceTree = "<group>"; };
+		C13530E51DDA90E300473AC8 /* Aiming4.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = Aiming4.m4a; sourceTree = "<group>"; };
 		C1401A9F1D7D3071007764F8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C1A1E5A31D7B202400E7CDE4 /* SettingsScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsScene.swift; sourceTree = "<group>"; };
 		C1A1E5A51D7B222700E7CDE4 /* SKToggle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKToggle.swift; sourceTree = "<group>"; };
@@ -159,7 +161,7 @@
 				8F352BFD1D75FB7E00EEC2B1 /* CoreData.framework in Frameworks */,
 				8F352BFB1D75FB7200EEC2B1 /* libsqlite3.tbd in Frameworks */,
 				8F352BF91D75FB3A00EEC2B1 /* libz.tbd in Frameworks */,
-				9FCB24C26CF48FB098DED68D /* libPods-Rebound.a in Frameworks */,
+				E7E97E38FA39BFB068E40B29 /* Pods_Rebound.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -171,7 +173,7 @@
 			children = (
 				C1F2D3CB1DD9016C008D8315 /* GameKit.framework */,
 				8F352C241D75FDA100EEC2B1 /* iOS */,
-				83F4DDC37BA9B280D4A78DDC /* libPods-Rebound.a */,
+				8C5DA0BD7121F10A90DD492F /* Pods_Rebound.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -210,6 +212,7 @@
 			children = (
 				C1401A9F1D7D3071007764F8 /* Assets.xcassets */,
 				8FF346971D6D0B2C00504D3E /* GameScene.sks */,
+				C11DA6151DD9804F00E47D69 /* IAPHelper.swift */,
 				8F9463D71D7668E8002233A7 /* LaunchScreen.storyboard */,
 				8F9463D81D7668E8002233A7 /* Main.storyboard */,
 				8FA9767C1D7935F300A00984 /* Tools.swift */,
@@ -256,8 +259,8 @@
 		8FA9764D1D780AF700A00984 /* Sound */ = {
 			isa = PBXGroup;
 			children = (
+				C13530E11DDA90E300473AC8 /* Aiming */,
 				C1F2D3C71DD8E88E008D8315 /* Bounce.m4a */,
-				C11DA6041DD9268100E47D69 /* Sling Sound Effects */,
 				C1F2D3C91DD8EDA4008D8315 /* GameOver.m4a */,
 				C11DA60D1DD94A4000E47D69 /* Shot.m4a */,
 				C1C9874A1D7FA9F10074BC0F /* StrangeGreenPlanet.mp3 */,
@@ -309,15 +312,15 @@
 			path = Mechanics;
 			sourceTree = "<group>";
 		};
-		C11DA6041DD9268100E47D69 /* Sling Sound Effects */ = {
+		C13530E11DDA90E300473AC8 /* Aiming */ = {
 			isa = PBXGroup;
 			children = (
-				C11DA6051DD9269200E47D69 /* Aiming1.m4a */,
-				C11DA6061DD9269200E47D69 /* Aiming2.m4a */,
-				C11DA6071DD9269200E47D69 /* Aiming3.m4a */,
-				C11DA6081DD9269200E47D69 /* Aiming4.m4a */,
+				C13530E21DDA90E300473AC8 /* Aiming1.m4a */,
+				C13530E31DDA90E300473AC8 /* Aiming2.m4a */,
+				C13530E41DDA90E300473AC8 /* Aiming3.m4a */,
+				C13530E51DDA90E300473AC8 /* Aiming4.m4a */,
 			);
-			name = "Sling Sound Effects";
+			path = Aiming;
 			sourceTree = "<group>";
 		};
 		C1A1E5AB1D7B617800E7CDE4 /* Settings */ = {
@@ -410,18 +413,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C11DA60B1DD9269200E47D69 /* Aiming3.m4a in Resources */,
 				C1F2D3CA1DD8EDA4008D8315 /* GameOver.m4a in Resources */,
 				8F9463DA1D7668E8002233A7 /* Main.storyboard in Resources */,
+				C13530E71DDA90E300473AC8 /* Aiming2.m4a in Resources */,
 				8FF346981D6D0B2C00504D3E /* GameScene.sks in Resources */,
 				8F9463D91D7668E8002233A7 /* LaunchScreen.storyboard in Resources */,
 				C1C9874B1D7FA9F10074BC0F /* StrangeGreenPlanet.mp3 in Resources */,
-				C11DA60A1DD9269200E47D69 /* Aiming2.m4a in Resources */,
 				C1F2D3C81DD8E88E008D8315 /* Bounce.m4a in Resources */,
-				C11DA6091DD9269200E47D69 /* Aiming1.m4a in Resources */,
-				C11DA60C1DD9269200E47D69 /* Aiming4.m4a in Resources */,
 				C11DA60E1DD94A4000E47D69 /* Shot.m4a in Resources */,
+				C13530E61DDA90E300473AC8 /* Aiming1.m4a in Resources */,
 				C1CAFF181D7E481E008B3D5F /* Config.plist in Resources */,
+				C13530E91DDA90E300473AC8 /* Aiming4.m4a in Resources */,
+				C13530E81DDA90E300473AC8 /* Aiming3.m4a in Resources */,
 				C1401AA01D7D3071007764F8 /* Assets.xcassets in Resources */,
 				C11DA6141DD9501900E47D69 /* Click.m4a in Resources */,
 			);
@@ -535,6 +538,7 @@
 				8F49085B1D73E65900C965CD /* MainMenu.swift in Sources */,
 				8FA976811D7935F300A00984 /* Platform.swift in Sources */,
 				8FA976831D7935F300A00984 /* Slingshot.swift in Sources */,
+				C11DA6161DD9804F00E47D69 /* IAPHelper.swift in Sources */,
 				8FA976741D791F2900A00984 /* SKButton.swift in Sources */,
 				8FA976841D7935F300A00984 /* Tools.swift in Sources */,
 				8FA976821D7935F300A00984 /* Score.swift in Sources */,

@@ -1,4 +1,4 @@
-platform :ios, '7.0'
+platform :ios, '9.0'
 target 'Rebound' do
   
   pod 'iRate'
@@ -6,7 +6,7 @@ target 'Rebound' do
   pod 'AdToApp/Interstitial'
   pod 'AdToApp/Image'
   pod 'AdToApp/Video'
-#  pod 'AdToApp/Reward'
+  #  pod 'AdToApp/Reward'
   pod 'AdToApp/Banner'
   pod 'AdToApp/AdColony'
   pod 'AdToApp/AmazonAd'
@@ -28,4 +28,15 @@ target 'Rebound' do
   pod 'AdToApp/Inhouse'
   pod 'AdToApp/Yandex'
   
+  use_frameworks!
+  pod 'SwiftyStoreKit'
+  
+  
+  post_install do |installer|
+    installer.pods_project.targets.each do |target|
+      target.build_configurations.each do |config|
+        config.build_settings['SWIFT_VERSION'] = '3.0'
+      end
+    end
+  end
 end

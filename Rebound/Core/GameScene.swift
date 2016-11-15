@@ -88,7 +88,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate, AdToAppSDKDelegate, AdToAppV
     ball.reset()
     
     scroll(0)
-    deathMenu.appear(score.amount)
+    deathMenu.appear(score: score)
     score.reset()
     verticalProgress = 0
     currentTheme.background.reset()
@@ -178,6 +178,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate, AdToAppSDKDelegate, AdToAppV
     banner.isHidden = !banner.isHidden
     
 //    terrains.array[terrains.currentIndex] = nil
+    
+    defaults.set(0, forKey: "high score")
     
   }
   

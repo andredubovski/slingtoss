@@ -92,6 +92,7 @@ PODS:
   - AdToApp/Yandex (47.14):
     - AdToApp/Core
   - iRate (1.11.6)
+  - SwiftyStoreKit (0.5.4)
 
 DEPENDENCIES:
   - AdToApp/AdColony
@@ -118,11 +119,13 @@ DEPENDENCIES:
   - AdToApp/Vungle
   - AdToApp/Yandex
   - iRate
+  - SwiftyStoreKit
 
 SPEC CHECKSUMS:
   AdToApp: 2db758eaece13fce792b803defec41b17f55aeac
   iRate: 61e558919c4a7fde63b3c22ebbd6c114a1eee658
+  SwiftyStoreKit: a8b02a708c6e2bf52207836d58afd3738e2f6670
 
-PODFILE CHECKSUM: bdf9d5e94f299574a40b97e56f64c22f707c9fdd
+PODFILE CHECKSUM: bee220c06273b1057960dabab040537e9d553fee
 
 COCOAPODS: 1.0.1

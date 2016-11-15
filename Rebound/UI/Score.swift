@@ -7,12 +7,16 @@
 //
 
 import SpriteKit
+import GameKit
 
 class Score {
   
   var amount = Int(0)
   var box = SKSpriteNode(color: currentTheme.uiColor, size: CGSize.zero)
   var label = SKLabelNode()
+  
+  var gcEnabled = Bool()
+  var gcDefaultLeaderBoard = String()
   
   init() {
     
@@ -28,6 +32,9 @@ class Score {
     box.position = CGPoint(x: box.frame.width/2, y: scene.frame.height-box.frame.height/2)
     box.zPosition = 7
     scene.addChild(box)
+    
+    authenticateLocalPlayer()
+    
   }
   
   func build() {
@@ -67,6 +74,47 @@ class Score {
     
     box.removeAllActions()
     box.alpha = 0
+  }
+  
+  func authenticateLocalPlayer() {
+    let localPlayer: GKLocalPlayer = GKLocalPlayer.localPlayer()
+    
+    localPlayer.authenticateHandler = {(ViewController, error) -> Void in
+      if((ViewController) != nil) {
+        // 1 Show login if player is not logged in
+        gameScene.view?.window?.rootViewController?.present(ViewController!, animated: true, completion: nil)
+      } else if (localPlayer.isAuthenticated) {
+        // 2 Player is already euthenticated & logged in, load game center
+        self.gcEnabled = true
+        
+        // Get the default leaderboard ID
+        self.gcDefaultLeaderBoard = "grp.com.Oaklin.Rebound.HighScoresLeaderboard"
+        
+        
+      } else {
+        // 3 Game center is not enabled on the users device
+        self.gcEnabled = false
+        print("Local player could not be authenticated, disabling game center")
+        print(error)
+      }
+      
+    }
+    
+  }
+  
+  func submit() {
+    let leaderboardID = "grp.com.Oaklin.Rebound.HighScoresLeaderboard"
+    let sScore = GKScore(leaderboardIdentifier: leaderboardID)
+    sScore.value = Int64(amount)
+    
+    GKScore.report([sScore], withCompletionHandler: { (error: Error?) -> Void in
+      if error != nil {
+        print(error!.localizedDescription)
+      } else {
+        print("Score submitted")
+        
+      }
+    })
   }
   
   func appear() {

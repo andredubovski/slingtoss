@@ -101,7 +101,6 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_resource "AdToApp/AdToAppResources/VungleResources/vg_mute_on.png"
   install_resource "AdToApp/AdToAppResources/VungleResources/vg_privacy.png"
   install_resource "AdToApp/AdToAppResources/VungleResources/__vungle.db"
-  install_resource "iRate/iRate/iRate.bundle"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_resource "AdToApp/AdToAppResources/StartApp.bundle"
@@ -125,7 +124,6 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_resource "AdToApp/AdToAppResources/VungleResources/vg_mute_on.png"
   install_resource "AdToApp/AdToAppResources/VungleResources/vg_privacy.png"
   install_resource "AdToApp/AdToAppResources/VungleResources/__vungle.db"
-  install_resource "iRate/iRate/iRate.bundle"
 fi
 
 mkdir -p "${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}"

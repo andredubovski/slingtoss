@@ -7,9 +7,9 @@
 //
 
 import SpriteKit
-import StoreKit
+import SwiftyStoreKit
 
-class SettingsMenu: SKNode, SKProductsRequestDelegate {
+class SettingsMenu: SKNode {
   
   var buttonToMarginRatio = CGFloat(0.2)
   var buttonWidth = CGFloat()
@@ -21,7 +21,6 @@ class SettingsMenu: SKNode, SKProductsRequestDelegate {
   var musicToggle = SKToggle()
   
   var removeAdsToggle = SKToggle()
-  var product_id = "com.Oaklin.Rebound.RemoveAds"
   var refreshIAPButton = SKButton()
   
   var homeButton = SKButton()
@@ -83,21 +82,23 @@ class SettingsMenu: SKNode, SKProductsRequestDelegate {
     )
     
     removeAdsToggle.turnOnAction = SKAction.run({
-      print("About to fetch the products");
-      // We check that we are allow to make the purchase.
-      if (SKPaymentQueue.canMakePayments())
-      {
-        let productID:NSSet = NSSet(object: self.product_id);
-        let productsRequest:SKProductsRequest = SKProductsRequest(productIdentifiers: productID as! Set<String>);
-        productsRequest.delegate = self;
-        productsRequest.start();
-        print("Fething Products");
-      } else {
-        let alert = UIAlertController(title: "Could not process payment.", message: "Please check your internet connection.", preferredStyle: UIAlertControllerStyle.alert)
-        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
-        settingsScene.view?.window?.rootViewController?.present(alert, animated: true, completion: nil)
-        self.removeAdsToggle.setStateTo(false)
-        defaults.set(false, forKey: "Ads")
+      
+      SwiftyStoreKit.purchaseProduct("com.musevisions.SwiftyStoreKit.Purchase1") { result in
+        switch result {
+        case .success(let productId):
+          print("Purchase Success: \(productId)")
+        case .error(let error):
+          print("Purchase Failed: \(error)")
+          
+          if let gvc = settingsScene.view?.window?.rootViewController! as? GameViewController {
+            let alert = UIAlertController(title: "Could not process payment.", message: "Please check your internet connection.", preferredStyle: UIAlertControllerStyle.alert)
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+            gvc.present(alert, animated: true, completion: nil)
+            self.removeAdsToggle.setStateTo(false)
+            defaults.set(true, forKey: "Ads")
+          }
+          
+        }
       }
       
     })
@@ -158,54 +159,6 @@ class SettingsMenu: SKNode, SKProductsRequestDelegate {
     refreshIAPButton.doWhenTouchesEnded(location)
     creditsButton.doWhenTouchesEnded(location)
     homeButton.doWhenTouchesEnded(location)
-  }
-  
-  func productsRequest(_ request: SKProductsRequest, didReceive response: SKProductsResponse) {
-    print("got the request from Apple")
-    var count : Int = response.products.count
-    if (count>0) {
-      var validProducts = response.products
-      var validProduct: SKProduct = response.products[0] as SKProduct
-      if (validProduct.productIdentifier == self.product_id) {
-        print(validProduct.localizedTitle)
-        print(validProduct.localizedDescription)
-        print(validProduct.price)
-        buyProduct(product: validProduct);
-      } else {
-        print(validProduct.productIdentifier)
-      }
-    } else {
-      print("nothing")
-    }
-  }
-  
-  func paymentQueue(queue: SKPaymentQueue!, updatedTransactions transactions: [AnyObject]!)    {
-    print("Received Payment Transaction Response from Apple");
-    
-    for transaction:AnyObject in transactions {
-      if let trans:SKPaymentTransaction = transaction as? SKPaymentTransaction{
-        switch trans.transactionState {
-        case .purchased:
-          print("Product Purchased");
-          SKPaymentQueue.default().finishTransaction(transaction as! SKPaymentTransaction)
-          break;
-        case .failed:
-          print("Purchased Failed");
-          SKPaymentQueue.default().finishTransaction(transaction as! SKPaymentTransaction)
-          break;
-          // case .Restored:
-        //[self restoreTransaction:transaction];
-        default:
-          break;
-        }
-      }
-    }
-  }
-  
-  func buyProduct(product: SKProduct){
-    print("Sending the Payment Request to Apple");
-    let payment = SKPayment(product: product)
-    SKPaymentQueue.default().add(payment);
   }
   
 }

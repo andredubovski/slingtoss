@@ -6,7 +6,7 @@
 //  Copyright © 2016 oakl.in. All rights reserved.
 //
 
-#import "iRate.h"
+//#import "iRate.h"
 #import "AdToAppSDK.h"
 #import "AdToAppView.h"
 #import "AdToAppTargeting.h"

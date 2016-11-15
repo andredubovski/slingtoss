@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftyStoreKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,30 +17,37 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   override class func initialize() -> Void {
     
     
-    iRate.sharedInstance().usesUntilPrompt = 6
-    iRate.sharedInstance().daysUntilPrompt = 0
-    iRate.sharedInstance().remindPeriod = 0
-    iRate.sharedInstance().messageTitle = "PLEASE RATE!"
-    iRate.sharedInstance().message = "I'm 15 years old and I love compliments. Please write a review about my quality app."
-    iRate.sharedInstance().rateButtonLabel = "Hellll yeah 😎"
-    iRate.sharedInstance().remindButtonLabel = "Later"
-    iRate.sharedInstance().cancelButtonLabel = "No, I'm a 💩"
-    iRate.sharedInstance().declinedThisVersion = false
-    iRate.sharedInstance().declinedAnyVersion = false
-    iRate.sharedInstance().ratedThisVersion = false
-    iRate.sharedInstance().ratedAnyVersion = false
-    iRate.sharedInstance().verboseLogging = false
-    iRate.sharedInstance().applicationBundleID = "com.clickgamer.AngryBirds"
-    iRate.sharedInstance().onlyPromptIfLatestVersion = false
+//    iRate.sharedInstance().usesUntilPrompt = 6
+//    iRate.sharedInstance().daysUntilPrompt = 0
+//    iRate.sharedInstance().remindPeriod = 0
+//    iRate.sharedInstance().messageTitle = "PLEASE RATE!"
+//    iRate.sharedInstance().message = "I'm 15 years old and I love compliments. Please write a review about my quality app."
+//    iRate.sharedInstance().rateButtonLabel = "Hellll yeah 😎"
+//    iRate.sharedInstance().remindButtonLabel = "Later"
+//    iRate.sharedInstance().cancelButtonLabel = "No, I'm a 💩"
+//    iRate.sharedInstance().declinedThisVersion = false
+//    iRate.sharedInstance().declinedAnyVersion = false
+//    iRate.sharedInstance().ratedThisVersion = false
+//    iRate.sharedInstance().ratedAnyVersion = false
+//    iRate.sharedInstance().verboseLogging = false
+//    iRate.sharedInstance().applicationBundleID = "com.clickgamer.AngryBirds"
+//    iRate.sharedInstance().onlyPromptIfLatestVersion = false
     
   }
   
   
-  func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+  func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
     
-    
-    
-    
+    SwiftyStoreKit.completeTransactions() { completedTransactions in
+      
+      for completedTransaction in completedTransactions {
+        
+        if completedTransaction.transactionState == .purchased || completedTransaction.transactionState == .restored {
+          
+          print("purchased: \(completedTransaction.productId)")
+        }
+      }
+    }
     return true
   }
   

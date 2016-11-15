@@ -7,9 +7,10 @@
 //
 
 import SpriteKit
+import GameKit
 
 class DeathMenu: MainMenu {
-  
+
   var scoreAmount = Int()
   var scoreBox = SKShapeNode()
   var scoreLabel = SKLabelNode()
@@ -39,8 +40,17 @@ class DeathMenu: MainMenu {
       vc?.present(activityVC, animated: true, completion: nil)
       
     })
-    button3.makeGlyph("gameCenter")
     
+    button3.makeGlyph("gameCenter")
+    button3.buttonAction = SKAction.run({
+      
+      let gcVC: GKGameCenterViewController = GKGameCenterViewController()
+      gcVC.gameCenterDelegate = gameScene.view?.window?.rootViewController as! GameViewController
+      gcVC.viewState = GKGameCenterViewControllerState.leaderboards
+      gcVC.leaderboardIdentifier = "grp.com.Oaklin.Rebound.HighScoresLeaderboard"
+      gameScene.view?.window?.rootViewController?.present(gcVC, animated: true, completion: nil)
+      
+    })
     
     
     scoreBox.path = CGPath(rect: CGRect(
@@ -83,12 +93,13 @@ class DeathMenu: MainMenu {
     
   }
   
-  func appear(_ scoreAmount: Int) {
-    self.scoreAmount = scoreAmount
+  func appear(score: Score) {
+    self.scoreAmount = score.amount
     
     let defaults = UserDefaults()
-    if scoreAmount > defaults.integer(forKey: "high score") {
-      defaults.set(scoreAmount, forKey: "high score")
+    if score.amount > defaults.integer(forKey: "high score") {
+      defaults.set(score.amount, forKey: "high score")
+      score.submit()
       highScoreLabel.text = "HIGH: \(defaults.integer(forKey: "high score"))"
     }
     
@@ -105,6 +116,10 @@ class DeathMenu: MainMenu {
     highScoreLabel.yScale = scoreLabel.yScale
     
     appear()
+  }
+  
+  func gameCenterViewControllerDidFinish(_ gameCenterViewController: GKGameCenterViewController) {
+    return
   }
   
 }

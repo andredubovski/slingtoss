@@ -7,6 +7,7 @@
 //
 
 import SpriteKit
+import iRate
 
 class MainMenu {
   

@@ -9,6 +9,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>SwiftyStoreKit.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>iRate.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -17,12 +22,17 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>687B131C886621477E5361945E9AEC06</key>
+		<key>00E74CED770597EF76DEE6FE824D1B7A</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>8B090755233C44E8E118A8DA48015C08</key>
+		<key>692F9926CED961BA9F373989338B566D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C103A25A4FDC4956ACB186CF555B81C7</key>
 		<dict>
 			<key>primary</key>
 			<true/>
