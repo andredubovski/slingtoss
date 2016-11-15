@@ -149,6 +149,14 @@ func tintImage(_ image: inout UIImage, color: UIColor) {
   UIGraphicsEndImageContext()
 }
 
+func popup(scene: SKScene, title: String, message: String) {
+  if let gvc = scene.view?.window?.rootViewController! as? GameViewController {
+    let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
+    alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+    gvc.present(alert, animated: true, completion: nil)
+  }
+}
+
 //extension Collection {
 //  /// Returns the element at the specified index iff it is within bounds, otherwise nil.
 //  subscript (safe index: Index) -> Iterator.Element? {

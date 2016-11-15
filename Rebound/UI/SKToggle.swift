@@ -27,6 +27,10 @@ class SKToggle: SKButton {
       run(SKAction.group([releaseOut, turnOffAction]))
       fillColor = lightColor
     }
+    
+    if defaults.bool(forKey: "SFX") {
+      clickPlayer.play()
+    }
   }
   
   func toggleState() {setStateTo(!state)}

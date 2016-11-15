@@ -83,20 +83,21 @@ class SettingsMenu: SKNode {
     
     removeAdsToggle.turnOnAction = SKAction.run({
       
-      SwiftyStoreKit.purchaseProduct("com.musevisions.SwiftyStoreKit.Purchase1") { result in
+      SwiftyStoreKit.purchaseProduct("com.Oaklin.Rebound.RemoveAds") { result in
         switch result {
         case .success(let productId):
-          print("Purchase Success: \(productId)")
-        case .error(let error):
-          print("Purchase Failed: \(error)")
           
-          if let gvc = settingsScene.view?.window?.rootViewController! as? GameViewController {
-            let alert = UIAlertController(title: "Could not process payment.", message: "Please check your internet connection.", preferredStyle: UIAlertControllerStyle.alert)
-            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
-            gvc.present(alert, animated: true, completion: nil)
-            self.removeAdsToggle.setStateTo(false)
-            defaults.set(true, forKey: "Ads")
-          }
+          print("Success! Purchased: \(productId)")
+          popup(scene: settingsScene, title: "Purchase successful!", message: "Thank you for your purchase.")
+          self.removeAdsToggle.setStateTo(true)
+          defaults.set(false, forKey: "Ads")
+          
+        case .error(let error):
+          
+          popup(scene: settingsScene, title: "Purchase Failed", message: String(describing: error))
+          
+          self.removeAdsToggle.setStateTo(false)
+          defaults.set(true, forKey: "Ads")
           
         }
       }
@@ -114,6 +115,22 @@ class SettingsMenu: SKNode {
       y: musicToggle.position.y - (buttonWidth/2 + refreshIAPButton.size.height/2 + marginWidth)
     )
     refreshIAPButton.display(scene)
+    refreshIAPButton.buttonAction = SKAction.run({
+      
+      SwiftyStoreKit.restorePurchases() { results in
+        if results.restoreFailedProducts.count > 0 {
+          popup(scene: settingsScene, title: "Restore Failed", message: String(describing: results.restoreFailedProducts))
+        } else if results.restoredProductIds.count > 0 {
+          print("Restore Success: \(results.restoredProductIds)")
+          self.removeAdsToggle.setStateTo(true)
+          defaults.set(false, forKey: "Ads")
+          popup(scene: settingsScene, title: "Successfully Restored", message: "")
+        } else {
+          popup(scene: settingsScene, title: "Nothing to Restore", message: "")
+        }
+      }
+      
+    })
     
     
     homeButton = SKButton(setSize: CGSize(width: buttonWidth/1.5, height: buttonWidth/1.5), setGlyph: "home")
