@@ -312,11 +312,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate, AdToAppViewDelegate, AdToApp
   func setupAdToApp() {
 
     //Uncomment the line below if you need test mode
-    AdToAppSDK.enableTestMode()
+//    AdToAppSDK.enableTestMode()
     //Uncomment the line below if you need logs
     AdToAppSDK.enableDebugLogs()
     AdToAppSDK.setDelegate(self)
-    AdToAppSDK.start(withAppId: "39c3f1a3-bced-4ae4-851b-7cb603a44479:c4050a11-a7eb-4733-b961-7d77c7601aee", modules:[
+    AdToAppSDK.start(withAppId: "55f1d158-f033-49ec-a53b-9a4e40b4106c:4b299984871e2d1213ef05b5d7f73412d04b911a", modules:[
       ADTOAPP_IMAGE_INTERSTITIAL,
       ADTOAPP_VIDEO_INTERSTITIAL,
       ADTOAPP_INTERSTITIAL,
