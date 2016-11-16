@@ -175,11 +175,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate, AdToAppSDKDelegate, AdToAppV
 //    let defaults = UserDefaults()
 //    defaults.set(defaults.integer(forKey: "theme") + 1 < themes.count ? defaults.integer(forKey: "theme") + 1 : 0, forKey: "theme")
     
-    banner.isHidden = !banner.isHidden
-    
-//    terrains.array[terrains.currentIndex] = nil
-    
-    defaults.set(0, forKey: "high score")
+//    banner.isHidden = !banner.isHidden
+//    
+////    terrains.array[terrains.currentIndex] = nil
+//    
+//    defaults.set(0, forKey: "high score")
     
   }
   
