@@ -3,10 +3,10 @@ target 'Rebound' do
   
   pod 'iRate'
   
+  pod 'AdToApp'
   pod 'AdToApp/Interstitial'
   pod 'AdToApp/Image'
   pod 'AdToApp/Video'
-  #  pod 'AdToApp/Reward'
   pod 'AdToApp/Banner'
   pod 'AdToApp/AdColony'
   pod 'AdToApp/AmazonAd'

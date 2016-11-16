@@ -12,7 +12,7 @@ import AVFoundation
 var gameFrame = CGRect()
 let blankView = UIView()
 
-class GameScene: SKScene, SKPhysicsContactDelegate, AdToAppSDKDelegate, AdToAppViewDelegate {
+class GameScene: SKScene, SKPhysicsContactDelegate, AdToAppViewDelegate, AdToAppSDKDelegate {
   
   var isVirgin = Bool(true)
   var menu = MainMenu()
@@ -28,7 +28,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate, AdToAppSDKDelegate, AdToAppV
   var verticalProgress = CGFloat(0)
   
   var adsOn = defaults.bool(forKey: "Ads")
-  var banner = AdToAppView()
   var atpActive = Bool(true)
   var atpPlaceholderActive = Bool(false)
   
@@ -96,7 +95,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate, AdToAppSDKDelegate, AdToAppV
     flashDeathOverlay()
     if defaults.bool(forKey: "SFX") && !isVirgin {gameOverPlayer.play()}
     
-    if random(0, to: 1) > 0.635 {AdToAppSDK.showInterstitial(ADTOAPP_INTERSTITIAL)}
     
     resetCount += 1
     
@@ -311,12 +309,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate, AdToAppSDKDelegate, AdToAppV
     buildGameOverSound()
   }
   
-  
   func setupAdToApp() {
+
     //Uncomment the line below if you need test mode
-//    AdToAppSDK.enableTestMode()
+    AdToAppSDK.enableTestMode()
     //Uncomment the line below if you need logs
-//    AdToAppSDK.enableDebugLogs()
+    AdToAppSDK.enableDebugLogs()
     AdToAppSDK.setDelegate(self)
     AdToAppSDK.start(withAppId: "39c3f1a3-bced-4ae4-851b-7cb603a44479:c4050a11-a7eb-4733-b961-7d77c7601aee", modules:[
       ADTOAPP_IMAGE_INTERSTITIAL,
@@ -326,28 +324,18 @@ class GameScene: SKScene, SKPhysicsContactDelegate, AdToAppSDKDelegate, AdToAppV
       ADTOAPP_BANNER
       ])
     
-    
-    banner = AdToAppView.attach(to: self.view, position:ADTOAPPSDK_BANNER_POSITION_BOTTOM, edgeInsets:UIEdgeInsets.zero, bannerSize:ADTOAPPSDK_BANNER_SIZE_320x50, delegate:self) as! AdToAppView
-    //Delegate methods:
-    //func adToAppViewDidDisplayAd(adToAppView: AdToAppView) {
-    //    NSLog("adToAppViewDidDisplayAd");
-    //}
-    //func adToAppView(adToAppView :AdToAppView, failedToDisplayAdWithError:NSError, isConnectionError:Bool){
-    //    NSLog("adToAppView:adToAppView:failedToDisplayAdWithError:isConnectionError:");
-    //}
-    banner.setRefreshInterval(25.0)
+    AdToAppView.attach(to: self.view, position:ADTOAPPSDK_BANNER_POSITION_BOTTOM, edgeInsets:UIEdgeInsets.zero, bannerSize:ADTOAPPSDK_BANNER_SIZE_320x50, delegate:self)
     
   }
   
-  func showAdPlaceholder() {
-    if !atpPlaceholderActive && adsOn {
-      let adPlaceholder = SKSpriteNode(imageNamed: "adPlaceholder")
-      adPlaceholder.position = CGPoint(x: frame.midX, y: adPlaceholder.frame.height/2)
-      adPlaceholder.zPosition = 1000
-      addChild(adPlaceholder)
-      atpPlaceholderActive = true
-    }
+  func ad(_ adToAppView: AdToAppView!, failedToDisplayAdWithError error: Error!, isConnectionError: Bool) {
+    return
   }
+  
+  func ad(toAppViewDidDisplayAd adToAppView: AdToAppView!, providerId: Int32) {
+    return
+  }
+  
   
   func onAdWillAppear(_ adType: String, providerId: Int32) {
     NSLog("On interstitial show")
@@ -357,13 +345,16 @@ class GameScene: SKScene, SKPhysicsContactDelegate, AdToAppSDKDelegate, AdToAppV
     NSLog("On interstitial hide")
   }
   
-  func ad(toAppViewDidDisplayAd adToAppView: AdToAppView!, providerId: Int32) {
-    return
+  //optional
+  func onReward(_ reward: Int32, currency gameCurrency: String!, providerId: Int32) {
+    NSLog("On reward")
   }
-  func ad(_ adToAppView: AdToAppView!, failedToDisplayAdWithError error: Error!, isConnectionError: Bool) {
-    print(error)
-    print("is connection error: \(isConnectionError)")
-    return
+  
+  //optional
+  private func shouldShowAd(adType: String)-> Bool {
+    NSLog("On should show Ad")
+    
+    return true;
   }
   
 }

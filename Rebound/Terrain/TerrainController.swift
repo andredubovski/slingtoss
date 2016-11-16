@@ -54,6 +54,7 @@ class TerrainController {
     }
     
     difficulty = pow(CGFloat(score.amount), 1/7) - 1
+    if difficulty > 1 {difficulty = 1}
     
     if array[array.count-1]!.position.y < gameFrame.height*2 {
       makeRandomTerrain(difficulty)

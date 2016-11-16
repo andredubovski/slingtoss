@@ -1,4 +1,11 @@
 PODS:
+  - AdToApp (47.14):
+    - AdToApp/Banner (= 47.14)
+    - AdToApp/Image (= 47.14)
+    - AdToApp/Interstitial (= 47.14)
+    - AdToApp/Personagraph (= 47.14)
+    - AdToApp/Reward (= 47.14)
+    - AdToApp/Video (= 47.14)
   - AdToApp/AdColony (47.14):
     - AdToApp/Core
   - AdToApp/AdMob (47.14):
@@ -63,8 +70,22 @@ PODS:
     - AdToApp/Core
   - AdToApp/NativeX (47.14):
     - AdToApp/Core
+  - AdToApp/Personagraph (47.14):
+    - AdToApp/Core
   - AdToApp/Revmob (47.14):
     - AdToApp/Core
+  - AdToApp/Reward (47.14):
+    - AdToApp/AdColony
+    - AdToApp/Applovin
+    - AdToApp/Flurry
+    - AdToApp/Inhouse
+    - AdToApp/InMobi
+    - AdToApp/MyTarget
+    - AdToApp/NativeX
+    - AdToApp/StartApp
+    - AdToApp/Supersonic
+    - AdToApp/Unity
+    - AdToApp/Vungle
   - AdToApp/Smaato (47.14):
     - AdToApp/Core
   - AdToApp/StartApp (47.14):
@@ -95,6 +116,7 @@ PODS:
   - SwiftyStoreKit (0.5.4)
 
 DEPENDENCIES:
+  - AdToApp
   - AdToApp/AdColony
   - AdToApp/AdMob
   - AdToApp/AmazonAd
@@ -126,6 +148,6 @@ SPEC CHECKSUMS:
   iRate: 61e558919c4a7fde63b3c22ebbd6c114a1eee658
   SwiftyStoreKit: a8b02a708c6e2bf52207836d58afd3738e2f6670
 
-PODFILE CHECKSUM: bee220c06273b1057960dabab040537e9d553fee
+PODFILE CHECKSUM: 92c76e12ee18e9ab71b4e01850dbb13154c779d2
 
 COCOAPODS: 1.0.1

@@ -6,37 +6,40 @@
 //  Copyright © 2016 oakl.in. All rights reserved.
 //
 
+import iRate
 import UIKit
 import SwiftyStoreKit
+import AdSupport
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
   
   var window: UIWindow?
   
+  
   override class func initialize() -> Void {
     
     
-//    iRate.sharedInstance().usesUntilPrompt = 6
-//    iRate.sharedInstance().daysUntilPrompt = 0
-//    iRate.sharedInstance().remindPeriod = 0
-//    iRate.sharedInstance().messageTitle = "PLEASE RATE!"
-//    iRate.sharedInstance().message = "I'm 15 years old and I love compliments. Please write a review about my quality app."
-//    iRate.sharedInstance().rateButtonLabel = "Hellll yeah 😎"
-//    iRate.sharedInstance().remindButtonLabel = "Later"
-//    iRate.sharedInstance().cancelButtonLabel = "No, I'm a 💩"
+    iRate.sharedInstance().usesUntilPrompt = 6
+    iRate.sharedInstance().daysUntilPrompt = 0
+    iRate.sharedInstance().remindPeriod = 0
+    iRate.sharedInstance().messageTitle = "PLEASE RATE!"
+    iRate.sharedInstance().message = "Please say nice things about my app."
+    iRate.sharedInstance().rateButtonLabel = "Yea sure 😎"
+    iRate.sharedInstance().remindButtonLabel = "Later"
+    iRate.sharedInstance().cancelButtonLabel = "Nah, I suck"
 //    iRate.sharedInstance().declinedThisVersion = false
 //    iRate.sharedInstance().declinedAnyVersion = false
 //    iRate.sharedInstance().ratedThisVersion = false
 //    iRate.sharedInstance().ratedAnyVersion = false
-//    iRate.sharedInstance().verboseLogging = false
-//    iRate.sharedInstance().applicationBundleID = "com.clickgamer.AngryBirds"
-//    iRate.sharedInstance().onlyPromptIfLatestVersion = false
+    iRate.sharedInstance().verboseLogging = false
+    iRate.sharedInstance().applicationBundleID = "com.clickgamer.AngryBirds"
+    iRate.sharedInstance().onlyPromptIfLatestVersion = false
     
   }
   
   
-  func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+  @nonobjc func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
     
     SwiftyStoreKit.completeTransactions() { completedTransactions in
       
@@ -72,7 +75,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   func applicationWillTerminate(_ application: UIApplication) {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
   }
-  
-  
+
 }
 
