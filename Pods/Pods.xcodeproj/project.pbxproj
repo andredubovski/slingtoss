@@ -7,25 +7,26 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1911A6833D9F6E456EF29D62CF83FC9A /* InAppReceiptRefreshRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66CC56F4B191C04251A747D5CD1996D9 /* InAppReceiptRefreshRequest.swift */; };
-		1981DBD295D2E1CE14965A45E862A864 /* InAppCompleteTransactionsObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE0C6D0BD7003731FCD61BE5CD79E1BF /* InAppCompleteTransactionsObserver.swift */; };
-		1CBCC11AFEC39AE34CF22778C05A0C30 /* iRate.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C19EA71023481A1C2A07C0BBCDE2098B /* iRate.bundle */; };
-		22F622114BB123DEA37B7C0FCCA8C202 /* InAppProductPurchaseRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF3146DB47899B4EC69A5583DD37D6F /* InAppProductPurchaseRequest.swift */; };
-		2B3F785928EAD464ADB8D35F4722E02E /* SwiftyStoreKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD1034244F38E1F59BF4FE39330A1321 /* SwiftyStoreKit.swift */; };
-		3904C006C8A8991EF3C1F38075EC31F0 /* InAppProductQueryRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17584161CA32764A9D527006DFAFD783 /* InAppProductQueryRequest.swift */; };
-		390A8863AE159A26A5744AFD4D272C1B /* iRate-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = BC3D81EC8BD14973BB540F59F640E814 /* iRate-dummy.m */; };
-		3B0BC087FEF77A4ACC7ABA82BE33FD1A /* iRate.m in Sources */ = {isa = PBXBuildFile; fileRef = 160C96AFAC20EA4B174819E412CA0154 /* iRate.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		42D52FD11C172750DA2A7183DAB3762E /* iRate-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 123053933A9936F65300A39768155461 /* iRate-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		53C9A6B70A7AFC465383792EED21A91C /* SwiftyStoreKit-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 61AFE0998E4AE041409FAE365047E54E /* SwiftyStoreKit-dummy.m */; };
-		583EB9E84C1E4FA0803116CC1710F72E /* OS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209131C6040FBD953F9C9BC5359F3F1A /* OS.swift */; };
+		1CBCC11AFEC39AE34CF22778C05A0C30 /* iRate.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A11D44A023264332B4A62CC628E4A394 /* iRate.bundle */; };
+		241D06808035290DF041408F29052A67 /* OS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A4753966F2886B36B2078E3C688A00F /* OS.swift */; };
+		390A8863AE159A26A5744AFD4D272C1B /* iRate-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = ECCCC862B831BF381746C737C7A06C3F /* iRate-dummy.m */; };
+		3B0BC087FEF77A4ACC7ABA82BE33FD1A /* iRate.m in Sources */ = {isa = PBXBuildFile; fileRef = B72AC28F6008CEB024CEB4BE4DF10CA7 /* iRate.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		3F7F936FD3946B0770FEE12E52D636B1 /* InAppReceipt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444A4B1EF4B605B50BC2E304F4622A13 /* InAppReceipt.swift */; };
+		42D52FD11C172750DA2A7183DAB3762E /* iRate-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A6708C03D644733CF8E9E24D3D88B63D /* iRate-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		446DFBA9CA9E390B73BDA92CEF5866F1 /* InAppCompleteTransactionsObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94CB594C5336518067B938817A66BD17 /* InAppCompleteTransactionsObserver.swift */; };
+		46264C234F82F3E076CCBCBBB755F1C8 /* SwiftyStoreKit-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D9230B604D79ED94A181DDD346BFD7B0 /* SwiftyStoreKit-dummy.m */; };
+		51DCA64C20D9AF3AA0E2472C79429B33 /* InAppProductPurchaseRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D453C8A22F04DB4835E64F9E318C65A6 /* InAppProductPurchaseRequest.swift */; };
 		6ED57567003B890AC655D5F412ACC64D /* Pods-Rebound-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0903EC983BA0C4486BC2B2D6EED34E83 /* Pods-Rebound-dummy.m */; };
+		6F4B3B3DDB805F761F83033790A570C3 /* SwiftyStoreKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F8C8172F491401E2E94311865067CC /* SwiftyStoreKit.swift */; };
 		7F16F23F0C5AD49910C772A09E034131 /* Pods-Rebound-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = CC733B7B6BFF4554EA41060779F81828 /* Pods-Rebound-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		86C35207C1F3E9170BEF573154BA6CC9 /* InAppReceipt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34CE727F0DFAE9476A86FD745D3D86D5 /* InAppReceipt.swift */; };
+		8633F665E25EE327652839FB97734907 /* SKProduct+LocalizedPrice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C1744F20D44CBCAF24725BEBE9242CD /* SKProduct+LocalizedPrice.swift */; };
 		9005D57B47CD833CDB204788F1055749 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */; };
-		9F76DC656CEE153BFD0448675B9E4D93 /* SwiftyStoreKit-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E405B7AA05CF3844AF7F180C7A980581 /* SwiftyStoreKit-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		BDFAB222CE5AEC9EB69D0F6EFF62D212 /* iRate.h in Headers */ = {isa = PBXBuildFile; fileRef = 87981FCF70EEA940F295D185A1CAB413 /* iRate.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		C9FD05EB363FAE46367CD07E27614BEE /* SKProduct+LocalizedPrice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86DAD5ED0C181EB2E3122D41540400CA /* SKProduct+LocalizedPrice.swift */; };
+		9C8D4D824002BDE008ADF154F13AAE60 /* InAppReceiptRefreshRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86DAB1F1738D0D779BD6FC7A0D4B9283 /* InAppReceiptRefreshRequest.swift */; };
+		9F76DC656CEE153BFD0448675B9E4D93 /* SwiftyStoreKit-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 258628E50BB67B04E0C6A665059C008B /* SwiftyStoreKit-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AF51C8F4C1F01BC323915AF48AD39A94 /* InAppProductQueryRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97FBCC1B1D967465111FED2471D371A9 /* InAppProductQueryRequest.swift */; };
+		BDFAB222CE5AEC9EB69D0F6EFF62D212 /* iRate.h in Headers */ = {isa = PBXBuildFile; fileRef = 74D6976125876D46C310FD4A1BE3000F /* iRate.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E1EBCED81B647B2F2BD3E733186CDF97 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */; };
+		E37EC07F4DCA0E3BBDF2E01E9208B4F0 /* SwiftyStoreKit+Types.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD8B81F3B86E1B728592715D3348BF3F /* SwiftyStoreKit+Types.swift */; };
 		E9C8AD50169EE72F00B942B8B5CD606C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */; };
 /* End PBXBuildFile section */
 
@@ -47,92 +48,93 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		00DF2852F197CF5A0DBCF53240F6B356 /* libProviderTest.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; path = libProviderTest.a; sourceTree = "<group>"; };
-		05FC677617CE03196285644195502D22 /* libProviderYandex.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; path = libProviderYandex.a; sourceTree = "<group>"; };
+		002E756BC2A845F83D6710A1E088DF56 /* vg_close.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = vg_close.png; path = AdToAppResources/VungleResources/vg_close.png; sourceTree = "<group>"; };
+		01AF2DA834954CA7C8E034809C985992 /* iRate.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = iRate.xcconfig; sourceTree = "<group>"; };
 		0903EC983BA0C4486BC2B2D6EED34E83 /* Pods-Rebound-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Rebound-dummy.m"; sourceTree = "<group>"; };
-		0A0FACC2F635AE006405F20550B51121 /* vg_mute_on.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = vg_mute_on.png; path = AdToAppResources/VungleResources/vg_mute_on.png; sourceTree = "<group>"; };
-		0C84222E9485336BEED109E781CD820F /* TapSenseAds_Volume_On.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = TapSenseAds_Volume_On.png; path = AdToAppResources/TapSenseResources/TapSenseAds_Volume_On.png; sourceTree = "<group>"; };
-		11D790BB63DBCC5006D6A6D355AF0738 /* libProviderInhouse.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; path = libProviderInhouse.a; sourceTree = "<group>"; };
-		123053933A9936F65300A39768155461 /* iRate-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "iRate-umbrella.h"; sourceTree = "<group>"; };
-		12B5DE121B3C619CDA5472B8879F2D11 /* libProviderApplovin.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; path = libProviderApplovin.a; sourceTree = "<group>"; };
-		13B224AEFD856246DC137044326596E9 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		160C96AFAC20EA4B174819E412CA0154 /* iRate.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = iRate.m; path = iRate/iRate.m; sourceTree = "<group>"; };
-		17584161CA32764A9D527006DFAFD783 /* InAppProductQueryRequest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = InAppProductQueryRequest.swift; path = SwiftyStoreKit/InAppProductQueryRequest.swift; sourceTree = "<group>"; };
-		186271DE683C31E7E6DB1286DACECFBB /* libProviderSupersonic.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; path = libProviderSupersonic.a; sourceTree = "<group>"; };
-		187443DE2E4A8448912F56F27C9E9149 /* TapSenseAds_Replay_Button.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = TapSenseAds_Replay_Button.png; path = AdToAppResources/TapSenseResources/TapSenseAds_Replay_Button.png; sourceTree = "<group>"; };
-		19306034EB0D4F67CF1F9B6EF88481A8 /* libProviderRevmob.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; path = libProviderRevmob.a; sourceTree = "<group>"; };
-		209131C6040FBD953F9C9BC5359F3F1A /* OS.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = OS.swift; path = SwiftyStoreKit/OS.swift; sourceTree = "<group>"; };
-		22E73BFD1CF8185110459CF8F2E21EC4 /* TapSenseAds_Close_No_Padding.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = TapSenseAds_Close_No_Padding.png; path = AdToAppResources/TapSenseResources/TapSenseAds_Close_No_Padding.png; sourceTree = "<group>"; };
-		28BAB308E1BEDC353A9C474DB6B035B7 /* ATALog.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = ATALog.h; sourceTree = "<group>"; };
+		0AC00E7A15F3F78AAA493AD17F6D1E7B /* libProviderAvocarrot.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; path = libProviderAvocarrot.a; sourceTree = "<group>"; };
+		0CA65718F8AD8A1B3CB581F5782B39B1 /* mraid.js */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.javascript; name = mraid.js; path = AdToAppResources/TapSenseResources/mraid.js; sourceTree = "<group>"; };
+		22CE171EFDB3C315D247E2E29FCE4A51 /* TapSenseAds_Replay_Button.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = TapSenseAds_Replay_Button.png; path = AdToAppResources/TapSenseResources/TapSenseAds_Replay_Button.png; sourceTree = "<group>"; };
+		258628E50BB67B04E0C6A665059C008B /* SwiftyStoreKit-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftyStoreKit-umbrella.h"; sourceTree = "<group>"; };
+		264D8FDE74C3447905BD7E50BD700AD0 /* libProviderTest.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; path = libProviderTest.a; sourceTree = "<group>"; };
 		2ADB443ED9EF5039FD890924AD31D3A6 /* Pods-Rebound.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Rebound.debug.xcconfig"; sourceTree = "<group>"; };
-		2B3049DB4E9889292A081E0599C7FA45 /* iRate-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "iRate-prefix.pch"; sourceTree = "<group>"; };
-		2CD6052BDA6E1F9B6C31A65CF3611ECD /* libProviderFacebook.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; path = libProviderFacebook.a; sourceTree = "<group>"; };
-		2CF05B718A306DB4FACB3C2680390EB6 /* iRate.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = iRate.modulemap; sourceTree = "<group>"; };
 		2DC7B5D2952ABC637ECC88AE84FF6E90 /* Pods-Rebound.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-Rebound.modulemap"; sourceTree = "<group>"; };
-		348472EEB6F55DFC5F0750BBC15A14E2 /* iRate.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = iRate.xcconfig; sourceTree = "<group>"; };
-		34CE727F0DFAE9476A86FD745D3D86D5 /* InAppReceipt.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = InAppReceipt.swift; path = SwiftyStoreKit/InAppReceipt.swift; sourceTree = "<group>"; };
+		2E15961BE14A712E1E442B91A79FBBAD /* libProviderStartApp.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; path = libProviderStartApp.a; sourceTree = "<group>"; };
+		31EEDA0949FCD9DA3C7913DE2D1DB81C /* libProviderInhouse.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; path = libProviderInhouse.a; sourceTree = "<group>"; };
 		35514C8B7FAD8CA625EBC28BE1CA5DBE /* Pods-Rebound-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Rebound-acknowledgements.plist"; sourceTree = "<group>"; };
 		385D6FAE2C054797F9E849054E9A7251 /* Pods-Rebound-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Rebound-acknowledgements.markdown"; sourceTree = "<group>"; };
 		39E768C718168CAA92481A8CA5911360 /* iRate.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = iRate.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		3C8B852BC83C5CAB1A1D31304A1DDD38 /* vg_mute_off.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = vg_mute_off.png; path = AdToAppResources/VungleResources/vg_mute_off.png; sourceTree = "<group>"; };
-		3D98F1CA8846AD66C6AC5AE6B3BF6FED /* libProviderInMobi.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; path = libProviderInMobi.a; sourceTree = "<group>"; };
-		44D77D1BCCD319ABA27D671A76248CE8 /* libProviderTapSense.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; path = libProviderTapSense.a; sourceTree = "<group>"; };
-		49B3158E50EB02A3D38F274E1351E0CC /* AdToAppTargeting.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = AdToAppTargeting.h; sourceTree = "<group>"; };
-		4D632BD1C62401723FF937B7BACD627E /* mraid_ts_ext.js */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.javascript; name = mraid_ts_ext.js; path = AdToAppResources/TapSenseResources/mraid_ts_ext.js; sourceTree = "<group>"; };
-		4E5C6C05394460E47170D07A557E0CC5 /* libProviderAdColony.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; path = libProviderAdColony.a; sourceTree = "<group>"; };
-		4F78B51AFA87EC37552C346E3975FCF3 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		50DC571985E340E6A7B09F08AFBDDA32 /* TapSenseAds_Close_Button.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = TapSenseAds_Close_Button.png; path = AdToAppResources/TapSenseResources/TapSenseAds_Close_Button.png; sourceTree = "<group>"; };
-		548056667BB5E8922832444F9E2C8EA6 /* TapSenseAds_Right_Arrow.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = TapSenseAds_Right_Arrow.png; path = AdToAppResources/TapSenseResources/TapSenseAds_Right_Arrow.png; sourceTree = "<group>"; };
+		3C1744F20D44CBCAF24725BEBE9242CD /* SKProduct+LocalizedPrice.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "SKProduct+LocalizedPrice.swift"; path = "SwiftyStoreKit/SKProduct+LocalizedPrice.swift"; sourceTree = "<group>"; };
+		444A4B1EF4B605B50BC2E304F4622A13 /* InAppReceipt.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = InAppReceipt.swift; path = SwiftyStoreKit/InAppReceipt.swift; sourceTree = "<group>"; };
+		48CEA5993307E0C187ABBD71033FD9AF /* libProviderFacebook.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; path = libProviderFacebook.a; sourceTree = "<group>"; };
+		5783C4EE0782A13164B02C76FAA361E2 /* libProviderInMobi.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; path = libProviderInMobi.a; sourceTree = "<group>"; };
+		5AEF1830DC899AFDDCDD7B25CED4B897 /* libProviderNativeX.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; path = libProviderNativeX.a; sourceTree = "<group>"; };
+		5D57EE3DC52C65F0C5E353FBAF2629D4 /* vg_privacy.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = vg_privacy.png; path = AdToAppResources/VungleResources/vg_privacy.png; sourceTree = "<group>"; };
 		5D8F569EB4EFD28B1F9C6971D6310349 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5E11A838756A732F083A5DFEF3518C01 /* AdToAppSDK.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = AdToAppSDK.h; sourceTree = "<group>"; };
 		5F4964A098B926FACBB9972CEA045576 /* Pods-Rebound.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Rebound.release.xcconfig"; sourceTree = "<group>"; };
-		6023F1D1E24CF8E166FA12FB33248299 /* libPersonagraph.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; path = libPersonagraph.a; sourceTree = "<group>"; };
-		61AFE0998E4AE041409FAE365047E54E /* SwiftyStoreKit-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SwiftyStoreKit-dummy.m"; sourceTree = "<group>"; };
-		622844BE5EBD72EA4D45262A9F0C55F7 /* TapSenseAds_Video_iPhone.nib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file; name = TapSenseAds_Video_iPhone.nib; path = AdToAppResources/TapSenseResources/TapSenseAds_Video_iPhone.nib; sourceTree = "<group>"; };
-		66CC56F4B191C04251A747D5CD1996D9 /* InAppReceiptRefreshRequest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = InAppReceiptRefreshRequest.swift; path = SwiftyStoreKit/InAppReceiptRefreshRequest.swift; sourceTree = "<group>"; };
-		6B2B0F46B332EADC83FEBF4AB0718F57 /* SwiftyStoreKit-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftyStoreKit-prefix.pch"; sourceTree = "<group>"; };
+		60B0D522ED034A1CE16C8C5929A0922E /* TapSenseAds_Close_Button.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = TapSenseAds_Close_Button.png; path = AdToAppResources/TapSenseResources/TapSenseAds_Close_Button.png; sourceTree = "<group>"; };
+		6A4753966F2886B36B2078E3C688A00F /* OS.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = OS.swift; path = SwiftyStoreKit/OS.swift; sourceTree = "<group>"; };
+		6BA8510963EAF2C0B2C2F3962B988088 /* libProviderGoogleAdMob.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; path = libProviderGoogleAdMob.a; sourceTree = "<group>"; };
+		6C2906009025E55ACC85C3D7F03E4209 /* libProviderRevmob.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; path = libProviderRevmob.a; sourceTree = "<group>"; };
+		6EAE2FBACE77A32A9175EE351E5CB429 /* TapSenseAds_Right_Arrow.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = TapSenseAds_Right_Arrow.png; path = AdToAppResources/TapSenseResources/TapSenseAds_Right_Arrow.png; sourceTree = "<group>"; };
+		6ED66585F5279041B3908E901DFD3F42 /* libProviderApplovin.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; path = libProviderApplovin.a; sourceTree = "<group>"; };
+		707E82B477809FD157A6A6EE9A48AD3A /* libPersonagraph.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; path = libPersonagraph.a; sourceTree = "<group>"; };
 		70CEA6757303C0A39EA60345F49FA327 /* SwiftyStoreKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftyStoreKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		7BB6E3DB0FD82A69B9FBE90EE53CA630 /* __vungle.db */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file; name = __vungle.db; path = AdToAppResources/VungleResources/__vungle.db; sourceTree = "<group>"; };
-		81DA448A0DBDDE527E06A9B20DFE48ED /* mraid.js */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.javascript; name = mraid.js; path = AdToAppResources/TapSenseResources/mraid.js; sourceTree = "<group>"; };
-		83FF7B02F91279AC97B427E85D6CDDD0 /* TapSenseAds_Left_Arrow.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = TapSenseAds_Left_Arrow.png; path = AdToAppResources/TapSenseResources/TapSenseAds_Left_Arrow.png; sourceTree = "<group>"; };
+		74D6976125876D46C310FD4A1BE3000F /* iRate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = iRate.h; path = iRate/iRate.h; sourceTree = "<group>"; };
+		76D68E7A7709C12C26725E95FFBEC97B /* libProviderMyTarget.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; path = libProviderMyTarget.a; sourceTree = "<group>"; };
+		7C537307FBD68C2B2B3C12768A04C541 /* iRate-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "iRate-prefix.pch"; sourceTree = "<group>"; };
+		7DD9160CC429094129C08894C6676EEE /* AdToAppView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = AdToAppView.h; sourceTree = "<group>"; };
+		7F0C8FCE6A77E977C969059334B4F42D /* mraid_ts_ext.js */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.javascript; name = mraid_ts_ext.js; path = AdToAppResources/TapSenseResources/mraid_ts_ext.js; sourceTree = "<group>"; };
 		8469EB5CC1C8FCE9AF81506BD967DBBF /* Pods_Rebound.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Rebound.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		86DAD5ED0C181EB2E3122D41540400CA /* SKProduct+LocalizedPrice.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "SKProduct+LocalizedPrice.swift"; path = "SwiftyStoreKit/SKProduct+LocalizedPrice.swift"; sourceTree = "<group>"; };
+		84F8C8172F491401E2E94311865067CC /* SwiftyStoreKit.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwiftyStoreKit.swift; path = SwiftyStoreKit/SwiftyStoreKit.swift; sourceTree = "<group>"; };
+		86DAB1F1738D0D779BD6FC7A0D4B9283 /* InAppReceiptRefreshRequest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = InAppReceiptRefreshRequest.swift; path = SwiftyStoreKit/InAppReceiptRefreshRequest.swift; sourceTree = "<group>"; };
 		87573B43C0BF2220867EDB8FB1FE6538 /* Pods-Rebound-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Rebound-frameworks.sh"; sourceTree = "<group>"; };
-		87981FCF70EEA940F295D185A1CAB413 /* iRate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = iRate.h; path = iRate/iRate.h; sourceTree = "<group>"; };
+		896FF05C81C12AE17E9E1F2801B9E8C7 /* iRate.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = iRate.modulemap; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		A6EBF57CD88DA4FB2D1622D799544D75 /* vg_privacy.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = vg_privacy.png; path = AdToAppResources/VungleResources/vg_privacy.png; sourceTree = "<group>"; };
-		A9EC6D1AEE0B32F87579C0C90B7E8E48 /* AdToAppView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = AdToAppView.h; sourceTree = "<group>"; };
-		AB8A6B37D20BC27B3A540109F17DBF44 /* libProviderVungle.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; path = libProviderVungle.a; sourceTree = "<group>"; };
-		AC01DC4C6B23F9D2D0572DAA8B7DF010 /* TapSenseAds_Close_Button_iPad.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = TapSenseAds_Close_Button_iPad.png; path = AdToAppResources/TapSenseResources/TapSenseAds_Close_Button_iPad.png; sourceTree = "<group>"; };
-		AC1D5E5ECC94022FD9527AB472076E29 /* libProviderStartApp.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; path = libProviderStartApp.a; sourceTree = "<group>"; };
-		AD3E82D68231CDBA9D89B764274673F5 /* libProviderGoogleAdMob.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; path = libProviderGoogleAdMob.a; sourceTree = "<group>"; };
-		AFF3146DB47899B4EC69A5583DD37D6F /* InAppProductPurchaseRequest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = InAppProductPurchaseRequest.swift; path = SwiftyStoreKit/InAppProductPurchaseRequest.swift; sourceTree = "<group>"; };
+		94CB594C5336518067B938817A66BD17 /* InAppCompleteTransactionsObserver.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = InAppCompleteTransactionsObserver.swift; path = SwiftyStoreKit/InAppCompleteTransactionsObserver.swift; sourceTree = "<group>"; };
+		964279BA7C3FB28BBE89579ABE1DC9A0 /* TapSenseAds_Volume_On.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = TapSenseAds_Volume_On.png; path = AdToAppResources/TapSenseResources/TapSenseAds_Volume_On.png; sourceTree = "<group>"; };
+		97FBCC1B1D967465111FED2471D371A9 /* InAppProductQueryRequest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = InAppProductQueryRequest.swift; path = SwiftyStoreKit/InAppProductQueryRequest.swift; sourceTree = "<group>"; };
+		99D3E780B4EEA7DD5EC2D53F3A230763 /* libProviderVungle.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; path = libProviderVungle.a; sourceTree = "<group>"; };
+		9BF72FF68E0D9EBAD7A0BD96D8ACF9D8 /* TapSenseAds_Close_No_Padding.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = TapSenseAds_Close_No_Padding.png; path = AdToAppResources/TapSenseResources/TapSenseAds_Close_No_Padding.png; sourceTree = "<group>"; };
+		9D05A1043C915DE7EA7E14D8BC47B5BF /* TapSenseAds_Close_Button_iPad.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = TapSenseAds_Close_Button_iPad.png; path = AdToAppResources/TapSenseResources/TapSenseAds_Close_Button_iPad.png; sourceTree = "<group>"; };
+		A11D44A023264332B4A62CC628E4A394 /* iRate.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = iRate.bundle; path = iRate/iRate.bundle; sourceTree = "<group>"; };
+		A168D14B557D63A032EBE5A07B9B2745 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A22215F5A5899F825892EAA0EE7886EE /* libProviderFlurry.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; path = libProviderFlurry.a; sourceTree = "<group>"; };
+		A4EBC8310B83F3348F31A199D167B32A /* UnityAds.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = UnityAds.bundle; path = AdToAppResources/UnityAds.bundle; sourceTree = "<group>"; };
+		A6708C03D644733CF8E9E24D3D88B63D /* iRate-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "iRate-umbrella.h"; sourceTree = "<group>"; };
+		A7E0B6C023ABF8E79C8AE51A06EBB9EE /* __vungle.db */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file; name = __vungle.db; path = AdToAppResources/VungleResources/__vungle.db; sourceTree = "<group>"; };
+		A9411CE4CBF0214AC08B321746D63A91 /* vg_cta.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = vg_cta.png; path = AdToAppResources/VungleResources/vg_cta.png; sourceTree = "<group>"; };
+		AB2F0D51A0F54BBB46D128C2FB1B2E34 /* libProviderInstreamatic.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; path = libProviderInstreamatic.a; sourceTree = "<group>"; };
+		AC6A3B3259ED32BA1D4C16011BF2A81A /* libProviderSupersonic.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; path = libProviderSupersonic.a; sourceTree = "<group>"; };
+		AE13C535CA4A0BA8476348EC1FAF5870 /* vg_mute_on.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = vg_mute_on.png; path = AdToAppResources/VungleResources/vg_mute_on.png; sourceTree = "<group>"; };
+		AE996BAD05EAEAB9795DFDB6FCCB9B32 /* AdToAppTargeting.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = AdToAppTargeting.h; sourceTree = "<group>"; };
 		B1C1EB14369C7D1817221FBF374C8A15 /* Pods-Rebound-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Rebound-resources.sh"; sourceTree = "<group>"; };
-		B637E94AF1B672239EBAD46C0181C0CA /* libAdToAppCore.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; path = libAdToAppCore.a; sourceTree = "<group>"; };
-		BC3D81EC8BD14973BB540F59F640E814 /* iRate-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "iRate-dummy.m"; sourceTree = "<group>"; };
-		C15913E47A00E51724CD7122BDBBC223 /* libProviderAmazon.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; path = libProviderAmazon.a; sourceTree = "<group>"; };
-		C19EA71023481A1C2A07C0BBCDE2098B /* iRate.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = iRate.bundle; path = iRate/iRate.bundle; sourceTree = "<group>"; };
+		B72AC28F6008CEB024CEB4BE4DF10CA7 /* iRate.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = iRate.m; path = iRate/iRate.m; sourceTree = "<group>"; };
+		B9E7E1EE54CD5A9E350FC734A9B2D5F0 /* StartApp.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = StartApp.bundle; path = AdToAppResources/StartApp.bundle; sourceTree = "<group>"; };
+		BE323E457FE59719C93E295A8142C6B0 /* ATALog.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = ATALog.h; sourceTree = "<group>"; };
+		C07287FEC312604C15038628E4F76923 /* libAdToAppCore.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; path = libAdToAppCore.a; sourceTree = "<group>"; };
+		C143D981AB28B0EAC8ED8CBCC66C5C33 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C1FA4D5C0C24A97DA33F0ADC3B7C4639 /* TapSenseAds_Left_Arrow.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = TapSenseAds_Left_Arrow.png; path = AdToAppResources/TapSenseResources/TapSenseAds_Left_Arrow.png; sourceTree = "<group>"; };
+		C9F4EA413EF9BA77F0AB32D8511BE577 /* SwiftyStoreKit.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = SwiftyStoreKit.modulemap; sourceTree = "<group>"; };
+		CBFF57FCB1AA09BFE28FFC70ABDD8FBF /* libProviderTapSense.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; path = libProviderTapSense.a; sourceTree = "<group>"; };
 		CC733B7B6BFF4554EA41060779F81828 /* Pods-Rebound-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Rebound-umbrella.h"; sourceTree = "<group>"; };
-		CD16A362149C22B0AB1CF26018468067 /* SwiftyStoreKit.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = SwiftyStoreKit.modulemap; sourceTree = "<group>"; };
+		CD119893FD11B6C691E1B08D492BEBDE /* libProviderAmazon.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; path = libProviderAmazon.a; sourceTree = "<group>"; };
+		CE7FBB488B51B044020450C4FB6BC6B9 /* SwiftyStoreKit-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftyStoreKit-prefix.pch"; sourceTree = "<group>"; };
 		CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		D2F8B3754D09BCA7E84542834CA7031D /* TapSenseAds_Video_iPad.nib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file; name = TapSenseAds_Video_iPad.nib; path = AdToAppResources/TapSenseResources/TapSenseAds_Video_iPad.nib; sourceTree = "<group>"; };
-		D36C26DFBB5D0FC2780E6292977F6E5A /* SwiftyStoreKit.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftyStoreKit.xcconfig; sourceTree = "<group>"; };
-		D4A1C02EE9B1736B504CB1FFE36AACD4 /* libProviderUnity.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; path = libProviderUnity.a; sourceTree = "<group>"; };
-		D98C982ED63015273D1423A8EAB783DF /* libProviderMyTarget.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; path = libProviderMyTarget.a; sourceTree = "<group>"; };
-		DD1034244F38E1F59BF4FE39330A1321 /* SwiftyStoreKit.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwiftyStoreKit.swift; path = SwiftyStoreKit/SwiftyStoreKit.swift; sourceTree = "<group>"; };
-		E405B7AA05CF3844AF7F180C7A980581 /* SwiftyStoreKit-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftyStoreKit-umbrella.h"; sourceTree = "<group>"; };
-		E83BF5C1928CDA7F4FB063CFCD57E6FF /* libProviderAvocarrot.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; path = libProviderAvocarrot.a; sourceTree = "<group>"; };
-		E9EE46E13D915ADB40CBA4905B82C972 /* vg_cta.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = vg_cta.png; path = AdToAppResources/VungleResources/vg_cta.png; sourceTree = "<group>"; };
-		ECC746BF863941740719F8328EEFC605 /* libProviderSmaato.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; path = libProviderSmaato.a; sourceTree = "<group>"; };
-		ED65120D1516841F41E28D25353EACAE /* TS_SVWebViewController.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = TS_SVWebViewController.bundle; path = AdToAppResources/TapSenseResources/TS_SVWebViewController.bundle; sourceTree = "<group>"; };
-		F4096F5CA803B5F8FA80B9039362ED52 /* vg_close.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = vg_close.png; path = AdToAppResources/VungleResources/vg_close.png; sourceTree = "<group>"; };
-		F48F73D5C642D314926F98DFF2881D1E /* libProviderInstreamatic.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; path = libProviderInstreamatic.a; sourceTree = "<group>"; };
-		F4A6D31CB4CDD1EFFA25EB6E74D7156D /* libProviderNativeX.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; path = libProviderNativeX.a; sourceTree = "<group>"; };
-		F4B391D02BA7680927C99CE3273CA111 /* UnityAds.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = UnityAds.bundle; path = AdToAppResources/UnityAds.bundle; sourceTree = "<group>"; };
-		F55B3023EDD25E6DE96FB4851A3FC067 /* libProviderFlurry.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; path = libProviderFlurry.a; sourceTree = "<group>"; };
-		FC672E518B48B49AE8989C2E2791695C /* StartApp.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = StartApp.bundle; path = AdToAppResources/StartApp.bundle; sourceTree = "<group>"; };
-		FCC44FF8053905B5A51CEDBC5DAEBDEA /* TapSenseAds_Volume_Off.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = TapSenseAds_Volume_Off.png; path = AdToAppResources/TapSenseResources/TapSenseAds_Volume_Off.png; sourceTree = "<group>"; };
-		FE0C6D0BD7003731FCD61BE5CD79E1BF /* InAppCompleteTransactionsObserver.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = InAppCompleteTransactionsObserver.swift; path = SwiftyStoreKit/InAppCompleteTransactionsObserver.swift; sourceTree = "<group>"; };
+		D03C8D7A4B7FF92C5AC1F1BD0F638F1E /* TapSenseAds_Video_iPhone.nib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file; name = TapSenseAds_Video_iPhone.nib; path = AdToAppResources/TapSenseResources/TapSenseAds_Video_iPhone.nib; sourceTree = "<group>"; };
+		D082F86EFE2AC81E926E1B4254E35C82 /* libProviderUnity.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; path = libProviderUnity.a; sourceTree = "<group>"; };
+		D163DED4F86CAE8FF298240C0F48EF6E /* TapSenseAds_Video_iPad.nib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file; name = TapSenseAds_Video_iPad.nib; path = AdToAppResources/TapSenseResources/TapSenseAds_Video_iPad.nib; sourceTree = "<group>"; };
+		D2F00500B94392D7EE45A3430DABD15F /* TapSenseAds_Volume_Off.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = TapSenseAds_Volume_Off.png; path = AdToAppResources/TapSenseResources/TapSenseAds_Volume_Off.png; sourceTree = "<group>"; };
+		D453C8A22F04DB4835E64F9E318C65A6 /* InAppProductPurchaseRequest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = InAppProductPurchaseRequest.swift; path = SwiftyStoreKit/InAppProductPurchaseRequest.swift; sourceTree = "<group>"; };
+		D626D7342D3662CB2CCF5C79C08ACF23 /* libProviderAdColony.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; path = libProviderAdColony.a; sourceTree = "<group>"; };
+		D9230B604D79ED94A181DDD346BFD7B0 /* SwiftyStoreKit-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SwiftyStoreKit-dummy.m"; sourceTree = "<group>"; };
+		DFB3E0EE69DBF090F9D32DB55DC7B4E2 /* vg_mute_off.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = vg_mute_off.png; path = AdToAppResources/VungleResources/vg_mute_off.png; sourceTree = "<group>"; };
+		E0BBE91CDC5FBA99AC88E1F08A453DF1 /* libProviderSmaato.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; path = libProviderSmaato.a; sourceTree = "<group>"; };
+		E14413E05356239934D27225BBACF949 /* AdToAppSDK.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = AdToAppSDK.h; sourceTree = "<group>"; };
+		EBA08C969DC88D726FBC18FF4B36BBFE /* SwiftyStoreKit.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftyStoreKit.xcconfig; sourceTree = "<group>"; };
+		ECCCC862B831BF381746C737C7A06C3F /* iRate-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "iRate-dummy.m"; sourceTree = "<group>"; };
+		F14DD20FA10BF5AA705B18B33C9E91E7 /* TS_SVWebViewController.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = TS_SVWebViewController.bundle; path = AdToAppResources/TapSenseResources/TS_SVWebViewController.bundle; sourceTree = "<group>"; };
+		F955C7218B60A2AF27F9AC61828FDD41 /* libProviderYandex.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; path = libProviderYandex.a; sourceTree = "<group>"; };
+		FD8B81F3B86E1B728592715D3348BF3F /* SwiftyStoreKit+Types.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "SwiftyStoreKit+Types.swift"; path = "SwiftyStoreKit/SwiftyStoreKit+Types.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,88 +165,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		02936E00EC27B5A768459DC893ACAE25 /* Resources */ = {
+		0814726B8CCB634126BF1CDF25D95454 /* AmazonAd */ = {
 			isa = PBXGroup;
 			children = (
-				81DA448A0DBDDE527E06A9B20DFE48ED /* mraid.js */,
-				4D632BD1C62401723FF937B7BACD627E /* mraid_ts_ext.js */,
-				50DC571985E340E6A7B09F08AFBDDA32 /* TapSenseAds_Close_Button.png */,
-				AC01DC4C6B23F9D2D0572DAA8B7DF010 /* TapSenseAds_Close_Button_iPad.png */,
-				22E73BFD1CF8185110459CF8F2E21EC4 /* TapSenseAds_Close_No_Padding.png */,
-				83FF7B02F91279AC97B427E85D6CDDD0 /* TapSenseAds_Left_Arrow.png */,
-				187443DE2E4A8448912F56F27C9E9149 /* TapSenseAds_Replay_Button.png */,
-				548056667BB5E8922832444F9E2C8EA6 /* TapSenseAds_Right_Arrow.png */,
-				D2F8B3754D09BCA7E84542834CA7031D /* TapSenseAds_Video_iPad.nib */,
-				622844BE5EBD72EA4D45262A9F0C55F7 /* TapSenseAds_Video_iPhone.nib */,
-				FCC44FF8053905B5A51CEDBC5DAEBDEA /* TapSenseAds_Volume_Off.png */,
-				0C84222E9485336BEED109E781CD820F /* TapSenseAds_Volume_On.png */,
-				ED65120D1516841F41E28D25353EACAE /* TS_SVWebViewController.bundle */,
+				F0F937724EDD235B73F28B7112E0B45F /* Frameworks */,
 			);
-			name = Resources;
+			name = AmazonAd;
 			sourceTree = "<group>";
 		};
-		03AAFB2E5A3DDC46D1DAA689055D047F /* Instreamatic */ = {
+		0C11172891FD18FA13ADF05A04395D85 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				7BF851D328183DDB58E058C7761A7FF6 /* Frameworks */,
-			);
-			name = Instreamatic;
-			sourceTree = "<group>";
-		};
-		040119BD307596FF4F0A570C7653488C /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				13B224AEFD856246DC137044326596E9 /* Info.plist */,
-				CD16A362149C22B0AB1CF26018468067 /* SwiftyStoreKit.modulemap */,
-				D36C26DFBB5D0FC2780E6292977F6E5A /* SwiftyStoreKit.xcconfig */,
-				61AFE0998E4AE041409FAE365047E54E /* SwiftyStoreKit-dummy.m */,
-				6B2B0F46B332EADC83FEBF4AB0718F57 /* SwiftyStoreKit-prefix.pch */,
-				E405B7AA05CF3844AF7F180C7A980581 /* SwiftyStoreKit-umbrella.h */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/SwiftyStoreKit";
-			sourceTree = "<group>";
-		};
-		08DA98436D11A5C6AA8D07422C47CA19 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				7BB6E3DB0FD82A69B9FBE90EE53CA630 /* __vungle.db */,
-				F4096F5CA803B5F8FA80B9039362ED52 /* vg_close.png */,
-				E9EE46E13D915ADB40CBA4905B82C972 /* vg_cta.png */,
-				3C8B852BC83C5CAB1A1D31304A1DDD38 /* vg_mute_off.png */,
-				0A0FACC2F635AE006405F20550B51121 /* vg_mute_on.png */,
-				A6EBF57CD88DA4FB2D1622D799544D75 /* vg_privacy.png */,
-			);
-			name = Resources;
-			sourceTree = "<group>";
-		};
-		0D74208850213507DE087E3000F469F8 /* Core */ = {
-			isa = PBXGroup;
-			children = (
-				5E11A838756A732F083A5DFEF3518C01 /* AdToAppSDK.h */,
-				49B3158E50EB02A3D38F274E1351E0CC /* AdToAppTargeting.h */,
-				A9EC6D1AEE0B32F87579C0C90B7E8E48 /* AdToAppView.h */,
-				28BAB308E1BEDC353A9C474DB6B035B7 /* ATALog.h */,
-				6A420EBDD4FFF7C892C76E78F33C7C3C /* Frameworks */,
-			);
-			name = Core;
-			sourceTree = "<group>";
-		};
-		0E5C5CC6BD76866F31199F51C933506C /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				E83BF5C1928CDA7F4FB063CFCD57E6FF /* libProviderAvocarrot.a */,
+				0AC00E7A15F3F78AAA493AD17F6D1E7B /* libProviderAvocarrot.a */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		0E7F237B7D40209ECBE89AA29AFC1636 /* Unity */ = {
-			isa = PBXGroup;
-			children = (
-				93AA80A6E7A0E2DE84CD9D7DC8E062DB /* Frameworks */,
-				37C580634E3EC5206D24C779E1054AED /* Resources */,
-			);
-			name = Unity;
 			sourceTree = "<group>";
 		};
 		0F69683AE691CB9B82A03C8E36D0A335 /* Products */ = {
@@ -257,20 +191,45 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		23A506ADCD027FBDE623633EE962F51C /* Frameworks */ = {
+		114686AAFD10D21B57CB4BDD3F116B24 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				3D98F1CA8846AD66C6AC5AE6B3BF6FED /* libProviderInMobi.a */,
+				A168D14B557D63A032EBE5A07B9B2745 /* Info.plist */,
+				896FF05C81C12AE17E9E1F2801B9E8C7 /* iRate.modulemap */,
+				01AF2DA834954CA7C8E034809C985992 /* iRate.xcconfig */,
+				ECCCC862B831BF381746C737C7A06C3F /* iRate-dummy.m */,
+				7C537307FBD68C2B2B3C12768A04C541 /* iRate-prefix.pch */,
+				A6708C03D644733CF8E9E24D3D88B63D /* iRate-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/iRate";
+			sourceTree = "<group>";
+		};
+		1E983CF30042D8C2AB6EA804D6F8A8B0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E0BBE91CDC5FBA99AC88E1F08A453DF1 /* libProviderSmaato.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		24D2B66B4569BD236291EF0774E5C355 /* Yandex */ = {
+		1FCC18CBFEF72F2DE3AE37B1AC104352 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				C02FCE0AED2AC7DFEA041F549EDA666B /* Frameworks */,
+				6ED66585F5279041B3908E901DFD3F42 /* libProviderApplovin.a */,
 			);
-			name = Yandex;
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		241291EECC4EF6C5B1EECD3D22447C98 /* iRate */ = {
+			isa = PBXGroup;
+			children = (
+				74D6976125876D46C310FD4A1BE3000F /* iRate.h */,
+				B72AC28F6008CEB024CEB4BE4DF10CA7 /* iRate.m */,
+				E72EF81146DBB30D21D1830CAD0C1FFD /* Resources */,
+				114686AAFD10D21B57CB4BDD3F116B24 /* Support Files */,
+			);
+			path = iRate;
 			sourceTree = "<group>";
 		};
 		24FB37653908AD5FC91B0DD025A9A6EE /* Pods-Rebound */ = {
@@ -291,36 +250,80 @@
 			path = "Target Support Files/Pods-Rebound";
 			sourceTree = "<group>";
 		};
-		267400CFD482AFD9365C86F74802BA5D /* Smaato */ = {
+		254BD752D86C1A041F951A0F42E08158 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				42F01F59207D42124B36B0F64C38F7E0 /* Frameworks */,
+				C143D981AB28B0EAC8ED8CBCC66C5C33 /* Info.plist */,
+				C9F4EA413EF9BA77F0AB32D8511BE577 /* SwiftyStoreKit.modulemap */,
+				EBA08C969DC88D726FBC18FF4B36BBFE /* SwiftyStoreKit.xcconfig */,
+				D9230B604D79ED94A181DDD346BFD7B0 /* SwiftyStoreKit-dummy.m */,
+				CE7FBB488B51B044020450C4FB6BC6B9 /* SwiftyStoreKit-prefix.pch */,
+				258628E50BB67B04E0C6A665059C008B /* SwiftyStoreKit-umbrella.h */,
 			);
-			name = Smaato;
+			name = "Support Files";
+			path = "../Target Support Files/SwiftyStoreKit";
 			sourceTree = "<group>";
 		};
-		27E8990E7E88840140817B7796EC599B /* AdMob */ = {
+		256016624D40CDAC2884943E91B922DD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				C1DED5DF3C726631B4E70EFD459F8DCE /* Frameworks */,
+				6C2906009025E55ACC85C3D7F03E4209 /* libProviderRevmob.a */,
 			);
-			name = AdMob;
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		355A3EFE8FC6F82C2CF8BFB40C9C2968 /* Personagraph */ = {
+		2601F0CE7299EF5C2F6CB73D74D24E90 /* AdToApp */ = {
 			isa = PBXGroup;
 			children = (
-				A21ABBB575B78D6B15CCE3ACD04654A8 /* Frameworks */,
+				6366E511EA1B8965BD616E14DE7BA56C /* AdColony */,
+				91A8A3D0EE260F4946CA5CB269B06F71 /* AdMob */,
+				0814726B8CCB634126BF1CDF25D95454 /* AmazonAd */,
+				65129B87460C83BF1F612E65A91FD640 /* Applovin */,
+				D8A06ABC57C89E7AAA2E7C1B5F57F5D5 /* Avocarrot */,
+				D25E483E1634D456272B12010A892699 /* Core */,
+				B587BF9005646CA5A6537684C882588E /* Facebook */,
+				B08DAC93D771B4FA46F96D916FCB00E9 /* Flurry */,
+				58D0889217B2144BA4F8199D30CAFD3B /* Inhouse */,
+				9E6DB7B1D5A4ECFA243ABC4627D047BE /* InMobi */,
+				4F45A875517D168D3750A13B08A18150 /* Instreamatic */,
+				352264A8516EC38EC2A8DF69E8D79421 /* MyTarget */,
+				26F46A19BE20B9FCB7EC343329FB5939 /* NativeX */,
+				679D1ACB8E16F7AACF172747B42D1C38 /* Personagraph */,
+				BF26E16A8494EB07598386927E913DE0 /* Revmob */,
+				CBFB9EAB336C4C4E0D716872FEE40A4B /* Smaato */,
+				A86690458C8F2BF12FD9FE0AF850FCDC /* StartApp */,
+				8A05D9A0F03AC5D3364572A7865CE754 /* Supersonic */,
+				62A2F244C8A729829C28EEDF01CE0CD8 /* TapSense */,
+				E16DE708CD1EC17BE86A5B129A107150 /* Unity */,
+				3551501C7B92C066CE3988585E6DF0CA /* Vungle */,
+				D2E5186028BEBC2CD36741EFEC1E84D1 /* Yandex */,
 			);
-			name = Personagraph;
+			path = AdToApp;
 			sourceTree = "<group>";
 		};
-		37C580634E3EC5206D24C779E1054AED /* Resources */ = {
+		26F46A19BE20B9FCB7EC343329FB5939 /* NativeX */ = {
 			isa = PBXGroup;
 			children = (
-				F4B391D02BA7680927C99CE3273CA111 /* UnityAds.bundle */,
+				DCAB8A2AD72F08973C732C89EB808250 /* Frameworks */,
 			);
-			name = Resources;
+			name = NativeX;
+			sourceTree = "<group>";
+		};
+		352264A8516EC38EC2A8DF69E8D79421 /* MyTarget */ = {
+			isa = PBXGroup;
+			children = (
+				AA2658FFE4D5DFDDCCA254DA82BFF2DB /* Frameworks */,
+			);
+			name = MyTarget;
+			sourceTree = "<group>";
+		};
+		3551501C7B92C066CE3988585E6DF0CA /* Vungle */ = {
+			isa = PBXGroup;
+			children = (
+				795195FDF5561F1484EE0E62A1E02403 /* Frameworks */,
+				A60A9B1AFDE2AE8571B06E887EC52FAC /* Resources */,
+			);
+			name = Vungle;
 			sourceTree = "<group>";
 		};
 		3DCAB2B7CDE207B3958B6CB957FCC758 /* iOS */ = {
@@ -331,83 +334,109 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
-		3EAD451F050A6D08C0D602CC6E4E8A7E /* Frameworks */ = {
+		44B93C4299C58C5479CF340C0426C441 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				AC1D5E5ECC94022FD9527AB472076E29 /* libProviderStartApp.a */,
+				6BA8510963EAF2C0B2C2F3962B988088 /* libProviderGoogleAdMob.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		42F01F59207D42124B36B0F64C38F7E0 /* Frameworks */ = {
+		4BD4C6CDF75D3015969FD3617FFD2C16 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				ECC746BF863941740719F8328EEFC605 /* libProviderSmaato.a */,
+				A22215F5A5899F825892EAA0EE7886EE /* libProviderFlurry.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		46BA3D14D776009891F6262C333BC5C6 /* SwiftyStoreKit */ = {
+		4F45A875517D168D3750A13B08A18150 /* Instreamatic */ = {
 			isa = PBXGroup;
 			children = (
-				FE0C6D0BD7003731FCD61BE5CD79E1BF /* InAppCompleteTransactionsObserver.swift */,
-				AFF3146DB47899B4EC69A5583DD37D6F /* InAppProductPurchaseRequest.swift */,
-				17584161CA32764A9D527006DFAFD783 /* InAppProductQueryRequest.swift */,
-				34CE727F0DFAE9476A86FD745D3D86D5 /* InAppReceipt.swift */,
-				66CC56F4B191C04251A747D5CD1996D9 /* InAppReceiptRefreshRequest.swift */,
-				209131C6040FBD953F9C9BC5359F3F1A /* OS.swift */,
-				86DAD5ED0C181EB2E3122D41540400CA /* SKProduct+LocalizedPrice.swift */,
-				DD1034244F38E1F59BF4FE39330A1321 /* SwiftyStoreKit.swift */,
-				040119BD307596FF4F0A570C7653488C /* Support Files */,
+				8B2D2AABF33422A512CB48A255C1FB41 /* Frameworks */,
 			);
-			path = SwiftyStoreKit;
+			name = Instreamatic;
 			sourceTree = "<group>";
 		};
-		561CCE18FD2B88A4990E4BA0658F2493 /* Revmob */ = {
+		54D5AE09A7D8DD7F8D0BBD4048EF0260 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				FA8D3BF7031896A098410580C820496F /* Frameworks */,
-			);
-			name = Revmob;
-			sourceTree = "<group>";
-		};
-		56444F6A9ACE473323F426DBE9A83517 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				FC672E518B48B49AE8989C2E2791695C /* StartApp.bundle */,
-			);
-			name = Resources;
-			sourceTree = "<group>";
-		};
-		611224C1BD9905E1AE10BD8658E48243 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				4E5C6C05394460E47170D07A557E0CC5 /* libProviderAdColony.a */,
+				D082F86EFE2AC81E926E1B4254E35C82 /* libProviderUnity.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		6798C1BD0069C76A0E2D5FF67E012E47 /* Frameworks */ = {
+		553B3E74361BF3D9D19579AC12B82A94 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				12B5DE121B3C619CDA5472B8879F2D11 /* libProviderApplovin.a */,
+				2601F0CE7299EF5C2F6CB73D74D24E90 /* AdToApp */,
+				241291EECC4EF6C5B1EECD3D22447C98 /* iRate */,
+				98BFDEFC21DCFCDA69633140334DC082 /* SwiftyStoreKit */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		58D0889217B2144BA4F8199D30CAFD3B /* Inhouse */ = {
+			isa = PBXGroup;
+			children = (
+				7B3EB96756DB898C2A465EC9B1183D9C /* Frameworks */,
+			);
+			name = Inhouse;
+			sourceTree = "<group>";
+		};
+		5B6F99BA45293CB783A3191679541759 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5783C4EE0782A13164B02C76FAA361E2 /* libProviderInMobi.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		6A420EBDD4FFF7C892C76E78F33C7C3C /* Frameworks */ = {
+		62A2F244C8A729829C28EEDF01CE0CD8 /* TapSense */ = {
 			isa = PBXGroup;
 			children = (
-				B637E94AF1B672239EBAD46C0181C0CA /* libAdToAppCore.a */,
-				00DF2852F197CF5A0DBCF53240F6B356 /* libProviderTest.a */,
+				E9AADDA0B1EBD4AA5428C67F43D63846 /* Frameworks */,
+				B41F69F1B87AA5B447564100F897F38F /* Resources */,
+			);
+			name = TapSense;
+			sourceTree = "<group>";
+		};
+		6366E511EA1B8965BD616E14DE7BA56C /* AdColony */ = {
+			isa = PBXGroup;
+			children = (
+				B27FF8D97B2FEDDEA28A1B47012672AA /* Frameworks */,
+			);
+			name = AdColony;
+			sourceTree = "<group>";
+		};
+		65129B87460C83BF1F612E65A91FD640 /* Applovin */ = {
+			isa = PBXGroup;
+			children = (
+				1FCC18CBFEF72F2DE3AE37B1AC104352 /* Frameworks */,
+			);
+			name = Applovin;
+			sourceTree = "<group>";
+		};
+		679D1ACB8E16F7AACF172747B42D1C38 /* Personagraph */ = {
+			isa = PBXGroup;
+			children = (
+				F9678A736BEA92CC9BD931F7BC007577 /* Frameworks */,
+			);
+			name = Personagraph;
+			sourceTree = "<group>";
+		};
+		795195FDF5561F1484EE0E62A1E02403 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				99D3E780B4EEA7DD5EC2D53F3A230763 /* libProviderVungle.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		7BF851D328183DDB58E058C7761A7FF6 /* Frameworks */ = {
+		7B3EB96756DB898C2A465EC9B1183D9C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				F48F73D5C642D314926F98DFF2881D1E /* libProviderInstreamatic.a */,
+				31EEDA0949FCD9DA3C7913DE2D1DB81C /* libProviderInhouse.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -417,60 +446,50 @@
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
 				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
-				EEFA24DF5C526EBABB1CD6000EF50323 /* Pods */,
+				553B3E74361BF3D9D19579AC12B82A94 /* Pods */,
 				0F69683AE691CB9B82A03C8E36D0A335 /* Products */,
 				9650DE1D34671A652FE49208B0C7A816 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
-		7F74125DC3C1366C9C07819C31FACD04 /* InMobi */ = {
+		820914F39B5FC970CCD400DF8357115D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				23A506ADCD027FBDE623633EE962F51C /* Frameworks */,
-			);
-			name = InMobi;
-			sourceTree = "<group>";
-		};
-		81673283342E1F183BE39A5E2C9A87F3 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				F4A6D31CB4CDD1EFFA25EB6E74D7156D /* libProviderNativeX.a */,
+				2E15961BE14A712E1E442B91A79FBBAD /* libProviderStartApp.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		86ED9564B61D01BC0E4C47E971056F95 /* Flurry */ = {
+		8A05D9A0F03AC5D3364572A7865CE754 /* Supersonic */ = {
 			isa = PBXGroup;
 			children = (
-				989FBB043E778F26DF71814B9CF6BC82 /* Frameworks */,
+				E3099230A0427CD160A23BD6EA808B32 /* Frameworks */,
 			);
-			name = Flurry;
+			name = Supersonic;
 			sourceTree = "<group>";
 		};
-		8E446AFB2237A60216996C5A35D095D5 /* TapSense */ = {
+		8B2D2AABF33422A512CB48A255C1FB41 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				B06FF4D8D1A1178DDA017EB9059B5A1E /* Frameworks */,
-				02936E00EC27B5A768459DC893ACAE25 /* Resources */,
-			);
-			name = TapSense;
-			sourceTree = "<group>";
-		};
-		93AA80A6E7A0E2DE84CD9D7DC8E062DB /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				D4A1C02EE9B1736B504CB1FFE36AACD4 /* libProviderUnity.a */,
+				AB2F0D51A0F54BBB46D128C2FB1B2E34 /* libProviderInstreamatic.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		952847C06F6A292D3099801DAEA49EC4 /* StartApp */ = {
+		8DACC8012BD0018838B320524C36587A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				3EAD451F050A6D08C0D602CC6E4E8A7E /* Frameworks */,
-				56444F6A9ACE473323F426DBE9A83517 /* Resources */,
+				48CEA5993307E0C187ABBD71033FD9AF /* libProviderFacebook.a */,
 			);
-			name = StartApp;
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		91A8A3D0EE260F4946CA5CB269B06F71 /* AdMob */ = {
+			isa = PBXGroup;
+			children = (
+				44B93C4299C58C5479CF340C0426C441 /* Frameworks */,
+			);
+			name = AdMob;
 			sourceTree = "<group>";
 		};
 		9650DE1D34671A652FE49208B0C7A816 /* Targets Support Files */ = {
@@ -481,71 +500,119 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		989FBB043E778F26DF71814B9CF6BC82 /* Frameworks */ = {
+		98BFDEFC21DCFCDA69633140334DC082 /* SwiftyStoreKit */ = {
 			isa = PBXGroup;
 			children = (
-				F55B3023EDD25E6DE96FB4851A3FC067 /* libProviderFlurry.a */,
+				94CB594C5336518067B938817A66BD17 /* InAppCompleteTransactionsObserver.swift */,
+				D453C8A22F04DB4835E64F9E318C65A6 /* InAppProductPurchaseRequest.swift */,
+				97FBCC1B1D967465111FED2471D371A9 /* InAppProductQueryRequest.swift */,
+				444A4B1EF4B605B50BC2E304F4622A13 /* InAppReceipt.swift */,
+				86DAB1F1738D0D779BD6FC7A0D4B9283 /* InAppReceiptRefreshRequest.swift */,
+				6A4753966F2886B36B2078E3C688A00F /* OS.swift */,
+				3C1744F20D44CBCAF24725BEBE9242CD /* SKProduct+LocalizedPrice.swift */,
+				84F8C8172F491401E2E94311865067CC /* SwiftyStoreKit.swift */,
+				FD8B81F3B86E1B728592715D3348BF3F /* SwiftyStoreKit+Types.swift */,
+				254BD752D86C1A041F951A0F42E08158 /* Support Files */,
 			);
-			name = Frameworks;
+			path = SwiftyStoreKit;
 			sourceTree = "<group>";
 		};
-		9EBDE03B748A0AA5EEBDE8904AF31BB2 /* Resources */ = {
+		9E6DB7B1D5A4ECFA243ABC4627D047BE /* InMobi */ = {
 			isa = PBXGroup;
 			children = (
-				C19EA71023481A1C2A07C0BBCDE2098B /* iRate.bundle */,
+				5B6F99BA45293CB783A3191679541759 /* Frameworks */,
+			);
+			name = InMobi;
+			sourceTree = "<group>";
+		};
+		A60A9B1AFDE2AE8571B06E887EC52FAC /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				A7E0B6C023ABF8E79C8AE51A06EBB9EE /* __vungle.db */,
+				002E756BC2A845F83D6710A1E088DF56 /* vg_close.png */,
+				A9411CE4CBF0214AC08B321746D63A91 /* vg_cta.png */,
+				DFB3E0EE69DBF090F9D32DB55DC7B4E2 /* vg_mute_off.png */,
+				AE13C535CA4A0BA8476348EC1FAF5870 /* vg_mute_on.png */,
+				5D57EE3DC52C65F0C5E353FBAF2629D4 /* vg_privacy.png */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
 		};
-		A15ACE6F7032ED4A669CEE7DBAAC690C /* Frameworks */ = {
+		A6852D32B8A2F426543EA5D616481620 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				AB8A6B37D20BC27B3A540109F17DBF44 /* libProviderVungle.a */,
+				A4EBC8310B83F3348F31A199D167B32A /* UnityAds.bundle */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		A8462756E0984AF8BFBD220EE9FAAA55 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F955C7218B60A2AF27F9AC61828FDD41 /* libProviderYandex.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		A21ABBB575B78D6B15CCE3ACD04654A8 /* Frameworks */ = {
+		A86690458C8F2BF12FD9FE0AF850FCDC /* StartApp */ = {
 			isa = PBXGroup;
 			children = (
-				6023F1D1E24CF8E166FA12FB33248299 /* libPersonagraph.a */,
+				820914F39B5FC970CCD400DF8357115D /* Frameworks */,
+				DBC53613DDD82C626BCF303C95E088BE /* Resources */,
+			);
+			name = StartApp;
+			sourceTree = "<group>";
+		};
+		AA2658FFE4D5DFDDCCA254DA82BFF2DB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				76D68E7A7709C12C26725E95FFBEC97B /* libProviderMyTarget.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		A559EDF187E2010875D93DD058DDFCB3 /* NativeX */ = {
+		B08DAC93D771B4FA46F96D916FCB00E9 /* Flurry */ = {
 			isa = PBXGroup;
 			children = (
-				81673283342E1F183BE39A5E2C9A87F3 /* Frameworks */,
+				4BD4C6CDF75D3015969FD3617FFD2C16 /* Frameworks */,
 			);
-			name = NativeX;
+			name = Flurry;
 			sourceTree = "<group>";
 		};
-		ACFE8153B4740DF873058D6146B5181E /* Supersonic */ = {
+		B27FF8D97B2FEDDEA28A1B47012672AA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				E1A1D1DD657BFDE85A8169974DD2BE3B /* Frameworks */,
-			);
-			name = Supersonic;
-			sourceTree = "<group>";
-		};
-		B06FF4D8D1A1178DDA017EB9059B5A1E /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				44D77D1BCCD319ABA27D671A76248CE8 /* libProviderTapSense.a */,
+				D626D7342D3662CB2CCF5C79C08ACF23 /* libProviderAdColony.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		B3E0C501F2AD58E3BADB7CC7C2154F44 /* iRate */ = {
+		B41F69F1B87AA5B447564100F897F38F /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				87981FCF70EEA940F295D185A1CAB413 /* iRate.h */,
-				160C96AFAC20EA4B174819E412CA0154 /* iRate.m */,
-				9EBDE03B748A0AA5EEBDE8904AF31BB2 /* Resources */,
-				F3C6088094428FB9872D5F2C4A739304 /* Support Files */,
+				0CA65718F8AD8A1B3CB581F5782B39B1 /* mraid.js */,
+				7F0C8FCE6A77E977C969059334B4F42D /* mraid_ts_ext.js */,
+				60B0D522ED034A1CE16C8C5929A0922E /* TapSenseAds_Close_Button.png */,
+				9D05A1043C915DE7EA7E14D8BC47B5BF /* TapSenseAds_Close_Button_iPad.png */,
+				9BF72FF68E0D9EBAD7A0BD96D8ACF9D8 /* TapSenseAds_Close_No_Padding.png */,
+				C1FA4D5C0C24A97DA33F0ADC3B7C4639 /* TapSenseAds_Left_Arrow.png */,
+				22CE171EFDB3C315D247E2E29FCE4A51 /* TapSenseAds_Replay_Button.png */,
+				6EAE2FBACE77A32A9175EE351E5CB429 /* TapSenseAds_Right_Arrow.png */,
+				D163DED4F86CAE8FF298240C0F48EF6E /* TapSenseAds_Video_iPad.nib */,
+				D03C8D7A4B7FF92C5AC1F1BD0F638F1E /* TapSenseAds_Video_iPhone.nib */,
+				D2F00500B94392D7EE45A3430DABD15F /* TapSenseAds_Volume_Off.png */,
+				964279BA7C3FB28BBE89579ABE1DC9A0 /* TapSenseAds_Volume_On.png */,
+				F14DD20FA10BF5AA705B18B33C9E91E7 /* TS_SVWebViewController.bundle */,
 			);
-			path = iRate;
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		B587BF9005646CA5A6537684C882588E /* Facebook */ = {
+			isa = PBXGroup;
+			children = (
+				8DACC8012BD0018838B320524C36587A /* Frameworks */,
+			);
+			name = Facebook;
 			sourceTree = "<group>";
 		};
 		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
@@ -556,184 +623,120 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		C02FCE0AED2AC7DFEA041F549EDA666B /* Frameworks */ = {
+		BF26E16A8494EB07598386927E913DE0 /* Revmob */ = {
 			isa = PBXGroup;
 			children = (
-				05FC677617CE03196285644195502D22 /* libProviderYandex.a */,
+				256016624D40CDAC2884943E91B922DD /* Frameworks */,
 			);
-			name = Frameworks;
+			name = Revmob;
 			sourceTree = "<group>";
 		};
-		C0A8BDC72DD49A83FB73F21638C18280 /* Facebook */ = {
+		CBFB9EAB336C4C4E0D716872FEE40A4B /* Smaato */ = {
 			isa = PBXGroup;
 			children = (
-				DD68B85C44F63936006AEFBDCE00755D /* Frameworks */,
+				1E983CF30042D8C2AB6EA804D6F8A8B0 /* Frameworks */,
 			);
-			name = Facebook;
+			name = Smaato;
 			sourceTree = "<group>";
 		};
-		C1DED5DF3C726631B4E70EFD459F8DCE /* Frameworks */ = {
+		D25E483E1634D456272B12010A892699 /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				AD3E82D68231CDBA9D89B764274673F5 /* libProviderGoogleAdMob.a */,
+				E14413E05356239934D27225BBACF949 /* AdToAppSDK.h */,
+				AE996BAD05EAEAB9795DFDB6FCCB9B32 /* AdToAppTargeting.h */,
+				7DD9160CC429094129C08894C6676EEE /* AdToAppView.h */,
+				BE323E457FE59719C93E295A8142C6B0 /* ATALog.h */,
+				F830C026140523AFA38684BBE4F3140C /* Frameworks */,
 			);
-			name = Frameworks;
+			name = Core;
 			sourceTree = "<group>";
 		};
-		C45CE5D5A34330C730508A63D116EAAB /* AmazonAd */ = {
+		D2E5186028BEBC2CD36741EFEC1E84D1 /* Yandex */ = {
 			isa = PBXGroup;
 			children = (
-				FF63BFC7E30AB8753B7BEE02A21F5A85 /* Frameworks */,
+				A8462756E0984AF8BFBD220EE9FAAA55 /* Frameworks */,
 			);
-			name = AmazonAd;
+			name = Yandex;
 			sourceTree = "<group>";
 		};
-		C566C17E9C623C65FB0B99E85861F96E /* AdColony */ = {
+		D8A06ABC57C89E7AAA2E7C1B5F57F5D5 /* Avocarrot */ = {
 			isa = PBXGroup;
 			children = (
-				611224C1BD9905E1AE10BD8658E48243 /* Frameworks */,
-			);
-			name = AdColony;
-			sourceTree = "<group>";
-		};
-		C65E921DF71C2E3951692AFC3AF8009C /* AdToApp */ = {
-			isa = PBXGroup;
-			children = (
-				C566C17E9C623C65FB0B99E85861F96E /* AdColony */,
-				27E8990E7E88840140817B7796EC599B /* AdMob */,
-				C45CE5D5A34330C730508A63D116EAAB /* AmazonAd */,
-				D5BDBDE629511A8599E1ABD8F99AAA45 /* Applovin */,
-				E6591BD9691432C95AFE789345D35DD6 /* Avocarrot */,
-				0D74208850213507DE087E3000F469F8 /* Core */,
-				C0A8BDC72DD49A83FB73F21638C18280 /* Facebook */,
-				86ED9564B61D01BC0E4C47E971056F95 /* Flurry */,
-				DA99F10023099457B33D9D212CD65608 /* Inhouse */,
-				7F74125DC3C1366C9C07819C31FACD04 /* InMobi */,
-				03AAFB2E5A3DDC46D1DAA689055D047F /* Instreamatic */,
-				E75A1C995D1BAA7B1C07F89412C0D6DF /* MyTarget */,
-				A559EDF187E2010875D93DD058DDFCB3 /* NativeX */,
-				355A3EFE8FC6F82C2CF8BFB40C9C2968 /* Personagraph */,
-				561CCE18FD2B88A4990E4BA0658F2493 /* Revmob */,
-				267400CFD482AFD9365C86F74802BA5D /* Smaato */,
-				952847C06F6A292D3099801DAEA49EC4 /* StartApp */,
-				ACFE8153B4740DF873058D6146B5181E /* Supersonic */,
-				8E446AFB2237A60216996C5A35D095D5 /* TapSense */,
-				0E7F237B7D40209ECBE89AA29AFC1636 /* Unity */,
-				F249E2A0660EEA402652E165F3CFC593 /* Vungle */,
-				24D2B66B4569BD236291EF0774E5C355 /* Yandex */,
-			);
-			path = AdToApp;
-			sourceTree = "<group>";
-		};
-		D5BDBDE629511A8599E1ABD8F99AAA45 /* Applovin */ = {
-			isa = PBXGroup;
-			children = (
-				6798C1BD0069C76A0E2D5FF67E012E47 /* Frameworks */,
-			);
-			name = Applovin;
-			sourceTree = "<group>";
-		};
-		DA99F10023099457B33D9D212CD65608 /* Inhouse */ = {
-			isa = PBXGroup;
-			children = (
-				DE553CE4E66BDED764AF4974D34A13C3 /* Frameworks */,
-			);
-			name = Inhouse;
-			sourceTree = "<group>";
-		};
-		DD68B85C44F63936006AEFBDCE00755D /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				2CD6052BDA6E1F9B6C31A65CF3611ECD /* libProviderFacebook.a */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		DE553CE4E66BDED764AF4974D34A13C3 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				11D790BB63DBCC5006D6A6D355AF0738 /* libProviderInhouse.a */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		E1A1D1DD657BFDE85A8169974DD2BE3B /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				186271DE683C31E7E6DB1286DACECFBB /* libProviderSupersonic.a */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		E61FF7C71320E3E00A3199A92372E5B6 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				D98C982ED63015273D1423A8EAB783DF /* libProviderMyTarget.a */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		E6591BD9691432C95AFE789345D35DD6 /* Avocarrot */ = {
-			isa = PBXGroup;
-			children = (
-				0E5C5CC6BD76866F31199F51C933506C /* Frameworks */,
+				0C11172891FD18FA13ADF05A04395D85 /* Frameworks */,
 			);
 			name = Avocarrot;
 			sourceTree = "<group>";
 		};
-		E75A1C995D1BAA7B1C07F89412C0D6DF /* MyTarget */ = {
+		DBC53613DDD82C626BCF303C95E088BE /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				E61FF7C71320E3E00A3199A92372E5B6 /* Frameworks */,
+				B9E7E1EE54CD5A9E350FC734A9B2D5F0 /* StartApp.bundle */,
 			);
-			name = MyTarget;
+			name = Resources;
 			sourceTree = "<group>";
 		};
-		EEFA24DF5C526EBABB1CD6000EF50323 /* Pods */ = {
+		DCAB8A2AD72F08973C732C89EB808250 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				C65E921DF71C2E3951692AFC3AF8009C /* AdToApp */,
-				B3E0C501F2AD58E3BADB7CC7C2154F44 /* iRate */,
-				46BA3D14D776009891F6262C333BC5C6 /* SwiftyStoreKit */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		F249E2A0660EEA402652E165F3CFC593 /* Vungle */ = {
-			isa = PBXGroup;
-			children = (
-				A15ACE6F7032ED4A669CEE7DBAAC690C /* Frameworks */,
-				08DA98436D11A5C6AA8D07422C47CA19 /* Resources */,
-			);
-			name = Vungle;
-			sourceTree = "<group>";
-		};
-		F3C6088094428FB9872D5F2C4A739304 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				4F78B51AFA87EC37552C346E3975FCF3 /* Info.plist */,
-				2CF05B718A306DB4FACB3C2680390EB6 /* iRate.modulemap */,
-				348472EEB6F55DFC5F0750BBC15A14E2 /* iRate.xcconfig */,
-				BC3D81EC8BD14973BB540F59F640E814 /* iRate-dummy.m */,
-				2B3049DB4E9889292A081E0599C7FA45 /* iRate-prefix.pch */,
-				123053933A9936F65300A39768155461 /* iRate-umbrella.h */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/iRate";
-			sourceTree = "<group>";
-		};
-		FA8D3BF7031896A098410580C820496F /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				19306034EB0D4F67CF1F9B6EF88481A8 /* libProviderRevmob.a */,
+				5AEF1830DC899AFDDCDD7B25CED4B897 /* libProviderNativeX.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		FF63BFC7E30AB8753B7BEE02A21F5A85 /* Frameworks */ = {
+		E16DE708CD1EC17BE86A5B129A107150 /* Unity */ = {
 			isa = PBXGroup;
 			children = (
-				C15913E47A00E51724CD7122BDBBC223 /* libProviderAmazon.a */,
+				54D5AE09A7D8DD7F8D0BBD4048EF0260 /* Frameworks */,
+				A6852D32B8A2F426543EA5D616481620 /* Resources */,
+			);
+			name = Unity;
+			sourceTree = "<group>";
+		};
+		E3099230A0427CD160A23BD6EA808B32 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AC6A3B3259ED32BA1D4C16011BF2A81A /* libProviderSupersonic.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E72EF81146DBB30D21D1830CAD0C1FFD /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				A11D44A023264332B4A62CC628E4A394 /* iRate.bundle */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		E9AADDA0B1EBD4AA5428C67F43D63846 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CBFF57FCB1AA09BFE28FFC70ABDD8FBF /* libProviderTapSense.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F0F937724EDD235B73F28B7112E0B45F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CD119893FD11B6C691E1B08D492BEBDE /* libProviderAmazon.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F830C026140523AFA38684BBE4F3140C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C07287FEC312604C15038628E4F76923 /* libAdToAppCore.a */,
+				264D8FDE74C3447905BD7E50BD700AD0 /* libProviderTest.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F9678A736BEA92CC9BD931F7BC007577 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				707E82B477809FD157A6A6EE9A48AD3A /* libPersonagraph.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -810,7 +813,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FB317F5E65EB51D796AA9E34E7715DF1 /* Build configuration list for PBXNativeTarget "SwiftyStoreKit" */;
 			buildPhases = (
-				F5CF44B493E7768282F255E6B178E665 /* Sources */,
+				3B23C0F62A4A396B1AE40285BA91975F /* Sources */,
 				F99E4E7C16D193AD1A3A7B8B7C0927BA /* Frameworks */,
 				46FA518DF2EBFDE2D3BF9092C0C4D108 /* Headers */,
 			);
@@ -871,28 +874,29 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		3B23C0F62A4A396B1AE40285BA91975F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				446DFBA9CA9E390B73BDA92CEF5866F1 /* InAppCompleteTransactionsObserver.swift in Sources */,
+				51DCA64C20D9AF3AA0E2472C79429B33 /* InAppProductPurchaseRequest.swift in Sources */,
+				AF51C8F4C1F01BC323915AF48AD39A94 /* InAppProductQueryRequest.swift in Sources */,
+				3F7F936FD3946B0770FEE12E52D636B1 /* InAppReceipt.swift in Sources */,
+				9C8D4D824002BDE008ADF154F13AAE60 /* InAppReceiptRefreshRequest.swift in Sources */,
+				241D06808035290DF041408F29052A67 /* OS.swift in Sources */,
+				8633F665E25EE327652839FB97734907 /* SKProduct+LocalizedPrice.swift in Sources */,
+				E37EC07F4DCA0E3BBDF2E01E9208B4F0 /* SwiftyStoreKit+Types.swift in Sources */,
+				46264C234F82F3E076CCBCBBB755F1C8 /* SwiftyStoreKit-dummy.m in Sources */,
+				6F4B3B3DDB805F761F83033790A570C3 /* SwiftyStoreKit.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		3E004260E1C87BD14AA67E957083957B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				390A8863AE159A26A5744AFD4D272C1B /* iRate-dummy.m in Sources */,
 				3B0BC087FEF77A4ACC7ABA82BE33FD1A /* iRate.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F5CF44B493E7768282F255E6B178E665 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				1981DBD295D2E1CE14965A45E862A864 /* InAppCompleteTransactionsObserver.swift in Sources */,
-				22F622114BB123DEA37B7C0FCCA8C202 /* InAppProductPurchaseRequest.swift in Sources */,
-				3904C006C8A8991EF3C1F38075EC31F0 /* InAppProductQueryRequest.swift in Sources */,
-				86C35207C1F3E9170BEF573154BA6CC9 /* InAppReceipt.swift in Sources */,
-				1911A6833D9F6E456EF29D62CF83FC9A /* InAppReceiptRefreshRequest.swift in Sources */,
-				583EB9E84C1E4FA0803116CC1710F72E /* OS.swift in Sources */,
-				C9FD05EB363FAE46367CD07E27614BEE /* SKProduct+LocalizedPrice.swift in Sources */,
-				53C9A6B70A7AFC465383792EED21A91C /* SwiftyStoreKit-dummy.m in Sources */,
-				2B3F785928EAD464ADB8D35F4722E02E /* SwiftyStoreKit.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -992,7 +996,7 @@
 		};
 		4AB5AFACD003EF4DA4FE95EF1A8B8E4D /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 348472EEB6F55DFC5F0750BBC15A14E2 /* iRate.xcconfig */;
+			baseConfigurationReference = 01AF2DA834954CA7C8E034809C985992 /* iRate.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -1057,7 +1061,7 @@
 		};
 		73967C52EF070FDCDB7A386BCAF84FFF /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 348472EEB6F55DFC5F0750BBC15A14E2 /* iRate.xcconfig */;
+			baseConfigurationReference = 01AF2DA834954CA7C8E034809C985992 /* iRate.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -1087,7 +1091,7 @@
 		};
 		A848764435B6F8F76142251F727FA3E5 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D36C26DFBB5D0FC2780E6292977F6E5A /* SwiftyStoreKit.xcconfig */;
+			baseConfigurationReference = EBA08C969DC88D726FBC18FF4B36BBFE /* SwiftyStoreKit.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -1156,7 +1160,7 @@
 		};
 		DA52A74E4C566460116E2C6B716172A5 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D36C26DFBB5D0FC2780E6292977F6E5A /* SwiftyStoreKit.xcconfig */;
+			baseConfigurationReference = EBA08C969DC88D726FBC18FF4B36BBFE /* SwiftyStoreKit.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;

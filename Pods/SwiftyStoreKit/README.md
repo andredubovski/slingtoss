@@ -9,7 +9,7 @@
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 [![Twitter](https://img.shields.io/badge/twitter-@biz84-blue.svg?maxAge=2592000)](http://twitter.com/biz84)
 
-SwiftyStoreKit is a lightweight In App Purchases framework for iOS 8.0+, tvOS 9.0+ and OS X 10.10+.
+SwiftyStoreKit is a lightweight In App Purchases framework for iOS 8.0+, tvOS 9.0+ and macOS 10.10+.
 
 | Language  | Branch | Pod version | Xcode version |
 | --------- | ------ | ----------- | ------------- |
@@ -23,7 +23,9 @@ SwiftyStoreKit is a lightweight In App Purchases framework for iOS 8.0+, tvOS 9.
 <img src="https://github.com/bizz84/SwiftyStoreKit/raw/master/Screenshots/Preview.png" width="320">
 <img src="https://github.com/bizz84/SwiftyStoreKit/raw/master/Screenshots/Preview2.png" width="320">
 
-### Setup + Complete Transactions
+## App startup
+
+### Complete Transactions
 
 Apple recommends to register a transaction observer [as soon as the app starts](https://developer.apple.com/library/ios/technotes/tn2387/_index.html):
 > Adding your app's observer at launch ensures that it will persist during all launches of your app, thus allowing your app to receive all the payment queue notifications.
@@ -33,13 +35,17 @@ SwiftyStoreKit supports this by calling `completeTransactions()` when the app st
 ```swift
 func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
 
-	SwiftyStoreKit.completeTransactions() { completedTransactions in
+	SwiftyStoreKit.completeTransactions(atomically: true) { products in
 	
-	    for completedTransaction in completedTransactions {
+	    for product in products {
 	
-	        if completedTransaction.transactionState == .purchased || completedTransaction.transactionState == .restored {
+	        if product.transaction.transactionState == .purchased || product.transaction.transactionState == .restored {
 	
-	            print("purchased: \(completedTransaction.productId)")
+               if product.needsFinishTransaction {
+                   // Deliver content from server, then:
+                   SwiftyStoreKit.finishTransaction(product.transaction)
+               }
+               print("purchased: \(product)")
 	        }
 	    }
 	}
@@ -48,6 +54,8 @@ func application(application: UIApplication, didFinishLaunchingWithOptions launc
 ```
 
 If there are any pending transactions at this point, these will be reported by the completion block so that the app state and UI can be updated.
+
+## Purchases
 
 ### Retrieve products info
 ```swift
@@ -64,13 +72,33 @@ SwiftyStoreKit.retrieveProductsInfo(["com.musevisions.SwiftyStoreKit.Purchase1"]
     }
 }
 ```
+
 ### Purchase a product
 
+* **Atomic**: to be used when the content is delivered immediately.
+
 ```swift
-SwiftyStoreKit.purchaseProduct("com.musevisions.SwiftyStoreKit.Purchase1") { result in
+SwiftyStoreKit.purchaseProduct("com.musevisions.SwiftyStoreKit.Purchase1", atomically: true) { result in
     switch result {
-    case .success(let productId):
-        print("Purchase Success: \(productId)")
+    case .success(let product):
+        print("Purchase Success: \(product.productId)")
+    case .error(let error):
+        print("Purchase Failed: \(error)")
+    }
+}
+```
+
+* **Non-Atomic**: to be used when the content is delivered by the server.
+
+```swift
+SwiftyStoreKit.purchaseProduct("com.musevisions.SwiftyStoreKit.Purchase1", atomically: false) { result in
+    switch result {
+    case .success(let product):
+        // fetch content from your server, then:
+        if product.needsFinishTransaction {
+            SwiftyStoreKit.finishTransaction(product.transaction)
+        }
+        print("Purchase Success: \(product.productId)")
     case .error(let error):
         print("Purchase Failed: \(error)")
     }
@@ -79,19 +107,68 @@ SwiftyStoreKit.purchaseProduct("com.musevisions.SwiftyStoreKit.Purchase1") { res
 
 ### Restore previous purchases
 
+* **Atomic**: to be used when the content is delivered immediately.
+
 ```swift
-SwiftyStoreKit.restorePurchases() { results in
+SwiftyStoreKit.restorePurchases(atomically: true) { results in
     if results.restoreFailedProducts.count > 0 {
         print("Restore Failed: \(results.restoreFailedProducts)")
     }
-    else if results.restoredProductIds.count > 0 {
-        print("Restore Success: \(results.restoredProductIds)")
+    else if results.restoredProducts.count > 0 {
+        print("Restore Success: \(results.restoredProducts)")
     }
     else {
         print("Nothing to Restore")
     }
 }
 ```
+
+* **Non-Atomic**: to be used when the content is delivered by the server.
+
+```swift
+SwiftyStoreKit.restorePurchases(atomically: false) { results in
+    if results.restoreFailedProducts.count > 0 {
+        print("Restore Failed: \(results.restoreFailedProducts)")
+    }
+    else if results.restoredProducts.count > 0 {
+        for product in results.restoredProducts {
+            // fetch content from your server, then:
+            if product.needsFinishTransaction {
+                SwiftyStoreKit.finishTransaction(product.transaction)
+            }
+        }
+        print("Restore Success: \(results.restoredProducts)")
+    }
+    else {
+        print("Nothing to Restore")
+    }
+}
+```
+
+#### What does atomic / non-atomic mean?
+
+When you purchase a product the following things happen:
+
+* A payment is added to the payment queue for your IAP.
+* When the payment has been processed with Apple, the payment queue is updated so that the appropriate transaction can be handled.
+* If the transaction state is **purchased** or **restored**, the app can unlock the functionality purchased by the user.
+* The app should call `finishTransaction()` to complete the purchase.
+
+This is what is [recommended by Apple](https://developer.apple.com/reference/storekit/skpaymentqueue/1506003-finishtransaction):
+
+> Your application should call finishTransaction(_:) only after it has successfully processed the transaction and unlocked the functionality purchased by the user.
+
+* A purchase is **atomic** when the app unlocks the functionality purchased by the user immediately and call `finishTransaction()` at the same time. This is desirable if you're unlocking functionality that is already inside the app.
+
+* In cases when you need to make a request to your own server in order to unlock the functionality, you can use a **non-atomic** purchase instead.
+
+SwiftyStoreKit provides three operations that can be performed **atomically** or **non-atomically**:
+
+* Making a purchase
+* Restoring purchases
+* Completing transactions on app launch
+
+## Receipt verification
 
 ### Retrieve local receipt
 
@@ -221,7 +298,7 @@ github "bizz84/SwiftyStoreKit"
 See the [Releases Page](https://github.com/bizz84/SwiftyStoreKit/releases)
 
 ## Sample Code
-The project includes demo apps [for iOS](https://github.com/bizz84/SwiftyStoreKit/blob/master/SwiftyStoreDemo/ViewController.swift) [and OSX](https://github.com/bizz84/SwiftyStoreKit/blob/master/SwiftyStoreOSXDemo/ViewController.swift) showing how to use SwiftyStoreKit.
+The project includes demo apps [for iOS](https://github.com/bizz84/SwiftyStoreKit/blob/master/SwiftyStoreKit-iOS-Demo/ViewController.swift) [and macOS](https://github.com/bizz84/SwiftyStoreKit/blob/master/SwiftyStoreKit-macOS-Demo/ViewController.swift) showing how to use SwiftyStoreKit.
 Note that the pre-registered in app purchases in the demo apps are for illustration purposes only and may not work as iTunes Connect may invalidate them.
 
 #### Features
@@ -229,7 +306,7 @@ Note that the pre-registered in app purchases in the demo apps are for illustrat
 - Support for consumable, non-consumable in-app purchases
 - Support for free, auto renewable and non renewing subscriptions
 - Receipt verification
-- iOS, tvOS and OS X compatible
+- iOS, tvOS and macOS compatible
 - enum-based error handling
 
 ## Known issues
@@ -258,7 +335,9 @@ The user can background the hosting application and change the Apple ID used wit
 * [Apple - TN2387: In-App Purchase Best Practices](https://developer.apple.com/library/content/technotes/tn2387/_index.html)
 * [Apple - About Receipt Validation](https://developer.apple.com/library/content/releasenotes/General/ValidateAppStoreReceipt/Introduction.html)
 * [Apple - Receipt Validation Programming Guide](https://developer.apple.com/library/content/releasenotes/General/ValidateAppStoreReceipt/Chapters/ReceiptFields.html#//apple_ref/doc/uid/TP40010573-CH106-SW1)
+* [Apple - Validating Receipts Locally](https://developer.apple.com/library/content/releasenotes/General/ValidateAppStoreReceipt/Chapters/ValidateLocally.html)
 * [Apple - Offering Subscriptions](https://developer.apple.com/app-store/subscriptions/)
+* [objc.io - Receipt Validation](https://www.objc.io/issues/17-security/receipt-validation/)
 
 
 ## Implementation Details
@@ -298,7 +377,7 @@ enum TransactionResult {
 Depending on the operation, the completion closure for `InAppProductPurchaseRequest` is then mapped to either a `PurchaseResult` or a `RestoreResults` value and returned to the caller.
 
 ## Credits
-Many thanks to [phimage](https://github.com/phimage) for adding OSX support and receipt verification.
+Many thanks to [phimage](https://github.com/phimage) for adding macOS support and receipt verification.
 
 ## Apps using SwiftyStoreKit
 
@@ -310,6 +389,7 @@ It would be great to showcase apps using SwiftyStoreKit here. Pull requests welc
 * [iPic](https://itunes.apple.com/app/id1101244278?ls=1&mt=12) - Automatically upload images and save Markdown links
 * [iHosts](https://itunes.apple.com/app/id1102004240?ls=1&mt=12) - Perfect for editing /etc/hosts
 * [Arise](http://www.abnehm-app.de/) - Calorie counter
+* [Truth Truth Lie](https://itunes.apple.com/app/id1130832864?ls=1&mt=8&app=messages) - iMessage game, featured by Apple
 
 
 ## License

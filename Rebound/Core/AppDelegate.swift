@@ -21,8 +21,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     
     iRate.sharedInstance().usesUntilPrompt = 6
-    iRate.sharedInstance().daysUntilPrompt = 0
-    iRate.sharedInstance().remindPeriod = 0
+    iRate.sharedInstance().daysUntilPrompt = 2
+    iRate.sharedInstance().remindPeriod = 4
     iRate.sharedInstance().messageTitle = "PLEASE RATE!"
     iRate.sharedInstance().message = "Please say nice things about my app."
     iRate.sharedInstance().rateButtonLabel = "Yea sure 😎"

@@ -113,7 +113,7 @@ PODS:
   - AdToApp/Yandex (47.14):
     - AdToApp/Core
   - iRate (1.11.6)
-  - SwiftyStoreKit (0.5.4)
+  - SwiftyStoreKit (0.6.0)
 
 DEPENDENCIES:
   - AdToApp
@@ -146,7 +146,7 @@ DEPENDENCIES:
 SPEC CHECKSUMS:
   AdToApp: 2db758eaece13fce792b803defec41b17f55aeac
   iRate: 61e558919c4a7fde63b3c22ebbd6c114a1eee658
-  SwiftyStoreKit: a8b02a708c6e2bf52207836d58afd3738e2f6670
+  SwiftyStoreKit: f47820a774eb94dcb2880f50a76f9533b2c282b9
 
 PODFILE CHECKSUM: 92c76e12ee18e9ab71b4e01850dbb13154c779d2
 

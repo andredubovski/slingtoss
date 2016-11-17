@@ -28,8 +28,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate, AdToAppViewDelegate, AdToApp
   var verticalProgress = CGFloat(0)
   
   var adsOn = defaults.bool(forKey: "Ads")
-  var atpActive = Bool(true)
-  var atpPlaceholderActive = Bool(false)
+  var ataBanner = AdToAppView();
   
   var backgroundMusicPlayer: AVAudioPlayer! = nil
   var bouncePlayerIndex = Int(0)
@@ -43,6 +42,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate, AdToAppViewDelegate, AdToApp
   }
   
   fileprivate func gameSetup() {
+    
+    if defaults.value(forKey: "SFX") == nil {defaults.set(true, forKey: "SFX")}
+    if defaults.value(forKey: "Music") == nil {defaults.set(true, forKey: "Music")}
+    if defaults.value(forKey: "Ads") == nil {defaults.set(true, forKey: "Ads")}
     
     currentTheme.build()
     if defaults.bool(forKey: "Ads") {setupAdToApp()}
@@ -95,8 +98,15 @@ class GameScene: SKScene, SKPhysicsContactDelegate, AdToAppViewDelegate, AdToApp
     flashDeathOverlay()
     if defaults.bool(forKey: "SFX") && !isVirgin {gameOverPlayer.play()}
     
-    
     resetCount += 1
+    switch resetCount % 3 {
+    case 0:
+      AdToAppSDK.showInterstitial(ADTOAPP_INTERSTITIAL)
+    case 1:
+      ataBanner.loadNextAd()
+    default:
+      return
+    }
     
   }
   
@@ -167,6 +177,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate, AdToAppViewDelegate, AdToApp
   
   func twoFingerTapped() {
     AdToAppSDK.showInterstitial(ADTOAPP_INTERSTITIAL)
+    
   }
   
   func doubleTapped() {
@@ -316,7 +327,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate, AdToAppViewDelegate, AdToApp
     //Uncomment the line below if you need logs
     AdToAppSDK.enableDebugLogs()
     AdToAppSDK.setDelegate(self)
-    AdToAppSDK.start(withAppId: "55f1d158-f033-49ec-a53b-9a4e40b4106c:4b299984871e2d1213ef05b5d7f73412d04b911a", modules:[
+    AdToAppSDK.start(withAppId: "89988786-84bc-4493-8df7-bc031c8b13fa:67144dfd-824b-4841-a022-7bdc973e19c9", modules:[
       ADTOAPP_IMAGE_INTERSTITIAL,
       ADTOAPP_VIDEO_INTERSTITIAL,
       ADTOAPP_INTERSTITIAL,
@@ -324,7 +335,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate, AdToAppViewDelegate, AdToApp
       ADTOAPP_BANNER
       ])
     
-    AdToAppView.attach(to: self.view, position:ADTOAPPSDK_BANNER_POSITION_BOTTOM, edgeInsets:UIEdgeInsets.zero, bannerSize:ADTOAPPSDK_BANNER_SIZE_320x50, delegate:self)
+    ataBanner = AdToAppView.attach(to: self.view, position:ADTOAPPSDK_BANNER_POSITION_BOTTOM, edgeInsets:UIEdgeInsets.zero, bannerSize:ADTOAPPSDK_BANNER_SIZE_320x50, delegate:self) as! AdToAppView
     
   }
   

@@ -53,7 +53,7 @@ class TerrainController {
       }
     }
     
-    difficulty = pow(CGFloat(score.amount), 1/7) - 1
+    difficulty = pow(CGFloat(score.amount)+25, 1/3)/3 - 0.77
     if difficulty > 1 {difficulty = 1}
     
     if array[array.count-1]!.position.y < gameFrame.height*2 {

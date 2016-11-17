@@ -15,6 +15,7 @@ class SettingsScene: SKScene {
   
   override func didMove(to view: SKView) {
     if isVirgin {
+      
       menu.build(self)
       currentTheme.build(self)
       isVirgin = false
