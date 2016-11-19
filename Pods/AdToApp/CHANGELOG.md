@@ -1,4 +1,9 @@
 
+## 47.15 (November 7, 2016)
+
+UPDATED:
+- Vungle to 4.0.8;
+
 ## 47.14 (November 1, 2016)
 
 UPDATED:
