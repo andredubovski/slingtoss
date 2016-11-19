@@ -8,16 +8,20 @@
 	<real>0.026</real>
 	<key>Relative terrain thickness</key>
 	<real>0.046875</real>
-	<key>Relative platform edge height</key>
+	<key>Min relative platform edge height</key>
+	<real>0.075</real>
+	<key>Max relative platform edge height</key>
+	<real>0.115</real>
+	<key>Default relative platform edge height</key>
 	<real>0.09375</real>
 	<key>Min relative platform length</key>
 	<real>0.15</real>
 	<key>Max relative platform length</key>
-	<real>0.35</real>
+	<real>0.41</real>
 	<key>Min relative ring radius</key>
-	<real>0.15</real>
+	<real>0.17</real>
 	<key>Max relative ring radius</key>
-	<real>0.24</real>
+	<real>0.28</real>
 	<key>Relative scroll threshold</key>
 	<real>0.38</real>
 </dict>

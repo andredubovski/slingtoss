@@ -99,15 +99,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate, AdToAppViewDelegate, AdToApp
     if defaults.bool(forKey: "SFX") && !isVirgin {gameOverPlayer.play()}
     
     resetCount += 1
-    switch resetCount % 3 {
-    case 0:
-      AdToAppSDK.showInterstitial(ADTOAPP_INTERSTITIAL)
-    case 1:
-      ataBanner.loadNextAd()
-    default:
-      return
-    }
-    
+    if random(0, to: 1) < 0.27 { AdToAppSDK.showInterstitial(ADTOAPP_INTERSTITIAL)}
+
   }
   
   func flashDeathOverlay() {
@@ -340,7 +333,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate, AdToAppViewDelegate, AdToApp
   }
   
   func ad(_ adToAppView: AdToAppView!, failedToDisplayAdWithError error: Error!, isConnectionError: Bool) {
-    return
+    print("failed to display ad, is connection error: \(isConnectionError)")
   }
   
   func ad(toAppViewDidDisplayAd adToAppView: AdToAppView!, providerId: Int32) {

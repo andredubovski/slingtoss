@@ -14,6 +14,8 @@ class TerrainController {
   var currentIndex = Int()
   var minLength = CGFloat()
   var maxLength = CGFloat()
+  var minHeight = CGFloat()
+  var maxHeight = CGFloat()
   var minRadius = CGFloat()
   var maxRadius = CGFloat()
   
@@ -25,6 +27,8 @@ class TerrainController {
   func build() {
     minLength = configValueForKey("Min relative platform length")
     maxLength = configValueForKey("Max relative platform length")
+    minHeight = configValueForKey("Min relative platform edge height")
+    maxHeight = configValueForKey("Max relative platform edge height")
     minRadius = configValueForKey("Min relative ring radius")
     maxRadius = configValueForKey("Max relative ring radius")
   }
@@ -54,7 +58,11 @@ class TerrainController {
     }
     
     difficulty = pow(CGFloat(score.amount)+25, 1/3)/3 - 0.77
-    if difficulty > 1 {difficulty = 1}
+//    let d = log2(Double(array.count) - 7) / 8
+//    if d.isNaN {difficulty = 0}
+//    else {difficulty = CGFloat(d)}
+    if difficulty < 0 {difficulty = 0}
+    else if difficulty > 1 {difficulty = 1}
     
     if array[array.count-1]!.position.y < gameFrame.height*2 {
       makeRandomTerrain(difficulty)
@@ -62,15 +70,17 @@ class TerrainController {
   }
   
   
-  func makePlatform(_ willBePermeable: Bool, willMove: Bool, lengthRelativeToFrameWidth: CGFloat, relativePositionAbovePrevious: CGPoint) {
+  func makePlatform(_ willBePermeable: Bool, willMove: Bool, movingDownSpeed: CGFloat, lengthRelativeToFrameWidth: CGFloat, edgeHeightRelativeToFrameWidth: CGFloat, relativePositionAbovePrevious: CGPoint) {
     
     let length = lengthRelativeToFrameWidth*gameFrame.width
+    let height = edgeHeightRelativeToFrameWidth*gameFrame.width
     
     let position = CGPoint(x: relativePositionAbovePrevious.x*gameFrame.width, y: array[array.count-1]!.position.y + relativePositionAbovePrevious.y*gameFrame.height)
     
-    let newPlatform = Platform(length: length, position: position)
+    let newPlatform = Platform(length: length, height: height, position: position)
     newPlatform.isPermeable = willBePermeable
     newPlatform.doesMoveDown = willMove
+    newPlatform.movingDownSpeed = movingDownSpeed
     array.append(newPlatform)
     newPlatform.build()
     newPlatform.makeSureIsInFrame()
@@ -98,28 +108,35 @@ class TerrainController {
   
     var position = CGPoint(x: random(0, to: 1), y: weightedRandom(1/3, to: 2/3, weight: difficulty))
   
-    if random(0, to: 3.8) > 1 {
+    if random(0, to: 4) > 1 {
       
-      var moving = weightedRandom(0, to: 100, weight: difficulty) > 85
+      var moving = weightedRandom(0, to: 100, weight: difficulty) > 69
+      let movingSpeed = weightedRandom(0, to: 1, weight: difficulty)
       
       var permeable = !(weightedRandom(0, to: 100, weight: difficulty) > 63.5)
       
       if let lastPlatform = array[array.count-1] as? Platform {
         if lastPlatform.doesMoveDown {
           permeable = true
-          if weightedRandom(0, to: 100, weight: difficulty) > 30 {
+          if weightedRandom(0, to: 100, weight: difficulty) > 35 {
             moving = true
           }
         }
       }
       
       let length = weightedRandom(minLength, to: maxLength, weight: 1-difficulty)
+      let height = weightedRandom(minHeight, to: maxHeight, weight: 1-difficulty)
       
       if !permeable {
         position = CGPoint(x: random(0, to: 1), y: weightedRandom(1/3, to: 1/2, weight: difficulty))
       }
       
-      makePlatform(permeable, willMove: moving, lengthRelativeToFrameWidth: length, relativePositionAbovePrevious: position)
+      makePlatform(permeable,
+                   willMove: moving,
+                   movingDownSpeed: movingSpeed,
+                   lengthRelativeToFrameWidth: length,
+                   edgeHeightRelativeToFrameWidth: height,
+                   relativePositionAbovePrevious: position)
       
     } else {
       
@@ -148,7 +165,9 @@ class TerrainController {
     makePlatform(
       true,
       willMove: false,
-      lengthRelativeToFrameWidth: random(0.25, to: 0.3),
+      movingDownSpeed: 0,
+      lengthRelativeToFrameWidth: random(0.3, to: 0.35),
+      edgeHeightRelativeToFrameWidth: configValueForKey("Default relative platform edge height"),
       relativePositionAbovePrevious: CGPoint(x: CGFloat(Int(random(1, to: 3))) / 3.0, y: 1/3)
     )
     

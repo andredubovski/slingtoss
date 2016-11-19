@@ -40,7 +40,7 @@ class Ring: Terrain {
     mutablePath.closeSubpath()
     path = mutablePath
     
-    let randomRadius = random(configValueForKey("Min relative ring radius"), to: configValueForKey("Max relative ring radius")) * gameFrame.width
+    let randomRadius = random(0.15, to: 0.24) * 320
     fillColor = currentTheme.ringColor(randomRadius)
     
     let physicsPath = CGMutablePath()

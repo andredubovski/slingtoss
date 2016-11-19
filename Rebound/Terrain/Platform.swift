@@ -14,16 +14,16 @@ class Platform: Terrain {
   var length = CGFloat()
   var edgeHeight = CGFloat()
   
-  init(length: CGFloat) {
+  init(length: CGFloat, edgeHeight: CGFloat) {
     super.init()
     
     //calculate platform dimensions based on screen size
     self.length = length
-    edgeHeight = gameFrame.width * configValueForKey("Relative platform edge height")
+    self.edgeHeight = edgeHeight
   }
   
-  convenience init(length: CGFloat, position: CGPoint) {
-    self.init(length: length)
+  convenience init(length: CGFloat, height: CGFloat = configValueForKey("Default relative platform edge height")*gameFrame.width, position: CGPoint) {
+    self.init(length: length, edgeHeight: height)
     self.position = position
   }
   
@@ -47,7 +47,7 @@ class Platform: Terrain {
     path = mutablePath
     
     super.build()
-    let randomLength = random(configValueForKey("Min relative platform length"), to: configValueForKey("Max relative platform length")) * gameFrame.width
+    let randomLength = random(0.15, to: 0.35) * 320
     if isPermeable {fillColor = currentTheme.permeablePlatformColor(randomLength); name = "permeable platform"}
     else {fillColor = currentTheme.impermeablePlatformColor(randomLength); name = "impermeable platform"}
     

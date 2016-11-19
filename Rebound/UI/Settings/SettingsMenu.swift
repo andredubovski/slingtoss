@@ -120,8 +120,7 @@ class SettingsMenu: SKNode {
       SwiftyStoreKit.restorePurchases() { results in
         if results.restoreFailedProducts.count > 0 {
           popup(scene: settingsScene, title: "Restore Failed", message: String(describing: results.restoreFailedProducts))
-        } else if results.restoredProductIds.count > 0 {
-          print("Restore Success: \(results.restoredProductIds)")
+        } else if results.restoredProducts.count > 0 {
           self.removeAdsToggle.setStateTo(true)
           defaults.set(false, forKey: "Ads")
           popup(scene: settingsScene, title: "Successfully Restored", message: "")

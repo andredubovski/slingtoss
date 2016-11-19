@@ -20,9 +20,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   override class func initialize() -> Void {
     
     
-    iRate.sharedInstance().usesUntilPrompt = 6
-    iRate.sharedInstance().daysUntilPrompt = 2
-    iRate.sharedInstance().remindPeriod = 4
+    iRate.sharedInstance().usesUntilPrompt = 3
+    iRate.sharedInstance().daysUntilPrompt = 1
+    iRate.sharedInstance().remindPeriod = 3
     iRate.sharedInstance().messageTitle = "PLEASE RATE!"
     iRate.sharedInstance().message = "Please say nice things about my app."
     iRate.sharedInstance().rateButtonLabel = "Yea sure 😎"
@@ -41,13 +41,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   
   @nonobjc func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
     
-    SwiftyStoreKit.completeTransactions() { completedTransactions in
+    SwiftyStoreKit.completeTransactions(atomically: true) { products in
       
-      for completedTransaction in completedTransactions {
+      for product in products {
         
-        if completedTransaction.transactionState == .purchased || completedTransaction.transactionState == .restored {
+        if product.transaction.transactionState == .purchased || product.transaction.transactionState == .restored {
           
-          print("purchased: \(completedTransaction.productId)")
+          if product.needsFinishTransaction {
+            // Deliver content from server, then:
+            SwiftyStoreKit.finishTransaction(product.transaction)
+          }
+          print("purchased: \(product)")
         }
       }
     }

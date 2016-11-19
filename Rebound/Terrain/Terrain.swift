@@ -17,6 +17,7 @@ class Terrain: SKShapeNode {
   
   var isPermeable = Bool(true)
   var doesMoveDown = Bool(false)
+  var movingDownSpeed = CGFloat(0)
   var isMovingDown = Bool(false)
   
   override init() {
@@ -78,8 +79,8 @@ class Terrain: SKShapeNode {
   func beginMovingDown() {
     physicsBody?.isDynamic = true
     physicsBody?.affectedByGravity = true
-    physicsBody?.linearDamping = 100
-    physicsBody?.angularDamping = 18
+    physicsBody?.linearDamping = 80 + (1-movingDownSpeed)*75
+    physicsBody?.angularDamping = 15 + (1-movingDownSpeed)*6
   }
   
   func scoreOn(_ score: Score) {
