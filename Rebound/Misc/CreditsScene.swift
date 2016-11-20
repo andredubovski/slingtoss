@@ -12,6 +12,7 @@ class CreditsScene: SKScene {
   var isVirgin = Bool(true)
   
   override func didMove(to view: SKView) {
+    gameScene.ataBanner.isHidden = true
     if isVirgin {
       let bg = Background(imageNamed: "background1")
       bg.build(self)
@@ -29,6 +30,7 @@ class CreditsScene: SKScene {
   
   
   override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+    gameScene.ataBanner.isHidden = false
     view?.presentScene(gameScene, transition: SKTransition.doorsCloseHorizontal(withDuration: 0.5))
   }
   

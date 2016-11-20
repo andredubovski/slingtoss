@@ -48,7 +48,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate, AdToAppViewDelegate, AdToApp
     if defaults.value(forKey: "Ads") == nil {defaults.set(true, forKey: "Ads")}
     
     currentTheme.build()
-//    if defaults.bool(forKey: "Ads") {setupAdToApp()}
+    if defaults.bool(forKey: "Ads") {setupAdToApp()}
     setupSound()
     physicsWorld.contactDelegate = self
     gameFrame = frame
@@ -100,7 +100,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate, AdToAppViewDelegate, AdToApp
     
     resetCount += 1
     let r = random(0, to: 1)
-    if r < 0.165 {
+    if r < 0.115 {
       AdToAppSDK.showInterstitial(ADTOAPP_VIDEO_INTERSTITIAL)
     } else if r < 0.567 {
       AdToAppSDK.showInterstitial(ADTOAPP_IMAGE_INTERSTITIAL)
@@ -346,11 +346,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate, AdToAppViewDelegate, AdToApp
   
   
   func onAdWillAppear(_ adType: String, providerId: Int32) {
-    NSLog("On interstitial show")
+    backgroundMusicPlayer.pause()
   }
   
   func onAdDidDisappear(_ adType: String, providerId: Int32) {
-    NSLog("On interstitial hide")
+    backgroundMusicPlayer.play()
   }
   
   //optional

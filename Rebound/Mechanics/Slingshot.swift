@@ -18,7 +18,7 @@ class Slingshot: SKShapeNode {
   var relativeStretchStrength = Int()
   var lastRelativeStretchStrength = Int()
   
-  var sensitivity = CGFloat(10.6)
+  var sensitivity = CGFloat(18.76)
   var shotVector = CGVector()
   var aimingToPoint = CGPoint()
   var canShoot = Bool(false)
@@ -108,7 +108,7 @@ class Slingshot: SKShapeNode {
     zRotation = -atan((atPoint.x-ball.position.x) / (atPoint.y-ball.position.y))
     position = ball.position
     
-    shotVector = vectorFromAngleMagnitude(-zRotation, magnitude: stretch/sensitivity)
+    shotVector = vectorFromAngleMagnitude(-zRotation, magnitude: relativeStretch*sensitivity)
     let aimVector = vectorFromAngleMagnitude(-zRotation, magnitude: stretch)
     aimingToPoint = CGPoint(x: ball.position.x + aimVector.dx, y: ball.position.y + aimVector.dy)
     
