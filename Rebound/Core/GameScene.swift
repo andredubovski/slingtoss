@@ -48,7 +48,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate, AdToAppViewDelegate, AdToApp
     if defaults.value(forKey: "Ads") == nil {defaults.set(true, forKey: "Ads")}
     
     currentTheme.build()
-    if defaults.bool(forKey: "Ads") {setupAdToApp()}
+//    if defaults.bool(forKey: "Ads") {setupAdToApp()}
     setupSound()
     physicsWorld.contactDelegate = self
     gameFrame = frame

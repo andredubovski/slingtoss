@@ -90,6 +90,7 @@ class DeathMenu: MainMenu {
     highScoreLabel.yScale = 1
     highScoreLabel.xScale = scoreLabel.xScale
     highScoreLabel.yScale = scoreLabel.yScale
+    scoreLabel.position.y = highScoreLabel.position.y
     
   }
   

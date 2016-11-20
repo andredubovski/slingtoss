@@ -47,7 +47,8 @@ class Ball: SKShapeNode {
     physicsBody?.categoryBitMask = PhysicsCategory.Ball
     physicsBody?.contactTestBitMask = PhysicsCategory.Terrain | PhysicsCategory.ImpermeableTerrain | PhysicsCategory.Wall
     physicsBody?.isDynamic = true
-    physicsBody!.mass = pow(0.000000305*gameFrame.height, 0.5)
+    physicsBody!.mass = 0.013162067
+    physicsBody?.linearDamping = 0.100000001490116
     physicsBody!.angularDamping = 4
     physicsBody?.usesPreciseCollisionDetection = true
     

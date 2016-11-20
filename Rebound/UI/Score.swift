@@ -95,7 +95,7 @@ class Score {
         // 3 Game center is not enabled on the users device
         self.gcEnabled = false
         print("Local player could not be authenticated, disabling game center")
-        print(error)
+        print(error as Any)
       }
       
     }

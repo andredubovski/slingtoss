@@ -75,8 +75,8 @@ func assembleThemes() {
   
   func permeablePlatformColor1(_ length: CGFloat) -> SKColor {
     return SKColor(
-      red: (length*(450/gameFrame.width)-60) / 255,
-      green: (length*(450/gameFrame.width)+10) / 255,
+      red: (length*(450/320)-60) / 255,
+      green: (length*(450/320)+10) / 255,
       blue: 1,
       alpha: 1
     )
@@ -85,17 +85,17 @@ func assembleThemes() {
   func impermeablePlatformColor1(_ length: CGFloat) -> SKColor {
     return SKColor(
       red: 1,
-      green: (length*(450/gameFrame.width)-50) / 255,
-      blue: (length*(450/gameFrame.width)+20) / 255,
+      green: (length*(450/320)-50) / 255,
+      blue: (length*(450/320)+20) / 255,
       alpha: 1
     )
   }
   
   func ringColor1(_ radius: CGFloat) -> SKColor {
     return SKColor(
-      red: (radius*(450/gameFrame.width)-60) / 255,
-      green: 1-(radius*(160/gameFrame.width)+30) / 255,
-      blue: (radius*(580/gameFrame.width)) / 255,
+      red: (radius*(450/320)-60) / 255,
+      green: 1-(radius*(160/320)+30) / 255,
+      blue: (radius*(580/320)) / 255,
       alpha: 1
     )
   }

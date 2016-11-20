@@ -82,10 +82,10 @@ class MainMenu {
     let defaults = UserDefaults()
     highScoreLabel = SKLabelNode(text: "HIGH SCORE: \(defaults.integer(forKey: "high score"))")
     highScoreLabel.fontColor = currentTheme.tintColor
-    highScoreLabel.position.y = -highScoreLabel.frame.height/2
     highScoreLabel.fontSize = 32 * gameFrame.width/320
     highScoreLabel.run(SKAction.scale(to: (highScoreBox.frame.height*0.8)/highScoreLabel.frame.height, duration: 0))
     highScoreBox.addChild(highScoreLabel)
+    highScoreLabel.position.y = -highScoreLabel.frame.height/2
     
   }
   
