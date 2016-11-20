@@ -117,7 +117,6 @@ PODS:
 
 DEPENDENCIES:
   - AdToApp
-  - AdToApp/AdColony
   - AdToApp/AdMob
   - AdToApp/AmazonAd
   - AdToApp/Applovin
@@ -148,6 +147,6 @@ SPEC CHECKSUMS:
   iRate: 61e558919c4a7fde63b3c22ebbd6c114a1eee658
   SwiftyStoreKit: f47820a774eb94dcb2880f50a76f9533b2c282b9
 
-PODFILE CHECKSUM: 92c76e12ee18e9ab71b4e01850dbb13154c779d2
+PODFILE CHECKSUM: 1648d9b5ca5b4183974f324bd90b982669bff9dd
 
 COCOAPODS: 1.0.1

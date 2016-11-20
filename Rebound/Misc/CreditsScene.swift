@@ -13,20 +13,14 @@ class CreditsScene: SKScene {
   
   override func didMove(to view: SKView) {
     if isVirgin {
-      let label1 = SKLabelNode(text: "Credits")
-      let label2 = SKLabelNode(text: "Andre Dubovskiy")
-      let label3 = SKLabelNode(text: "I did everything.")
+      let bg = Background(imageNamed: "background1")
+      bg.build(self)
       
-      addChild(label1)
-      addChild(label2)
-      addChild(label3)
-      
-      label1.fontName = "AvenirNext-Bold"
-      label3.fontSize = 20
-      
-      label1.position = CGPoint(x: frame.midX, y: 0.8*frame.height)
-      label2.position = CGPoint(x: frame.midX, y: 0.6*frame.height)
-      label3.position = CGPoint(x: frame.midX, y: frame.midY)
+      let creditsImage = SKSpriteNode(imageNamed: "Credits")
+      creditsImage.position = CGPoint(x: frame.midX, y: frame.midY)
+      creditsImage.yScale = frame.height/creditsImage.frame.height
+      creditsImage.xScale = creditsImage.yScale
+      addChild(creditsImage)
       
       isVirgin = false
     }

@@ -99,8 +99,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate, AdToAppViewDelegate, AdToApp
     if defaults.bool(forKey: "SFX") && !isVirgin {gameOverPlayer.play()}
     
     resetCount += 1
-    if random(0, to: 1) < 0.27 { AdToAppSDK.showInterstitial(ADTOAPP_INTERSTITIAL)}
-
+    let r = random(0, to: 1)
+    if r < 0.165 {
+      AdToAppSDK.showInterstitial(ADTOAPP_VIDEO_INTERSTITIAL)
+    } else if r < 0.567 {
+      AdToAppSDK.showInterstitial(ADTOAPP_IMAGE_INTERSTITIAL)
+    }
   }
   
   func flashDeathOverlay() {
