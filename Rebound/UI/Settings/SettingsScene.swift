@@ -11,15 +11,19 @@ import SpriteKit
 class SettingsScene: SKScene {
   
   var menu = SettingsMenu()
+  
   var isVirgin = Bool(true)
   
   override func didMove(to view: SKView) {
     if isVirgin {
-      
+      let bg = Background(imageNamed: "background1")
+      bg.build(self)
       menu.build(self)
       currentTheme.build(self)
       isVirgin = false
     }
+    
+    
     
   }
   

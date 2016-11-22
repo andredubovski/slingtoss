@@ -88,17 +88,29 @@ class SettingsMenu: SKNode {
         case .success(let productId):
           
           print("Success! Purchased: \(productId)")
-          popup(scene: settingsScene, title: "Purchase successful!", message: "Thank you for your purchase.")
+          popup(scene: settingsScene, title: "Purchase successful!", message: "Thank you for your purchase")
           self.removeAdsToggle.setStateTo(true)
           defaults.set(false, forKey: "Ads")
           
         case .error(let error):
           
-          popup(scene: settingsScene, title: "Purchase Failed", message: String(describing: error))
+          switch error {
+          case .failed(let error):
+            popup(scene: settingsScene, title: "Purchase Failed", message: "\(error.localizedDescription)")
+            
+          case .invalidProductId(let productId):
+            popup(scene: settingsScene, title: "Purchase Failed", message: "Invalid product ID: \(productId)")
+            
+          case .noProductIdentifier:
+            popup(scene: settingsScene, title: "Purchase Failed", message: "No product identifier")
+            
+          case .paymentNotAllowed:
+            popup(scene: settingsScene, title: "Purchase Failed", message: "Payment not allowed")
+            
+          }
           
           self.removeAdsToggle.setStateTo(false)
           defaults.set(true, forKey: "Ads")
-          
         }
       }
       
@@ -119,7 +131,12 @@ class SettingsMenu: SKNode {
       
       SwiftyStoreKit.restorePurchases() { results in
         if results.restoreFailedProducts.count > 0 {
-          popup(scene: settingsScene, title: "Restore Failed", message: String(describing: results.restoreFailedProducts))
+          
+          let errorString = String(describing: results.restoreFailedProducts)
+          let errorNSString = errorString as NSString
+          let errorMsg = errorNSString.substring(with: NSRange(location: errorString.distance(from: errorString.startIndex, to:errorString.indexes(of: "\"").first!) + 1, length: errorString.distance(from: errorString.indexes(of: "\"").first!, to:errorString.indexes(of: "\"").last!) - 1))
+          
+          popup(scene: settingsScene, title: "Restore Failed", message: errorMsg)
         } else if results.restoredProducts.count > 0 {
           self.removeAdsToggle.setStateTo(true)
           defaults.set(false, forKey: "Ads")

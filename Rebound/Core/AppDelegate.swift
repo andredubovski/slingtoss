@@ -32,8 +32,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //    iRate.sharedInstance().declinedAnyVersion = false
 //    iRate.sharedInstance().ratedThisVersion = false
 //    iRate.sharedInstance().ratedAnyVersion = false
-    iRate.sharedInstance().verboseLogging = false
-    iRate.sharedInstance().applicationBundleID = "com.clickgamer.AngryBirds"
     iRate.sharedInstance().onlyPromptIfLatestVersion = false
     
   }

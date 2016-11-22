@@ -157,6 +157,18 @@ func popup(scene: SKScene, title: String, message: String) {
   }
 }
 
+extension String {
+  func indexes(of string: String, options: String.CompareOptions = .literal) -> [String.Index] {
+    var result: [String.Index] = []
+    var start = startIndex
+    while let range = range(of: string, options: options, range: start..<endIndex, locale: nil) {
+      result.append(range.lowerBound)
+      start = range.upperBound
+    }
+    return result
+  }
+}
+
 //extension Collection {
 //  /// Returns the element at the specified index iff it is within bounds, otherwise nil.
 //  subscript (safe index: Index) -> Iterator.Element? {

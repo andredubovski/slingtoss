@@ -98,13 +98,16 @@ class GameScene: SKScene, SKPhysicsContactDelegate, AdToAppViewDelegate, AdToApp
     flashDeathOverlay()
     if defaults.bool(forKey: "SFX") && !isVirgin {gameOverPlayer.play()}
     
-    resetCount += 1
-    let r = random(0, to: 1)
-    if r < 0.115 {
-      AdToAppSDK.showInterstitial(ADTOAPP_VIDEO_INTERSTITIAL)
-    } else if r < 0.567 {
-      AdToAppSDK.showInterstitial(ADTOAPP_IMAGE_INTERSTITIAL)
+    if resetCount > 4 {
+      let r = random(0, to: 1)
+      if r < 0.09 {
+        AdToAppSDK.showInterstitial(ADTOAPP_VIDEO_INTERSTITIAL)
+      } else if r < 0.4 {
+        AdToAppSDK.showInterstitial(ADTOAPP_IMAGE_INTERSTITIAL)
+      }
     }
+    
+    resetCount += 1
   }
   
   func flashDeathOverlay() {
@@ -322,7 +325,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate, AdToAppViewDelegate, AdToApp
     //Uncomment the line below if you need test mode
 //    AdToAppSDK.enableTestMode()
     //Uncomment the line below if you need logs
-    AdToAppSDK.enableDebugLogs()
+//    AdToAppSDK.enableDebugLogs()
     AdToAppSDK.setDelegate(self)
     AdToAppSDK.start(withAppId: "89988786-84bc-4493-8df7-bc031c8b13fa:67144dfd-824b-4841-a022-7bdc973e19c9", modules:[
       ADTOAPP_IMAGE_INTERSTITIAL,

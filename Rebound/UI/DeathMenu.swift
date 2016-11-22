@@ -8,6 +8,7 @@
 
 import SpriteKit
 import GameKit
+import iRate
 
 class DeathMenu: MainMenu {
 
@@ -31,7 +32,7 @@ class DeathMenu: MainMenu {
       
       let vc = gameScene.view?.window?.rootViewController
       
-      let shareText = "Just got \(self.scoreAmount) point\(self.scoreAmount == 1 ? "" : "s") playing Rebound. Check it out! www.oakl.in/rebound"
+      let shareText = "Just got \(self.scoreAmount) point\(self.scoreAmount == 1 ? "" : "s") playing Rebound. Check it out! tinyurl.com/reboundapp"
       
       let shareImage = gameScene.getScreenShot()
       
@@ -98,9 +99,10 @@ class DeathMenu: MainMenu {
     self.scoreAmount = score.amount
     
     let defaults = UserDefaults()
+    
+    score.submit()
     if score.amount > defaults.integer(forKey: "high score") {
       defaults.set(score.amount, forKey: "high score")
-      score.submit()
       highScoreLabel.text = "HIGH: \(defaults.integer(forKey: "high score"))"
     }
     

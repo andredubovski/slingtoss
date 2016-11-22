@@ -127,7 +127,7 @@
 		C1A1E5A51D7B222700E7CDE4 /* SKToggle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKToggle.swift; sourceTree = "<group>"; };
 		C1A1E5A71D7B5AF400E7CDE4 /* SettingsMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsMenu.swift; sourceTree = "<group>"; };
 		C1C9874A1D7FA9F10074BC0F /* StrangeGreenPlanet.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = StrangeGreenPlanet.mp3; sourceTree = "<group>"; };
-		C1CAFF171D7E481E008B3D5F /* Config.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Config.plist; sourceTree = "<group>"; };
+		C1CAFF171D7E481E008B3D5F /* Config.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Config.plist; path = ../Mechanics/Config.plist; sourceTree = "<group>"; };
 		C1F2D3C71DD8E88E008D8315 /* Bounce.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = Bounce.m4a; sourceTree = "<group>"; };
 		C1F2D3C91DD8EDA4008D8315 /* GameOver.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = GameOver.m4a; sourceTree = "<group>"; };
 		C1F2D3CB1DD9016C008D8315 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
@@ -210,6 +210,7 @@
 		8F6451121D70C1CD00A061FB /* Misc */ = {
 			isa = PBXGroup;
 			children = (
+				C1CAFF171D7E481E008B3D5F /* Config.plist */,
 				C1401A9F1D7D3071007764F8 /* Assets.xcassets */,
 				C148A39D1DDAC2E500C45592 /* CreditsScene.swift */,
 				8FF346971D6D0B2C00504D3E /* GameScene.sks */,
@@ -249,9 +250,9 @@
 				C1A1E5AB1D7B617800E7CDE4 /* Settings */,
 				8F49085C1D73E67600C965CD /* DeathMenu.swift */,
 				8F49085A1D73E65900C965CD /* MainMenu.swift */,
+				8FA9767A1D7935F300A00984 /* Score.swift */,
 				8FA976731D791F2900A00984 /* SKButton.swift */,
 				C1A1E5A51D7B222700E7CDE4 /* SKToggle.swift */,
-				8FA9767A1D7935F300A00984 /* Score.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -305,7 +306,6 @@
 			children = (
 				8FA976751D7935F300A00984 /* Background.swift */,
 				8FA976761D7935F300A00984 /* Ball.swift */,
-				C1CAFF171D7E481E008B3D5F /* Config.plist */,
 				8FA9767B1D7935F300A00984 /* Slingshot.swift */,
 				8F36DB3A1D7515580096105D /* Theme.swift */,
 			);
@@ -671,7 +671,7 @@
 				SWIFT_OBJC_BRIDGING_HEADER = "Rebound/Core/Rebound-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -699,7 +699,7 @@
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Rebound/Core/Rebound-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
