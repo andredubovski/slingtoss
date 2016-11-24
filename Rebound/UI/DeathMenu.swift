@@ -30,15 +30,13 @@ class DeathMenu: MainMenu {
     button2.makeGlyph("share")
     button2.buttonAction = SKAction.run({
       
-      let vc = gameScene.view?.window?.rootViewController
-      
-      let shareText = "Just got \(self.scoreAmount) point\(self.scoreAmount == 1 ? "" : "s") playing SlingToss. Check it out! https://itunes.apple.com/us/app/slingtoss/id1179068876"
+      let shareText = "Just got \(self.scoreAmount) point\(self.scoreAmount == 1 ? "" : "s") playing SlingToss. Check it out! itunes.apple.com/us/app/slingtoss/id1179068876"
       
       let shareImage = gameScene.getScreenShot()
       
-      let activityVC:UIActivityViewController = UIActivityViewController(activityItems: [shareText, shareImage], applicationActivities: nil)
+      let activityVC: UIActivityViewController = UIActivityViewController(activityItems: [shareText, shareImage], applicationActivities: nil)
       
-      vc?.present(activityVC, animated: true, completion: nil)
+      gameScene.view?.window?.rootViewController?.present(activityVC, animated: true, completion: nil)
       
     })
     

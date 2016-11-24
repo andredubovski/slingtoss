@@ -56,6 +56,7 @@
 		C13530E91DDA90E300473AC8 /* Aiming4.m4a in Resources */ = {isa = PBXBuildFile; fileRef = C13530E51DDA90E300473AC8 /* Aiming4.m4a */; };
 		C1401AA01D7D3071007764F8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C1401A9F1D7D3071007764F8 /* Assets.xcassets */; };
 		C148A39E1DDAC2E500C45592 /* CreditsScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = C148A39D1DDAC2E500C45592 /* CreditsScene.swift */; };
+		C15229081DE6DEF7003C54D6 /* Tutoial.swift in Sources */ = {isa = PBXBuildFile; fileRef = C15229071DE6DEF7003C54D6 /* Tutoial.swift */; };
 		C1A1E5A41D7B202400E7CDE4 /* SettingsScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1A1E5A31D7B202400E7CDE4 /* SettingsScene.swift */; };
 		C1A1E5A61D7B222700E7CDE4 /* SKToggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1A1E5A51D7B222700E7CDE4 /* SKToggle.swift */; };
 		C1A1E5A81D7B5AF400E7CDE4 /* SettingsMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1A1E5A71D7B5AF400E7CDE4 /* SettingsMenu.swift */; };
@@ -123,6 +124,7 @@
 		C13530E51DDA90E300473AC8 /* Aiming4.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = Aiming4.m4a; sourceTree = "<group>"; };
 		C1401A9F1D7D3071007764F8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C148A39D1DDAC2E500C45592 /* CreditsScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreditsScene.swift; sourceTree = "<group>"; };
+		C15229071DE6DEF7003C54D6 /* Tutoial.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Tutoial.swift; path = Rebound/UI/Tutoial.swift; sourceTree = SOURCE_ROOT; };
 		C1A1E5A31D7B202400E7CDE4 /* SettingsScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsScene.swift; sourceTree = "<group>"; };
 		C1A1E5A51D7B222700E7CDE4 /* SKToggle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKToggle.swift; sourceTree = "<group>"; };
 		C1A1E5A71D7B5AF400E7CDE4 /* SettingsMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsMenu.swift; sourceTree = "<group>"; };
@@ -247,6 +249,7 @@
 		8F9BA3B91D6D158B007BFB26 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				C15229071DE6DEF7003C54D6 /* Tutoial.swift */,
 				C1A1E5AB1D7B617800E7CDE4 /* Settings */,
 				8F49085C1D73E67600C965CD /* DeathMenu.swift */,
 				8F49085A1D73E65900C965CD /* MainMenu.swift */,
@@ -534,6 +537,7 @@
 				8F420FBF1D73F48A0004DA61 /* Ring.swift in Sources */,
 				8F4908581D73E2B200C965CD /* Terrain.swift in Sources */,
 				8FF346961D6D0B2C00504D3E /* AppDelegate.swift in Sources */,
+				C15229081DE6DEF7003C54D6 /* Tutoial.swift in Sources */,
 				8FA9767D1D7935F300A00984 /* Background.swift in Sources */,
 				8F49085B1D73E65900C965CD /* MainMenu.swift in Sources */,
 				8FA976811D7935F300A00984 /* Platform.swift in Sources */,

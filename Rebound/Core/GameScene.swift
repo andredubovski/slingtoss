@@ -30,6 +30,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate, AdToAppViewDelegate, AdToApp
   var adsOn = defaults.bool(forKey: "Ads")
   var ataBanner = AdToAppView();
   
+  let tutorial = Tutorial(imageNamed: "tutorial")
+  
   var backgroundMusicPlayer: AVAudioPlayer! = nil
   var bouncePlayerIndex = Int(0)
   var bouncePlayer = [AVAudioPlayer!]()
@@ -52,6 +54,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate, AdToAppViewDelegate, AdToApp
     setupSound()
     physicsWorld.contactDelegate = self
     gameFrame = frame
+    settingsScene.didMove(to: view!)
     if gameFrame.width > 500 {physicsWorld.speed = 1.45}
     
     menu.build()
@@ -60,6 +63,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate, AdToAppViewDelegate, AdToApp
     slingshot.build()
     terrains.build()
     score.build()
+    
+    tutorial.size = CGSize(width: 259, height: 318)
+    tutorial.position = CGPoint(x: frame.midX, y: frame.midY)
     
     reset()
     if !onDeathMenu {
@@ -120,6 +126,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate, AdToAppViewDelegate, AdToApp
   
   
   override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+    
+    if tutorial.isShowing {tutorial.doWhenTouchesBegan(); return}
+    
     for touch in touches {
       let touchLocation = touch.location(in: self)
       if menu.isActive {menu.doWhenTouchesBegan(touchLocation)}
@@ -135,6 +144,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate, AdToAppViewDelegate, AdToApp
   }
   
   override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+    
+    if tutorial.isShowing {return}
+    
     for touch in touches {
       let touchLocation = touch.location(in: self)
       if menu.isActive {menu.doWhenTouchesMoved(touchLocation)}
@@ -144,6 +156,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate, AdToAppViewDelegate, AdToApp
   }
   
   override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+    
+    if tutorial.isShowing {tutorial.doWhenTouchesEnded(); return}
     
     var shot = Bool(false)
     if !menu.wasPressed && !deathMenu.wasPressed {shot = slingshot.shoot(terrains.current, ball: ball)}

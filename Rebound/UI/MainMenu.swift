@@ -66,7 +66,7 @@ class MainMenu {
     )
     button3.display()
     button3.buttonAction =
-      SKAction.run({gameScene.view?.presentScene(creditsScene, transition: SKTransition.doorsOpenHorizontal(withDuration: 0.5))})
+      SKAction.run({gameScene.tutorial.show()})
     elements.append(button3)
     
     highScoreBox = SKShapeNode(rect: CGRect(
