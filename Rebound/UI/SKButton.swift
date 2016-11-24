@@ -3,7 +3,7 @@
 //  Helix
 //
 //  Created by Andre Oaklin on 6/25/16.
-//  Copyright © 2016 oakl.in. All rights reserved.
+//  Copyright © 2016 witehat.com. All rights reserved.
 //
 
 import SpriteKit

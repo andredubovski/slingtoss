@@ -1,9 +1,9 @@
 //
 //  MainMenu.swift
-//  Rebound
+//  SlingToss
 //
 //  Created by Andre Oaklin on 8/28/16.
-//  Copyright © 2016 oakl.in. All rights reserved.
+//  Copyright © 2016 witehat.com. All rights reserved.
 //
 
 import SpriteKit
@@ -19,7 +19,7 @@ class MainMenu {
   var marginWidth = CGFloat()
   
   var elements = [SKNode]()
-  var title = SKLabelNode(text: "Rebound")
+  var title = SKLabelNode(text: "SlingToss")
   var button1 = SKButton()
   var button2 = SKButton()
   var button3 = SKButton()

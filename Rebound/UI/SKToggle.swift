@@ -1,9 +1,9 @@
 //
 //  SKToggle.swift
-//  Rebound
+//  SlingToss
 //
 //  Created by Andre Dubovskiy on 9/3/16.
-//  Copyright © 2016 oakl.in. All rights reserved.
+//  Copyright © 2016 witehat.com. All rights reserved.
 //
 
 import SpriteKit

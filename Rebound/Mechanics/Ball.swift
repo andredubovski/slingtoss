@@ -1,9 +1,9 @@
 //
 //  Ball.swift
-//  Rebound
+//  SlingToss
 //  
 //  Created by Andre Oaklin on 8/7/16.
-//  Copyright © 2016 oakl.in. All rights reserved.
+//  Copyright © 2016 witehat.com. All rights reserved.
 //
 
 import SpriteKit
@@ -28,7 +28,7 @@ fileprivate func <= <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
 }
 
 
-class Ball: SKShapeNode {
+class Ball: SKSpriteNode {
   var radius = CGFloat()
   var collidingWithPermeable = Bool()
   
@@ -36,11 +36,13 @@ class Ball: SKShapeNode {
     
     name = "ball"
     radius = gameFrame.width * configValueForKey("Relative ball radius")
-    path = CGPath(ellipseIn: CGRect(x: -radius, y: -radius, width: radius*2, height: radius*2), transform: nil)
+    size = CGSize(width: radius*2, height: radius*2)
+    texture = SKTexture(image: #imageLiteral(resourceName: "ball"))
+//    path = CGPath(ellipseIn: CGRect(x: -radius, y: -radius, width: radius*2, height: radius*2), transform: nil)
     position = CGPoint(x: gameFrame.midX, y: gameFrame.height*0.4)
-    fillColor = currentTheme.ballColor
-    lineWidth = 1
-    strokeColor = fillColor
+//    fillColor = currentTheme.ballColor
+//    lineWidth = 1
+//    strokeColor = fillColor
     zPosition = 3
     
     physicsBody = SKPhysicsBody(circleOfRadius: radius)
@@ -66,7 +68,7 @@ class Ball: SKShapeNode {
   }
   
   func update(_ terrains: TerrainController) {
-    if physicsBody?.velocity.dy <= 30 &&
+    if physicsBody?.velocity.dy <= 50 &&
       !(terrains.containPoint(CGPoint(x: position.x, y: position.y-(radius-1.5))) ||
         terrains.containPoint(CGPoint(x: position.x, y: position.y+(radius-1.5))) ||
         terrains.containPoint(CGPoint(x: position.x-(radius-1.5), y: position.y)) ||

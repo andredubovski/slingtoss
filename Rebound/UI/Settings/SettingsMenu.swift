@@ -1,9 +1,9 @@
 //
 //  SettingsMenu.swift
-//  Rebound
+//  SlingToss
 //
 //  Created by Andre Dubovskiy on 9/3/16.
-//  Copyright © 2016 oakl.in. All rights reserved.
+//  Copyright © 2016 witehat.com. All rights reserved.
 //
 
 import SpriteKit
@@ -83,7 +83,7 @@ class SettingsMenu: SKNode {
     
     removeAdsToggle.turnOnAction = SKAction.run({
       
-      SwiftyStoreKit.purchaseProduct("com.Oaklin.Rebound.RemoveAds") { result in
+      SwiftyStoreKit.purchaseProduct("com.witehat.SlingToss.RemoveAds") { result in
         switch result {
         case .success(let productId):
           

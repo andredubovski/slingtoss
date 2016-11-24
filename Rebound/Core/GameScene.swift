@@ -1,9 +1,9 @@
 //
 //  GameScene.swift
-//  Rebound
+//  SlingToss
 //
 //  Created by Andre Oaklin on 8/7/16.
-//  Copyright (c) 2016 oakl.in. All rights reserved.
+//  Copyright (c) 2016 witehat.com. All rights reserved.
 //
 
 import SpriteKit
@@ -325,9 +325,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate, AdToAppViewDelegate, AdToApp
     //Uncomment the line below if you need test mode
 //    AdToAppSDK.enableTestMode()
     //Uncomment the line below if you need logs
-//    AdToAppSDK.enableDebugLogs()
+    AdToAppSDK.enableDebugLogs()
     AdToAppSDK.setDelegate(self)
-    AdToAppSDK.start(withAppId: "89988786-84bc-4493-8df7-bc031c8b13fa:67144dfd-824b-4841-a022-7bdc973e19c9", modules:[
+    AdToAppSDK.start(withAppId: "e41a7f3d-7104-47c3-8dbf-ddcc0541020b:0d1b5786-7d2d-4495-bc82-9dfa56e5f675", modules:[
       ADTOAPP_IMAGE_INTERSTITIAL,
       ADTOAPP_VIDEO_INTERSTITIAL,
       ADTOAPP_INTERSTITIAL,

@@ -1,9 +1,9 @@
 //
 //  Score.swift
-//  Rebound
+//  SlingToss
 //
 //  Created by Andre Oaklin on 8/8/16.
-//  Copyright © 2016 oakl.in. All rights reserved.
+//  Copyright © 2016 witehat.com. All rights reserved.
 //
 
 import SpriteKit
@@ -88,7 +88,7 @@ class Score {
         self.gcEnabled = true
         
         // Get the default leaderboard ID
-        self.gcDefaultLeaderBoard = "grp.com.Oaklin.Rebound.HighScoresLeaderboard"
+        self.gcDefaultLeaderBoard = "grp.SlingToss.HighScores"
         
         
       } else {
@@ -103,7 +103,7 @@ class Score {
   }
   
   func submit() {
-    let leaderboardID = "grp.com.Oaklin.Rebound.HighScoresLeaderboard"
+    let leaderboardID = "grp.SlingToss.HighScores"
     let sScore = GKScore(leaderboardIdentifier: leaderboardID)
     sScore.value = Int64(amount)
     

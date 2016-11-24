@@ -1,9 +1,9 @@
 //
 //  DeathMenu.swift
-//  Rebound
+//  SlingToss
 //
 //  Created by Andre Oaklin on 8/28/16.
-//  Copyright © 2016 oakl.in. All rights reserved.
+//  Copyright © 2016 witehat.com. All rights reserved.
 //
 
 import SpriteKit
@@ -32,7 +32,7 @@ class DeathMenu: MainMenu {
       
       let vc = gameScene.view?.window?.rootViewController
       
-      let shareText = "Just got \(self.scoreAmount) point\(self.scoreAmount == 1 ? "" : "s") playing Rebound. Check it out! tinyurl.com/reboundapp"
+      let shareText = "Just got \(self.scoreAmount) point\(self.scoreAmount == 1 ? "" : "s") playing SlingToss. Check it out! https://itunes.apple.com/us/app/slingtoss/id1179068876"
       
       let shareImage = gameScene.getScreenShot()
       
@@ -48,7 +48,7 @@ class DeathMenu: MainMenu {
       let gcVC: GKGameCenterViewController = GKGameCenterViewController()
       gcVC.gameCenterDelegate = gameScene.view?.window?.rootViewController as! GameViewController
       gcVC.viewState = GKGameCenterViewControllerState.leaderboards
-      gcVC.leaderboardIdentifier = "grp.com.Oaklin.Rebound.HighScoresLeaderboard"
+      gcVC.leaderboardIdentifier = "grp.SlingToss.HighScores"
       gameScene.view?.window?.rootViewController?.present(gcVC, animated: true, completion: nil)
       
     })

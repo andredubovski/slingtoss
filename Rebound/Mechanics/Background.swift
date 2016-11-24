@@ -1,9 +1,11 @@
 //
 //  Background.swift
-//  Rebound
+//  SlingToss
 //
 //  Created by Andre Oaklin on 8/7/16.
-//  Copyright © 2016 oakl.in. All rights reserved.
+//  Copyright © 2016 witehat.com. All rights reserved.
+//
+//  Background pattern image by subtlepatterns.com
 //
 
 import SpriteKit

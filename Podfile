@@ -1,5 +1,5 @@
 platform :ios, '9.0'
-target 'Rebound' do
+target 'SlingToss' do
   
   pod 'iRate'
   
