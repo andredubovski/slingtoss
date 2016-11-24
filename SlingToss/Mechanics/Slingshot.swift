@@ -18,7 +18,9 @@ class Slingshot: SKShapeNode {
   var relativeStretchStrength = Int()
   var lastRelativeStretchStrength = Int()
   
-  var sensitivity = CGFloat(18.76)
+  var sensitivity = CGFloat(18.0)
+  var linearity = CGFloat(0.65)
+  var exponentCoefficient = CGFloat()
   var shotVector = CGVector()
   var aimingToPoint = CGPoint()
   var canShoot = Bool(false)
@@ -58,6 +60,8 @@ class Slingshot: SKShapeNode {
     } catch {
       fatalError("couldn't load music file")
     }
+    
+    exponentCoefficient = 1 - linearity/2
     
   }
   
@@ -108,7 +112,7 @@ class Slingshot: SKShapeNode {
     zRotation = -atan((atPoint.x-ball.position.x) / (atPoint.y-ball.position.y))
     position = ball.position
     
-    shotVector = vectorFromAngleMagnitude(-zRotation, magnitude: relativeStretch*sensitivity)
+    shotVector = vectorFromAngleMagnitude(-zRotation, magnitude: pow(relativeStretch*sensitivity, exponentCoefficient)*pow(sensitivity, 1-exponentCoefficient))
     let aimVector = vectorFromAngleMagnitude(-zRotation, magnitude: stretch)
     aimingToPoint = CGPoint(x: ball.position.x + aimVector.dx, y: ball.position.y + aimVector.dy)
     

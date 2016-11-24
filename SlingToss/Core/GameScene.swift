@@ -227,6 +227,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate, AdToAppViewDelegate, AdToApp
     if score.amount == 1 && terrains.array[2]!.alpha < 0.1 {
       terrains.array[2]?.appear()
     }
+    terrains.update(ball: ball)
   }
   
   

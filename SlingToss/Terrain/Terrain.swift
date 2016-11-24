@@ -67,7 +67,7 @@ class Terrain: SKShapeNode {
     physicsBody?.angularDamping = 0.1
     physicsBody?.isDynamic = true
     physicsBody?.affectedByGravity = true
-    physicsBody?.applyAngularImpulse(random(-100, to: 100) > 0 ? -0.027 : 0.027)
+    physicsBody?.applyAngularImpulse(random(-100, to: 100) > 0 ? -0.03 : 0.03)
     hasFallen = true
   }
   
@@ -79,8 +79,8 @@ class Terrain: SKShapeNode {
   func beginMovingDown() {
     physicsBody?.isDynamic = true
     physicsBody?.affectedByGravity = true
-    physicsBody?.linearDamping = 80 + (1-movingDownSpeed)*75
-    physicsBody?.angularDamping = 15 + (1-movingDownSpeed)*6
+    physicsBody?.linearDamping = 80 + (1-movingDownSpeed)*120
+    physicsBody?.angularDamping = 15 + (1-movingDownSpeed)*12
   }
   
   func scoreOn(_ score: Score) {

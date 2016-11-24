@@ -49,7 +49,6 @@ class TerrainController {
           terrain.scoreOn(score)
           current = array[score.amount]!
           currentIndex = score.amount
-          if current.doesMoveDown {current.beginMovingDown()}
         }
         if terrain.position.y < -gameFrame.height {
           array[i]?.removeFromParent()
@@ -66,7 +65,18 @@ class TerrainController {
     
     if array[array.count-1]!.position.y < gameFrame.height*2 {
       makeRandomTerrain(difficulty)
+    } 
+  }
+  
+  func update(ball: Ball) {
+    
+    if ball.physicsBody!.velocity.dy < 40 &&
+      ball.physicsBody!.velocity.dy < 6 &&
+      current.doesMoveDown &&
+      !current.isMovingDown {
+      current.beginMovingDown()
     }
+    
   }
   
   
