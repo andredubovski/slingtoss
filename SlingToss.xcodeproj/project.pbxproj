@@ -94,7 +94,7 @@
 		8F352C1E1D75FD0900EEC2B1 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		8F352C201D75FD1200EEC2B1 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		8F352C221D75FD1B00EEC2B1 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
-		8F352C261D75FFBD00EEC2B1 /* Rebound-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Rebound-Bridging-Header.h"; sourceTree = "<group>"; };
+		8F352C261D75FFBD00EEC2B1 /* SlingToss-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SlingToss-Bridging-Header.h"; sourceTree = "<group>"; };
 		8F36DB3A1D7515580096105D /* Theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		8F420FBE1D73F48A0004DA61 /* Ring.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ring.swift; sourceTree = "<group>"; };
 		8F4908571D73E2B200C965CD /* Terrain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Terrain.swift; sourceTree = "<group>"; };
@@ -124,12 +124,12 @@
 		C13530E51DDA90E300473AC8 /* Aiming4.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = Aiming4.m4a; sourceTree = "<group>"; };
 		C1401A9F1D7D3071007764F8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C148A39D1DDAC2E500C45592 /* CreditsScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreditsScene.swift; sourceTree = "<group>"; };
-		C15229071DE6DEF7003C54D6 /* Tutoial.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Tutoial.swift; path = Rebound/UI/Tutoial.swift; sourceTree = SOURCE_ROOT; };
+		C15229071DE6DEF7003C54D6 /* Tutoial.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tutoial.swift; sourceTree = "<group>"; };
 		C1A1E5A31D7B202400E7CDE4 /* SettingsScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsScene.swift; sourceTree = "<group>"; };
 		C1A1E5A51D7B222700E7CDE4 /* SKToggle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKToggle.swift; sourceTree = "<group>"; };
 		C1A1E5A71D7B5AF400E7CDE4 /* SettingsMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsMenu.swift; sourceTree = "<group>"; };
 		C1C9874A1D7FA9F10074BC0F /* StrangeGreenPlanet.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = StrangeGreenPlanet.mp3; sourceTree = "<group>"; };
-		C1CAFF171D7E481E008B3D5F /* Config.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Config.plist; path = ../Mechanics/Config.plist; sourceTree = "<group>"; };
+		C1CAFF171D7E481E008B3D5F /* Config.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Config.plist; sourceTree = "<group>"; };
 		C1F2D3C71DD8E88E008D8315 /* Bounce.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = Bounce.m4a; sourceTree = "<group>"; };
 		C1F2D3C91DD8EDA4008D8315 /* GameOver.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = GameOver.m4a; sourceTree = "<group>"; };
 		C1F2D3CB1DD9016C008D8315 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
@@ -212,8 +212,8 @@
 		8F6451121D70C1CD00A061FB /* Misc */ = {
 			isa = PBXGroup;
 			children = (
-				C1CAFF171D7E481E008B3D5F /* Config.plist */,
 				C1401A9F1D7D3071007764F8 /* Assets.xcassets */,
+				C1CAFF171D7E481E008B3D5F /* Config.plist */,
 				C148A39D1DDAC2E500C45592 /* CreditsScene.swift */,
 				8FF346971D6D0B2C00504D3E /* GameScene.sks */,
 				8F9463D71D7668E8002233A7 /* LaunchScreen.storyboard */,
@@ -230,7 +230,7 @@
 				8FA976771D7935F300A00984 /* GameScene.swift */,
 				8FA976781D7935F300A00984 /* GameViewController.swift */,
 				8F9463D51D766885002233A7 /* Info.plist */,
-				8F352C261D75FFBD00EEC2B1 /* Rebound-Bridging-Header.h */,
+				8F352C261D75FFBD00EEC2B1 /* SlingToss-Bridging-Header.h */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -249,13 +249,13 @@
 		8F9BA3B91D6D158B007BFB26 /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				C15229071DE6DEF7003C54D6 /* Tutoial.swift */,
 				C1A1E5AB1D7B617800E7CDE4 /* Settings */,
 				8F49085C1D73E67600C965CD /* DeathMenu.swift */,
 				8F49085A1D73E65900C965CD /* MainMenu.swift */,
-				8FA9767A1D7935F300A00984 /* Score.swift */,
 				8FA976731D791F2900A00984 /* SKButton.swift */,
 				C1A1E5A51D7B222700E7CDE4 /* SKToggle.swift */,
+				8FA9767A1D7935F300A00984 /* Score.swift */,
+				C15229071DE6DEF7003C54D6 /* Tutoial.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -279,7 +279,7 @@
 				4FD94EDA282B6EDFE3E63B90 /* Frameworks */,
 				D0DD676D680629BAB4F7B945 /* Pods */,
 				8FF346931D6D0B2C00504D3E /* Products */,
-				8FF346941D6D0B2C00504D3E /* Rebound */,
+				8FF346941D6D0B2C00504D3E /* SlingToss */,
 			);
 			sourceTree = "<group>";
 		};
@@ -291,7 +291,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		8FF346941D6D0B2C00504D3E /* Rebound */ = {
+		8FF346941D6D0B2C00504D3E /* SlingToss */ = {
 			isa = PBXGroup;
 			children = (
 				8F9BA3B71D6D1551007BFB26 /* Core */,
@@ -301,7 +301,7 @@
 				8F9BA3B81D6D157E007BFB26 /* Terrain */,
 				8F9BA3B91D6D158B007BFB26 /* UI */,
 			);
-			path = Rebound;
+			path = SlingToss;
 			sourceTree = "<group>";
 		};
 		8FF8DCF21D73AAB60024655C /* Mechanics */ = {
@@ -661,7 +661,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = YRLX8RKRSZ;
 				ENABLE_BITCODE = NO;
-				INFOPLIST_FILE = Rebound/Core/Info.plist;
+				INFOPLIST_FILE = SlingToss/Core/Info.plist;
 				INFOPLIST_OTHER_PREPROCESSOR_FLAGS = "-traditional";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -672,7 +672,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.witehat.SlingToss;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "Rebound/Core/Rebound-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "SlingToss/Core/SlingToss-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -690,7 +690,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = YRLX8RKRSZ;
 				ENABLE_BITCODE = NO;
-				INFOPLIST_FILE = Rebound/Core/Info.plist;
+				INFOPLIST_FILE = SlingToss/Core/Info.plist;
 				INFOPLIST_OTHER_PREPROCESSOR_FLAGS = "-traditional";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -701,7 +701,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.witehat.SlingToss;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "Rebound/Core/Rebound-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "SlingToss/Core/SlingToss-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
