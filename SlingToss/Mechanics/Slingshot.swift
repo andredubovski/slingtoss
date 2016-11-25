@@ -31,7 +31,7 @@ class Slingshot: SKShapeNode {
   func build() {
     gameScene.addChild(self)
     thickness = gameFrame.width*0.012325
-    maxStretch = gameFrame.width*configValueForKey("Max relative slingshot stretch")
+    maxStretch = gameFrame.width*configNumberForKey("Max relative slingshot stretch")
     radius = gameScene.ball.radius+thickness/2 + 1
     
     lineWidth = thickness

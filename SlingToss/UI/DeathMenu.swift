@@ -64,6 +64,7 @@ class DeathMenu: MainMenu {
     
     scoreLabel.text = "SCORE: \(scoreAmount)"
     scoreLabel.fontColor = currentTheme.tintColor
+    scoreLabel.fontName = configStringForKey("Score font")
     scoreLabel.position.y = -scoreLabel.frame.height*0.4
     scoreLabel.fontSize = highScoreLabel.fontSize
     scoreLabel.removeAllActions()
@@ -74,14 +75,12 @@ class DeathMenu: MainMenu {
     scoreBox.addChild(scoreLabel)
     
     
-    
     highScoreBox.path = CGPath(rect: CGRect(
       x: -(gameFrame.width - 3*marginWidth)/4, y: -(2*marginWidth)/2,
       width: (gameFrame.width - 3*marginWidth)/2, height: 2*marginWidth
       ), transform: nil)
     highScoreBox.position = CGPoint(x: gameFrame.midX + (marginWidth/2 + highScoreBox.frame.width/2), y: button2.position.y - (buttonWidth/2 + marginWidth + highScoreBox.frame.height/2))
     
-    let defaults = UserDefaults()
     highScoreLabel.text = "HIGH: \(defaults.integer(forKey: "high score"))"
     highScoreLabel.position.y = -highScoreLabel.frame.height*0.4
     highScoreLabel.removeAllActions()

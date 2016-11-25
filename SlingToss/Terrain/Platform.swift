@@ -22,7 +22,7 @@ class Platform: Terrain {
     self.edgeHeight = edgeHeight
   }
   
-  convenience init(length: CGFloat, height: CGFloat = configValueForKey("Default relative platform edge height")*gameFrame.width, position: CGPoint) {
+  convenience init(length: CGFloat, height: CGFloat = configNumberForKey("Default relative platform edge height")*gameFrame.width, position: CGPoint) {
     self.init(length: length, edgeHeight: height)
     self.position = position
   }

@@ -35,7 +35,7 @@ class Ball: SKSpriteNode {
   func build() {
     
     name = "ball"
-    radius = gameFrame.width * configValueForKey("Relative ball radius")
+    radius = gameFrame.width * configNumberForKey("Relative ball radius")
     size = CGSize(width: radius*2, height: radius*2)
     texture = SKTexture(image: #imageLiteral(resourceName: "ball"))
 //    path = CGPath(ellipseIn: CGRect(x: -radius, y: -radius, width: radius*2, height: radius*2), transform: nil)

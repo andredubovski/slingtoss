@@ -25,12 +25,12 @@ class TerrainController {
   }
   
   func build() {
-    minLength = configValueForKey("Min relative platform length")
-    maxLength = configValueForKey("Max relative platform length")
-    minHeight = configValueForKey("Min relative platform edge height")
-    maxHeight = configValueForKey("Max relative platform edge height")
-    minRadius = configValueForKey("Min relative ring radius")
-    maxRadius = configValueForKey("Max relative ring radius")
+    minLength = configNumberForKey("Min relative platform length")
+    maxLength = configNumberForKey("Max relative platform length")
+    minHeight = configNumberForKey("Min relative platform edge height")
+    maxHeight = configNumberForKey("Max relative platform edge height")
+    minRadius = configNumberForKey("Min relative ring radius")
+    maxRadius = configNumberForKey("Max relative ring radius")
   }
   
   
@@ -177,7 +177,7 @@ class TerrainController {
       willMove: false,
       movingDownSpeed: 0,
       lengthRelativeToFrameWidth: random(0.3, to: 0.35),
-      edgeHeightRelativeToFrameWidth: configValueForKey("Default relative platform edge height"),
+      edgeHeightRelativeToFrameWidth: configNumberForKey("Default relative platform edge height"),
       relativePositionAbovePrevious: CGPoint(x: CGFloat(Int(random(1, to: 3))) / 3.0, y: 1/3)
     )
     

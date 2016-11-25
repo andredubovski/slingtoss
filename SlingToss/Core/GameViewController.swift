@@ -19,8 +19,12 @@ var defaults = UserDefaults()
 var path = Bundle.main.path(forResource: "Config", ofType: "plist")
 var config = NSDictionary(contentsOfFile: path!)
 
-func configValueForKey(_ key: String) -> CGFloat {
+func configNumberForKey(_ key: String) -> CGFloat {
   return CGFloat(config!.object(forKey: key) as! NSNumber)
+}
+
+func configStringForKey(_ key: String) -> String {
+  return config!.object(forKey: key) as! String
 }
 
 func configBoolForKey(_ key: String) -> Bool {

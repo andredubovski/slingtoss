@@ -213,7 +213,6 @@
 			isa = PBXGroup;
 			children = (
 				C1401A9F1D7D3071007764F8 /* Assets.xcassets */,
-				C1CAFF171D7E481E008B3D5F /* Config.plist */,
 				C148A39D1DDAC2E500C45592 /* CreditsScene.swift */,
 				8FF346971D6D0B2C00504D3E /* GameScene.sks */,
 				8F9463D71D7668E8002233A7 /* LaunchScreen.storyboard */,
@@ -227,6 +226,7 @@
 			isa = PBXGroup;
 			children = (
 				8FF346951D6D0B2C00504D3E /* AppDelegate.swift */,
+				C1CAFF171D7E481E008B3D5F /* Config.plist */,
 				8FA976771D7935F300A00984 /* GameScene.swift */,
 				8FA976781D7935F300A00984 /* GameViewController.swift */,
 				8F9463D51D766885002233A7 /* Info.plist */,
@@ -672,6 +672,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.witehat.SlingToss;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "SlingToss/Core/SlingToss-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
@@ -701,6 +702,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.witehat.SlingToss;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "SlingToss/Core/SlingToss-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;

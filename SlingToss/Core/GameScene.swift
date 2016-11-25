@@ -24,7 +24,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate, AdToAppViewDelegate, AdToApp
   let slingshot = Slingshot()
   let score = Score()
   
-  let scrollThresholdOnScreen = configValueForKey("Relative scroll threshold")
+  let scrollThresholdOnScreen = configNumberForKey("Relative scroll threshold")
   var verticalProgress = CGFloat(0)
   
   var adsOn = defaults.bool(forKey: "Ads")
