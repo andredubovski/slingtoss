@@ -340,7 +340,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate, AdToAppViewDelegate, AdToApp
     //Uncomment the line below if you need test mode
 //    AdToAppSDK.enableTestMode()
     //Uncomment the line below if you need logs
-    AdToAppSDK.enableDebugLogs()
+//    AdToAppSDK.enableDebugLogs()
     AdToAppSDK.setDelegate(self)
     AdToAppSDK.start(withAppId: "e41a7f3d-7104-47c3-8dbf-ddcc0541020b:0d1b5786-7d2d-4495-bc82-9dfa56e5f675", modules:[
       ADTOAPP_IMAGE_INTERSTITIAL,

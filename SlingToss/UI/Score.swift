@@ -25,7 +25,7 @@ class Score {
   
   func build(_ scene: SKScene) {
     label.text = String(amount)
-    label.fontName = "HelveticaNeue-Light"
+    label.fontName = configStringForKey("Score font")
     label.fontColor = currentTheme.tintColor
     label.position = CGPoint(x: 0, y: -label.frame.height/2)
     box.addChild(label)

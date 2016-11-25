@@ -24,5 +24,7 @@
 	<real>0.28</real>
 	<key>Relative scroll threshold</key>
 	<real>0.38</real>
+	<key>Score font</key>
+	<string>HelveticaNeue-Thin</string>
 </dict>
 </plist>

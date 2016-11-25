@@ -213,11 +213,11 @@
 			isa = PBXGroup;
 			children = (
 				C1401A9F1D7D3071007764F8 /* Assets.xcassets */,
-				C148A39D1DDAC2E500C45592 /* CreditsScene.swift */,
 				8FF346971D6D0B2C00504D3E /* GameScene.sks */,
 				8F9463D71D7668E8002233A7 /* LaunchScreen.storyboard */,
 				8F9463D81D7668E8002233A7 /* Main.storyboard */,
 				8FA9767C1D7935F300A00984 /* Tools.swift */,
+				C148A39D1DDAC2E500C45592 /* CreditsScene.swift */,
 			);
 			path = Misc;
 			sourceTree = "<group>";
