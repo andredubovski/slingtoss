@@ -18,11 +18,16 @@ class Tutorial: SKSpriteNode {
   let fade = SKAction.fadeAlpha(to: 0, duration: 0.1)
   var isBeingTouched = false
   
+  func build() {
+    size = CGSize(width: 259, height: 318)
+    position = CGPoint(x: gameFrame.midX, y: gameFrame.midY)
+    zPosition = 100
+    alpha = 0
+  }
+  
   
   func show(scene: SKScene = gameScene) {
     scene.addChild(self)
-    zPosition = 100
-    alpha = 0
     run(appear)
     isShowing = true
   }

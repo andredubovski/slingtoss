@@ -63,9 +63,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate, AdToAppViewDelegate, AdToApp
     slingshot.build()
     terrains.build()
     score.build()
-    
-    tutorial.size = CGSize(width: 259, height: 318)
-    tutorial.position = CGPoint(x: frame.midX, y: frame.midY)
+    tutorial.build()
     
     reset()
     if !onDeathMenu {
@@ -74,6 +72,14 @@ class GameScene: SKScene, SKPhysicsContactDelegate, AdToAppViewDelegate, AdToApp
     }
     
     buildWalls()
+    
+    if !defaults.bool(forKey: "hasShownTutorial") {
+      run(SKAction.sequence([
+        SKAction.wait(forDuration: 0.6),
+        SKAction.run({self.tutorial.show()})
+      ]))
+      defaults.set(true, forKey: "hasShownTutorial")
+    }
     
   }
   

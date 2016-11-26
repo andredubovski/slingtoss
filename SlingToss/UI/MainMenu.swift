@@ -127,6 +127,7 @@ class MainMenu {
   
   
   func appear() {
+    highScoreLabel.text = "HIGH SCORE: \(defaults.integer(forKey: "high score"))"
     for element in elements {
       element.removeAllActions()
       element.run(fadeIn)
@@ -145,6 +146,7 @@ class MainMenu {
   
   
   func show() {
+    highScoreLabel.text = "HIGH SCORE: \(defaults.integer(forKey: "high score"))"
     for element in elements {
       element.removeAllActions()
       element.alpha = 1

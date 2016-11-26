@@ -15,6 +15,8 @@ class DeathMenu: MainMenu {
   var scoreAmount = Int()
   var scoreBox = SKShapeNode()
   var scoreLabel = SKLabelNode()
+  var smallHighScoreBox = SKShapeNode()
+  var smallHighScoreLabel = SKLabelNode()
   
   override func build(_ scene: SKScene = gameScene) {
     
@@ -75,20 +77,28 @@ class DeathMenu: MainMenu {
     scoreBox.addChild(scoreLabel)
     
     
-    highScoreBox.path = CGPath(rect: CGRect(
+    smallHighScoreBox.path = CGPath(rect: CGRect(
       x: -(gameFrame.width - 3*marginWidth)/4, y: -(2*marginWidth)/2,
       width: (gameFrame.width - 3*marginWidth)/2, height: 2*marginWidth
-      ), transform: nil)
-    highScoreBox.position = CGPoint(x: gameFrame.midX + (marginWidth/2 + highScoreBox.frame.width/2), y: button2.position.y - (buttonWidth/2 + marginWidth + highScoreBox.frame.height/2))
+    ), transform: nil)
+    smallHighScoreBox.fillColor = currentTheme.uiColor
+    smallHighScoreBox.lineWidth = 0
+    smallHighScoreBox.position = CGPoint(x: gameFrame.midX + (marginWidth/2 + smallHighScoreBox.frame.width/2), y: button2.position.y - (buttonWidth/2 + marginWidth + smallHighScoreBox.frame.height/2))
+    scene.addChild(smallHighScoreBox)
+    elements.append(smallHighScoreBox)
     
-    highScoreLabel.text = "HIGH: \(defaults.integer(forKey: "high score"))"
-    highScoreLabel.position.y = -highScoreLabel.frame.height*0.4
-    highScoreLabel.removeAllActions()
-    highScoreLabel.xScale = 1
-    highScoreLabel.yScale = 1
-    highScoreLabel.xScale = scoreLabel.xScale
-    highScoreLabel.yScale = scoreLabel.yScale
-    scoreLabel.position.y = highScoreLabel.position.y
+    smallHighScoreLabel.text = "HIGH: \(defaults.integer(forKey: "high score"))"
+    smallHighScoreLabel.fontColor = currentTheme.tintColor
+    smallHighScoreLabel.fontName = configStringForKey("Score font")
+    smallHighScoreLabel.position.y = -scoreLabel.frame.height*0.4
+    smallHighScoreLabel.fontSize = highScoreLabel.fontSize
+    smallHighScoreLabel.removeAllActions()
+    smallHighScoreLabel.xScale = 1
+    smallHighScoreLabel.yScale = 1
+    smallHighScoreLabel.xScale = (smallHighScoreBox.frame.width*0.85)/smallHighScoreLabel.frame.width
+    smallHighScoreLabel.yScale = smallHighScoreLabel.xScale
+    smallHighScoreBox.addChild(smallHighScoreLabel)
+    scoreLabel.position.y = smallHighScoreLabel.position.y
     
   }
   
@@ -98,24 +108,39 @@ class DeathMenu: MainMenu {
     let defaults = UserDefaults()
     
     score.submit()
-    if score.amount > defaults.integer(forKey: "high score") {
-      defaults.set(score.amount, forKey: "high score")
-      highScoreLabel.text = "HIGH: \(defaults.integer(forKey: "high score"))"
-    }
-    
-    scoreLabel.text = "SCORE: \(scoreAmount)"
-    scoreLabel.removeAllActions()
-    highScoreLabel.xScale = 1
-    highScoreLabel.yScale = 1
-    scoreLabel.xScale = 1
-    scoreLabel.yScale = 1
-    scoreLabel.xScale = (scoreBox.frame.width*0.85)/scoreLabel.frame.width
-    scoreLabel.yScale = scoreLabel.xScale
-    highScoreLabel.removeAllActions()
-    highScoreLabel.xScale = scoreLabel.xScale
-    highScoreLabel.yScale = scoreLabel.yScale
     
     appear()
+    
+    if score.amount > defaults.integer(forKey: "high score") {
+      
+      defaults.set(score.amount, forKey: "high score")
+      highScoreLabel.text = "NEW HIGH: \(defaults.integer(forKey: "high score"))!"
+      smallHighScoreLabel.text = "HIGH: \(defaults.integer(forKey: "high score"))"
+      
+      scoreBox.removeAllActions()
+      scoreBox.alpha = 0
+      smallHighScoreBox.removeAllActions()
+      smallHighScoreBox.alpha = 0
+      
+    } else {
+    
+      highScoreBox.removeAllActions()
+      highScoreBox.alpha = 0
+      
+      smallHighScoreLabel.text = "HIGH: \(defaults.integer(forKey: "high score"))"
+      scoreLabel.text = "SCORE: \(scoreAmount)"
+      scoreLabel.removeAllActions()
+      smallHighScoreLabel.xScale = 1
+      smallHighScoreLabel.yScale = 1
+      scoreLabel.xScale = 1
+      scoreLabel.yScale = 1
+      scoreLabel.xScale = (scoreBox.frame.width*0.85)/scoreLabel.frame.width
+      scoreLabel.yScale = scoreLabel.xScale
+      smallHighScoreLabel.removeAllActions()
+      smallHighScoreLabel.xScale = scoreLabel.xScale
+      smallHighScoreLabel.yScale = scoreLabel.yScale
+        
+    }
   }
   
   func gameCenterViewControllerDidFinish(_ gameCenterViewController: GKGameCenterViewController) {
