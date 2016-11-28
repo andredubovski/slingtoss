@@ -19,6 +19,9 @@ class Terrain: SKShapeNode {
   var doesMoveDown = Bool(false)
   var movingDownSpeed = CGFloat(0)
   var isMovingDown = Bool(false)
+  var doesMoveAcross = Bool(false)
+  var movingAcrossSpeed = CGFloat(0.5)
+  var isMovingAcross = Bool(true)
   
   override init() {
     
@@ -42,8 +45,19 @@ class Terrain: SKShapeNode {
     physicsBody?.contactTestBitMask = PhysicsCategory.Ball
     physicsBody?.usesPreciseCollisionDetection = true
     
-    if doesMoveDown {strokeColor = currentTheme.movingPlatformStrokeColor; lineWidth = 2; glowWidth = 0.5}
+    if doesMoveDown {strokeColor = currentTheme.movingDownPlatformStrokeColor; lineWidth = 2; glowWidth = 0.5}
     else {strokeColor = fillColor}
+    
+    if doesMoveAcross {
+      let moveAcrossDuration = TimeInterval(6 - movingAcrossSpeed*3.5)
+      let moveAcrossAction = SKAction.repeatForever(SKAction.sequence([
+        SKAction.moveTo(x: gameFrame.width-frame.width/2, duration: moveAcrossDuration),
+        SKAction.moveTo(x: frame.width/2, duration: moveAcrossDuration)
+        ]))
+//      setValue(moveAcrossAction, forKey: "move across")
+      position.x = frame.width/2
+      run(moveAcrossAction)
+    }
     
     gameScene.addChild(self)
     
@@ -79,8 +93,14 @@ class Terrain: SKShapeNode {
   func beginMovingDown() {
     physicsBody?.isDynamic = true
     physicsBody?.affectedByGravity = true
-    physicsBody?.linearDamping = 80 + (1-movingDownSpeed)*120
-    physicsBody?.angularDamping = 15 + (1-movingDownSpeed)*12
+    physicsBody?.linearDamping = 75 + (1-movingDownSpeed)*90
+    physicsBody?.angularDamping = 14 + (1-movingDownSpeed)*10
+  }
+  
+  func stopMovingAcross() {
+//    removeAction(forKey: "move across")
+    removeAllActions()
+    isMovingAcross = false
   }
   
   func scoreOn(_ score: Score) {

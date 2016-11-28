@@ -29,8 +29,12 @@ fileprivate func <= <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
 
 
 class Ball: SKSpriteNode {
+  
+  
   var radius = CGFloat()
-  var collidingWithPermeable = Bool()
+  var doesCollideWithPermeableTerrains = Bool(false)
+  var isContactingTerrain = Bool(false)
+  var isLandedOnTerrain = Bool(false)
   
   func build() {
     
@@ -69,21 +73,49 @@ class Ball: SKSpriteNode {
   
   func update(_ terrains: TerrainController) {
     if physicsBody?.velocity.dy <= 50 &&
-      !(terrains.containPoint(CGPoint(x: position.x, y: position.y-(radius-1.5))) ||
-        terrains.containPoint(CGPoint(x: position.x, y: position.y+(radius-1.5))) ||
-        terrains.containPoint(CGPoint(x: position.x-(radius-1.5), y: position.y)) ||
-        terrains.containPoint(CGPoint(x: position.x+(radius-1.5), y: position.y))) {
+      
+      !(terrains.containPoint(CGPoint(x: position.x, y: position.y-(radius-1))) ||
+        terrains.containPoint(CGPoint(x: position.x, y: position.y+(radius-1))) ||
+        terrains.containPoint(CGPoint(x: position.x-(radius-1), y: position.y)) ||
+        terrains.containPoint(CGPoint(x: position.x+(radius-1), y: position.y)) ||
+        
+        terrains.containPoint(CGPoint(x: position.x + (radius-1)/pow(2, 0.5), y: position.y + (radius-1)/pow(2, 0.5))) ||
+        terrains.containPoint(CGPoint(x: position.x + (radius-1)/pow(2, 0.5), y: position.y - (radius-1)/pow(2, 0.5))) ||
+        terrains.containPoint(CGPoint(x: position.x - (radius-1)/pow(2, 0.5), y: position.y + (radius-1)/pow(2, 0.5))) ||
+        terrains.containPoint(CGPoint(x: position.x - (radius-1)/pow(2, 0.5), y: position.y - (radius-1)/pow(2, 0.5)))) {
+      
       physicsBody?.collisionBitMask = PhysicsCategory.Wall | PhysicsCategory.ImpermeableTerrain | PhysicsCategory.Terrain
-      collidingWithPermeable = true
+      doesCollideWithPermeableTerrains = true
+      
     } else {
+      
       physicsBody?.collisionBitMask = PhysicsCategory.Wall | PhysicsCategory.ImpermeableTerrain
-      collidingWithPermeable = false
+      doesCollideWithPermeableTerrains = false
+      
     }
     
     if gameScene.menu.isActive || gameScene.deathMenu.isActive {
       physicsBody?.collisionBitMask = PhysicsCategory.Wall | PhysicsCategory.ImpermeableTerrain | PhysicsCategory.Terrain
-      collidingWithPermeable = true
+      doesCollideWithPermeableTerrains = true
     }
+    
+    var isContactingTerrain = Bool(false)
+    for contactedBody in (physicsBody?.allContactedBodies())! {
+      if contactedBody.categoryBitMask == PhysicsCategory.Terrain ||
+        contactedBody.categoryBitMask == PhysicsCategory.ImpermeableTerrain {
+        isContactingTerrain = true
+      }
+    }
+    self.isContactingTerrain = isContactingTerrain
+    
+      if ((terrains.current.physicsBody!.allContactedBodies().contains(physicsBody!) && magnitude(physicsBody!.velocity) < 60) ||
+        (terrains.current is Ring && magnitude(physicsBody!.velocity) < 65)) ||
+        (terrains.current.doesMoveDown &&
+          (terrains.current.physicsBody!.allContactedBodies().contains(physicsBody!) &&
+            magnitude(physicsBody!.velocity) < 70)) ||
+        magnitude(physicsBody!.velocity) < 24 {
+        isLandedOnTerrain = true
+      } else {isLandedOnTerrain = false}
   
   }
 }

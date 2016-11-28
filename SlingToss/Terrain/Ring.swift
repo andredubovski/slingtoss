@@ -40,8 +40,7 @@ class Ring: Terrain {
     mutablePath.closeSubpath()
     path = mutablePath
     
-    let randomRadius = random(0.15, to: 0.24) * 320
-    fillColor = currentTheme.ringColor(randomRadius)
+    fillColor = currentTheme.ringColor()
     
     let physicsPath = CGMutablePath()
     physicsPath.move(to: CGPoint(x: 0, y: 0))

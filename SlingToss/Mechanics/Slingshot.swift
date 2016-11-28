@@ -23,7 +23,6 @@ class Slingshot: SKShapeNode {
   var exponentCoefficient = CGFloat()
   var shotVector = CGVector()
   var aimingToPoint = CGPoint()
-  var canShoot = Bool(false)
   
   var aimPlayer = [AVAudioPlayer!]()
   var shotPlayer: AVAudioPlayer! = nil
@@ -81,7 +80,7 @@ class Slingshot: SKShapeNode {
   
   func aim(_ ball: Ball, atPoint: CGPoint) {
     
-    if canShoot {
+    if ball.isLandedOnTerrain {
       alpha = 1
       removeAllActions()
       
@@ -124,7 +123,7 @@ class Slingshot: SKShapeNode {
   }
   
   func shoot(_ terrain: Terrain, ball: Ball) -> Bool {
-    if canShoot {
+    if ball.isLandedOnTerrain {
       ball.physicsBody?.applyImpulse(shotVector)
       if defaults.bool(forKey: "SFX") {
         shotPlayer.volume = Float(relativeStretch)
@@ -143,15 +142,6 @@ class Slingshot: SKShapeNode {
   func update(_ terrain: Terrain, ball: Ball) {
     if ball.position.y > aimingToPoint.y {removeAllActions(); alpha = 0}
     if alpha > 0 {updateSling(ball, atPoint: aimingToPoint)}
-    if let ballBody = ball.physicsBody {
-      if let terrainBody = terrain.physicsBody {
-        if ((terrainBody.allContactedBodies().contains(ballBody) && magnitude(ballBody.velocity) < 50) ||
-        (terrain is Ring && magnitude(ballBody.velocity) < 65)) ||
-        magnitude(ballBody.velocity) < 24
-        {canShoot = true}
-        else {canShoot = false}
-      }
-    }
   }
   
 }

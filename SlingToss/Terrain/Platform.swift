@@ -47,9 +47,16 @@ class Platform: Terrain {
     path = mutablePath
     
     super.build()
-    let randomLength = random(0.15, to: 0.35) * 320
-    if isPermeable {fillColor = currentTheme.permeablePlatformColor(randomLength); name = "permeable platform"}
-    else {fillColor = currentTheme.impermeablePlatformColor(randomLength); name = "impermeable platform"}
+    if isPermeable && !doesMoveAcross {
+      fillColor = currentTheme.permeablePlatformColor()
+    }
+    
+    if !isPermeable {
+      fillColor = currentTheme.impermeablePlatformColor()
+      name = "impermeable platform"
+    } else {
+      name = "permeable platform"
+    }
     
   }
   

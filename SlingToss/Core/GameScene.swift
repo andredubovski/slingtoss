@@ -139,7 +139,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate, AdToAppViewDelegate, AdToApp
       let touchLocation = touch.location(in: self)
       if menu.isActive {menu.doWhenTouchesBegan(touchLocation)}
       if deathMenu.isActive {deathMenu.doWhenTouchesBegan(touchLocation)}
-      if slingshot.canShoot && !menu.wasPressed && !deathMenu.wasPressed {
+      if ball.isLandedOnTerrain && !menu.wasPressed && !deathMenu.wasPressed {
         ball.physicsBody?.isResting = true
         slingshot.aim(ball, atPoint: touchLocation)
         if defaults.bool(forKey: "SFX") {
@@ -157,7 +157,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate, AdToAppViewDelegate, AdToApp
       let touchLocation = touch.location(in: self)
       if menu.isActive {menu.doWhenTouchesMoved(touchLocation)}
       if deathMenu.isActive {deathMenu.doWhenTouchesMoved(touchLocation)}
-      if slingshot.canShoot && !menu.wasPressed && !deathMenu.wasPressed {slingshot.aim(ball, atPoint: touchLocation)}
+      if ball.isLandedOnTerrain && !menu.wasPressed && !deathMenu.wasPressed {slingshot.aim(ball, atPoint: touchLocation)}
     }
   }
   
@@ -256,7 +256,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate, AdToAppViewDelegate, AdToApp
         (contact.bodyA.node!.name == "ball" && contact.bodyB.node!.name == "ring") ||
         (contact.bodyB.node!.name == "ball" && contact.bodyA.node!.name == "ring"))
         &&
-        ball.collidingWithPermeable {
+        ball.doesCollideWithPermeableTerrains {
           playBounceSound(contact.collisionImpulse/8<=1 ? contact.collisionImpulse/8 : 1)
       }
       
