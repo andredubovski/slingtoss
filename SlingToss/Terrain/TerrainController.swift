@@ -74,6 +74,7 @@ class TerrainController {
         terrain.position.y -= interval
         if (terrain.position.y < gameFrame.height && !terrain.hasAppeared) ||
           (i == 2 && !terrain.hasAppeared) {terrain.appear()}
+        
         if terrain is Platform  {if terrain.position.y < 0 && !terrain.hasFallen {terrain.fall()}}
         if terrain is Ring  {if terrain.position.y < -terrain.frame.height/2 && !terrain.hasFallen {terrain.fall()}}
         if (terrain.position.y + (terrain.thickness + ball.frame.height/2) - 2.5 <= ball.position.y &&

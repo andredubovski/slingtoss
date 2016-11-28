@@ -47,16 +47,13 @@ class Platform: Terrain {
     path = mutablePath
     
     super.build()
-    if isPermeable && !doesMoveAcross {
+    if isPermeable {
       fillColor = currentTheme.permeablePlatformColor()
-    }
-    
-    if !isPermeable {
+      name = "permeable platform"
+    } else {
       fillColor = currentTheme.impermeablePlatformColor()
       name = "impermeable platform"
-    } else {
-      name = "permeable platform"
-    }
+    } 
     
   }
   

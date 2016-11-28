@@ -54,9 +54,8 @@ class Terrain: SKShapeNode {
         SKAction.moveTo(x: gameFrame.width-frame.width/2, duration: moveAcrossDuration),
         SKAction.moveTo(x: frame.width/2, duration: moveAcrossDuration)
         ]))
-//      setValue(moveAcrossAction, forKey: "move across")
       position.x = frame.width/2
-      run(moveAcrossAction)
+      run(moveAcrossAction, withKey: "move across")
     }
     
     gameScene.addChild(self)
@@ -98,8 +97,7 @@ class Terrain: SKShapeNode {
   }
   
   func stopMovingAcross() {
-//    removeAction(forKey: "move across")
-    removeAllActions()
+    removeAction(forKey: "move across")
     isMovingAcross = false
   }
   

@@ -49,7 +49,7 @@ class Ball: SKSpriteNode {
 //    strokeColor = fillColor
     zPosition = 3
     
-    physicsBody = SKPhysicsBody(circleOfRadius: radius)
+    physicsBody = SKPhysicsBody(circleOfRadius: radius-0.5)
     physicsBody?.categoryBitMask = PhysicsCategory.Ball
     physicsBody?.contactTestBitMask = PhysicsCategory.Terrain | PhysicsCategory.ImpermeableTerrain | PhysicsCategory.Wall
     physicsBody?.isDynamic = true
