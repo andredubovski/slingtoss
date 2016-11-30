@@ -73,7 +73,20 @@ class TerrainController {
       if let terrain = array[i] {
         terrain.position.y -= interval
         if (terrain.position.y < gameFrame.height && !terrain.hasAppeared) ||
-          (i == 2 && !terrain.hasAppeared) {terrain.appear()}
+          (i == 2 && !terrain.hasAppeared) {
+          terrain.appear()
+          if !terrain.isPermeable && !defaults.bool(forKey: "hasShownImermeableTutorial") {
+            gameScene.run(SKAction.sequence([
+              SKAction.wait(forDuration: 0.6),
+              SKAction.run({
+                gameScene.tutorial = Tutorial(imageNamed: "tutorial_impermeable")
+                gameScene.tutorial.build()
+                gameScene.tutorial.show()
+              })
+              ]))
+            defaults.set(true, forKey: "hasShownImermeableTutorial")
+          }
+        }
         
         if terrain is Platform  {if terrain.position.y < 0 && !terrain.hasFallen {terrain.fall()}}
         if terrain is Ring  {if terrain.position.y < -terrain.frame.height/2 && !terrain.hasFallen {terrain.fall()}}
@@ -102,7 +115,7 @@ class TerrainController {
     if array[array.count-1]!.position.y < gameFrame.height*2 {
       makeRandomTerrain(difficulty: difficulty)
     }
-
+    
   }
   
   func update(ball: Ball) {
@@ -161,15 +174,15 @@ class TerrainController {
   
   
   func makeRandomTerrain(difficulty: CGFloat = 0.5) {
-  
+    
     var position = CGPoint(x: random(0, to: 1), y: weightedRandom(1/3, to: 2/3, weight: difficulty))
     
     let doesMoveAcross = weightedRandom(0, to: 100, weight: difficulty) > 59
     let movingAcrossSpeed = weightedRandom(0, to: 1, weight: difficulty)
-  
+    
     if random(0, to: 4) > 1 {
       
-      var moves = weightedRandom(0, to: 100, weight: difficulty) > 66.9 
+      var moves = weightedRandom(0, to: 100, weight: difficulty) > 66.9
       let movingSpeed = weightedRandom(0, to: 1, weight: difficulty)
       
       var permeable = !(weightedRandom(0, to: 100, weight: difficulty) > 63.5)

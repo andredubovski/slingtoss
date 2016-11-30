@@ -66,7 +66,11 @@ class MainMenu {
     )
     button3.display()
     button3.buttonAction =
-      SKAction.run({gameScene.tutorial.show()})
+      SKAction.run({
+        gameScene.tutorial.texture = SKTexture(image: #imageLiteral(resourceName: "tutorial"))
+        gameScene.tutorial.isSequence = true;
+        gameScene.tutorial.show()
+      })
     elements.append(button3)
     
     highScoreBox = SKShapeNode(rect: CGRect(

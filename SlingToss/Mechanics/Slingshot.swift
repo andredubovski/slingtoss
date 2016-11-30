@@ -125,6 +125,7 @@ class Slingshot: SKShapeNode {
   func shoot(_ terrain: Terrain, ball: Ball) -> Bool {
     if ball.isLandedOnTerrain {
       ball.physicsBody?.applyImpulse(shotVector)
+      ball.timeOfLastShot = NSDate().timeIntervalSince1970
       if defaults.bool(forKey: "SFX") {
         shotPlayer.volume = Float(relativeStretch)
         shotPlayer.play()

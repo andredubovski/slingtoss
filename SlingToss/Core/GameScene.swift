@@ -30,7 +30,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate, AdToAppViewDelegate, AdToApp
   var adsOn = defaults.bool(forKey: "Ads")
   var ataBanner = AdToAppView();
   
-  let tutorial = Tutorial(imageNamed: "tutorial")
+  var tutorial = Tutorial(imageNamed: "tutorial")
   
   var backgroundMusicPlayer: AVAudioPlayer! = nil
   var bouncePlayerIndex = Int(0)

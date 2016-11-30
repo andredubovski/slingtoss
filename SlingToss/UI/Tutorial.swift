@@ -11,6 +11,7 @@ import SpriteKit
 class Tutorial: SKSpriteNode {
   
   var isShowing = false
+  var isSequence = false
   
   let appear = SKAction.fadeAlpha(to: 1, duration: 0.3)
   let pressIn = SKAction.scale(to: 0.95, duration: 0.04)
@@ -39,11 +40,24 @@ class Tutorial: SKSpriteNode {
   
   func doWhenTouchesEnded() {
     if isBeingTouched {
-      run(SKAction.sequence([
-        SKAction.group([releaseOut, fade]),
-        SKAction.run({self.removeFromParent()})
-        ]))
-      isShowing = false
+      if !isSequence {
+        run(SKAction.sequence([
+          SKAction.group([releaseOut, fade]),
+          SKAction.run({self.removeFromParent()})
+          ]))
+        isShowing = false
+      }
+      else {
+        run(SKAction.sequence([
+          SKAction.group([releaseOut, fade]),
+          SKAction.run({
+            self.removeFromParent()
+            self.texture = SKTexture(image: #imageLiteral(resourceName: "tutorial_impermeable"))
+            self.show()
+            })
+          ]))
+        self.isSequence = false
+      }
     }
   isBeingTouched = false
   }
