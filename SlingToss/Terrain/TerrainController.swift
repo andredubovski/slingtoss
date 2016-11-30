@@ -164,12 +164,12 @@ class TerrainController {
   
     var position = CGPoint(x: random(0, to: 1), y: weightedRandom(1/3, to: 2/3, weight: difficulty))
     
-    let doesMoveAcross = weightedRandom(0, to: 100, weight: difficulty) > 66
+    let doesMoveAcross = weightedRandom(0, to: 100, weight: difficulty) > 59
     let movingAcrossSpeed = weightedRandom(0, to: 1, weight: difficulty)
   
     if random(0, to: 4) > 1 {
       
-      var moves = weightedRandom(0, to: 100, weight: difficulty) > 69
+      var moves = weightedRandom(0, to: 100, weight: difficulty) > 66.9 
       let movingSpeed = weightedRandom(0, to: 1, weight: difficulty)
       
       var permeable = !(weightedRandom(0, to: 100, weight: difficulty) > 63.5)

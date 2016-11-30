@@ -50,10 +50,12 @@ class Terrain: SKShapeNode {
     
     if doesMoveAcross {
       let moveAcrossDuration = TimeInterval(6 - movingAcrossSpeed*3.5)
-      let moveAcrossAction = SKAction.repeatForever(SKAction.sequence([
-        SKAction.moveTo(x: gameFrame.width-frame.width/2, duration: moveAcrossDuration),
-        SKAction.moveTo(x: frame.width/2, duration: moveAcrossDuration)
-        ]))
+      let moveAcrossAction = SKAction.sequence([
+        SKAction.wait(forDuration: TimeInterval(random(2, to: 4))),
+        SKAction.repeatForever(SKAction.sequence([
+          SKAction.moveTo(x: gameFrame.width-frame.width/2, duration: moveAcrossDuration),
+          SKAction.moveTo(x: frame.width/2, duration: moveAcrossDuration)
+          ]))])
       position.x = frame.width/2
       run(moveAcrossAction, withKey: "move across")
     }
@@ -68,9 +70,9 @@ class Terrain: SKShapeNode {
       SKAction.scale(to: 1.2, duration: 0.24),
       SKAction.scale(to: 1, duration: 0.06)
       ]),
-      SKAction.fadeAlpha(to: 1, duration: 0.3)
-  ])
-  
+                                 SKAction.fadeAlpha(to: 1, duration: 0.3)
+      ])
+    
     run(popOut)
     hasAppeared = true
   }

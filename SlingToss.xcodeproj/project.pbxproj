@@ -122,6 +122,7 @@
 		C13530E31DDA90E300473AC8 /* Aiming2.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = Aiming2.m4a; sourceTree = "<group>"; };
 		C13530E41DDA90E300473AC8 /* Aiming3.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = Aiming3.m4a; sourceTree = "<group>"; };
 		C13530E51DDA90E300473AC8 /* Aiming4.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = Aiming4.m4a; sourceTree = "<group>"; };
+		C139E4B51DEC26F2006294D2 /* SlingToss.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SlingToss.entitlements; sourceTree = "<group>"; };
 		C1401A9F1D7D3071007764F8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C148A39D1DDAC2E500C45592 /* CreditsScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreditsScene.swift; sourceTree = "<group>"; };
 		C15229071DE6DEF7003C54D6 /* Tutoial.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tutoial.swift; sourceTree = "<group>"; };
@@ -294,6 +295,7 @@
 		8FF346941D6D0B2C00504D3E /* SlingToss */ = {
 			isa = PBXGroup;
 			children = (
+				C139E4B51DEC26F2006294D2 /* SlingToss.entitlements */,
 				8F9BA3B71D6D1551007BFB26 /* Core */,
 				8FF8DCF21D73AAB60024655C /* Mechanics */,
 				8F6451121D70C1CD00A061FB /* Misc */,
@@ -384,9 +386,12 @@
 						CreatedOnToolsVersion = 7.3;
 						DevelopmentTeam = YRLX8RKRSZ;
 						LastSwiftMigration = 0800;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 						SystemCapabilities = {
 							com.apple.GameCenter = {
+								enabled = 1;
+							};
+							com.apple.Push = {
 								enabled = 1;
 							};
 						};
@@ -657,6 +662,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = SlingToss/SlingToss.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = YRLX8RKRSZ;
@@ -671,8 +677,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.witehat.SlingToss;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE = "c0f3ef8b-6ded-443c-a8c6-b1ff3af4bd72";
+				PROVISIONING_PROFILE_SPECIFIER = "SlingToss Development";
 				SWIFT_OBJC_BRIDGING_HEADER = "SlingToss/Core/SlingToss-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
@@ -687,8 +693,9 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = SlingToss/SlingToss.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				DEVELOPMENT_TEAM = YRLX8RKRSZ;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = SlingToss/Core/Info.plist;
@@ -701,8 +708,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.witehat.SlingToss;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE = "0c5c1a91-7c51-430e-aadd-afc8916bc5ce";
+				PROVISIONING_PROFILE_SPECIFIER = "SlingToss App Store Distribution";
 				SWIFT_OBJC_BRIDGING_HEADER = "SlingToss/Core/SlingToss-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;

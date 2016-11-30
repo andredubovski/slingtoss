@@ -74,15 +74,15 @@ class Ball: SKSpriteNode {
   func update(_ terrains: TerrainController) {
     if physicsBody?.velocity.dy <= 50 &&
       
-      !(terrains.containPoint(CGPoint(x: position.x, y: position.y-(radius-1))) ||
-        terrains.containPoint(CGPoint(x: position.x, y: position.y+(radius-1))) ||
-        terrains.containPoint(CGPoint(x: position.x-(radius-1), y: position.y)) ||
-        terrains.containPoint(CGPoint(x: position.x+(radius-1), y: position.y)) ||
+      !(terrains.containPoint(CGPoint(x: position.x, y: position.y-(radius-1.5))) ||
+        terrains.containPoint(CGPoint(x: position.x, y: position.y+(radius-1.5))) ||
+        terrains.containPoint(CGPoint(x: position.x-(radius-1.5), y: position.y)) ||
+        terrains.containPoint(CGPoint(x: position.x+(radius-1.5), y: position.y)) ||
         
-        terrains.containPoint(CGPoint(x: position.x + (radius-1)/pow(2, 0.5), y: position.y + (radius-1)/pow(2, 0.5))) ||
-        terrains.containPoint(CGPoint(x: position.x + (radius-1)/pow(2, 0.5), y: position.y - (radius-1)/pow(2, 0.5))) ||
-        terrains.containPoint(CGPoint(x: position.x - (radius-1)/pow(2, 0.5), y: position.y + (radius-1)/pow(2, 0.5))) ||
-        terrains.containPoint(CGPoint(x: position.x - (radius-1)/pow(2, 0.5), y: position.y - (radius-1)/pow(2, 0.5)))) {
+        terrains.containPoint(CGPoint(x: position.x + (radius-2.5)/pow(2, 0.5), y: position.y + (radius-2.5)/pow(2, 0.5))) ||
+        terrains.containPoint(CGPoint(x: position.x + (radius-2.5)/pow(2, 0.5), y: position.y - (radius-2.5)/pow(2, 0.5))) ||
+        terrains.containPoint(CGPoint(x: position.x - (radius-2.5)/pow(2, 0.5), y: position.y + (radius-2.5)/pow(2, 0.5))) ||
+        terrains.containPoint(CGPoint(x: position.x - (radius-2.5)/pow(2, 0.5), y: position.y - (radius-2.5 )/pow(2, 0.5)))) {
       
       physicsBody?.collisionBitMask = PhysicsCategory.Wall | PhysicsCategory.ImpermeableTerrain | PhysicsCategory.Terrain
       doesCollideWithPermeableTerrains = true
