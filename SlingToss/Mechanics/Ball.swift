@@ -73,7 +73,7 @@ class Ball: SKSpriteNode {
   }
   
   func update(_ terrains: TerrainController) {
-    if (physicsBody?.velocity.dy <= 45 ||
+    if (physicsBody?.velocity.dy <= 50 ||
        (physicsBody?.velocity.dy <= 75 &&
         terrains.current is Ring &&
         NSDate().timeIntervalSince1970 - timeOfLastShot > 0.5)) &&
@@ -112,10 +112,15 @@ class Ball: SKSpriteNode {
     }
     self.isContactingTerrain = isContactingTerrain
     
-      if (terrains.current.physicsBody!.allContactedBodies().contains(physicsBody!) && magnitude(physicsBody!.velocity) < 60) ||
+      if (terrains.current.physicsBody!.allContactedBodies().contains(physicsBody!) &&
+        abs(magnitude(physicsBody!.velocity) - magnitude(terrains.current.physicsBody!.velocity)) < 60 &&
+        abs(physicsBody!.velocity.dy - terrains.current.physicsBody!.velocity.dy) < 60 &&
+        doesCollideWithPermeableTerrains)
+        ||
         (terrains.current is Ring &&
-          abs(magnitude(physicsBody!.velocity) - magnitude((terrains.current.physicsBody?.velocity)!)) < 65) ||
-        abs(physicsBody!.velocity.dy  ) < 1  {
+          abs(magnitude(physicsBody!.velocity) - magnitude(terrains.current.physicsBody!.velocity)) < 65)
+        ||
+        abs(physicsBody!.velocity.dy - terrains.current.physicsBody!.velocity.dy) < 1  {
         isLandedOnTerrain = true
       } else {isLandedOnTerrain = false}
   
