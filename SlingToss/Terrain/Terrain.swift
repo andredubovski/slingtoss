@@ -94,8 +94,8 @@ class Terrain: SKShapeNode {
   func beginMovingDown() {
     physicsBody?.isDynamic = true
     physicsBody?.affectedByGravity = true
-    physicsBody?.linearDamping = 75 + (1-movingDownSpeed)*90
-    physicsBody?.angularDamping = 14 + (1-movingDownSpeed)*10
+    physicsBody?.linearDamping = 65 + (1-movingDownSpeed)*80
+    physicsBody?.angularDamping = 13 + (1-movingDownSpeed)*9
   }
   
   func stopMovingAcross() {

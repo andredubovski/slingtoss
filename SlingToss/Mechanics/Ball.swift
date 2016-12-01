@@ -114,15 +114,16 @@ class Ball: SKSpriteNode {
     
       if (terrains.current.physicsBody!.allContactedBodies().contains(physicsBody!) &&
         abs(magnitude(physicsBody!.velocity) - magnitude(terrains.current.physicsBody!.velocity)) < 60 &&
-        abs(physicsBody!.velocity.dy - terrains.current.physicsBody!.velocity.dy) < 60 &&
+        abs(physicsBody!.velocity.dy - terrains.current.physicsBody!.velocity.dy) < 20 &&
         doesCollideWithPermeableTerrains)
         ||
         (terrains.current is Ring &&
           abs(magnitude(physicsBody!.velocity) - magnitude(terrains.current.physicsBody!.velocity)) < 65)
         ||
-        abs(physicsBody!.velocity.dy - terrains.current.physicsBody!.velocity.dy) < 1  {
+        abs(physicsBody!.velocity.dy) < 6  {
         isLandedOnTerrain = true
       } else {isLandedOnTerrain = false}
+    print(abs(physicsBody!.velocity.dy - terrains.current.physicsBody!.velocity.dy))
   
   }
 }
