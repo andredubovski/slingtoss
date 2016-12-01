@@ -39,6 +39,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate, AdToAppViewDelegate, AdToApp
   
   override func didMove(to view: SKView) {
     
+    ataBanner.isHidden = false
     if isVirgin {gameSetup(); isVirgin = false}
     
   }

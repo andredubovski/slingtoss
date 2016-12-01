@@ -140,9 +140,9 @@ class SettingsMenu: SKNode {
         } else if results.restoredProducts.count > 0 {
           self.removeAdsToggle.setStateTo(true)
           defaults.set(false, forKey: "Ads")
-          popup(scene: settingsScene, title: "Successfully Restored", message: "")
+          popup(scene: settingsScene, title: "Successfully Restored", message: "Enjoy!")
         } else {
-          popup(scene: settingsScene, title: "Nothing to Restore", message: "")
+          popup(scene: settingsScene, title: "Nothing to Restore", message: "You have not payed for this in app purchase before.")
         }
       }
       

@@ -15,6 +15,8 @@ class SettingsScene: SKScene {
   var isVirgin = Bool(true)
   
   override func didMove(to view: SKView) {
+    
+    gameScene.ataBanner.isHidden = true
     if isVirgin {
       let bg = Background(imageNamed: "background1")
       bg.build(self)
@@ -22,8 +24,6 @@ class SettingsScene: SKScene {
       currentTheme.build(self)
       isVirgin = false
     }
-    
-    
     
   }
   

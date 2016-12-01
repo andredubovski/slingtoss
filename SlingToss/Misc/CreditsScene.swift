@@ -30,7 +30,6 @@ class CreditsScene: SKScene {
   
   
   override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-    gameScene.ataBanner.isHidden = false
     view?.presentScene(gameScene, transition: SKTransition.doorsCloseHorizontal(withDuration: 0.5))
   }
   
