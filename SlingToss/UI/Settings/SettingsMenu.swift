@@ -83,7 +83,7 @@ class SettingsMenu: SKNode {
     
     removeAdsToggle.turnOnAction = SKAction.run({
       
-      SwiftyStoreKit.purchaseProduct("com.witehat.SlingToss.RemoveAds") { result in
+      SwiftyStoreKit.purchaseProduct("com.witehat.SlingToss.RemoveAdvertisements") { result in
         switch result {
         case .success(let productId):
           
@@ -165,6 +165,9 @@ class SettingsMenu: SKNode {
     creditsButton.buttonAction =
       SKAction.run({settingsScene.view?.presentScene(creditsScene, transition: SKTransition.doorsOpenHorizontal(withDuration: 0.5))})
     creditsButton.display(scene)
+    
+    removeAdsToggle.removeFromParent()
+    refreshIAPButton.removeFromParent()
 
   }
   

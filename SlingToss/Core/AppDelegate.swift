@@ -46,7 +46,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if product.transaction.transactionState == .purchased || product.transaction.transactionState == .restored {
           
           if product.needsFinishTransaction {
-            // Deliver content from server, then:
+            defaults.set(false, forKey: "Ads")
+            gameScene.ataBanner.isHidden = true
             SwiftyStoreKit.finishTransaction(product.transaction)
           }
           print("purchased: \(product)")

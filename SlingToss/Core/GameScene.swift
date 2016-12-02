@@ -27,7 +27,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate, AdToAppViewDelegate, AdToApp
   let scrollThresholdOnScreen = configNumberForKey("Relative scroll threshold")
   var verticalProgress = CGFloat(0)
   
-  var adsOn = defaults.bool(forKey: "Ads")
   var ataBanner = AdToAppView();
   
   var tutorial = Tutorial(imageNamed: "tutorial")
@@ -39,7 +38,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate, AdToAppViewDelegate, AdToApp
   
   override func didMove(to view: SKView) {
     
-    ataBanner.isHidden = false
+    ataBanner.isHidden = defaults.bool(forKey: "Ads")
+    
     if isVirgin {gameSetup(); isVirgin = false}
     
   }
@@ -111,11 +111,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate, AdToAppViewDelegate, AdToApp
     flashDeathOverlay()
     if defaults.bool(forKey: "SFX") && !isVirgin {gameOverPlayer.play()}
     
-    if resetCount > 4 {
+    if resetCount > 4 && defaults.bool(forKey: "Ads") {
       let r = random(0, to: 1)
       if r < 0.09 {
         AdToAppSDK.showInterstitial(ADTOAPP_VIDEO_INTERSTITIAL)
-      } else if r < 0.4 {
+      } else if r < 0.44 {
         AdToAppSDK.showInterstitial(ADTOAPP_IMAGE_INTERSTITIAL)
       }
     }
