@@ -165,9 +165,6 @@ class SettingsMenu: SKNode {
     creditsButton.buttonAction =
       SKAction.run({settingsScene.view?.presentScene(creditsScene, transition: SKTransition.doorsOpenHorizontal(withDuration: 0.5))})
     creditsButton.display(scene)
-    
-    removeAdsToggle.removeFromParent()
-    refreshIAPButton.removeFromParent()
 
   }
   
