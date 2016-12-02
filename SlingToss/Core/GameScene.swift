@@ -108,6 +108,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate, AdToAppViewDelegate, AdToApp
     verticalProgress = 0
     currentTheme.background.reset()
     
+    //chode
+    
     flashDeathOverlay()
     if defaults.bool(forKey: "SFX") && !isVirgin {gameOverPlayer.play()}
     
