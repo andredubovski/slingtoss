@@ -54,6 +54,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
       }
     }
+    
+    SwiftyStoreKit.verifyReceipt(password: "f76006aae37d48e5b4e31f9da3630828") { result in
+      switch result {
+      case .success(let receipt):
+        print("\(receipt)")
+      case .error(let error):
+        if case .noReceiptData = error {
+          SwiftyStoreKit.refreshReceipt { result in }
+        }
+      }
+    }
+    
     return true
   }
   

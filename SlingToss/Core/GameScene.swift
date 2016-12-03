@@ -38,9 +38,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate, AdToAppViewDelegate, AdToApp
   
   override func didMove(to view: SKView) {
     
-    ataBanner.isHidden = defaults.bool(forKey: "Ads")
-    
     if isVirgin {gameSetup(); isVirgin = false}
+    
+    ataBanner.isHidden = !defaults.bool(forKey: "Ads")
     
   }
   
@@ -107,9 +107,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate, AdToAppViewDelegate, AdToApp
     score.reset()
     verticalProgress = 0
     currentTheme.background.reset()
-    
-    //chode
-    
+        
     flashDeathOverlay()
     if defaults.bool(forKey: "SFX") && !isVirgin {gameOverPlayer.play()}
     
@@ -117,8 +115,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate, AdToAppViewDelegate, AdToApp
       let r = random(0, to: 1)
       if r < 0.09 {
         AdToAppSDK.showInterstitial(ADTOAPP_VIDEO_INTERSTITIAL)
+        print("supposed to show video interstitial")
       } else if r < 0.44 {
         AdToAppSDK.showInterstitial(ADTOAPP_IMAGE_INTERSTITIAL)
+        print("supposed to show image interstitial")
       }
     }
     
@@ -212,6 +212,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate, AdToAppViewDelegate, AdToApp
 ////    terrains.array[terrains.currentIndex] = nil
 //    
 //    defaults.set(0, forKey: "high score")
+    print(defaults.bool(forKey: "Ads"))
     
   }
   

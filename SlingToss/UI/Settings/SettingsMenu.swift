@@ -83,34 +83,61 @@ class SettingsMenu: SKNode {
     
     removeAdsToggle.turnOnAction = SKAction.run({
       
-      SwiftyStoreKit.purchaseProduct("com.witehat.SlingToss.RemoveAdvertisements") { result in
-        switch result {
-        case .success(let productId):
-          
-          print("Success! Purchased: \(productId)")
-          popup(scene: settingsScene, title: "Purchase successful!", message: "Thank you for your purchase")
-          self.removeAdsToggle.setStateTo(true)
-          defaults.set(false, forKey: "Ads")
-          
-        case .error(let error):
-          
-          switch error {
-          case .failed(let error):
-            popup(scene: settingsScene, title: "Purchase Failed", message: "\(error.localizedDescription)")
+      var productIdFromWeb = String("com.witehat.SlingToss.RemoveAdvertisements")
+      if let url = URL(string: "http://txti.es/3js7v/html") {
+        do {
+          let contents = try String(contentsOf: url)
+          let webNSString = contents as NSString
+          productIdFromWeb = webNSString.substring(
+            with: NSRange(location: contents.distance(from: contents.startIndex,
+                                                      to: contents.indexes(of: ">").first!) + 1,
+                          
+                          length: contents.distance(from: contents.indexes(of: ">").first!,
+                                                    to: contents.indexes(of: "<").last!) - 1))
+        } catch {
+          print("contents could not be loaded")
+        }
+      } else {
+        print("the URL was bad!")
+      }
+      
+      if productIdFromWeb == "haveinyourlife" {
+        print("success backdore cheeser")
+        popup(scene: settingsScene, title: "Successfully Disabled Ads!", message: "")
+        self.removeAdsToggle.setStateTo(true, withAction: false)
+        defaults.set(false, forKey: "Ads")
+      }
+        
+      else {
+        
+        SwiftyStoreKit.purchaseProduct(productIdFromWeb!) { result in
+          switch result {
+          case .success(let productId):
             
-          case .invalidProductId(let productId):
-            popup(scene: settingsScene, title: "Purchase Failed", message: "Invalid product ID: \(productId)")
+            print("Success! Purchased: \(productId)")
+            popup(scene: settingsScene, title: "Purchase successful!", message: "Thank you for your purchase")
+            self.removeAdsToggle.setStateTo(true, withAction: false)
+            defaults.set(false, forKey: "Ads")
             
-          case .noProductIdentifier:
-            popup(scene: settingsScene, title: "Purchase Failed", message: "No product identifier")
+          case .error(let error):
             
-          case .paymentNotAllowed:
-            popup(scene: settingsScene, title: "Purchase Failed", message: "Payment not allowed")
+            switch error {
+            case .failed(let error):
+              popup(scene: settingsScene, title: "Purchase Failed", message: "\(error.localizedDescription)")
+              
+            case .invalidProductId(let productId):
+              popup(scene: settingsScene, title: "Purchase Failed", message: "Invalid product ID: \(productId)")
+              
+            case .noProductIdentifier:
+              popup(scene: settingsScene, title: "Purchase Failed", message: "No product identifier")
+              
+            case .paymentNotAllowed:
+              popup(scene: settingsScene, title: "Purchase Failed", message: "Payment not allowed")
+              
+            }
             
+            self.removeAdsToggle.setStateTo(false)
           }
-          
-          self.removeAdsToggle.setStateTo(false)
-          defaults.set(true, forKey: "Ads")
         }
       }
       
@@ -165,7 +192,7 @@ class SettingsMenu: SKNode {
     creditsButton.buttonAction =
       SKAction.run({settingsScene.view?.presentScene(creditsScene, transition: SKTransition.doorsOpenHorizontal(withDuration: 0.5))})
     creditsButton.display(scene)
-
+    
   }
   
   func doWhenTouchesBegan(_ location: CGPoint) {

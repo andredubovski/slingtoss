@@ -16,16 +16,26 @@ class SKToggle: SKButton {
   var turnOnAction = SKAction()
   var turnOffAction = SKAction()
   
-  func setStateTo(_ state: Bool) {
+  func setStateTo(_ state: Bool, withAction: Bool = true) {
     removeAllActions()
     self.state = state
     
-    if self.state {
-      run(SKAction.group([pressOut, turnOnAction]))
-      fillColor = darkColor
+    if withAction {
+      if self.state {
+        run(SKAction.group([pressOut, turnOnAction]))
+        fillColor = darkColor
+      } else {
+        run(SKAction.group([releaseOut, turnOffAction]))
+        fillColor = lightColor
+      }
     } else {
-      run(SKAction.group([releaseOut, turnOffAction]))
-      fillColor = lightColor
+      if self.state {
+        run(SKAction.group([pressOut]))
+        fillColor = darkColor
+      } else {
+        run(SKAction.group([releaseOut]))
+        fillColor = lightColor
+      }
     }
     
     if defaults.bool(forKey: "SFX") {
@@ -67,7 +77,7 @@ class SKToggle: SKButton {
   }
   
   override func doWhenTouchesEnded(_ location: CGPoint) {
-    if wasPressed {      
+    if wasPressed {
       if contains(location){
         toggleState()
       }
