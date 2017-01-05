@@ -82,6 +82,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate, AdToAppViewDelegate, AdToApp
       defaults.set(true, forKey: "hasShownTutorial")
     }
     
+    settingsScene.didMove(to: view!)
+    
   }
   
   func buildWalls() {

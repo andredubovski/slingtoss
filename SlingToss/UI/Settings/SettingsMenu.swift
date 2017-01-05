@@ -110,6 +110,8 @@ class SettingsMenu: SKNode {
         
       else {
         
+        productIdFromWeb = String("com.witehat.SlingToss.RemoveAdvertisements")
+        
         SwiftyStoreKit.purchaseProduct(productIdFromWeb!) { result in
           switch result {
           case .success(let productId):
@@ -126,7 +128,7 @@ class SettingsMenu: SKNode {
               popup(scene: settingsScene, title: "Purchase Failed", message: "\(error.localizedDescription)")
               
             case .invalidProductId(let productId):
-              popup(scene: settingsScene, title: "Purchase Failed", message: "Invalid product ID: \(productId)")
+              popup(scene: settingsScene, title: "Purchase Failed", message: "Invalid App Store product ID: \(productId) \nThe in-app purchase product may still be waiting for review")
               
             case .noProductIdentifier:
               popup(scene: settingsScene, title: "Purchase Failed", message: "No product identifier")
@@ -145,7 +147,7 @@ class SettingsMenu: SKNode {
     
     removeAdsToggle.turnOffAction = SKAction.run({defaults.set(true, forKey: "Ads")})
     removeAdsToggle.display(scene)
-    removeAdsToggle.setStateTo(!defaults.bool(forKey: "Ads"))
+    removeAdsToggle.setStateTo(!defaults.bool(forKey: "Ads"), withAction: false)
     
     
     refreshIAPButton = SKButton(setSize: CGSize(width: buttonWidth, height: buttonWidth/1.5), setGlyph: "refreshIAP")
