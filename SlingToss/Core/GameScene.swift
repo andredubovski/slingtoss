@@ -15,7 +15,6 @@ let blankView = UIView()
 class GameScene: SKScene, SKPhysicsContactDelegate, AdToAppViewDelegate, AdToAppSDKDelegate {
   
   var isVirgin = Bool(true)
-  var menu = MainMenu()
   var deathMenu = DeathMenu()
   var onDeathMenu = Bool(false)
   var resetCount = Int(0)
@@ -51,14 +50,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate, AdToAppViewDelegate, AdToApp
     if defaults.value(forKey: "Ads") == nil {defaults.set(true, forKey: "Ads")}
     
     currentTheme.build()
-    if defaults.bool(forKey: "Ads") {setupAdToApp()}
-    setupSound()
     physicsWorld.contactDelegate = self
     gameFrame = frame
     settingsScene.didMove(to: view!)
     if gameFrame.width > 500 {physicsWorld.speed = 1.45}
     
-    menu.build()
     deathMenu.build()
     ball.build()
     slingshot.build()
@@ -69,7 +65,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate, AdToAppViewDelegate, AdToApp
     reset()
     if !onDeathMenu {
       deathMenu.hide()
-      menu.appear()
     }
     
     buildWalls()
@@ -101,7 +96,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate, AdToAppViewDelegate, AdToApp
   
   fileprivate func reset() {
     
-    terrains.reset(ball, menu: menu.isActive ? menu:deathMenu)
+    terrains.reset(ball, menu: deathMenu)
     ball.reset()
     
     scroll(0)
@@ -142,9 +137,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate, AdToAppViewDelegate, AdToApp
     
     for touch in touches {
       let touchLocation = touch.location(in: self)
-      if menu.isActive {menu.doWhenTouchesBegan(touchLocation)}
       if deathMenu.isActive {deathMenu.doWhenTouchesBegan(touchLocation)}
-      if ball.isLandedOnTerrain && !menu.wasPressed && !deathMenu.wasPressed {
+      if ball.isLandedOnTerrain && !deathMenu.wasPressed {
         ball.physicsBody?.isResting = true
         slingshot.aim(ball, atPoint: touchLocation)
         if defaults.bool(forKey: "SFX") {
@@ -160,9 +154,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate, AdToAppViewDelegate, AdToApp
     
     for touch in touches {
       let touchLocation = touch.location(in: self)
-      if menu.isActive {menu.doWhenTouchesMoved(touchLocation)}
       if deathMenu.isActive {deathMenu.doWhenTouchesMoved(touchLocation)}
-      if ball.isLandedOnTerrain && !menu.wasPressed && !deathMenu.wasPressed {slingshot.aim(ball, atPoint: touchLocation)}
+      if ball.isLandedOnTerrain && !deathMenu.wasPressed {slingshot.aim(ball, atPoint: touchLocation)}
     }
   }
   
@@ -171,13 +164,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate, AdToAppViewDelegate, AdToApp
     if tutorial.isShowing {tutorial.doWhenTouchesEnded(); return}
     
     var shot = Bool(false)
-    if !menu.wasPressed && !deathMenu.wasPressed {shot = slingshot.shoot(terrains.current, ball: ball)}
+    if !deathMenu.wasPressed {shot = slingshot.shoot(terrains.current, ball: ball)}
     
     for touch in touches {
       let touchLocation = touch.location(in: self)
-      if menu.isActive {
-        menu.doWhenTouchesEnded(touchLocation, shot: shot)
-      }
       if deathMenu.isActive {
         deathMenu.doWhenTouchesEnded(touchLocation, shot: shot)
         if shot {
@@ -220,7 +210,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate, AdToAppViewDelegate, AdToApp
   
   
   fileprivate func scroll(_ interval: CGFloat) {
-    if menu.isActive {menu.disappear(); score.appear()}
     if deathMenu.isActive {deathMenu.disappear(); score.appear()}
     currentTheme.background.scroll(interval)
     terrains.scroll(interval, progress: verticalProgress, ball: ball, score: score)
@@ -338,33 +327,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate, AdToAppViewDelegate, AdToApp
     }
   }
 
-  func setupSound() {
-    let audioSession = AVAudioSession.sharedInstance()
-    do {try audioSession.setCategory(AVAudioSessionCategoryAmbient, with: .duckOthers)}
-    catch {print("AVAudioSession cannot be set: \(error)")}
-    beginBgMusic()
-    buildBounceSound()
-    buildGameOverSound()
-  }
-  
-  func setupAdToApp() {
-
-    //Uncomment the line below if you need test mode
-//    AdToAppSDK.enableTestMode()
-    //Uncomment the line below if you need logs
-//    AdToAppSDK.enableDebugLogs()
-    AdToAppSDK.setDelegate(self)
-    AdToAppSDK.start(withAppId: "e41a7f3d-7104-47c3-8dbf-ddcc0541020b:0d1b5786-7d2d-4495-bc82-9dfa56e5f675", modules:[
-      ADTOAPP_IMAGE_INTERSTITIAL,
-      ADTOAPP_VIDEO_INTERSTITIAL,
-      ADTOAPP_INTERSTITIAL,
-      //ADTOAPP_REWARDED_INTERSTITIAL,
-      ADTOAPP_BANNER
-      ])
-    
-    ataBanner = AdToAppView.attach(to: self.view, position:ADTOAPPSDK_BANNER_POSITION_BOTTOM, edgeInsets:UIEdgeInsets.zero, bannerSize:ADTOAPPSDK_BANNER_SIZE_320x50, delegate:self) as! AdToAppView
-    
-  }
   
   func ad(_ adToAppView: AdToAppView!, failedToDisplayAdWithError error: Error!, isConnectionError: Bool) {
     print("failed to display ad, is connection error: \(isConnectionError)")

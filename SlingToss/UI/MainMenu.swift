@@ -31,6 +31,7 @@ class MainMenu {
   }
   
   func build(_ scene: SKScene = gameScene) {
+    print("building main menu in scene \(scene)")
     buttonWidth = gameFrame.width / (3 + 4*buttonToMarginRatio)
     marginWidth = buttonWidth*buttonToMarginRatio
     
@@ -47,7 +48,7 @@ class MainMenu {
       y: title.position.y - (title.frame.height/2 + buttonWidth/2)
     )
     button1.buttonAction = SKAction.run({scene.view?.presentScene(settingsScene, transition: SKTransition.doorsOpenHorizontal(withDuration: 0.5))})
-    button1.display()
+    button1.display(scene)
     elements.append(button1)
     
     button2 = SKButton(setSize: CGSize(width: buttonWidth, height: buttonWidth), setGlyph: "review")
@@ -56,7 +57,7 @@ class MainMenu {
       y: title.position.y - (title.frame.height/2 + buttonWidth/2)
     )
     button2.buttonAction = SKAction.run({iRate.sharedInstance().openRatingsPageInAppStore()})
-    button2.display()
+    button2.display(scene)
     elements.append(button2)
     
     button3 = SKButton(setSize: CGSize(width: buttonWidth, height: buttonWidth), setGlyph: "info")
@@ -64,12 +65,12 @@ class MainMenu {
       x: gameFrame.midX + (buttonWidth + marginWidth),
       y: title.position.y - (title.frame.height/2 + buttonWidth/2)
     )
-    button3.display()
+    button3.display(scene)
     button3.buttonAction =
       SKAction.run({
-        gameScene.tutorial.texture = SKTexture(image: #imageLiteral(resourceName: "tutorial"))
-        gameScene.tutorial.isSequence = true;
-        gameScene.tutorial.show()
+        menuScene.tutorial.texture = SKTexture(image: #imageLiteral(resourceName: "tutorial"))
+        menuScene.tutorial.isSequence = true;
+        menuScene.tutorial.show()
       })
     elements.append(button3)
     
@@ -117,7 +118,7 @@ class MainMenu {
   }
   
   
-  func doWhenTouchesEnded(_ location: CGPoint, shot: Bool) {
+  func doWhenTouchesEnded(_ location: CGPoint, shot: Bool = false) {
     if isActive {
       button1.doWhenTouchesEnded(location)
       button2.doWhenTouchesEnded(location)

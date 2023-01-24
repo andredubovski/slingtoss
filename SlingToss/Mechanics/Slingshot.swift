@@ -111,7 +111,7 @@ class Slingshot: SKShapeNode {
     zRotation = -atan((atPoint.x-ball.position.x) / (atPoint.y-ball.position.y))
     position = ball.position
     
-    shotVector = vectorFromAngleMagnitude(-zRotation, magnitude: pow(relativeStretch*sensitivity, exponentCoefficient)*pow(sensitivity, 1-exponentCoefficient))
+    shotVector = vectorFromAngleMagnitude(-zRotation, magnitude: pow(relativeStretch*sensitivity, exponentCoefficient)*pow(sensitivity, 1-exponentCoefficient)*gameFrame.height/568)
     let aimVector = vectorFromAngleMagnitude(-zRotation, magnitude: stretch)
     aimingToPoint = CGPoint(x: ball.position.x + aimVector.dx, y: ball.position.y + aimVector.dy)
     

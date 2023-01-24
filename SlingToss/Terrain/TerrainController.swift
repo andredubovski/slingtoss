@@ -47,6 +47,7 @@ class TerrainController {
     firstPlatform.build()
     firstPlatform.hasScored = true
     firstPlatform.makeSureIsInFrame()
+    ball.position.x = firstPlatform.position.x
     current = firstPlatform
     array.append(firstPlatform)
     

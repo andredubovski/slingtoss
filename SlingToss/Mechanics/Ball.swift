@@ -98,7 +98,7 @@ class Ball: SKSpriteNode {
       
     }
     
-    if gameScene.menu.isActive || gameScene.deathMenu.isActive {
+    if gameScene.deathMenu.isActive {
       physicsBody?.collisionBitMask = PhysicsCategory.Wall | PhysicsCategory.ImpermeableTerrain | PhysicsCategory.Terrain
       doesCollideWithPermeableTerrains = true
     }

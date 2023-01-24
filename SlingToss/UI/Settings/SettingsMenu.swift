@@ -83,7 +83,7 @@ class SettingsMenu: SKNode {
     
     removeAdsToggle.turnOnAction = SKAction.run({
       
-      var productIdFromWeb = String("com.witehat.SlingToss.RemoveAdvertisements")
+      var productIdFromWeb = String("com.witehat.SlingToss.NoAds")
       if let url = URL(string: "http://txti.es/3js7v/html") {
         do {
           let contents = try String(contentsOf: url)
@@ -110,9 +110,9 @@ class SettingsMenu: SKNode {
         
       else {
         
-        productIdFromWeb = String("com.witehat.SlingToss.RemoveAdvertisements")
+        productIdFromWeb = String("com.witehat.SlingToss.NoAds")
         
-        SwiftyStoreKit.purchaseProduct(productIdFromWeb!) { result in
+        SwiftyStoreKit.purchaseProduct(productIdFromWeb!, atomically: true) { result in
           switch result {
           case .success(let productId):
             

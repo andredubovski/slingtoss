@@ -28,7 +28,7 @@ class DeathMenu: MainMenu {
     title.xScale = (gameFrame.width-2*marginWidth)/title.frame.width
     
     button1.makeGlyph("home")
-    button1.buttonAction = SKAction.run({self.disappear(); gameScene.menu.appear()})
+    button1.buttonAction = SKAction.run({self.disappear(); scene.view?.presentScene(menuScene, transition: SKTransition.doorsOpenHorizontal(withDuration: 0.5))})
     button2.makeGlyph("share")
     button2.buttonAction = SKAction.run({
       

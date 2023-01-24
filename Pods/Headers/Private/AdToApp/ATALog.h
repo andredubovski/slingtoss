@@ -1,1 +1,0 @@
-../../../AdToApp/ATALog.h

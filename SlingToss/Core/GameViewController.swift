@@ -11,6 +11,7 @@ import SpriteKit
 import GameKit
 import StoreKit
 
+var menuScene = MenuScene()
 var gameScene = GameScene()
 var settingsScene = SettingsScene()
 var creditsScene = CreditsScene()
@@ -46,11 +47,12 @@ class GameViewController: UIViewController, GKGameCenterControllerDelegate {
     /* Set the scale mode to scale to fit the window */
     assembleThemes()
     
+    menuScene.scaleMode = .resizeFill
     settingsScene.scaleMode = .resizeFill
     gameScene.scaleMode = .resizeFill
     creditsScene.scaleMode = .resizeFill
     
-    skView.presentScene(gameScene)
+    skView.presentScene(menuScene)
   }
   
   override var shouldAutorotate : Bool {

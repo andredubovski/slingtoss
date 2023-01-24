@@ -62,6 +62,7 @@
 		C1A1E5A81D7B5AF400E7CDE4 /* SettingsMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1A1E5A71D7B5AF400E7CDE4 /* SettingsMenu.swift */; };
 		C1C9874B1D7FA9F10074BC0F /* StrangeGreenPlanet.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C1C9874A1D7FA9F10074BC0F /* StrangeGreenPlanet.mp3 */; };
 		C1CAFF181D7E481E008B3D5F /* Config.plist in Resources */ = {isa = PBXBuildFile; fileRef = C1CAFF171D7E481E008B3D5F /* Config.plist */; };
+		C1EE80CC1FC8FA0B007B3C62 /* MenuScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1EE80CB1FC8FA0B007B3C62 /* MenuScene.swift */; };
 		C1F2D3C81DD8E88E008D8315 /* Bounce.m4a in Resources */ = {isa = PBXBuildFile; fileRef = C1F2D3C71DD8E88E008D8315 /* Bounce.m4a */; };
 		C1F2D3CA1DD8EDA4008D8315 /* GameOver.m4a in Resources */ = {isa = PBXBuildFile; fileRef = C1F2D3C91DD8EDA4008D8315 /* GameOver.m4a */; };
 		C1F2D3CC1DD9016C008D8315 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1F2D3CB1DD9016C008D8315 /* GameKit.framework */; };
@@ -131,6 +132,7 @@
 		C1A1E5A71D7B5AF400E7CDE4 /* SettingsMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsMenu.swift; sourceTree = "<group>"; };
 		C1C9874A1D7FA9F10074BC0F /* StrangeGreenPlanet.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = StrangeGreenPlanet.mp3; sourceTree = "<group>"; };
 		C1CAFF171D7E481E008B3D5F /* Config.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Config.plist; sourceTree = "<group>"; };
+		C1EE80CB1FC8FA0B007B3C62 /* MenuScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuScene.swift; sourceTree = "<group>"; };
 		C1F2D3C71DD8E88E008D8315 /* Bounce.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = Bounce.m4a; sourceTree = "<group>"; };
 		C1F2D3C91DD8EDA4008D8315 /* GameOver.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = GameOver.m4a; sourceTree = "<group>"; };
 		C1F2D3CB1DD9016C008D8315 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
@@ -229,6 +231,7 @@
 				8FF346951D6D0B2C00504D3E /* AppDelegate.swift */,
 				C1CAFF171D7E481E008B3D5F /* Config.plist */,
 				8FA976771D7935F300A00984 /* GameScene.swift */,
+				C1EE80CB1FC8FA0B007B3C62 /* MenuScene.swift */,
 				8FA976781D7935F300A00984 /* GameViewController.swift */,
 				8F9463D51D766885002233A7 /* Info.plist */,
 				8F352C261D75FFBD00EEC2B1 /* SlingToss-Bridging-Header.h */,
@@ -551,6 +554,7 @@
 				8FA976841D7935F300A00984 /* Tools.swift in Sources */,
 				8FA976821D7935F300A00984 /* Score.swift in Sources */,
 				C1A1E5A41D7B202400E7CDE4 /* SettingsScene.swift in Sources */,
+				C1EE80CC1FC8FA0B007B3C62 /* MenuScene.swift in Sources */,
 				8FA976861D79362800A00984 /* TerrainController.swift in Sources */,
 				C1A1E5A81D7B5AF400E7CDE4 /* SettingsMenu.swift in Sources */,
 				8FA9767E1D7935F300A00984 /* Ball.swift in Sources */,
@@ -695,7 +699,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = SlingToss/SlingToss.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = YRLX8RKRSZ;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = SlingToss/Core/Info.plist;
@@ -708,8 +712,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.witehat.SlingToss;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "0c5c1a91-7c51-430e-aadd-afc8916bc5ce";
-				PROVISIONING_PROFILE_SPECIFIER = "SlingToss App Store Distribution";
+				PROVISIONING_PROFILE = "dd007f27-03af-4ced-8c42-a61e5b11a3ba";
+				PROVISIONING_PROFILE_SPECIFIER = "SlingToss Development";
 				SWIFT_OBJC_BRIDGING_HEADER = "SlingToss/Core/SlingToss-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;

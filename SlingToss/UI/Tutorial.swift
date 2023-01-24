@@ -19,16 +19,16 @@ class Tutorial: SKSpriteNode {
   let fade = SKAction.fadeAlpha(to: 0, duration: 0.1)
   var isBeingTouched = false
   
-  func build() {
+  func build(scene: SKScene = gameScene) {
     size = CGSize(width: 259, height: 318)
     position = CGPoint(x: gameFrame.midX, y: gameFrame.midY)
     zPosition = 100
     alpha = 0
+    scene.addChild(self)
   }
   
   
-  func show(scene: SKScene = gameScene) {
-    scene.addChild(self)
+  func show() {
     run(appear)
     isShowing = true
   }
@@ -42,8 +42,7 @@ class Tutorial: SKSpriteNode {
     if isBeingTouched {
       if !isSequence {
         run(SKAction.sequence([
-          SKAction.group([releaseOut, fade]),
-          SKAction.run({self.removeFromParent()})
+          SKAction.group([releaseOut, fade])
           ]))
         isShowing = false
       }
@@ -51,7 +50,6 @@ class Tutorial: SKSpriteNode {
         run(SKAction.sequence([
           SKAction.group([releaseOut, fade]),
           SKAction.run({
-            self.removeFromParent()
             self.texture = SKTexture(image: #imageLiteral(resourceName: "tutorial_impermeable"))
             self.show()
             })
